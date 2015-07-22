@@ -1,0 +1,145 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  This bbl file is created by econ.bst ver.2.1
+%  The latest econ.bst is available at
+%  <http://shirotakeda.org/home/tex/econ-bst.html>
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\SortNoop}[1]{}
+%%% Definition of \bysame
+\ifx\undefined\bysame
+\newcommand{\bysame}{\hskip.3em \leavevmode\rule[.5ex]{3em}{.3pt}\hskip0.5em}
+\fi
+
+\begin{thebibliography}{xxx}
+
+\harvarditem[Applebaum]{Applebaum}{2009}{Applebaum2009}
+Applebaum, David (2009)  {\it L\'evy processes and stochastic calculus}:
+  Cambridge University Press, 2nd edition.
+
+\harvarditem[Barndorff-Nielsen \& Shephard]{Barndorff-Nielsen \&
+  Shephard}{2004}{BN2004}
+Barndorff-Nielsen, Ole~E. and Shephard, Neil (2004) ``Econometric analysis of
+  realized covariation: {H}igh frequency based covariance, regression, and
+  correlation in financial economics'', {\it Econometrica}, Vol. 72, No. 3, pp.
+  885--925.
+
+\harvarditem[Bouchaud et~al.]{Bouchaud, Sagna, Cont, El-Karoui \&
+  Potters}{1999}{Bouchaud1999}
+Bouchaud, Jean-Philippe, Sagna, Nicolas, Cont, Rama, El-Karoui, Nicole, and
+  Potters, Marc (1999) ``Phenomenology of the interest rate curve'', {\it
+  Applied Mathematical Finance}, Vol. 6, pp. 209--232.
+
+\harvarditem[Carmona \& Tehranchi]{Carmona \& Tehranchi}{2006}{Carmona2006}
+Carmona, Ren\'e and Tehranchi, Michael (2006)  {\it Interest rate models: an
+  infinite dimensional stochastic analysis perspective}, Berlin Heidelberg:
+  Springer-Verlag.
+
+\harvarditem[Christensen]{Christensen}{2001}{Christensen2001}
+Christensen, Ole (2001) ``Frames, {R}iesz bases, and discrete {G}abor/wavelet
+  expansions'', {\it Bull. Amer. Math. Soc}, pp. 273--291.
+
+\harvarditem[Christensen]{Christensen}{2006}{Christensen2006}
+\bysame  (2006) ``Pairs of dual {G}abor frame generators with compact support
+  and desired frequency localization'', {\it Applied Computational Harmonic
+  Analysis}, Vol. 20, pp. 403--410.
+
+\harvarditem[Christensen]{Christensen}{2008}{Christensen2008}
+\bysame  (2008)  {\it Frames and bases: {A}n introductory course}, Boston:
+  Birkhauser.
+
+\harvarditem[Fan \& Wang]{Fan \& Wang}{2008}{Fan2008}
+Fan, Jianqing and Wang, Yazhen (2008) ``Spot volatility estimation for
+  high-frequency data'', {\it Statistics and its interface}, Vol. 1, pp.
+  279--288.
+
+\harvarditem[Florens-Zmirou]{Florens-Zmirou}{1993}{Florens1993}
+Florens-Zmirou, Danielle (1993) ``On estimating the diffusion coefficicient
+  from discrete observations'', {\it Journal of Applied Probability}, Vol. 30,
+  No. 4, pp. 790--804.
+
+\harvarditem[Foster \& Nelson]{Foster \& Nelson}{1996}{Foster1996}
+Foster, Dean~P. and Nelson, Dan~B. (1996) ``Continuous record asymptotics for
+  rolling sample variance estimators'', {\it Econometrica}, Vol. 64, No. 1, pp.
+  139--174.
+
+\harvarditem[Garman]{Garman}{1976}{Garman1976}
+Garman, Mark~B. (1976) ``Market microstructure'', {\it Journal of Financial
+  Economics}, Vol. 3, No. 3, pp. 257--275.
+
+\harvarditem[Genon-Catalot et~al.]{Genon-Catalot, Laredo \&
+  Picard}{1992}{GenonCatalot1992}
+Genon-Catalot, V., Laredo, C., and Picard, D. (1992) ``Non-parametric
+  estimation of the diffusion coefficient by wavelets methods'', {\it
+  Scandinavian Journal of Statistics}, Vol. 19, No. 4, pp. 317--335.
+
+\harvarditem[Hasbrouck]{Hasbrouck}{1991}{Hasbrouck1991}
+Hasbrouck, Joel (1991) ``Measuring the information content of stock trades'',
+  {\it The Journal of Finance}, Vol. 46, No. 1, pp. 179--207.
+
+\harvarditem[Heath et~al.]{Heath, Jarrow \& Morton}{1992}{Heath1992}
+Heath, David, Jarrow, Robert, and Morton, Andrew (1992) ``Bond pricing and the
+  term structure of interest rates: {A} new methodology for continuous claims
+  valuation'', {\it Econometrica}, Vol. 60, No. 1, pp. 77--105.
+
+\harvarditem[Hoffmann et~al.]{Hoffmann, Munk \&
+  Schmidt-Hieber}{2012}{Hoffmann2012}
+Hoffmann, M., Munk, A., and Schmidt-Hieber (2012) ``Adaptive wavelet estimation
+  of the diffusion coefficient under additive error measurements'', {\it
+  Annales de l'institut {Henry Poincar\'e}, Probabilit\'es et Statistiques},
+  Vol. 48, No. 4, pp. 1186--1216.
+
+\harvarditem[Litterman \& Scheinkman]{Litterman \&
+  Scheinkman}{1991}{Litterman1991}
+Litterman, Robert~B. and Scheinkman, Jos\'e (1991) ``Common factors affecting
+  bond market returns'', {\it The Journal of Fixed Income}, Vol. 1, No. 1, pp.
+  54--61.
+
+\harvarditem[Malliavin \& Mancino]{Malliavin \& Mancino}{2002}{Malliavin2002}
+Malliavin, Paul and Mancino, Maria~Elvira (2002) ``Fourier series methods for
+  measurement of multivariate volatilities'', {\it Finance and Stochastics},
+  Vol. 6, No. 1, pp. 49--61.
+
+\harvarditem[Malliavin \& Mancino]{Malliavin \& Mancino}{2009}{Malliavin2009}
+\bysame  (2009) ``A {F}ourier transform method for nonparametric estimation of
+  multivariate volatility'', {\it Annals of Statistics}, Vol. 37, No. 4, pp.
+  1983 -- 2010.
+
+\harvarditem[Malliavin et~al.]{Malliavin, Mancino \&
+  Recchioni}{2007}{Malliavin2007}
+Malliavin, Paul, Mancino, Maria~Elvira, and Recchioni, Maria~Cristina (2007)
+  ``A non-parametric calibration of the hjm geometry: an application of it\^o
+  calculus to financial statistics'', {\it Japanese Journal of Mathematics},
+  Vol. 2, pp. 55--77.
+
+\harvarditem[Podolskij \& Vetter]{Podolskij \& Vetter}{2007}{Podolskij2007}
+Podolskij, Mark and Vetter, Matthias (2007) ``Estimation of the volatility
+  functional in the simultaneous presence of microstructure noise and jumps'',
+  {\it CREATES Research Papers, School of Economics and Management, Aarhus
+  University}.
+
+\harvarditem[Protter]{Protter}{2004}{Protter2004}
+Protter, Philip~E. (2004)  {\it Stochastic Integration and Differential
+  Equations}: Springer, 2nd edition.
+
+\harvarditem[Roll]{Roll}{1984}{Roll1984}
+Roll, Richard (1984) ``A simple implicit measure of the effective bid-ask
+  spread in an efficient market'', {\it Journal of Finance}, Vol. 39, No. 4,
+  pp. 1127--1139.
+
+\harvarditem[Zhang et~al.]{Zhang, Mykland \& A\"it-{S}ahalia}{2005}{Zhang2005}
+Zhang, Lan, Mykland, Per~A., and A\"it-{S}ahalia, Yacine (2005) ``A tale of two
+  time scales: {D}etermining integrated volatility with noisy high-frequency
+  data'', {\it Journal of the American Statistical Association}, Vol. 100, No.
+  472, pp. 1394 -- 1411.
+
+\harvarditem[Zhang]{Zhang}{2008}{Zhang2008}
+Zhang, Zhihua (2008) ``Convergence of {W}eyl-{H}eisenberg frame series'', {\it
+  Indian Journal of Pure and Applied Mathematics}, Vol. 39, No. 2, pp.
+  167--175.
+
+\harvarditem[Zu \& Boswijk]{Zu \& Boswijk}{2014}{Zu2014}
+Zu, Yang and Boswijk, Peter~H. (2014) ``Estimating spot volatility with
+  high-frequency financial data'', {\it Journal of Econometrics}, Vol. 181, No.
+  2, pp. 117--135.
+
+\end{thebibliography}

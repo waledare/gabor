@@ -1,0 +1,82 @@
+\section{Volatility estimation } \label{sec:estimator}
+We make the following assumptions about the drift and volatility coefficients explicit.
+\begin{ass}\label{as:vol}\mbox{} 
+  \begin{enumerate}
+    \item The volatility function is strictly positive, bounded, and  continuous. 
+    \item The modulus of continuity  of the volatility coefficient,   $\omega_\sigma(\Delta_n)$, is equal to  $ o(1/\log(1/\Delta_n))$ as $n \to \infty$.  
+    \item There is $0< C_T <\infty $ such that $\vert \mu(t , x) \vert \le C_T (1 + \vert x \vert)$, for all $t \in [0,T]$ and $x \in \real$.
+  \end{enumerate}
+\end{ass}
+\noindent Since $\sigma^2$  may not necessarily be defined on the entire real line, we proceed as in \cite{GenonCatalot1992} by  constructing an extension over the real line that has support in $[0,T]$; this way we are able to apply the Hilbert space machinery in \LtwoR. We let \bsv denote the extension of $\sigma^2$, i.e.  \bsv coincides exactly with $\sigma^2$ on $[0,T]$ but vanishes outside of $[0,T]$. We summarize these notions as follows:
+\begin{ass} \label{as:barvol}
+  \bsv is in  $\LtwoR$,   has support in   $[0, T]$, and coincides with $\sigma^2$ on $[0,T]$.
+\end{ass}
+\noindent  With this substitution, we end up with a new process $\bar{X}$  coinciding with $X$ on $[0,T]$ such that 
+\begin{align}
+  \D\bar{X} = \mu(t, \bar{X}_t) \D t + \bar{\sigma}(t) \D W_t, \qquad \bar{X}_0 = x.\notag
+  \label{}
+\end{align}
+Now we may avail ourselves of the Gabor frame representation on \LtwoR. Let $\{g, \tg\}$ be a dual Gabor pair constructed as in Lemma \eqref{le:gabor}, then   \bsv admits a Gabor frame expansion given by:  
+\begin{align}
+  &\bsv(t)  = \sum_{h,k \in \ints} \chk \;g_{h,k}(t), \text{ where } 
+\\
+&\chk = \langle \bsv, \tilde{g}_{h,k} \rangle.
+\end{align}
+Note that both $\bsv$ and $\tg$ have compact support. Indeed \bsv has support in $[0,T]$, whereas  \tg has support in $[s,r]$. So, $\chk \ne 0$ only if  the supports of \bsv and \tghk overlap.  Furthermore, we note from \eqref{eq:dualghk} that $\tilde{g}_{h,k+1}$ is simply \tghk shifted by $b$ units; so, $\chk = 0$ if $|k| > K_0$ with 
+\begin{align}
+  K_0:= \lceil (T + |s| + |r|)/b \rceil,
+\end{align}
+where $\lceil x\rceil$ is the smallest positive integer larger than $x \in \real$.  Thus \bsv admits a  representation of the form: 
+\begin{align}
+  &\bsv(t) =  \sum_{\substack{(h,k) \in \ints^2\\\vert k \vert \le K_0}} \chk\;g_{h,k}(t).
+\end{align}
+Now, suppose $n$ observations of the log price process are available, and let 
+\begin{align}
+  \Theta_n := \{(h,k) \in \ints^2 : |h| \le H_n \text{ and }|k| \le K_0\},\notag
+  \label{}
+\end{align}
+where $H_n$ is an increasing sequence in $n$. 
+We propose the following estimator of the volatility coefficient in $[0,T]$:
+\begin{align}
+  &\svn(t) = \sum_{(h,k) \in \Theta_n} \cnhk\;g_{h,k}(t), \text{ where}\\
+  &\cnhk = \sum_{i =0}^{n-1} \btghki (X_{t_{i+1}} - X_{t_i})^2.
+  \label{}
+\end{align}
+In the next section we show that the estimator converges to $\sigma^2$ on $[0,T]$ in a mean integrated square error sense.
+\section{Asymptotic properties} \label{sec:deviation}
+Let $R_n$ denote the average integrate square deviation of \svn from \bsv, i.e.  
+\begin{align}
+R_n = \e \int_\real \{\svn(t) - \bsv(t)\}^2 \lambda(t) \D t,
+  \label{eq:remeainder}
+\end{align}
+where $\lambda$ is a positive and continuous weight function with support in $(0,T)$. The weight function allows us to emphasis different time windows when estimating the volatility. For instance, we may wish to emphasize the recent past in real-time applications. 
+We show that $R_n$ tends to 0 as a function of the sample size, $n$. Note that $R_n$ is the sum of a bias and a variance component, which we write as follows:
+\begin{align}
+  &R_n = B_n^2 + V_n, \notag \qquad \text{ } 
+\end{align}
+where
+\begin{align}
+  &B^2_n := \int_\real (\e[\svn(t) - \bsv(t)])^2 \lambda(t) \D t \notag \\
+&V_n :=  \int_\real \e[\{\svn(t) - \e[\svn(t)]\}^2] \lambda(t) \D t. \notag
+  \label{}
+\end{align}
+\begin{prop} \label{pr:consistency}
+  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \eqref{le:gabor}.   Suppose the conditions in  Assumptions \eqref{as:vol} and \eqref{as:barvol} hold. If  $H_n^2 \Delta_n, H_n\omega_g(\Delta_n)$, and  $\omega_{\sigma^2}(1/H_n) \log H_n\to 0$, then the mean integrated square error
+  $R_n$ tends to 0 as $n$ tends to infinity, with 
+  \begin{align}
+    & B_n^2 = O(H_n^2\Delta_n + \{H_n\omega_g(\Delta_n)\}^2 + \{\omega_{\sigma^2}(1/H_n) \log H_n\}^2)\notag \\
+    & V_n = O(H_n^2 \Delta_n),
+    \label{}
+  \end{align}
+  where $\omega_g(\delta) := \sup \{ |g (t) - g(t')|: t, t' \in \real \text{ and } |t -t'| < \delta\}$. 
+\end{prop}
+\begin{proof}
+  See Appendix \ref{ap:proof}.
+\end{proof}
+\begin{remark}\mbox{}
+  \begin{enumerate}  
+    \item First, the above bounds are remarkably similar to those achievable using an orthonormal basis such as wavelets \citep{GenonCatalot1992}. The variance component is slower by a factor of $H_n$. This comes about because the vectors in a frame need not be orthogonal. The bias term is slower by a logarithmic factor. Intuitively, the logarithmic term shows up because we are expanding \bsv using a frame, which may be thought of as containing some redundant term. In practical implementations, this may be a small price to pay for the added flexibility and robustness gained by using frames. 
+    \item Second, this result shows that the variance component of the MISE does not depend on the smoothness properties of either $\sigma^2$ and $g$.  
+  \end{enumerate}
+\end{remark}
+

@@ -1,0 +1,113 @@
+\input{../Paper2/header}
+\usepackage[toc,page]{appendix}
+\newcommand{\sumn}{\ensuremath{\sum_{k \in \nats}}\xspace}
+\newcommand{\sumi}{\ensuremath{\sum_{k \in \ints}}\xspace}
+\newcommand{\sv}{\ensuremath{\sigma_t^2}\xspace}
+\newcommand{\svnt}{\ensuremath{\sigma^2}\xspace}
+\newcommand{\svhk}{\ensuremath{\sigma^2_{h,k}}\xspace}
+\newcommand{\vh}{\ensuremath{V_h(\phi)}\xspace}
+\newcommand{\svn}{\ensuremath{\hat{\sigma}_{n}^2}\xspace}
+\newcommand{\svnN}{\ensuremath{\hat{\sigma}_{t}^2}\xspace}
+\newcommand{\hs}{\ensuremath{\mcal{H}}\xspace}
+\newcommand{\chk}{\ensuremath{{c}_{h,k}}\xspace}
+\newcommand{\cnhk}{\ensuremath{\hat{c}_{h,k}}\xspace}
+\title{Nonparametric estimation of multivariate volatility: A frame duality approach}
+\author{Wale Dare}
+\begin{document}
+\maketitle
+\section{Model}
+Let $\{p_t\}_{0 \le t\le T}$ be  log prices with dynamics given by  
+\begin{align}
+  \D p_t =   \mu_t \D t + \sigma_t \D W_t, \qquad t \in [0,T],
+  \label{}
+\end{align}
+where \sbm is a standard Brownian motion with respect to the filtered probability space $(\Omega, \mcal{F}, \{\mcal{F}\}_t, \p)$ satisfying the usual conditions; \idp is locally bounded and cadlag, %VERIFY THIS% 
+ whereas  \ivp is  predictable and locally bounded; %VERIFY THIS%
+  both \idp and \ivp satisfy the Lipschitz and growth conditions required for the existence of a strong solution. The obeservation horizon $T$ is fixed and finite.   \\ 
+  \indent Suppose $n$ log prices $ p_{t_i} := p_i$, $i=1,2,\cdots,n$, are observed discretely at equidistant intervals $\Delta_n := T/n$. Given this data we wish to obtain an estimate of the  spot volatility, $\sigma$, within the observation interval $[0,T]$. If all paths of $\sigma$ are such that 
+\begin{align} 
+  \int_0^T\sigma_t^2 \D t < \infty, \notag  
+\end{align}
+  then  the spot volatility is a random element (function) in $L^2(0,T)$, the set of square integrable functions on $[0,T]$. Without loss of generality we set $T$ equal to 1. \\
+  \indent Now \Ltwo is a separable Hilbert space so that it  admits a frame representation.  That is, there is a sequence, $\{\phi_k\}_{k=1}^{\infty}$, of elements in \Ltwo such that for all $f \in \Ltwo$,  $f = \sum_{k = 1}^{\infty} c_k \phi_k$, where $\{c_k\}^\infty_{k =1} $ is a sequence in \ltwo, the set of square summable sequences. Frames generalize the notion of orthogonal basis: both share the representation property, but frames need not have elements  that are mutually orthogonal. As a result, the representation in terms of the elements of a frame need not be unique.  
+This is by no means a disadvantage; the redundancies in the frame yield computational stability and parsimony in the representation.
+\section{Frames and Riesz bases} We start by giving a general definition of frames. The specialization to the space of interest \Ltwo is immediate.
+\begin{defn}
+  Let \hs be a separable Hilbert space with inner product $\langle \cdot, \cdot\rangle$ linear in the first argument. A sequence $\{\phi_k\}_{k \in \nats}$, with $\phi_k \in \hs$ for all $k$, is a frame if there exists positive constants $c$ and $C$ such that
+  \begin{align}
+    c \Vert f \Vert^2 \le \sum_{k \in \nats}\vert \langle f, \phi_k\rangle \vert^2 \le  C \Vert f \Vert^2,
+    \label{}
+  \end{align}
+  for all $f \in \hs$.
+\end{defn}
+\noindent The  constants $c$ and $C$ are  the  \emph{frame bounds}. If $\{\phi_k\}$ is a frame then we may associate with it a bounded operator, $A:\ltwo \to \hs$, known as the  \emph{synthesis operator} and  given by $A\;\{c_k\} := \sum_{k \in \nats} c_k \phi_k$.  Its adjoint, $A^*:\hs \to \ltwo$, is known as the \emph{analysis operator} and  is  given by $A^*f := \{\langle f, \phi_k \rangle\}$. By composing the analysis operator with the synthesis operator, we obtain the \emph{frame operator}, $F:\hs \to \hs$, given by 
+\begin{align}
+  F f := AA^*f = \sum_{k \in \nats} \langle f, \phi_k \rangle \phi_k. \notag
+\end{align}
+The frame operator $F$ is bounded, invertible, and self-adjoint\footnote{See \cite{Christensen2001} and the references therein.}. This yields the reprensentation result
+\begin{align}
+  f = FF^{-1}f = \sumn \langle f, F^{-1} \phi_k\rangle \phi_k.  
+  \label{}
+\end{align}
+The sequence $\{F^{-1}\phi_k\}_{k \in \nats}$ is also a frame, and it is called the \emph{canonical dual} of $\{\phi_k\}_{k \in \nats}$. A frame will generally have other duals besides the canonical dual. Frames are quite general objects. What is needed is some control over the type of redundancies allowed in a frame. Without such a restriction results about the rate of convergence of the frame expansion would be impossible to come by. A Riesz basis provides just the type of control needed. Informally, a Riesz basis is a frame whose elements are all essential. 
+\begin{defn}
+  A sequence $\{\phi_k\}_{k \in \nats}$, with $\phi_k \in \hs$ for all $k$, is a Riesz basis  if there exists an orthonormal basis $\{\xi_k\}_{k \in \nats}$ of \hs and  a bounded invertible operator $T: \hs \to \hs$ such that $\phi_k = T \xi_k$, for all $k$. 
+\end{defn}
+\noindent A frame is Riesz basis if it is \emph{complete}; i.e. whenever $\langle f,\phi_k\rangle = 0$ for all $k$ then $f =0$; and there are positive cosntants $c,C$ such that 
+\begin{align}
+  c\sum_{k=1}^N\vert c_k\vert^2 \le \left\Vert \sum_{k =1}^N c_k \phi_k \right \Vert^2 \le C\sum_{k=1}^N\vert c_k\vert^2,
+  \label{}
+\end{align}
+for all finite sequences $\{c_k\}_{1\le k\le N}$. This is equivalent to the condition
+\begin{align}
+  c\le \sumi \vert\hat{\phi}(\omega + 2 \pi k)\vert \le C, \qquad \forall\omega \in [0,2\pi], 
+  \label{}
+\end{align}
+where $\hat{\phi}$ is the Fourier transform of $\phi$. 
+To proceed in our analysis, we specialize further the type of Riesz basis to those that may be generated by a single element (function), $\phi \in \Ltwo$.  The entire Riesz basis is then generated by translating $\phi$ across the closed unit interval. By appropriately scaling the $\phi$ we end up with different levels of granularity in the representation. That is, we have in mind a collection\footnote{See \cite{Unser1997} for further elaboration on these ideas.} $\{\phi_{h,k}\}_{k, h \in \ints}$, where $\phi_{h,k} :=  \phi(x/h - k)$. We denote the function space generated by this basis as follows:
+\begin{align}
+  V_h(\phi) := \left\{\sumi c_{h,k} \phi_{h,k} : \{c_{h,k}\} \in \ltwo\right\}
+  \label{}
+\end{align}
+\section{Volatility estimation by duality}
+To obtain estimates for $\svnt \in \Ltwo$, we appeal to the duality theorem of Riesz basis. That is, there exists a Riesz basis $\{\psi_{h,k}\}_{k \in \ints}$ such that the projection of \svnt onto \vh is given by 
+\begin{align}
+  &\svhk(t)  = \sumi \chk \;\phi_{h,k}(t), \text{ where }\\
+  &\chk = \langle \svnt, \psi_{h,k} \rangle
+  \label{}
+\end{align}
+Now given $n$ observations of the log price process $p$, we propose the following estimator of the volatility
+\begin{align}
+  &\svn(t) = \sum_{k = -K}^{K} \cnhk\;\phi_{h,k}(t)\\
+  &\cnhk = \sum_{i =2}^n \psi_{h,k}((i-1)/n) (p_{i\Delta_n } - p_{(i-1)\Delta_n}) 
+  \label{}
+\end{align}
+\begin{comment}
+To this end we note  that since \sv is a  random elements in \Ltwo, it  admits the following representation:
+\begin{align}
+ & \sv = \sum_{j,k \in \ints} c_{j,k} e^{i2\pi j b t }g(t - k a) ,
+  \label{}
+\end{align}
+where $i = \sqrt{-1}$; $a$ and $b$ are given real numbers; $g $ is a suitably chosen function in \Ltwo; $c_{j,k}$ for $j,k \in \ints$ are random coefficients given by 
+\begin{align}
+  c_{j,k} = \int_\real \sv e^{i2\pi j b t }g(t - k a) \D t ;
+  \label{}
+\end{align} and   $\{g_{j,k}(t) := e^{i2\pi j b t }g(t - k a)\}$ for $j,k \in \ints$ forms a Gabor frame\footnote{See \cite{Christensen2001} for a very asseccible introduction to Gabor frames} for \Ltwo. A frame generalizes the notion of a basis for a vector space by containing additional vectors beyond those absolutely neccessary to form a basis. The additional vectors offer computational stability and  flexibility in the representation. Furthermore, a Gabor frame is localized in both time and frequency; so, we may expect it to be amenable to  noise reduction applications where stationarity assumptions on the latent process may not be appropriate.   So, given choices of $a,b \text{ and } g$, the random element \sv may be estimated by obtaining approximations for the random coefficients $c_{j,k}$.   
+To this end, we propose the following estimator
+\begin{align}
+  & \svnN = \sum_{j,k \in [-N, N]} \cnjk g_{j,k}(t) , 
+\end{align}
+where
+\begin{align}
+ & \cnjk := \sum_{i = 1}^{n-1} g_{j,k}(i\Delta_n) (p_{i+1} - p_i)^2;
+  \label{}
+\end{align} and $N$ is some positive natural number. Note that the precision of  \svnN improves as $n$ and $N$ increase, independently of each other.
+\begin{lem}
+  The estimator \cnjk converges in probability to \cjk as $n \to \infty$.
+\end{lem}
+\begin{proof}
+\end{proof}
+\end{comment}
+\input{/home/wale/Dropbox/PhD/Bibliography/masterbiblinux}
+\end{document}
+

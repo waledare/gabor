@@ -1,0 +1,26 @@
+\select@language {american}
+\contentsline {chapter}{\numberline {1}Nonparametric spot volatility estimation by Gabor frames methods}{2}
+\contentsline {section}{\numberline {1.1}Model}{3}
+\contentsline {section}{\numberline {1.2}Gabor frames}{4}
+\contentsline {section}{\numberline {1.3}Volatility estimation }{7}
+\contentsline {section}{\numberline {1.4}Asymptotic properties}{9}
+\contentsline {section}{\numberline {1.5}Simulation study}{10}
+\contentsline {section}{\numberline {1.6}Volatility in the bond market}{10}
+\contentsline {section}{\numberline {1.7}Extensions}{10}
+\contentsline {subsection}{\numberline {1.7.1}Estimating the spot co-volatility matrix}{10}
+\contentsline {section}{\numberline {1.8}Conclusion}{11}
+\contentsline {chapter}{\numberline {2}Market microstructure noise and spot volatility estimation }{12}
+\contentsline {section}{\numberline {2.1}Model}{13}
+\contentsline {subsection}{\numberline {2.1.1}Market microstructure noise}{14}
+\contentsline {section}{\numberline {2.2}Noise-robust estimator}{15}
+\contentsline {section}{\numberline {2.3}Simulation study}{16}
+\contentsline {section}{\numberline {2.4}Diurnal pattern in the bond market revisited}{16}
+\contentsline {section}{\numberline {2.5}Conclusion}{16}
+\contentsline {chapter}{\numberline {3}Detecting changes in bond market stability}{17}
+\contentsline {section}{\numberline {3.1}Forward rates and bond prices}{17}
+\contentsline {section}{\numberline {3.2}HJM model of fixed-income markets}{18}
+\contentsline {section}{\numberline {3.3}Realized Spectra}{19}
+\contentsline {section}{\numberline {3.4}Empirical study}{20}
+\contentsline {section}{\numberline {3.5}Conclusion}{20}
+\contentsline {chapter}{Appendices}{24}
+\contentsline {chapter}{\numberline {A}Proofs}{25}

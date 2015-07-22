@@ -1,0 +1,46 @@
+\input{../Paper2/header}
+\usepackage[toc,page]{appendix}
+\newcommand{\sv}{\ensuremath{\sigma_t^2}\xspace}
+\newcommand{\svn}{\ensuremath{\hat{\sigma}_{t}^2}\xspace}
+\newcommand{\svnN}{\ensuremath{\hat{\sigma}_{t}^2}\xspace}
+\newcommand{\cjk}{\ensuremath{{c}_{j,k}}\xspace}
+\newcommand{\cnjk}{\ensuremath{\hat{c}_{j,k}}\xspace}
+\title{Gabor series method for estimating multivariate volatilities}
+\author{Wale Dare}
+\begin{document}
+\maketitle
+\section{Model}
+Let $\{p_t\}$ be a log prices process assumed to be a version of the strong solution of the stochastic differential  equation
+\begin{align}
+  \D p_t =   \mu_t \D t + \sigma_t \D W_t, \qquad t \in [0,T],
+  \label{}
+\end{align}
+where \sbm is a standard Brownian motion with respect to the filtered probability basis $(\Omega, \mcal{F}, \{\mcal{F}\}_t, \p)$ satisfying the usual conditions ; \idp and \ivp are the instantaneous drift and diffusion coefficients satisfying the Lipschitz and growth conditions for the existence of a strong solution; and $T$ is a finite number. Note that the time horizon may be set to $[0,1]$  without losing the generality of our analysis by using a change of variable argument.   \\ 
+\indent We assume that $n$ log prices $p_i$ indexed by $i$ from 1 to $n$ are observed discreely at equidistant intervals $\Delta_n := 1/n$ between time zero and one. Given this data we wish to obtain an estimate of the  spot volatility \sv during the observation interval $[0,1]$. Note that the spot volatility is a random element (function) in \ltwo, the set of square integrable functions on $[0,1]$. In other words,  we wish to obtain a sequence of random elements \svn whose approximation of \sv improves as the number of observations increases. To this end we note  that since \sv is a  random elements in \ltwo, it  admits the following representation:
+\begin{align}
+ & \sv = \sum_{j,k \in \ints} c_{j,k} e^{i2\pi j b t }g(t - k a) ,
+  \label{}
+\end{align}
+where $i = \sqrt{-1}$; $a$ and $b$ are given real numbers; $g $ is a suitably chosen function in \ltwo; $c_{j,k}$ for $j,k \in \ints$ are random coefficients given by 
+\begin{align}
+  c_{j,k} = \int_\real \sv e^{i2\pi j b t }g(t - k a) \D t ;
+  \label{}
+\end{align} and   $\{g_{j,k}(t) := e^{i2\pi j b t }g(t - k a)\}$ for $j,k \in \ints$ forms a Gabor frame\footnote{See \cite{Christensen2001} for a very asseccible introduction to Gabor frames} for \ltwo. A frame generalizes the notion of a basis for a vector space by containing additional vectors beyond those absolutely neccessary to form a basis. The additional vectors offer computational stability and  flexibility in the representation. Furthermore, a Gabor frame is localized in both time and frequency; so, we may expect it to be amenable to  noise reduction applications where stationarity assumptions on the latent process may not be appropriate.   So, given choices of $a,b \text{ and } g$, the random element \sv may be estimated by obtaining approximations for the random coefficients $c_{j,k}$.   
+To this end, we propose the following estimator
+\begin{align}
+  & \svnN = \sum_{j,k \in [-N, N]} \cnjk g_{j,k}(t) , 
+\end{align}
+where
+\begin{align}
+ & \cnjk := \sum_{i = 1}^{n-1} g_{j,k}(i\Delta_n) (p_{i+1} - p_i)^2;
+  \label{}
+\end{align} and $N$ is some positive natural number. Note that the precision of  \svnN improves as $n$ and $N$ increase, independently of each other.
+\begin{lem}
+  The estimator \cnjk converges in probability to \cjk as $n \to \infty$.
+\end{lem}
+\begin{proof}
+
+\end{proof}
+\input{/home/wale/Dropbox/PhD/Bibliography/masterbiblinux}
+\end{document}
+

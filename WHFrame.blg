@@ -1,0 +1,91 @@
+This is BibTeX, Version 0.99d (TeX Live 2013)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: WHFrame.aux
+The style file: econ.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: /home/wale/Dropbox/PhD/Bibliography/Actuarial.bib
+Database file #2: /home/wale/Dropbox/PhD/Bibliography/Ambiguity.bib
+Database file #3: /home/wale/Dropbox/PhD/Bibliography/AssetPricing.bib
+I was expecting an "="---line 207 of file /home/wale/Dropbox/PhD/Bibliography/AssetPricing.bib
+ : @article 
+ :          {Yaron2004,
+I'm skipping whatever remains of this entry
+Database file #4: /home/wale/Dropbox/PhD/Bibliography/bib.bib
+You're missing a field part---line 765 of file /home/wale/Dropbox/PhD/Bibliography/bib.bib
+ :   month= 
+ :          ,
+I'm skipping whatever remains of this entry
+You're missing a field part---line 1571 of file /home/wale/Dropbox/PhD/Bibliography/bib.bib
+ :   month= 
+ :          ,
+I'm skipping whatever remains of this entry
+Database file #5: /home/wale/Dropbox/PhD/Bibliography/Insurance.bib
+Database file #6: /home/wale/Dropbox/PhD/Bibliography/IV.bib
+Database file #7: /home/wale/Dropbox/PhD/Bibliography/Macroeconomics.bib
+I was expecting a `,' or a `}'---line 131 of file /home/wale/Dropbox/PhD/Bibliography/Macroeconomics.bib
+ :   
+ :   author = {Christopher A. Sims},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Database file #8: /home/wale/Dropbox/PhD/Bibliography/MathEcon.bib
+Database file #9: /home/wale/Dropbox/PhD/Bibliography/Microstructure.bib
+Database file #10: /home/wale/Dropbox/PhD/Bibliography/Monetary.bib
+I was expecting a `,' or a `}'---line 713 of file /home/wale/Dropbox/PhD/Bibliography/Monetary.bib
+ :   
+ :   otherinfo = {}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Database file #11: /home/wale/Dropbox/PhD/Bibliography/oldasp.bib
+Database file #12: /home/wale/Dropbox/PhD/Bibliography/UtilityTheory.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+Warning--can't use both author and editor fields in Christensen2008
+Warning--there is no volume, number, and pages in Podolskij2007
+Warning--can't use both author and editor fields in Protter2004
+You've used 25 entries,
+            6548 wiz_defined-function locations,
+            1421 strings with 13781 characters,
+and the built_in function-call counts, 28870 in all, are:
+= -- 4678
+> -- 1061
+< -- 72
++ -- 369
+- -- 336
+* -- 1702
+:= -- 3873
+add.period$ -- 25
+call.type$ -- 25
+change.case$ -- 201
+chr.to.int$ -- 31
+cite$ -- 28
+duplicate$ -- 849
+empty$ -- 1418
+format.name$ -- 348
+if$ -- 7339
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 90
+num.names$ -- 232
+pop$ -- 400
+preamble$ -- 2
+purify$ -- 176
+quote$ -- 0
+skip$ -- 1900
+stack$ -- 0
+substring$ -- 2446
+swap$ -- 188
+text.length$ -- 60
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 393
+warning$ -- 3
+while$ -- 239
+width$ -- 0
+write$ -- 386
+(There were 5 error messages)

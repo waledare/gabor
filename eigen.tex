@@ -1,0 +1,58 @@
+\chapter{Detecting  changes in  bond market stability}
+It is a well-known tenet in empirical finance that a large portions of the variability in financial markets results from a handful of risk-factors. In particular, it has been known since, at least, the paper by \cite{Litterman1991} that fixed-income securities can be explained by no more than four factors. This observation has been further substantiated by the  empirical  study by \cite{Bouchaud1999}. Our aim in this chapter is to  formulate and test the predictive power of a test statistic that tracks the evolution of the principal eigen vector of the spot co-volatility matrix.    
+\section{Forward rates and bond prices}
+We fix notation by going over the basics of continuous-time fixed-income pricing. For a detailed presentation see  \cite{Carmona2006} or \cite{Heath1992}.  Let $P(t,\T)$ denote the time-$t$ price of a zero-coupon bond (bond) with maturity date $\T$ and unit nominal value, where $0\le t\le \T < \infty$. Under the assumption that the bond price $P(t,\T)$ is a smooth function of the maturity date \T,  the forward rate $f(t,\T)$ is given by the instantaneous rate of return on a loan contracted at time $t$ to take effect starting at time \T; it is defined as:
+\begin{align}
+  f(t,\T) = -\partial \log P(t, \T)/\partial T .
+  \label{eq:fp}
+\end{align}
+The above definition yields a formula for the unit price of a bond at time $t$ with maturity \T; this is achieved by  integrating and then taking the exponential of  both sides of \eqref{eq:fp} to yield:
+\begin{align}
+  P(t, \T) = \exp \left(-\int_t^\T f(t,s) \D s \right).
+  \label{eq:bp}
+\end{align}
+It is  clear from \eqref{eq:bp} that the forward rate fully characterizes bond prices. Specializing to the case where the contract and effective dates coincides yields a characterization of the spot interest rate in terms of the forward rate function. Thus, denoting the spot interest rate by $r(t)$, we have
+\begin{align}
+  r(t) = f(t,t).\notag
+  \label{}
+\end{align}
+It is  clear from the above equality that a discussion of the spot rate may be subsumed in a discussion of the forward rate. This is the point of departure of the model of fixed-income markets proposed by \cite{Heath1992} (HJM). We highlight the salient point of the HJM perspective in the next section. 
+\section{HJM model of fixed-income markets}
+The HJM model provides a model for the dynamics of the entire term structure. It is assumed that there is  continuum of bonds indexed by maturity date \T taking values in some closed and bounded interval. Bond prices and forward rates are denoted by $P(t, \T)$ and $f(t, \T)$, respectively. The forward rate evolution in time is subject to uncertainty arising from $m$-dimensional  standard Brownian vector $(W_1, \cdots, W_d)$, with $m < \infty$, defined on the filtered probability space $\{\Omega, \mcal{F}, \{\mcal{F}_t\}_{t\ge 0}, \p\}$, satisfying the usual conditions. To recap, while there are uncountably many bonds and consequently forward rates - one for each maturity date - there are only $m$ risk factors affecting the time evolution of the entire term structure. Given a fixed maturity date \T, the forward rate $f(t, \T)$ satisfies the following:
+\begin{align}
+  f(t,\T) = f(0, \T) + \int^t_0 \mu(t,\T) \D s + \int^t_0 \sum_{j = 1}^m \sigma_j(s,\T) \D W_j (s),
+  \label{eq:fd}
+\end{align}
+where $0 \le t \le \T$; the drift function is locally  integrable and the volatility coefficient is locally square integrable. \cite{Heath1992} showed that the no-arbitrage condition restricts the drift coefficient according to the following:
+\begin{align}
+  \mu(t, \T) = \sum_{j = 1}^m \sigma_j(t,\T) \int_t^\T \sigma_j(t, s) \D s.\notag
+  \label{}
+\end{align}
+So, the drift function is fully characterized by the volatility coefficient.
+\section{Realized Spectra}
+Now, in practice we do not have market data for a continuum of maturities. Most fixed-income instruments are contracted for maturities that are multiples of 3 months, up to a mximum of 30 years; so, in practice we have about 120 maturities. Based on the empirical evidence \citep{Bouchaud1999, Litterman1991}, the principal risk factors, those accounting for the vast majority of the variability, say 90\%, are less than 4; so, 120 maturities is probably more than we need to start teasing out what these principal risk factors are, and to monitor how they change or evolve over time. We start by 
+fixing $1 < d < \infty$ maturities for which we have high-frequency data available. 
+We let $[0,T]$ denote the observation interval. We assume the $d$ forward rates are observed synchronously at equidistant intervals.  Let $\Sigma(t)$ denote the time-$t$ $d \times d$ spot co-volatility matrix of the $d$ forward rates. Since, $\Sigma(t)$ is symmetric and positive definite, its spectral decomposition is given by:
+\begin{align}
+  \Sigma(t) = \sum_{i = 1}^d \lambda_i(t) \{v_i(t) \otimes v_i(t)\},\qquad t \ge 0,\notag
+  \label{}
+\end{align}
+where  $\{\lambda(t)_i , v_i(t)\}$ are time-$t$ eigen pairs with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_d$.   Given the empirical evidence aluded to previously, there is $d' << d$ such that  
+\begin{align}
+  \Sigma(t) \approx \sum_{i = 1}^{d'} \lambda_i(t) \{v_i(t) \otimes v_i(t)\},\qquad t \ge 0. \notag
+  \label{}
+\end{align}
+Now, because $\Sigma$ is not observable, we propose using \Svn specified in Equation \eqref{eq:Sigma} of Chapter 1 to estimate $\Sigma$. Now given, \Svn, we propose to estimate the spectrum of $\Sigma$ by means of the spectrum of \Svn, which we denote by $\{\hat{\lambda}_{n,j}, \hat{v}_{n,j}\}$ for $j$ between 1 and $d$. 
+Now let 
+\begin{align}
+  \hat{\chi}_n (t_i) = \frac{\langle \hat{v}_{n,1}(t_i),   \hat{v}_{n,1}(t_i -1)\rangle}{\Vert \hat{v}_{n,1}(t_i) \Vert \Vert \hat{v}_{n,1}(t_i -1) \Vert},
+\end{align}
+where $\langle \cdot \rangle$ and $\Vert \cdot \Vert$ are, respectively, the Euclidean inner product and norm. The statistic $ \hat{\chi}_n (t_i)$ is an empirical construct measuring the cosine between successive realizations of the most important eigen vectors $\hat{v}_{n,1}(t_i)$ and  $\hat{v}_{n,1}(t_i -1)$. The empirical envidence \citep{Carmona2006} suggests that the principal or most important factor can account for a disproportionately portion of total variability; so, it makes sense to track just the most principal vector. Since this eigen vector is a description of  the composition of the most important or principal  risk factor, we may view $\hat{\chi}_n (t_i)$ as telling us how the direction or composition of the principal risk factor changes  over time. Knowledge of this time evolution, if tracked in real-time, could provide actionable information to traders about market  direction and stability.
+Furthermore, \cite{Malliavin2007} showed empirically that the  Fourier-based counterpart of $\hat{\chi}_n (t_i)$ is fairly stable  when it is business-as-usual in the market; in crisis periods  this statistic can exhibit substantial fluctuations. Our aim is to replicate this empirical result and to answer a question that \cite{Malliavin2007} have left unanswered: is the realized velocity  of the eigen vector a leading indicator for market returns? Intuitively, changes in volatility need not be reflected immediately in prices since the Brownian motions driving rates may offset the change in volatility for some time before they begin to show in return data. So, we conjecture the question may be answered in the affirmative, but we will have to conduct an empirical study to settle the question. To test this hypothesis,  we propose the following simple model:
+\begin{align}
+  f(t_i, \T) = \alpha + \sum_{j=1}^q\beta_j \hat{\chi}_n (t_{i-j}) + \sum_{j=1}^p\gamma_j f(t_{i-j},\T)+ \eta_i,
+  \label{}
+\end{align}
+where $eta_i$ is \iid error with constant variance and zero mean; $p$ and $q$ are positive integers; and $\alpha, \{\beta_j\}_{j=1}^q$ and $\{\gamma_j\}_{j=1}^p$ are constants to be determined and tested for statistical significance.
+\section{Empirical study}
+\section{Conclusion}

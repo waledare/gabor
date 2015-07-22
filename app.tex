@@ -1,0 +1,160 @@
+\begin{appendices}
+  \chapter{Proofs}\label{ap:proof}
+  We now give the proof of Lemma \eqref{lem:modtg}. \\ \\
+  \begin{proof}
+  Note that $G$ is bounded away from zero. Indeed, since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b := [(s+r -b)/2, (s+r +b)/2]$, then
+  \begin{align}
+    \min_{t\in\real} G(t) &=  \min_{t \in I_b} G(t) \notag\\
+    & \ge (2\pi/a) \min_{t \in I_b}\vert g(t)\vert^2.\notag
+    \label{}
+  \end{align}  
+  Because $g$ is continuous and $g$ doesn't vanish in $(r,s)$, we conclude that $G_*:=\min_{t \in \real}G(t) > 0$. It is also straight forward that $G^* := \max_{t \in \real}G(t) < \infty$. Now, let $t, t' \in \real$ such that $\vert t - t' \vert \le \delta$, then 
+  \begin{align}
+    \vert \tg(t) - \tg(t')\vert & = \vert (G(t)G(t'))^{-1}(g(t)G(t') - g(t')G(t))\vert  \notag\\
+    & \le (G_*^{-2})\{\vert g(t)\vert \vert G(t) - G(t') \vert + \vert G(t)\vert \vert g(t) - g(t')\vert\}. 
+    \label{eq:difftg}
+  \end{align}
+Let $\tau := r +  (t \bmod {b})$, and $\tau':=r + (t' \bmod{b})$. It is straight forward to verify that if  $\vert \tau - \tau' \vert \le \delta$, then
+\begin{align}
+  \vert G(t) - G(t') \vert & \le  \sum_{j = 0}^{\lfloor (s + r)/b \rfloor} \vert g(\tau + j b)^2 - g(\tau' + j b)^2\vert\notag\\
+  & \le \sum_{j = 0}^{\lfloor (s + r)/b \rfloor} \vert g(\tau + j b) - g(\tau' + j b) \vert \vert g(\tau + j b) + g(\tau' + j b)\vert\notag\\
+  & \le 2 \lceil (s + r)/b\rceil g^*\omega_g(\delta),
+  \label{}
+\end{align}
+where $g^* := \max_{t \in \real} \vert g(t)\vert $. On the other hand, if $\vert \tau - \tau'\vert > \delta$, then 
+\begin{align}
+  &\vert G(t) - G(t') \vert \notag \\
+  &\quad \le \vert g(\tau')^2 - g(r)^2\vert +   \vert g(s)^2 - g(\tau + c)^2 \vert\notag \\
+  &\qquad +\sum_{j = 1}^{\lfloor (s + r)/b \rfloor} \{\vert g(\tau + (j-1) b)^2 - g(\tau' + j b)^2\vert\}.  \notag
+  \label{}
+\end{align}
+where $c = \lfloor (s + r)/b \rfloor b $. It follows as above that 
+\begin{align}
+\vert G(t) - G(t') \vert \le 2 (\lceil (s + r)/b\rceil +1)g^*\omega_g(\delta, T).
+\end{align}
+Returning to \eqref{eq:difftg}, we see that
+\begin{align}
+  \vert \tg(t) - \tg(t')\vert \le C_{\tg} \omega_g(\delta),\notag
+  \label{}
+\end{align}
+where $C_{\tg} = G_*^2(2 (\lceil (s + r)/b\rceil +1)(g^*)^2 + G^*)$. Now let \hkints, then
+\begin{align}
+  \vert \tghk(t) - \tghk(t')\vert & = \vert e^{ihat} (\tg(t - kb) -\tg(t'-kb) \vert\notag\\
+  &\le \vert (\tg(t - kb) -\tg(t'-kb) \vert \le C_{\tg} \omega_g(\delta).
+  \label{}
+\end{align}
+The last inequality follows because translating a function leaves its modulus of continuity unchanged.\\
+\end{proof}
+Next, we provide a proof of Proposition \eqref{pr:consistency}. \\\\
+\begin{proof}
+  We begin with $B^2_n$, the bias component of the integrated mean square error. Using \ito's product formula \citep[p. 257]{Applebaum2009}, we may express, using \ito's isometry theorem, the average deviation at time $t$ as follows:
+\begin{align}
+  &\e[\svn(t) - \bsv(t)] = B_{1,n}(t) + B_{2,n}(t) + B_{3,n}(t), \notag
+\end{align}
+where
+\begin{align}
+  &B_{1,n}(t) :=  \sumt g_{h,k}(t) \left\{\sum_{i=0}^{n-1} \btghki \int_{t_i}^{t_{i+1}}\sigma^2(s) \D s -\chk\right\}, \notag\\
+  &B_{2,n}(t) := 2 \sumt g_{h,k}(t)\left\{ \sum_{i=0}^{n-1} \btghki \e\left[\int_{t_i}^{t_{i+1}}(X_s - X_{t_i}) \mu(s,X_s) \D s\right] \right\}, \notag\\
+  &B_{3,n}(t) := - \sum_{\substack{(j,k) \not\in \Theta_n }}g_{h,k}(t)\chk. 
+  \label{}
+\end{align}
+The first two components, $B_{1,n}(t)$ and  $B_{2,n}(t)$, result from the fact that   $X$ is being observed discretely; whereas  $B_{3,n}$ results because only a finite number of the frame elements are being used in the approximation. We refer to Theorem 4.1 in  \cite{Zhang2008} for an estimate of  $B_{3,n}$:
+\begin{align}
+  B_{3,n} = O(\omega_{\bsv}(1/H_n)\log H_n)\notag.
+  \label{}
+\end{align}
+So, the smoother the volatility coefficient the smaller the number of frame elements needed to obtain a decent approximation. We obtain a bound on $B_{1,n}$  by noting that 
+\begin{align}
+ \sum_{i=0}^{n-1} \btghki\int_{t_i}^{t_{i+1}}\sigma^2(s) \D s -\chk\notag
+  & = \sum_{i=0}^{n-1}\int_{t_i}^{t_{i+1}}\sigma^2(s)\{\btghki - \btghks\} \D s\notag \\
+  &\le C_\beta\omega_{\tghk} (\Delta_n), \notag
+  \label{}
+\end{align}
+where  $C_\beta = \int^T_0 \sigma^2(s) \D s < \infty$. It follows from Lemma \eqref{lem:modtg} that  
+\begin{align}
+  B_{1,n}(t) \le C_B H_n\omega_{g}(\Delta_n)\notag 
+  %\label{in:b1}
+\end{align}
+with $C_B = 2(2K_0 + 1)g^*\tg^* C_\beta C_{\tg}$. 
+Next, we estimate $B_{2,n} (t)$. Note that
+\begin{align}
+  X_s - X_{t_i} = \int_{t_i}^s \mu(u,X_u) \D u + \int^s_{t_i} \sigma(u)\D W_u. \notag
+  \label{}
+\end{align}
+So, we may write
+\begin{align}
+  &\e\left[\int_{t_i}^{t_{i+1}}(X_s - X_{t_i}) \mu(s,X_s) \D s\right]\notag\\
+  &\quad = \e\left[\int_{t_i}^{t_{i+1}}\left( \int_{t_i}^s \mu(u,X_u) \D u\right)\mu(s,X_s) \D s\right] \notag \\
+  &\qquad + \e\left[\int_{t_i}^{t_{i+1}}\left( \int_{t_i}^s \sigma(u) \D W_u\right)\mu(s,X_s) \D s\right]\notag \\
+  &\quad =: \beta_{2,i} + \beta_{3,i}. \notag
+\end{align}
+By Fubinni's theorem,  the Cauchy-Schwarz inequality,  \ito's isometry theorem, and the linear growth condition on the drift, we have
+\begin{align}
+  \beta_{3,i} &\le C_T\int_{t_i}^{t_{i+1}}\left( \int_{t_i}^s \sigma^2(u) \D u\right)^{1/2}\e[(1+\vert X_s\vert)^2]^{1/2} \D s\notag\\
+& \le C_3 \Delta_n^{3/2}.
+  \label{}
+\end{align}
+Similarly, it may be verified that $\beta_{2,i} \le C_2 \Delta_n^2$. Now we may write
+\begin{align}
+  B_{2,n}(t) &\le \Delta_n^{1/2}\sumt g_{h,k}(t)\left\{ \sum_{i=0}^{n-1} \btghki C_4 \Delta_n \right\} \notag \\
+  & \le ( (2K_0+1)C_4 g^*\tg^* T) (2H_n + 1)\Delta^{1/2}_n\notag\\
+  & = O(H_n \Delta^{1/2}_n).
+  \label{}
+\end{align}
+Thus the square bias is bounded as follows:
+\begin{align}
+  B^2_n &= \int_R (B_{1,n}(t) + B_{2,n}(t)+  B_{3,n}(t))^2 \lambda(t) \D t \notag\\
+  &= O(H_n^2 \Delta_n + H^2_n\omega^2_g(\Delta_n)  + \omega^2_{\bsv}(1/H_n)\log^2H_n).
+  \label{}
+\end{align}
+Next, we obtain a  bound for the variance term. Note that $V_n$ may be expressed as follows:
+\begin{align}
+  V_n & = V_{1,n} + V_{2,n} \notag
+\end{align}
+with
+\begin{align}
+  & V_{1,n} := \sum_{(h,k) \in \Theta_n}\var[\cnhk]\gamma_{h,k}^2,\text{ and} \notag\\ 
+& V_{2,n} := \mathop{\sum}_{\substack{(h,k),(h',k') \in \Theta_n\\(h,k) \ne (h',k')}} \cov[\cnhk, \hat{c}_{h',k'}] \gamma_{h,k} \gamma_{h',k'},\notag
+  \label{}
+\end{align}
+where $\gamma_{h,k} : = \int_0^T g_{h,k}(t) \D t$.  We start with $V_{1,n}$. If we set 
+\begin{align}
+  &Y_i := \left(\int^{t_{i+1}}_{t_i} \sigma(s) \D W_s\right)^2  \qquad \text{and} \notag\\
+  &Z_i := \left(\int^{t_{i+1}}_{t_i} \mu(s, X_s) \D s\right)^2 + 2\left(\int^{t_{i+1}}_{t_i} \mu(s,X_s) \D s\right)\left(\int^{t_{i+1}}_{t_i} \sigma(s) \D W_s\right), \notag 
+  \label{}
+\end{align}
+then we may write 
+\begin{align}
+  \cnhk = \sum_{i = 0}^{n-1} g_{h,k}(t_i) (Y_i + Z_i).\notag
+  \label{}
+\end{align}
+Furthermore, setting
+\begin{align}
+  \alpha_{1,i} := \sum_{(h,k) \in \Theta_n} g^2_{h,k}(t_i)\gamma_{h,k}^2,\notag
+  \label{}
+\end{align}
+allows us to write 
+\begin{align}
+  V_{1,n} := \sum_{i = 0}^{n-1} \alpha_{1,i} (\var[Y_i] + \var[Z_i] + 2 \cov[Y_i,Z_i]). \notag
+  \label{}
+\end{align}
+Using the Cauchy-Schwarz inequality, we obtain 
+\begin{align}
+    &\var[Y_i] = \left(\int^{t_{i+1}}_{t_i} \sigma^2(t_i) \D s\right)^2 = O(\Delta_n^2);\\
+    &\var[Z_i] \le \e[Z_i^2] = O(\Delta_n^3); \\
+    &\cov[Y_i, Z_i] \le (\var[Z_i] \var[Y_i])^{1/2} = O(\Delta_n^{5/2}).
+\end{align}
+Since $\alpha_{1,i} = O(H_n)$, we conclude that  $V_{1,n} = O(H_n\Delta_n)$. It is clear that $V_{2,n}$ may be bounded in a similar fashion. Indeed, let
+\begin{align}
+  \alpha_{2,i} := \sum_{\substack{(h,k) \in \Theta_n\\ (h,k) \ne (h',k')}} g_{h',k'}(t_i)g_{h,k}(t_i)\gamma_{h',k'}\gamma_{h,k},\notag
+  \label{}
+\end{align}
+then we may write
+\begin{align}
+  V_{2,n} := \sum_{i = 0}^{n-1} \alpha_{2,i} (\var[Y_i] + \var[Z_i] + 2 \cov[Y_i,Z_i]). \notag
+  \label{}
+\end{align}
+Since $ \alpha_{2,i} = O(H_n^2)$, it follows that $V_{2,n} := O(H^2_n\Delta_n)$. 
+\end{proof}
+%\chapter{Extensions} \label{ap:ext}
+\end{appendices}

@@ -1,0 +1,184 @@
+\input{../Paper2/header}
+\usepackage[toc,page]{appendix}
+\newcommand{\sumn}{\ensuremath{\sum_{k \in \nats}}\xspace}
+\newcommand{\sumi}{\ensuremath{\sum_{k \in \ints}}\xspace}
+\newcommand{\sumt}{\ensuremath{\sum_{(h,k) \in \Theta_n}}\xspace}
+\newcommand{\sv}{\ensuremath{\sigma_t^2}\xspace}
+\newcommand{\bsv}{\ensuremath{\bar{\sigma}^2}\xspace}
+\newcommand{\svnt}{\ensuremath{\sigma^2}\xspace}
+\newcommand{\svhk}{\ensuremath{\sigma^2_{h,k}}\xspace}
+\newcommand{\vh}{\ensuremath{V_h(\phi)}\xspace}
+\newcommand{\idp}{\ensuremath{\mu}\xspace}
+\newcommand{\svn}{\ensuremath{\hat{\sigma}_{n}^2}\xspace}
+\newcommand{\Svn}{\ensuremath{\hat{\Sigma}_n}\xspace}
+\newcommand{\svnb}{\ensuremath{\hat{\sigma}_{n,b}^2}\xspace}
+\newcommand{\svnN}{\ensuremath{\hat{\sigma}_{t}^2}\xspace}
+\newcommand{\hs}{\ensuremath{\mcal{H}}\xspace}
+\newcommand{\T}{\ensuremath{\tau}\xspace}
+\newcommand{\chk}{\ensuremath{{c}_{h,k}}\xspace}
+\newcommand{\cnhk}{\ensuremath{\hat{c}_{h,k}}\xspace}
+\newcommand{\ivp}{\ensuremath{\sigma}\xspace}
+\newcommand{\inner}[2]{\ensuremath{\langle{#1},{#2}\rangle}\xspace}
+\newcommand{\ghk}{\ensuremath{g_{h,k}}\xspace}
+\newcommand{\tghk}{\ensuremath{\tilde{g}_{h,k}}\xspace}
+\newcommand{\btghki}{\ensuremath{\overline{\tilde{g}_{h,k}(t_i)}}\xspace}
+\newcommand{\btghks}{\ensuremath{\overline{\tilde{g}_{h,k}(s)}}\xspace}
+\newcommand{\tg}{\ensuremath{\tilde{g}}\xspace}
+\newcommand{\hkints}{\ensuremath{h,k \in \ints}\xspace}
+\title{PhD thesis proposal: \\ On nonparametric  volatility estimation, market microstructure noise, and fixed-income market stability.}
+\author{Wale Dare}
+\begin{document}
+\maketitle
+\tableofcontents
+\chapter {Nonparametric spot volatility estimation by Gabor frames methods}
+Volatility estimation for discretely observed asset prices has received a great deal of attention recently, but much of that effort has been focused on 
+integrated volatility and, to a lesser extent, the spot volatility at a given point in time. In both cases, the object of interest is local: spot volatility at a given point in time or integrated volatility up to a given terminal time.  Notable contributions to the spot and integrated volatility estimation literature include  the papers by \cite{Foster1996}, \cite{Fan2008},   \cite{Florens1993}, and  \cite{BN2004}. On the other hand,  global approaches, which aim  to obtain  volatility estimates not just at a point in time but for an entire time window,  have received much less coverage. As a result, very little is known about the behaviour of these estimators; in fact, what is known is confined to the case where both the price and volatility processes have continuous paths.      
+
+
+So far, two types of global spot volatility estimators have been proposed. The first of these is  the Fourier-based volatility estimator proposed by  \cite{Malliavin2002} and \cite{Malliavin2009}. This estimator is built up  by first obtaining an estimate of  the Fourier series expansion  of the price process. The estimated Fourier coefficients of the price process are then used to obtain estimates for the Fourier coefficients of the volatility function.  Even though \citeauthor{Malliavin2002} show that estimates of the individual coefficients  in the Fourier expansion of the volatility function converge in a mean square sense, they stopped short of provoding an explicit rate of convergence for the entire volatiltity function. The second class of global estimators is the wavelet-based estimators proposed by     \cite{GenonCatalot1992} and \cite{Hoffmann2012}. A lot more is known about this class of estimators; for instance, uniform and integrated mean square rates are well known.  In both the Fourier and the wavelet approaches, there is a reliance  on orthonormal bases: the Fourier and wavelet orthonormal bases, respectively.  Using orthonormal bases  is optimal  provided the  individual coefficients in the orthonormal basis expansion of the volatility function can be estimated with good precision. This may not always be the case when using a finite number of data points to estimate the basis coefficients. The global spot volatility estimator we propose  is aimed squarely at this problem by employing a Gabor frame methodology. Frames are very flexible and yield robust estimates  when the individual coefficients cannot be estimated with high precision; which is probably the case when using a finite amount of  data. Additionally, Gabor frames  possess highly efficient noise reduction capabilities. This point becomes important when price measurements are subject to market microstructure noise. We elaborate on these points further below.
+
+The rest of this paper is organized as follows: Section \ref{sec:model} gives a description of the price dynamics and observed prices; Section \ref{sec:gabor} reviews the part of the theory of Gabor frames that is pertinent to our study; Section \ref{sec:estimator} gives a specification of the Gabor frame based estimator; Section \ref{sec:deviation} contains a discussion of the convergence of the estimator in a MISE sense; Section \ref{sec:simulation} contains a simulation exercise providing further support for the estimator; in Section \ref{sec:empirics} we use the proposed estimator to gain insight into  the diurnal pattern of intra day volatility in the bond  market;  Section \ref{sec:conclusion} concludes and briefly discusses future work. All proofs are relegated to the Appendix.
+\section{Model} \label{sec:model}
+Let $\{X_t\}_{t\ge 0}$ be  log prices with dynamics given by  
+\begin{align}
+  \D X_t =   \mu(t, X_t) \D t + \sigma(t) \D W_t, \qquad X_0 = x,  
+  \label{eq:pdynamics}
+\end{align}
+where \sbm is a standard Brownian motion with respect to the filtered probability space $(\Omega, \mcal{F}, \{\mcal{F}\}_t, \p)$ satisfying the usual conditions; the initial price $x \in \real$ is known; the non-stochastic functions \idp and \ivp are as yet unknown, but assumed to satisfy the Lipschitz and growth conditions sufficient for the existence of a strong solution. We assume prices are observed in the fixed time interval  $[0,T]$ at discrete, equidistant times $t_i := i\Delta_n$, where  $i= 0,1,\cdots,n$ and $\Delta_n = T/n$. Given the finite sequence  $\{X_{t_i}, i=0,1,2,\cdots,n\}$, our aim is to estimate the spot variance $\sigma^2$ in the time interval $[0,T]$ by means of projection methods. We approach this task  by estimating the projection  of the spot variance in  the finite dimensional subspace spanned by finite Gabor frame elements.  
+\section{Gabor frames}\label{sec:gabor} 
+Frames generalize the notion of orthonormal bases in  Hilbert spaces. If $\{f_k\}_{k \in \nats}$ is a frame for a separable Hilbert space \hs then every vector $f \in \hs$ may be expressed as a linear combination of the frame elements, i.e.
+\begin{align}
+  f = \sumn c_k f_k.
+  \label{eq:framerep}
+\end{align}
+This is similar to how elements in a Hilbert space may be expressed in terms of orthonormal basis; but unlike orthonormal basis, the representation in \eqref{eq:framerep} need not be unique, and the frame elements need not be orthogonal. Loosely speaking, frames contain redundant elements. The absence of uniqueness in the frame representation is by no means a shortcoming; on the contrary, we are afforded a great deal of flexibility and stability as a result. In fact, given a finite data sample, the estimated basis expansion coefficients are likely to be imprecise. This lack of precision can create significant distortions when using an orthonormal basis. These distortions are somewhat mitigated when using frames because of the built-in redundancies  they contain. Of course, we end up computing more coefficients but there is no hard limit on the number of coefficients we should compute; we use the same $n$ data points whether we compute $k$ or $k+ 10$ coefficients.   
+
+
+
+Furthermore, if $\{f_k\}_{k \in \nats}$ is a frame for \hs, then surjective, bounded  transformations of $\{f_k\}_{k \in \nats}$  also constitute frames for \hs, e.g. $\{f_k + f_{k+1}\}_{k \in \nats}$ is a frame. So, once we have a frame, we can generate an arbitrary number of them very easily. We may then obtain estimates using each frame and compare results. If our results using the different frames fall within a tight band, then we are afforded some indication of the robustness of our computations.   
+
+
+Another reason frames might be a good idea is that high-frequency financial data is seldom without market microstructure noise, while Fourier and wavelet methods have noise reduction capabilities, Gabor frames are particularly efficient in this regards. As a result, Gabor frames can potentially yield much sparser representations of the volatility process when working in a noisy environment.  We will not deal explicitly with market microstructure noise here, we will do so in a second paper.  Our discussion of  frame theory is rather brief, we only mention concepts needed for our specification of the volatility estimator, for a detailed treatment see the book by \cite{Christensen2008}. 
+
+In the sequel if $z$ is a complex number then we shall denote respectively by $\bar{z}$ and $\vert z \vert$ the complex conjugate and magnitude of $z$. For econometric applications such as we are concerned with in this thesis, the set of square-integrable, complex-valued functions defined on the real line \real is the primary function space of interest; we denote it by \LtwoR. The norm of an element $f$ in \LtwoR is
+\begin{align}
+  \Vert f \Vert := \left(\int_\real f(t) \overline{f(t)} \D t\right)^{1/2} < \infty, \notag
+  \label{}
+\end{align}
+ and the inner product of two elements $f$ and $g$ in $\LtwoR$ is $\langle f,g\rangle :=  \int_\real f(t) \overline{g(t)} \D t$.
+
+ Denote by \ltwoI the set of square-summable, complex-valued sequences defined over the set of integers \ints. The norm of \ltwoI is 
+ \begin{align}
+   \Vert c \Vert := \left( \sum_{k \in \ints} c_k \overline{c_k} \right)^{1/2} <   \infty, \qquad \forall c \in \ltwoI,\notag
+   \label{}
+ \end{align}
+ where $c_k$ is the $k$-th component of $c$. The inner product of two sequences $c$ and $e$ in \ltwoI is $\langle c, e \rangle := \sum_{k \in \ints} c_k \overline{e_k}$.
+\begin{defn}
+   A sequence $\{f_k\}_{k \in \nats} \subset \LtwoR$ is a frame if there exists positive constants $c$ and $C$ such that
+  \begin{align}
+    c \Vert f \Vert^2 \le \sum_{k \in \nats}\vert \langle f, f_k\rangle \vert^2 \le  C \Vert f \Vert^2,
+  \qquad  \forall f \in \LtwoR. \notag \label{}
+  \end{align}
+\end{defn}
+\noindent The  constants $c$ and $C$ are called   \emph{frame bounds}. If $\{f_k\}$ is a frame then we may associate with it a bounded operator $A:\ltwo \to \LtwoR$ known as the  \emph{synthesis operator}, which, for all $c:= \{c_k\} \in \ltwo$, is definied as:  
+\begin{align}
+  A\;c = \sum_{k \in \nats} c_k f_k.  \notag
+\end{align}
+The adjoint of the synthesis operator $A^*:\LtwoR \to \ltwo$ is known as the \emph{analysis} operator and    is  defined as:
+\begin{align}
+A^*f := \{\langle f, f_k \rangle\},  \notag 
+\end{align}
+$\forall f\in \LtwoR$. By composing the analysis and the synthesis operators, we obtain the \emph{frame operator} $F:\LtwoR \to \LtwoR$ defined as: 
+\begin{align}
+  F f := AA^*f = \sum_{k \in \nats} \langle f, f_k \rangle f_k, \notag
+\end{align}
+for all $f \in \LtwoR$.
+The frame operator $F$ is bounded, invertible, and self-adjoint\footnote{See \cite{Christensen2001} and the references therein.}. This yields the representation result
+\begin{align}
+  f = FF^{-1}f = \sumn \langle f, F^{-1} f_k\rangle f_k. \notag 
+  \label{}
+\end{align}
+The sequence $\{F^{-1}f_k\}_{k \in \nats}$ is also a frame, and it is called the \emph{canonical dual} of $\{f_k\}_{k \in \nats}$. A frame will generally have other duals besides the canonical dual. That is, there exists  sequences $\{\tilde{f}_k\}_{k \in \nats}$ besides the canonical sequence such that 
+\begin{align}
+  f = \sumn \langle f, \tilde{f}_k\rangle f_k \qquad \forall f \in \LtwoR.
+  \label{eq:dual}
+\end{align}
+Next, we specialize the discussion to Gabor frames. The analysis of Gabor frames involves two operators $T$ and $M$, called  translation and modulation operators, respectively. ($T$ as used here will not be confused with the upper bound of the observation interval $[0,T]$, as the meaning of $T$ will be clear from the context). If $f \in \LtwoR$ then 
+\begin{align}
+  & T_bf(t) := f(t -  b),  \notag\\
+  & M_af(t) := e^{2\pi iat}f(t), \notag 
+  \label{}
+\end{align}
+for $a,b \in \real$, where $i^2 = -1$. Both $T$ and $M$ are shift operators: $T$ is a shift or translation operator on the time axis, whereas $M$ performs shifts on the frequency axis. A Gabor system is constructed by preforming time-frequency shifts on a single function $g \in \LtwoR$, i.e. 
+\begin{align}
+  \{M_h T_k g\}_{h,k \in \ints}\notag
+  \label{}
+\end{align}
+is a Gabor system. A Gabor system need not be a frame.
+\begin{defn}
+  Let $g \in \LtwoR$ and $a,b >0$ and,  for all $t \in \real$, define  
+\begin{align}
+  g_{h,k}(t) := e^{i h a t }g(t - k b), \qquad  \forall h,k \in \ints, \notag    
+ \end{align}
+ where $i = \sqrt{-1}$. If the sequence $\{g_{h,k}\}_{h,k \in \ints}$ constitutes a  frame for \LtwoR, then it is called a Gabor frame or a Weyl-Heisenberg frame. 
+\end{defn}
+\noindent The fixed function $g$ is called  the \emph{generator} or the \emph{window function}.  
+In order to obtain sharp asymptotic rates, we require $g$ and its dual \tg to be continuous and compactly supported. The following Lemma taken from \cite{Christensen2006} and \cite{Zhang2008} tells us exactly how to construct such dual pairs.
+\begin{lem}\label{le:gabor}
+  Let $[r,s]$ be a finite interval, $a\text{ and }b$ positive constants,  and $g$ a continuous function. If $g(t) \ne 0$ when $t \in (r,s)$; $g(t) = 0$ when $t \notin (r,s)$; $a < 2\pi/(s-r)$; and $0<b<s-r$; then  $\{g,\tilde{g}\}$ is a pair of dual Gabor frame generators with 
+\begin{align}
+  &\tilde{g}(t)  := g(t)/G(t), \text{ where} \label{eq:dualg}\\
+  &G(t) := (2\pi/a)\sumi|g(t-kb)|^2.\label{eq:capg}
+\end{align}
+Furthermore, 
+\begin{align}
+  \tilde{g}_{h,k}(\cdot) := e^{ihat} \tilde{g}(\cdot - kb), \qquad \forall h, k \in \ints \label{eq:dualghk}
+\end{align}
+is compactly supported.   
+\end{lem}
+\noindent Next, we establish that the dual generator \tg also inherits the continuity properties of $g$.
+\begin{lem} \label{lem:modtg}
+  Let the dual Gabor frame generator $\tilde{g}$ be constructed as in \eqref{eq:dualg}. If $\omega_g(\delta)$ denotes the modulus of continuity of $g$, i.e. $\omega_g(\delta) := \sup \{|g(t) - g(t')| : t,t' \in \real \text{ and } |t -t'| < \delta\}$,  then   
+  \begin{align}
+    \omega_{\tilde{g}_{j,k}}(\delta) = C \omega_g(\delta) \qquad \forall \hkints\notag,
+    \label{}
+  \end{align}
+  where $C$ is a positive constant.
+\end{lem}
+\begin{proof}
+  See Appendix \ref{ap:proof}.
+\end{proof}
+\noindent In the sequel,  we assume the Gabor frame setup in Lemma \eqref{le:gabor}.
+\begin{comment}
+Frames are quite general objects. What is needed is some control over the type of redundancies allowed in a frame. Without such a restriction results about the rate of convergence of the frame expansion would be impossible to come by. A Riesz basis provides just the type of control needed. Informally, a Riesz basis is a frame whose elements are all essential. 
+\begin{defn}
+  A sequence $\{f_k\}_{k \in \nats}$, with $f_k \in \LtwoR$ for all $k$, is a Riesz basis  if there exists an orthonormal basis $\{\xi_k\}_{k \in \nats}$ of \LtwoR and  a bounded invertible operator $T: \LtwoR \to \LtwoR$ such that $f_k = T \xi_k$, for all $k$. 
+\end{defn}
+\noindent A frame is Riesz basis if it is \emph{complete}; i.e. whenever $\langle f,f_k\rangle = 0$ for all $k$ then $f =0$; and there are positive constants $c,C$ such that 
+\begin{align}
+  c\sum_{k=1}^N\vert c_k\vert^2 \le \left\Vert \sum_{k =1}^N c_k f_k \right \Vert^2 \le C\sum_{k=1}^N\vert c_k\vert^2,
+  \label{}
+\end{align}
+for all finite sequences $\{c_k\}_{1\le k\le N}$. This is equivalent to the condition
+\begin{align}
+  c\le \sumi \vert\hat{f}(\omega + 2 \pi k)\vert \le C, \qquad \forall\omega \in [0,2\pi], 
+  \label{}
+\end{align}
+where $\hat{f}$ is the Fourier transform of $f$. 
+To proceed in our analysis, we specialize further the type of Riesz basis to those that may be generated by a single element (function), $f \in \Ltwo$.  The entire Riesz basis is then generated by translating $f$ across the closed unit interval. By appropriately scaling the $f$ we end up with different levels of granularity in the representation. That is, we have in mind a collection\footnote{See \cite{Unser1997} for further elaboration on these ideas.} $\{f_{h,k}\}_{k, h \in \ints}$, where $f_{h,k} :=  f(x/h - k)$. We denote the function space generated by this basis as follows:
+\begin{align}
+  V_h(f) := \left\{\sumi c_{h,k} f_{h,k} : \{c_{h,k}\} \in \ltwo\right\}
+  \label{}
+\end{align}
+\end{comment}
+\input{volatility}
+\input{empirics}
+\input{ext}
+\section{Conclusion} \label{sec:conclusion}
+We proposed an estimator for the spot volatility function using Gabor frame methods. We showed that the estimator converges in a MISE sense and obtained an explicit convergence rate.  The evidence for the validity of the proposed estimator will be further reinforced in a simulation study. We will also take the estimator to task using data from the Forex and bond market. 
+\input{noise}
+\input{eigen}
+\input{/home/wale/Dropbox/PhD/Bibliography/masterbiblinux}
+\input{app}
+\end{document}
+
