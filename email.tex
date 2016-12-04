@@ -1,0 +1,14 @@
+\input{../Paper2/header}
+\begin{document}
+
+\noindent I think the source of my confusion is located in the previous line. It would appear that the middle estimate:
+$$E\left[\left\vert\int^{T_c}_0 (\sum^m_{i =2} H_{t,i})^2 dt\right\vert^{p/2}\right] \leq E\left[\left\vert\int^{T_c}_0 \sum^m_{i =2} H_{t,i}^2 dt\right\vert^{p/2}\right]$$
+is missing an $m$, according to the Cauchy inequality. Heuristically, when you square a sum you end up with cross terms that must be accounted for. So it would appear that the estimate would look like this instead (with an $m$ inserted):
+$$E\left[\left\vert\int^{T_c}_0 \left(\sum^m_{i =2} H_{t,i}\right)^2 dt\right\vert^{p/2}\right] \leq E\left[\left\vert\int^{T_c}_0 \sum^m_{i =2} { \{m\}   }H_{t,i}^2 dt\right\vert^{p/2}\right]$$
+Now on the next line instead of 
+$$ E\left[\left\vert m^{-1} \sum^m_{i =2}(H_{i}^*)^2 \right\vert^{p/2}\right] \leq m^{-1}\sum_{i=2}^m E[(H^*)^p]$$
+ we would have instead (by H\"older inequality):
+ $$ E\left[\left\vert \sum^m_{i =2}(H_{i}^*)^2 \right\vert^{p/2}\right] \leq m^{p/2 -1}\sum_{i=2}^m E[(H^*)^p]$$
+(I have left out the length of the support because it is asymptotically irrelevant). Combining the above with the last equation of the proof of Lemma 4.3, which estimates $E[(H^*)^p] = O(m^{-p/2})$, it would follow that
+$$ E_{\mathcal{D}_\infty(c)} \left[\left\vert \int^{T_c}_0 \sum^m_{i=2} H_{t,i} dX_t\right\vert^p\right] = O(1).$$
+\end{document}

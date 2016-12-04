@@ -1,0 +1,14 @@
+
+\section{Prices} \label{sec:model}
+We follow the literature by assuming that the asset price is a semimartingale\footnote{Adapted processes which almost surely have  right-continuous, left-limited paths and  may be expressed as a sum of a local martingale and a finite variation process.}. This assumption is motivated in part by the fundamental theorem of asset pricing, which requires asset prices to be semimartingales as a neccessary  and [SUFFICIENT?] condition for an arbitrage-free market. The class of semimartingales in its entirety  is somewhat too broad and  unwieldy. In fact, whether or not the notion of spot volatility makes sense for such a broad class is not immediately clear. We will instead confine our analysis to the class of stochastic processes known as  \emph{\ito  semimartingales}: these are semimartingales with absolutely continuous \emph{characteristics}\footnote{See \cite{Jacod2003}.}. 
+
+
+Let $(\Omega, \mcal{F}, \{\mcal{F}_t\}_{t \ge 0}, \p)$ be a filtered probability space satifying the \emph{usual conditions}. We consider prices that evolve over time according to:
+\begin{align}
+  X_t & = X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s   + J_t, \qquad t \ge 0  
+  \label{eq:semimartingale}
+\end{align}
+where $J$ is a pure jump process; \sbm is a standard Brownian motion;  $X_0$ is either known or observable at time 0;   $b$ and $\sigma$ are suitably restricted processes. We follow the ususal practise by referring to either $\sigma$ or $\sigma^2$  as \emph{(spot) volatility}, with \emph{(spot) variance} reserved exclusively for $\sigma^2$ when it is important to make a  distinction between the two. In addition, to stress the connection with the simple Brownian motion with drift case, $b$ and $\sigma$ will occasionally be referred to, respectively, as the \emph{drift coefficient} and the \emph{diffusion coefficient}. 
+ The class of continuous \ito processes is large; it contains for example   solutions of all stochastic differential equations.
+
+ We assume prices are observed in the fixed time interval \domain at discrete, equidistant times $t_i := i\Delta_n$, where  $i= 0,1,\cdots,n$ and $\Delta_n = 1/n$. Given the finite sequence  $\{X_{t_i}, i=0,1,2,\cdots,n\}$, our aim is to estimate the spot variance $\sigma^2$ in the time interval $[0,1]$ by nonparametric methods. Note that our objective is not an approximation of a point but rather the approximation of an entire function. Thus an estimator of the spot variance may be viewed as a  random element (function), as opposed to a random variable, that must converge in some sense to the spot variance, which itself is a random element. We approach this task  by estimating the expansion of the spot variance using  finite collections of  Gabor frame elements.

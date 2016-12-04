@@ -1,9 +1,16 @@
-\chapter{Detecting  changes in  bond market stability}
-It is a well-known tenet in empirical finance that a large portions of the variability in financial markets results from a handful of risk-factors. In particular, it has been known since, at least, the paper by \cite{Litterman1991} that fixed-income securities can be explained by no more than four factors. This observation has been further substantiated by the  empirical  study by \cite{Bouchaud1999}. Our aim in this chapter is to  formulate and test the predictive power of a test statistic that tracks the evolution of the principal eigen vector of the spot co-volatility matrix.    
+\chapter{On measuring changes in  bond market stability}
+It is a well-known tenet in empirical finance that a large portion of the variability in financial markets results from a handful of risk-factors. Accurate measurement and use of these principal factors has been shown to be economically worthwhile. For instance, \cite{Litterman1991}, working directly with spot rate yields, argue  that a large portion (> 98\%) of  the volatility in fixed-income returns  can be explained by no more than three  characteristics of the yield curve, with the most principal factor accounting for roughly 89\% of return variance by itself. In addition, \citeauthor{Litterman1991} show by way of a case study the superiority of a hedged portfolio immunized against these three principal factors  over the traditional duration-matched portfolio.  %By this, we mean a large proportion of the volatility in these markets may be accounted for by the most principal four eigen vectors of the covolatility matrix. %Similar conclusions were reached by \cite{Bouchaud1999}.
+
+
+
+Approaching the problem from a slightly different angle by using futures contracts to reconstract a proxy for the foreward rate curve (FRC), \cite{Bouchaud1999} report a very fast decay of the eigenvalues associated with the stochastic component of the foreward rate curve, implying  that much of the observed fluctuation observed in  FRC may  be attributed to a  small number of ``modes''. In addition, \citeauthor{Bouchaud1999} demonstrate the statistical  stability and significance of the principal factors driving the stochastic components of the the FRC via a simulation exercise.   
+
+
+Now, on account of the large contribution the first few principal factors, it is suggestive that these factors capture systematic risk. Furthermore, it is well-agreed that systematic risk is the main source of risk to which well-diversified portfolios are susceptible. It is thus clear that accurate measurements of these factors is economically worthwhile. Traditionally, factor measurement is achieved via a principal component analysis; our proposed contribution is within this tradition.  Using nonparametric methods, we endeavour to obtain robust, accurate, real-time (intra-day) principal factor measurements in the form of eigen values and vectors of the spot covolatility matrix; from these measurements, we will study the time evolution and potential predictiveness of these principal factors with regards major market movements.      
 \section{Forward rates and bond prices}
 We fix notation by going over the basics of continuous-time fixed-income pricing. For a detailed presentation see  \cite{Carmona2006} or \cite{Heath1992}.  Let $P(t,\T)$ denote the time-$t$ price of a zero-coupon bond (bond) with maturity date $\T$ and unit nominal value, where $0\le t\le \T < \infty$. Under the assumption that the bond price $P(t,\T)$ is a smooth function of the maturity date \T,  the forward rate $f(t,\T)$ is given by the instantaneous rate of return on a loan contracted at time $t$ to take effect starting at time \T; it is defined as:
 \begin{align}
-  f(t,\T) = -\partial \log P(t, \T)/\partial T .
+  f(t,\T) = -\partial \log P(t, \T)/\partial \T .
   \label{eq:fp}
 \end{align}
 The above definition yields a formula for the unit price of a bond at time $t$ with maturity \T; this is achieved by  integrating and then taking the exponential of  both sides of \eqref{eq:fp} to yield:
@@ -29,30 +36,33 @@ where $0 \le t \le \T$; the drift function is locally  integrable and the volati
   \label{}
 \end{align}
 So, the drift function is fully characterized by the volatility coefficient.
-\section{Realized Spectra}
-Now, in practice we do not have market data for a continuum of maturities. Most fixed-income instruments are contracted for maturities that are multiples of 3 months, up to a mximum of 30 years; so, in practice we have about 120 maturities. Based on the empirical evidence \citep{Bouchaud1999, Litterman1991}, the principal risk factors, those accounting for the vast majority of the variability, say 90\%, are less than 4; so, 120 maturities is probably more than we need to start teasing out what these principal risk factors are, and to monitor how they change or evolve over time. We start by 
+\section{Realized Spectrum}
+Now, in practice we do not have market data for a continuum of maturities. Most fixed-income instruments are contracted for maturities that are multiples of 3 months, up to a mximum of 30 years; so, in practice we have about 120 maturities. Based on the empirical evidence \citep{Bouchaud1999, Litterman1991}, the principal risk factors, those accounting for the vast majority of the variability, say 98\%, are less than 4; so, 120 maturities is probably more than we need to start teasing out what these principal risk factors are, and to monitor how they change or evolve over time. We start by 
 fixing $1 < d < \infty$ maturities for which we have high-frequency data available. 
 We let $[0,T]$ denote the observation interval. We assume the $d$ forward rates are observed synchronously at equidistant intervals.  Let $\Sigma(t)$ denote the time-$t$ $d \times d$ spot co-volatility matrix of the $d$ forward rates. Since, $\Sigma(t)$ is symmetric and positive definite, its spectral decomposition is given by:
 \begin{align}
   \Sigma(t) = \sum_{i = 1}^d \lambda_i(t) \{v_i(t) \otimes v_i(t)\},\qquad t \ge 0,\notag
   \label{}
 \end{align}
-where  $\{\lambda(t)_i , v_i(t)\}$ are time-$t$ eigen pairs with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_d$.   Given the empirical evidence aluded to previously, there is $d' << d$ such that  
+where  $\{\lambda(t)_i , v_i(t)\}$ are time-$t$ eigen pairs, with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_d$,  and $\otimes$ is the Kronecker product symbol.   Given the empirical evidence aluded to previously, there is $d' << d$, i.e. there is a $d'$ much smaller than $d$,  
+ such that  
 \begin{align}
   \Sigma(t) \approx \sum_{i = 1}^{d'} \lambda_i(t) \{v_i(t) \otimes v_i(t)\},\qquad t \ge 0. \notag
   \label{}
 \end{align}
-Now, because $\Sigma$ is not observable, we propose using \Svn specified in Equation \eqref{eq:Sigma} of Chapter 1 to estimate $\Sigma$. Now given, \Svn, we propose to estimate the spectrum of $\Sigma$ by means of the spectrum of \Svn, which we denote by $\{\hat{\lambda}_{n,j}, \hat{v}_{n,j}\}$ for $j$ between 1 and $d$. 
-Now let 
+Now, because $\Sigma$ is not accessible, we propose using  the Gabor frame co-volatility matrix estimator, \Svn,  specified in Equation \eqref{eq:Sigma} of Chapter 1 to estimate $\Sigma$. Now given, \Svn, we propose to estimate the spectrum of $\Sigma$ by means of the spectrum of \Svn;  we denote this by $\{\hat{\lambda}_{n,j}, \hat{v}_{n,j}\}$ for $j$ between 1 and $d$. 
+Now for each $ j $ between 1 and $d$, let 
 \begin{align}
-  \hat{\chi}_n (t_i) = \frac{\langle \hat{v}_{n,1}(t_i),   \hat{v}_{n,1}(t_i -1)\rangle}{\Vert \hat{v}_{n,1}(t_i) \Vert \Vert \hat{v}_{n,1}(t_i -1) \Vert},
+  \hat{\chi}_{n,j} (t_i) = \frac{\langle \hat{v}_{n,j}(t_i),   \hat{v}_{n,j}(t_i -1)\rangle}{\Vert \hat{v}_{n,j}(t_i) \Vert \Vert \hat{v}_{n,j}(t_i -1) \Vert}, \qquad i = 1,\cdots,n,
 \end{align}
-where $\langle \cdot \rangle$ and $\Vert \cdot \Vert$ are, respectively, the Euclidean inner product and norm. The statistic $ \hat{\chi}_n (t_i)$ is an empirical construct measuring the cosine between successive realizations of the most important eigen vectors $\hat{v}_{n,1}(t_i)$ and  $\hat{v}_{n,1}(t_i -1)$. The empirical envidence \citep{Carmona2006} suggests that the principal or most important factor can account for a disproportionately portion of total variability; so, it makes sense to track just the most principal vector. Since this eigen vector is a description of  the composition of the most important or principal  risk factor, we may view $\hat{\chi}_n (t_i)$ as telling us how the direction or composition of the principal risk factor changes  over time. Knowledge of this time evolution, if tracked in real-time, could provide actionable information to traders about market  direction and stability.
-Furthermore, \cite{Malliavin2007} showed empirically that the  Fourier-based counterpart of $\hat{\chi}_n (t_i)$ is fairly stable  when it is business-as-usual in the market; in crisis periods  this statistic can exhibit substantial fluctuations. Our aim is to replicate this empirical result and to answer a question that \cite{Malliavin2007} have left unanswered: is the realized velocity  of the eigen vector a leading indicator for market returns? Intuitively, changes in volatility need not be reflected immediately in prices since the Brownian motions driving rates may offset the change in volatility for some time before they begin to show in return data. So, we conjecture the question may be answered in the affirmative, but we will have to conduct an empirical study to settle the question. To test this hypothesis,  we propose the following simple model:
+where $\langle \cdot \rangle$ and $\Vert \cdot \Vert$ are, respectively, the Euclidean inner product and norm. The statistic $ \hat{\chi}_{n,j} (t_i)$ is an empirical construct measuring the cosine between successive realizations of the  eigenvectors $\hat{v}_{n,j}(t_i)$ and  $\hat{v}_{n,j}(t_i -1)$. 
+
+Now the empirical envidence \citep{Carmona2006} suggests that the principal or most important factor can account for a disproportionately portion of total variability; so, it makes sense to pay special attention to the most principal eigenvector. Since this eigenvector is a description of  the composition of the most important or principal  risk factor, we may view $\hat{\chi}_{n,1} (t_i)$ as telling us how the direction or composition of the principal risk factor changes  over time. Knowledge of this time evolution, if tracked in real-time, could provide actionable information to traders about market  direction and stability.
+Furthermore, \cite{Malliavin2007} showed empirically that the  Fourier-based counterpart of $\hat{\chi}_{n,1} (t_i)$ is fairly stable  when it is business-as-usual in the market; in crisis periods  this statistic can exhibit substantial fluctuations. Our aim is to replicate this empirical result using the robust  Gabor frame co-volatility estimator  and to answer a question that \cite{Malliavin2007} have left unanswered, i.e. whether the realized velocity  of the  principal eigenvector is a leading indicator for major market movements? Intuitively, changes in volatility need not be reflected immediately in prices since the Brownian motions driving rates may offset the change in volatility for some time before they may begin to show in return data.  We conjecture that  an affirmative answer to this question may not be rejected with statistical significance. In the sequel  we will   conduct an empirical study to settle the matter. We propose the following simple model:
 \begin{align}
-  f(t_i, \T) = \alpha + \sum_{j=1}^q\beta_j \hat{\chi}_n (t_{i-j}) + \sum_{j=1}^p\gamma_j f(t_{i-j},\T)+ \eta_i,
+  f(t_i, \T) = \alpha_{\T} + \sum_{j=1}^q\beta_{\T,j} \hat{\chi}_{n,1} (t_{i-j}) + \sum_{j=1}^p\gamma_{\T,j} f(t_{i-j},\T)+ \eta_{\T,i},
   \label{}
 \end{align}
-where $eta_i$ is \iid error with constant variance and zero mean; $p$ and $q$ are positive integers; and $\alpha, \{\beta_j\}_{j=1}^q$ and $\{\gamma_j\}_{j=1}^p$ are constants to be determined and tested for statistical significance.
+where $\eta_{\T,i}$ is \iid error with constant variance and zero mean; $p$ and $q$ are positive integers; and $\alpha_{\T}, \{\beta_{\T,j}\}_{j=1}^q$ and $\{\gamma_{\T,j}\}_{j=1}^p$ are constants to be determined and tested for statistical significance.
 \section{Empirical study}
 \section{Conclusion}

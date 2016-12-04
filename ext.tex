@@ -1,23 +1,25 @@
-\section{Extensions}
-\subsection{Estimating the spot co-volatility matrix}
-We propose the following extension to \svn from Chapter 1 to a multivariate setting. Let $\{X\}_{t \ge 0}$ be a $d$-dimensional vector of log-prices satisfying the stochastic integral equation:
+\section{Multivariate Extension} \label{sec:extension}
+We propose the following extension to \svn from Chapter 1 to a multivariate setting. Let $\{X\}_{t \ge 0}$ be a $d$-dimensional vector of prices satisfying the stochastic integral equation:
 \begin{align}
-  X_t = X_0 + \int^t_0 \mu(t, X_s) \D s + \int^t_0 \sigma(t) \D W_s, \qquad  t \ge 0,\notag
+  X_t = X_0 + \int^t_0 b(s) \D s + \int^t_0 \sigma(s) \D W_s, \qquad  t \ge 0,\notag
   \label{}
 \end{align}
-where $\{W_s\}_{t \ge 0}$ is an $m$-dimensional standard Brownian motion; $\mu$ is  $\real^d$-valued, continuous, and locally bounded in both variables; $\sigma$ is $\real^d \times \real^m$-valued, continuous and locally bounded in time.   Let 
+where $\{W_s\}_{t \ge 0}$ is an $m$-dimensional standard Brownian motion; $b$ is  $\real^d$-valued, adapted, and \cadlag; $\sigma$ is $\real^d \times \real^m$-valued, adapated, and continuous; and $X_0$ is known at time 0. Let 
 \begin{align}
   \Sigma (t) := \sigma(t)\sigma'(t), \qquad t \ge  0\notag
   \label{}
 \end{align}
-where $\sigma'(t)$ is the transpose of $\sigma(t)$. Our aim is to obtain an estimate for $\Sigma$ on the basis of $n$ discretely and synchronously  observed price vectors $\{X_1,\cdots,X_n\}$ in some fixed time interval $[0,T]$, where $T < \infty$. With very little loss of generality we assume that the prices are observed at equidistant intervals given by 
+where $\sigma'(t)$ is the transpose of $\sigma(t)$. Our aim is to obtain an estimate for $\Sigma$ on the basis of $n$ discretely and synchronously  observed price vectors $\{X_1,\cdots,X_n\}$ in some fixed time interval. The observation interval is normalized to \domain without loss of generality. We assume that the prices are observed at equidistant intervals given by 
 \begin{align}
-\Delta_n : = T/n.
+\Delta_n : = 1/n.
 \end{align}
-Let $\{g_{h,k}, \tghk\}_{h,k \in \ints}$ be a pair of dual Gabor frames generated as in Lemma \eqref{le:gabor}, and $\Theta_n := \{(h,k) \in \ints^2 : |h| \le H_n \text{ and }|k| \le K_0\}$ with $H_n$ an increasing sequence $n$ and $K_0= \lceil (T + |s| + |r|)/b \rceil$. 
-We propose to estimate the spot co-volatility matrix in $[0,T]$ using $\hat{\Sigma}_n$ defined component-wise for $1 \le u,v \le d$ as follows:
+Let $\{g_{h,k}, \tghk\}_{h,k \in \ints}$ denote  a pair of dual Gabor frames generated under the assumptions of  Lemma \eqref{le:gabor}; let  $\Theta_n := \{(h,k) \in \ints^2 : |h| \le H_n \text{ and }|k| \le K_0\}$, where $H_n$ is  an increasing sequence in  $n$;  and let $K_0= \lceil (1 + |s| + |r|)/b \rceil$ be constant. Intuitively,  $H_n$ represents the length of the frequency domain expansion for each time window; whereas, $K_0$, which is a constant because of the finite time domain support of the volatility function, captures the number of frame elements used to tile the time axis for each frequency domain shift.    
+We propose to estimate the spot co-volatility matrix in $[0,1]$ using $\hat{\Sigma}_n$ defined component-wise for $1 \le u,v \le d$ as follows:
 \begin{align}
-  &\Svn^{u,v}(t) = \sum_{(h,k) \in \Theta_n} \cnhk^{u,v}\;g_{h,k}(t), \text{ where}\label{eq:Sigma}\\
+  &\Svn^{u,v}(t) = \sum_{(h,k) \in \Theta_n} \cnhk^{u,v}\;g_{h,k}(t),\qquad \forall t \in [0,1],  \label{eq:Sigma}
+\end{align}
+where 
+\begin{align}
   &\cnhk^{u,v} = \sum_{i =0}^{n-1} \btghki (X_u(t_{i+1}) - X_u(t_i))(X_v(t_{i+1}) - X_v(t_i)).
   \label{}
 \end{align}

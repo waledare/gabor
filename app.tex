@@ -2,7 +2,7 @@
   \chapter{Proofs}\label{ap:proof}
   We now give the proof of Lemma \eqref{lem:modtg}. \\ \\
   \begin{proof}
-  Note that $G$ is bounded away from zero. Indeed, since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b := [(s+r -b)/2, (s+r +b)/2]$, then
+   $G$ is bounded away from zero. To see this, note that since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b := [(s+r -b)/2, (s+r +b)/2]$, then
   \begin{align}
     \min_{t\in\real} G(t) &=  \min_{t \in I_b} G(t) \notag\\
     & \ge (2\pi/a) \min_{t \in I_b}\vert g(t)\vert^2.\notag
@@ -39,7 +39,7 @@ Returning to \eqref{eq:difftg}, we see that
 \end{align}
 where $C_{\tg} = G_*^2(2 (\lceil (s + r)/b\rceil +1)(g^*)^2 + G^*)$. Now let \hkints, then
 \begin{align}
-  \vert \tghk(t) - \tghk(t')\vert & = \vert e^{ihat} (\tg(t - kb) -\tg(t'-kb) \vert\notag\\
+  \vert \tghk(t) - \tghk(t')\vert & = \vert e^{\i h a t} (\tg(t - kb) -\tg(t'-kb) \vert\notag\\
   &\le \vert (\tg(t - kb) -\tg(t'-kb) \vert \le C_{\tg} \omega_g(\delta).
   \label{}
 \end{align}
@@ -107,7 +107,11 @@ Thus the square bias is bounded as follows:
   &= O(H_n^2 \Delta_n + H^2_n\omega^2_g(\Delta_n)  + \omega^2_{\bsv}(1/H_n)\log^2H_n).
   \label{}
 \end{align}
-Next, we obtain a  bound for the variance term. Note that $V_n$ may be expressed as follows:
+Next, we obtain a  bound for the variance term $V_n$. Recall from \eqref{eq:ivar} that
+\begin{align}
+V_n :=  \int_\real \e[\{\svn(t) - \e[\svn(t)]\}^2] \lambda(t) \D t \notag
+\end{align}
+and note that $V_n$ may be expressed as follows:
 \begin{align}
   V_n & = V_{1,n} + V_{2,n} \notag
 \end{align}
@@ -157,4 +161,5 @@ then we may write
 Since $ \alpha_{2,i} = O(H_n^2)$, it follows that $V_{2,n} := O(H^2_n\Delta_n)$. 
 \end{proof}
 %\chapter{Extensions} \label{ap:ext}
+\input{semiapp}
 \end{appendices}

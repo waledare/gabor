@@ -1,0 +1,337 @@
+\begin{appendices}
+  \chapter{Proofs}\label{ap:proof}
+  We now give the proof of Lemma \eqref{lem:modtg}. \\ \\
+  \begin{proof}
+   $G$ is bounded away from zero. To see this, note that since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b := [(s+r -b)/2, (s+r +b)/2]$, then
+  \begin{align}
+    \min_{t\in\real} G(t) &=  \min_{t \in I_b} G(t) \notag\\
+    & \ge (2\pi/a) \min_{t \in I_b}\vert g(t)\vert^2.\notag
+    \label{}
+  \end{align}  
+  Because $g$ is continuous and $g$ doesn't vanish in $(r,s)$, we conclude that $G_*:=\min_{t \in \real}G(t) > 0$. It is also straight forward that $G^* := \max_{t \in \real}G(t) < \infty$. Now, let $t, t' \in \real$ such that $\vert t - t' \vert \le \delta$, then 
+  \begin{align}
+    \vert \tg(t) - \tg(t')\vert & = \vert (G(t)G(t'))^{-1}(g(t)G(t') - g(t')G(t))\vert  \notag\\
+    & \le (G_*^{-2})\{\vert g(t)\vert \vert G(t) - G(t') \vert + \vert G(t)\vert \vert g(t) - g(t')\vert\}. 
+    \label{eq:difftg}
+  \end{align}
+Let $\tau := r +  (t \bmod {b})$, and $\tau':=r + (t' \bmod{b})$. It is straight forward to verify that if  $\vert \tau - \tau' \vert \le \delta$, then
+\begin{align}
+  \vert G(t) - G(t') \vert & \le  \sum_{j = 0}^{\lfloor (s + r)/b \rfloor} \vert g(\tau + j b)^2 - g(\tau' + j b)^2\vert\notag\\
+  & \le \sum_{j = 0}^{\lfloor (s + r)/b \rfloor} \vert g(\tau + j b) - g(\tau' + j b) \vert \vert g(\tau + j b) + g(\tau' + j b)\vert\notag\\
+  & \le 2 \lceil (s + r)/b\rceil g^*\modc{g}{\delta},
+  \label{}
+\end{align}
+where $g^* := \max_{t \in \real} \vert g(t)\vert $. On the other hand, if $\vert \tau - \tau'\vert > \delta$, then 
+\begin{align}
+  &\vert G(t) - G(t') \vert \notag \\
+  &\quad \le \vert g(\tau')^2 - g(r)^2\vert +   \vert g(s)^2 - g(\tau + c)^2 \vert\notag \\
+  &\qquad +\sum_{j = 1}^{\lfloor (s + r)/b \rfloor} \{\vert g(\tau + (j-1) b)^2 - g(\tau' + j b)^2\vert\}.  \notag
+  \label{}
+\end{align}
+where $c = \lfloor (s + r)/b \rfloor b $. It follows as above that 
+\begin{align}
+\vert G(t) - G(t') \vert \le 2 (\lceil (s + r)/b\rceil +1)g^*\modc{g}{\delta}.
+\end{align}
+Returning to \eqref{eq:difftg}, we see that
+\begin{align}
+  \vert \tg(t) - \tg(t')\vert \le C_{\tg} \modc{g}{\delta},\notag
+  \label{}
+\end{align}
+where $C_{\tg} = G_*^2(2 (\lceil (s + r)/b\rceil +1)(g^*)^2 + G^*)$. Now let \hkints, then
+\begin{align}
+  \vert \tghk(t) - \tghk(t')\vert & = \vert e^{\i h a t} (\tg(t - kb) -\tg(t'-kb) \vert\notag\\
+  &\le \vert (\tg(t - kb) -\tg(t'-kb) \vert \le C_{\tg} \modc{g}{\delta}.
+  \label{}
+\end{align}
+The last inequality follows because translating a function leaves its modulus of continuity unchanged.\\
+\end{proof}
+The proof of Proposition \eqref{pr:consistency} depends in a crucial  way on Theorem 4.1 in \cite{Zhang2008}. We recall it here for convenience.
+
+\begin{thm} \label{th:fourone}
+  Let $\{\ghk, \tghk\}$ be a pair of compactly supported dual Gabor frames satisfying the conditions of Lemma \eqref{le:gabor}. If $f \in \LtwoR$ is bounded and continuous on \real then for any positive integer $l$, if $K > (l + \vert s \vert + \vert r \vert)/ b$ and $H$ is a positive integer then  the partial sums 
+  \begin{align}
+    S_{H,K} (t) := \sum_{\vert h \vert \le H} \sum_{\vert k \vert \le K} \inner{f}{\ghk} \tghk(t)  \notag
+    \label{}
+  \end{align}
+  satisfies
+  \begin{align}
+    S_{H,K} (t) - f(t) = O({\Vert g \Vert_{\infty}}/{ab}) ( \Vert g \Vert_{\infty}\modc{f}{1/aH} + \Vert f \Vert_{\infty} \modc{g}{1/aH}) \log H\notag, 
+    \label{}
+  \end{align}
+for all $t$ such that $\vert t\vert \le l$.
+\end{thm}
+\noindent Now we prove Proposition \eqref{pr:consistency}.\\\\
+\begin{proof}
+Without loss of generality let $X_0 = 0$, and  take $\alpha  \in (0, 1]$ and $c > 0$ as given. We begin with $B^2_n(\alpha, c)$, the integrated square bias component of $R_n(\alpha,c)$, which is defined as:
+\begin{align}
+  B^2_n(\alpha, c) = \int_0^1 \e[ (\svn(t) - \sigma^2(t))\indvol]^2 \D t. \label{eq:sqbapp}
+\end{align}
+We make the following notational simplification:
+\begin{align}
+  \eind [ X] := \e[ X \indvol], \notag
+  \label{}
+\end{align}
+for all random variables $X$. We proceed by first obtaining an  upper bound  for the integrand in \eqref{eq:sqbapp}, i.e. the square bias at each fixed point $t$. To that end, let $t \in \domain$, and note that 
+\begin{align}
+  \eind[ \svn(t) - \sigma^2(t)] & = \sum_{(h,k) \in \Theta_n} \eind[\cnhk\ - \chk]\;g_{h,k}(t)\notag\\
+  & \quad -\sum_{(h,k) \not\in \Theta_n} \eind[\chk]\;g_{h,k}(t),\label{eq:rone} 
+\end{align}
+  where 
+\begin{align}  
+  \cnhk &= \sum_{i =0}^{n-1} \btghki (X_{t_{i+1}} - X_{t_i})^2 \text{ and }\notag\\  
+  \chk &= \int^1_0 \btghks \sigma^2(s) \D s. \notag
+\end{align}
+We tackle the summands in \eqref{eq:rone} in turn starting with the first one. But first let 
+\begin{align}
+  M_i := \int_{t_i}^{t_{i+1}} \mu(s) \D s, \quad \text{and} \quad  S_i := \int_{t_i}^{t_{i+1}} \sigma(s) \D W_s, \notag
+\end{align}
+and note that since $X_{t_{i+1}} - X_{t_i} = M_i + S_i$, it follows that
+\begin{align}
+  \eind[(X_{t_{i+1}} - X_{t_i})^2] &= \eind[M_i^2]  
+  + 2\eind[M_iS_i] \notag\\ & \quad+ \eind[S_i^2].\notag 
+\end{align}
+So, \eqref{eq:rone} may be written as 
+\begin{align}
+  &\eind[\svn(t) - \sv(t)] = B_{1,n}(t) + B_{2,n}(t) + B_{3,n}(t) + B_{4,n}(t), \notag
+\end{align}
+where
+\begin{align}
+  &B_{1,n}(t) :=  \sumt g_{h,k}(t) \left(\eind\left[ \sum_{i=0}^{n-1} \btghki S_i^2  - \chk\right]\right), \notag\\
+  &B_{2,n}(t) := 2 \sumt g_{h,k}(t)\left(\sum_{i=0}^{n-1} \btghki \eind\left[S_i M_i\right] \right), \notag\\
+  &B_{3,n}(t) := \sumt g_{h,k}(t)\left( \sum_{i=0}^{n-1} \btghki \eind\left[M_i^2\right] \right), \notag\\
+  &B_{4,n}(t) := - \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\eind[\chk]. 
+  \label{}
+\end{align}
+We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
+\begin{align}
+  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\eind[\chk] &=  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\e[\inner{\sigma^2}{ \tghk}\indvol] \notag\\ 
+&\le  \e\left\vert\sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\inner{\sigma^2 \indvol}{ \tghk}\right\vert \notag\\
+&\le c\e[\modc{\tghk}{1/H_n}\log H_n] \notag \\
+&\quad + c\e[\modc{\sigma^2\indvol}{1/H_n} \log H_n]\notag,
+\end{align}
+where the last  line follows from Theorem \eqref{th:fourone}. But since  $\sigma^2 \indvol$ is bounded by $c$ if it is in the \holder ball \hball{\alpha}{c}  and $0$ otherwise, it follows that $\modc{\sigma^2\indvol}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}$.  So,  
+\begin{align}
+ B_{4,n}(t) =  O( H_n^{-\alpha}\log H_n).
+  \label{eq:B4}
+\end{align}
+Note the generic use of the constant  $c$. In the sequel, we will use $c$ to denote the amalgamation of various constants resulting from multiple steps; this should be harmless since  constants are not asymptotically relevant. 
+
+We now obtain an estimate for  $B_{3,n}(t)$. Note the following:
+\begin{align}
+  \eind[ M_i^2] & = \e\left[\left(\int_{t_i}^{t_{i+1}} \mu(s) \D s\right)^2\indvol\right] \notag\\
+  & = \e\left[\left(\int_{t_i}^{t_{i+1}} \mu(s)\indvol \D s\right)^2\right] \notag\\
+& \le \e\left[\left(\int_{t_i}^{t_{i+1}}\vert \mu(s)\indvol\vert \D s\right)^2\right] \notag
+  \label{}
+\end{align}
+Note that $\vert\mu(s)\indvol\vert$ is either 0 or less than $c$, so   
+\begin{align}
+ \eind[ M_i^2] \le c \Delta_n^2. 
+  \label{eq:msq}
+\end{align}
+ Now since  $g_{h,k}$ and \tghk  are bounded independently of $h$ and $k$, and $n\Delta_n = 1$, we have
+\begin{align}
+  B_{3,n}(t) = O( H_n \Delta_n).
+  \label{}
+\end{align}
+We obtain an estimate for $B_{2,n}(t)$ next, but first let 
+\begin{align}
+&T_{\sigma^2}(c)   := \inf\{t \in  (0,1]: \sigma^2(t) > c\}, \\ 
+  &T_{\mu}(c)  := \inf\{t \in (0,1]: \mu(t) > c\}. \notag
+  \label{}
+\end{align}
+So, $T_{\sigma^2}(c)$ and $T_{\mu}(c)$ are the hitting times of the open set $(c, \infty)$ by $\mu$ and $\sigma^2$, respectively; and they record the instant just before these coefficients exceed $c$. Because both processes are adapted and at least \cadlag, both hitting times  are stopping times. Now, set 
+\begin{align}
+T_i(c)  :=  T_{\sigma^2}(c) \wedge  T_{\mu}(c) \wedge  t_i, \qquad i= 1, \cdots, n. \notag
+\end{align}
+Because  $T_{\sigma^2}(c)$ and   $T_{\mu}(c)$ are stopping times, so are the  $T_i(c)$'s. The important thing to note is that at all times before  $T_i(c)$, both $\mu$ and $\sigma^2$ are bounded by $c$.  
+
+Returning to $B_{2,n}(t)$ note that $\indvol^2 = \indvol$ so that
+$\eind[M_iS_i] = \e[(M_i \indvol) (S_i \indvol)]$. By the Cauchy-Schwarz inequality, 
+\begin{align}
+  \e[(M_i \indvol) (S_i \indvol)]\le \e[(M_i \indvol)^2]^{1/2}\e[ (S_i \indvol)^2]^{1/2}\label{eq:rfour}
+\end{align}
+Now, by repeating the same steps as in the case of  $B_{3,n}(t)$ above, we  may conclude that 
+\begin{align} 
+  \e[(M_i \indvol)^2]^{1/2} \le  c \Delta_n \label{eq:rtwo}.
+\end{align}
+Now consider the following: if $\omega \in \eball{\alpha}{c}$ then $\sigma^2(\omega) \in \hball{\alpha}{c}$ and $\Vert \sigma^2(\omega) \Vert_\infty \le \Vert \sigma^2(\omega)\Vert_\alpha \le c$ so  that $T_{\sigma^2(\omega)}(c) = 1$. Similarly $T_{\mu(\omega)}(c) = 1$ so that $T_i(c) = t_i$.  Hence, 
+\begin{align}
+  \e[ (S_i \indvol)^2] &= \e\left[\left(\int_{t_i}^{t_{i+1}} \sigma(s) \D W_s\right)^2\indvol\right]\notag\\
+&= \e\left[\left(\int_{t_i}^{T_{i+1}(c)} \sigma(s) \D W_s\right)^2\indvol\right]\notag\\
+&\le \e\left[\left(\int_{t_i}^{T_{i+1}(c)} \sigma(s) \D W_s\right)^2\right],
+\end{align}
+Note the role played by the $T_i(c)$'s; they serve to eliminate the factor $\indvol$ from the computations.  An application of the Burkholder-Davis-Gundy (BDG) inequality now has the effect of eliminating the Wiener process $W$. So,
+\begin{align}
+  \notag\e[ (S_i \indvol)^2]^{1/2} &\le c\e\left[\left(\int_{t_i}^{T_{i+1}(c)} \sigma^2(s) \D s\right)\right]^{1/2}\notag \\
+  &\le (c \Delta_n)^{1/2}.\label{eq:rthree}
+\end{align}
+ Now, substituting \eqref{eq:rtwo} and \eqref{eq:rthree} into \eqref{eq:rfour} yields the estimate
+\begin{align}
+  \eind[M_i S_i] \le (c\Delta_n)^{3/2}.\label{eq:ms}
+\end{align}
+Since  $g_{h,k}$ and \tghk  are bounded independently of $h$ and $k$, and $n\Delta_n = 1$, we have
+\begin{align}
+  B_{2,n}(t) = O( H_n \Delta_n^{1/2}).
+  \label{}
+\end{align}
+Now we tackle the final piece $B_{1,n}(t)$. Let 
+\begin{align}
+  A  := \eind\left[\sum_{i=0}^{n-1}\btghki S_i^2 -\int_{0}^{1} \sigma^2(s) \btghks \D s\right].
+\end{align}
+We will first obtain an upper bound for $A$; we proceed by adding and subtracting $\eind [\sumin\int_{t_i}^{t_{i+1}}\btghki \sigma^2(s)  \D s]$  from  $A$ to yield: 
+\begin{align}
+  A & = \eind\left[\sumin\btghki \left(S_i^2 -\int_{t_i}^{t_{i+1}} \sigma^2(s) \D s\right)\right ]\notag \\
+  &\quad +  \eind\left[\sumin\left(\int_{t_i}^{t_{i+1}} \sigma^2(s) \{\btghki - \btghks\} \D s\right) \right]\notag\\
+  &=:A_{1} + A_{2} \notag.
+  \label{}
+\end{align}
+We obtain estimates in turn for the summands. By linearity of expectation 
+\begin{align}
+  A_{2} &= \sumin \int_{t_i}^{t_{i+1}} \e[\sigma^2(s) \indvol] \{\btghki - \btghks\} \D s\notag\\
+  &\le c\modc{\tghk}{\Delta_n},\notag
+  \label{}
+\end{align}
+where $\modc{\tghk}{\Delta_n}$ is the modulus of continuity of $\tghk$ on an interval of length $\Delta_n$. By  Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have, 
+\begin{align}
+  A_{2} \le c\modc{g}{\Delta_n} \le c \Delta_n.\notag \\
+  \label{}
+\end{align}
+Now, we obtain an estimate for $A_{1}$. First, let $D_i: \Omega\times[0,1] \to \real$ for $i = 0, \cdots, n-1$ be defined as follows:  
+\begin{align}
+&D_{i}(t) := \btghki\left(\int_{t_i}^{t} \sigma(u)\D W_u\right)\mathbbm{1}_{(t_i, t_{i+1}]}(t).
+  \label{eq:Di}\\
+&D_0(0) := 0.
+\end{align}
+So, $D_i(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1}]$. Now, using the integration by parts formula for semimartingales, we may write
+\begin{align}
+  S^2_i - \int^{t_{i+ 1}}_{t_i} \sigma^2(s) \D W_s = 2\int_{t_i}^{t_{i+1}}\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\notag
+  \label{}
+\end{align}
+so that 
+\begin{align}
+  A_1 &= 2\,\eind\left[\sumin\int_{t_i}^{t_{i+1}}\btghki\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\right ]\notag \\
+  &=2\,\eind\left[\int_0^1\sumin D_i(s) \sigma(s) \D W_s \right]\notag\\
+  &=2\,\e\left[\left(\int_0^1\sumin D_i(s) \sigma(s) \D W_s\right)\indvol \right]\notag.
+  \label{}
+\end{align}
+Using the same stopping time argument as above, we may replace the upper limit of integration with $T_n(c)$ so that 
+\begin{align}
+  A_1 & \le 2\,\e\left[\left(\int_0^{T_n(c)}\sumin D_i(s) \sigma(s) \D W_s\right)\indvol \right]\notag\\ 
+  & \le 2\,\e\left[\left\vert\int_0^{T_n(c)}\sumin D_i(s) \sigma(s) \D W_s\right\vert \right].\notag 
+  \label{}
+\end{align}
+Now using the fact that $\int_0^{T_n(c)}\sumin D_i(s) \sigma(s) \D W_s$ is a  martingale, we may make another appeal to the BDG inequality to yield:
+\begin{align}
+  A_1 & \le c\e\left[\left\vert\int_0^{T_n(c)}\left(\sumin D_i(s) \sigma(s)\right)^2 \D s\right\vert^{1/2} \right]\notag \\
+  & \le c\e\left[\left\vert\int_0^{T_n(c)}\sumin \{D_i(s) \sigma(s)\}^2 \D s\right\vert^{1/2} \right]\notag,
+  \notag
+  \label{}
+\end{align}
+where the last line follows because $D_i (s) D_j(s) = 0$ whenever $i \not= j$. Now if  we define $D^*_i := \sup_{t_i <s \le T_n(c)} D_i(s)$, and use the fact that $\sigma$ is less than  $c$ before $T_n(c)$ then
+\begin{align}
+  A_1 & \le c\e\left[\left\vert\sumin \Delta_n(D_i^*)^2 \right\vert^{1/2} \right] \notag\\
+  & \le c\e\left[\left\vert\sumin \Delta_n(D_i^*)^2 \right\vert \right] \notag\\
+  & \le c\Delta_n\sumin\e[(D_i^*)^2]   
+  \label{eq:ra1}
+\end{align}
+where $c$ is a generic constant representing the bound on $\sigma^2$ and the BDG constant.  Note  from the definition of  $D_i$ \eqref{eq:Di} that it  is itself a martingale, so we may bound  $D^*_i$  with yet another application of the BDG inequality. That is
+\begin{align}
+  D^*_i &\le \left(\int^{T_{i+1}(c)}_{t_i} \sigma^2(s) \D s\right)^{1/2} \notag\\
+  &\le c \Delta_n^{1/2}. 
+  \label{}
+\end{align}
+Plugging the above into the estimate in \eqref{eq:ra1} yields: $A_1 \le c \Delta_n $. Combining  the estimates for $A_1$ and $A_2$,  it may be seen that
+\begin{align}
+  B_{1,n}(t) = O(H_n\Delta_n ).
+  \label{}
+\end{align}
+Collecting the estimates for $B_{j,n}(t)$ for $j =1,\cdots,4$, it is easily seen that $\e[\svn(t) - \sigma^2(t)] = O(H_n \Delta_n^{1/2}  +H_n^{-\alpha}\log H_n)$ for all $t \in \domain$. So that 
+\begin{align}
+  B^2(\alpha,c) =  O(H_n^2 \Delta_n  + H_n^{-2\alpha}\log^2 H_n).\notag
+  \label{}
+\end{align}
+Next, we obtain a  bound for the variance term $V_n(\alpha, c)$. Recall that
+\begin{align}
+V_n(\alpha,c)  & =  \int_0^1 \eind[\{\svn(t) - \eind[\svn(t)]\}^2]  \D t.
+\notag
+\end{align}
+So that by the definition of the estimator, we may write
+\begin{align}
+ V_n(\alpha,c) & =   \int_0^1\eind\left[\left\{\sumt (\chk -\eind[\chk])\ghk(t)\right\}^2 \right]\D t \notag\\
+& =\sum_{(h,k) \in \Theta_n}\varind[\cnhk]\left( \int_0^1 g_{h,k}^2(t) \D t\right)\notag \\
+& \quad + \sum_{(h,k) \ne (h',k') \in \Theta_n} \covind[\cnhk, \hat{c}_{h',k'}]\left( \int_0^1 g_{h,k}(t) g_{h',k'}(t)\D t\right) \notag\\
+& =: V_1 + V_2,
+\end{align}
+ We will estimate these quantities in turn starting with $V_1$, but first let  
+\begin{align}
+  &Y_i := \left(\int^{t_{i+1}}_{t_i} \sigma(s) \D W_s\right)^2 ,\notag\\
+  &Z_i := \left(\int^{t_{i+1}}_{t_i} \mu(s) \D s\right)^2 + 2\left(\int^{t_{i+1}}_{t_i} \mu(s) \D s\right)\left(\int^{t_{i+1}}_{t_i} \sigma(s) \D W_s\right), \notag\\ 
+  &\beta_{1,i} := \sum_{(h,k) \in \Theta_n} g^2_{h,k}(t_i)\left( \int_0^1 g_{h,k}^2(t) \D t\right),\notag
+  \label{}
+\end{align}
+for $i = 0,\cdots, n-1$. Now note that 
+\begin{align}
+  \cnhk = \sumin \ghk(t_i) (X_{t_{i=1}} - X_{t_i})^2 = \sum_{i = 0}^{n-1} g_{h,k}(t_i) (Y_i + Z_i),\notag
+  \label{}
+\end{align}
+and  since  increments of the Brownian motion are independent, we have
+\begin{align}
+  V_{1} = \sum_{i = 0}^{n-1} \beta_{1,i} (\varind[Y_i] + \varind[Z_i] + 2 \covind[Y_i,Z_i]). \notag
+  \label{}
+\end{align}
+We will estimate the first two moments of $Y_i$ and $Z_i$ in turn. Note that  
+\begin{align}
+  \eind[Y_i] &= \e[Y_i \indvol] = \e\left[ \left(\int^{t_{i+1}}_{t_i} \sigma(s) \D W_s\right)^2\indvol\right]\notag\\
+&=\e\left[ \left(\int^{T_i(c)}_{t_i} \sigma(s) \D W_s\right)^2\indvol\right] \notag\\
+&\le\e\left[ \left(\int^{T_i(c)}_{t_i} \sigma(s) \D W_s\right)^2\right]\notag\\
+&\le c \e\left[ \left(\int^{T_i(c)}_{t_i} \sigma^2(s) \D s\right)\right]\notag\\
+&\le c\Delta_n.
+  \label{}
+\end{align}
+where the fourth line results from an application of the BDG inequality.  Repeating the exact same steps, it may be seen that $\eind[Y^2] \le c \Delta_n^2$. Thus,
+\begin{align}
+  \varind[Y_i] = \eind[Y_i^2] - \eind[Y_i]^2 \le c \Delta_n^2.
+\end{align}
+Next we obtain estimates for $Z_i$. From \eqref{eq:msq} and \eqref{eq:ms} we may conclude
+\begin{align}
+  \eind[Z_i] = \eind[M_i^2] + 2 \eind[M_i S_i] \le c \Delta_n^{3/2}. \notag
+  \label{}
+\end{align}
+Using similar computations as above, it may be seen that $\eind[Z_i^2] \le c\Delta^3_n$ so that 
+\begin{align}
+  \varind[Z_i] \le c \Delta_n^3.\notag
+  \label{}
+\end{align}
+Now by  the Cauchy-Schwarz inequality  we may write
+\begin{align}
+    \covind[Y_i, Z_i] \le (\varind[Z_i] \varind[Y_i])^{1/2} \le c \Delta_n^{5/2}. \notag
+\end{align}
+Now because \ghk is bounded, it follows that $\beta_{1,i} = O(H_n)$ so  
+\begin{align}
+  V_{1} = O(H_n\Delta_n)\notag
+  \label{}
+\end{align}
+It is  straight forward to see  that $V_{2}$ may be estimated in a similar fashion. Indeed, let
+\begin{align}
+  \beta_{2,i} := \sum_{ (h,k) \ne (h',k') \in \Theta_n} g_{h',k'}(t_i)g_{h,k}(t_i)\left( \int_0^1 g_{h,k}(t) g_{h',k'}(t)\D t\right),\notag
+  \label{}
+\end{align}
+then we may write
+\begin{align}
+  V_{2} = \sum_{i = 0}^{n-1} \beta_{2,i} (\varind[Y_i] + \varind[Z_i] + 2 \covind[Y_i,Z_i]), \notag
+  \label{}
+\end{align}
+the computations will then proceed identically as before from this point. Again, by the boundedness of \ghk, it follows that   $ \beta_{2,i} = O(H_n^2)$ so that
+\begin{align}
+  V_{2} = O(H^2_n\Delta_n).\notag
+  \label{}
+\end{align}
+Therefore,
+\begin{align}
+  V(\alpha,c)  = O(H^2_n\Delta_n).\notag
+  \label{}
+\end{align}
+\end{proof}
+\input{finiteactproof}
+\end{appendices}
+%\chapter{Extensions} \label{ap:ext}
