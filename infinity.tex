@@ -1,0 +1,55 @@
+\subsection{Infinity}
+The following assumptions are assumed to be in force.
+\begin{ass} \label{fubini}
+  \begin{enumerate}
+    \item Volatility paths have to be continuous. This is a requirement of  \cite{Zhang2008}. 
+  \end{enumerate}
+\end{ass}
+\begin{prop}
+  Let the jump process of $X$ be a  \levy process specified by \eqref{eq:j}, \eqref{eq:j1}, and \eqref{eq:j2}. 
+  If conditions $(i), (ii)$ and $(iii)$ of Proposition \eqref{pro:finite} hold, then 
+  \jvn converges in \Ltwo in probability to \sv.
+\end{prop}
+\begin{proof}
+  We wish to show that the random variable
+  $\int_0^1 (\jvn - \sigma^2(t))^2dt$ tends to zero in probability. The regularity conditions on $X$ and $\sigma^2$ imply that  $\sup_{t \in [0,1]} (\jvn - \sigma^2(t))^2$ is a random variable and that the previous claim would follow as soon as $\sup_{t \in [0,1]} (\jvn - \sigma^2(t))^2$ is shown  to converge to  zero in probability.  To that end consider the following decomposition of the process $X$:
+  \begin{align}
+    &X = X^f + J^s\label{eq:xj},\\
+    &X^f = X^c + J^l\label{eq:xjc},
+  \end{align}
+  where 
+    $X^c = \int^t_0 b_s \D s + \int^t_0 \sigma_s \D W_s$, 
+    $J^l = xI_{\vert x \vert > 1} \ast \mu,$
+    and $J^s = xI_{\vert x \vert \le  1} \ast (\mu - \nu)$.
+    Let $t$ be a point in the unit interval, then 
+    \begin{align}
+      \jvn -  \sigma^2(t) &= \sumt (\ceen{X} - \cee) \ghk(t)\notag \\
+& \quad - \sumnt \cee \ghk(t).
+      \label{eq:open}
+    \end{align}
+    By Theorem 4.1 of \cite{Zhang2008} (See Theorem A.1 of the Appendix), the last term on the right converges uniformly  on the unit  interval  to zero, almost surely, as $n \to \infty$. 
+    
+     To obtain a bound on the first item on the right of \eqref{eq:open}, we may use \eqref{eq:xj} to write
+    \begin{align}
+c_n ( & X, h, k) - \cee  \notag  \\
+      & =  \sumin \btghki  (\dxf)^2 \indxff - \int^{1}_{0} \sigma^2(s) \btghks ds \notag\\
+      & + \sumin \btghki(\dxf)^2 (\indx - \indxff) \notag\\
+      &+ 2 \sumin \btghki\dxf \djt \indx \notag \\
+      & + \sumin \btghki(\djt)^2\indx.
+      \label{}
+    \end{align}
+    By Proposition \eqref{pro:finite}, the first term tends to zero almost surely at the rate of $O(n^{-1} \log(n))$. It remains to show that the last three terms on the right converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$. Now for each outcome in $A_i \cap B_i$, it is the case that $2 u_n^{1/2} - \vert \djt \vert \le \vert \dxf \vert - \vert \djt \vert \le \vert \dxf + \djt  \vert \le u_n^{1/2}$, so that $\vert \djt \vert \ge u_n^{1/2}$ and 
+    \begin{align}
+      \sumin & \btghki(\dxf)^2 I_{A_i \cap B_i} \le \sumin \btghki(\dxf)^2 I_{\{(\djt)^2 > u_n\}}\notag\\
+       & \le \sumin \btghki(\dxc)^2 I_{\{(\djt)^2 > u_n\}} + \sumin \btghki(\djl)^2 I_{\{(\djt)^2 > u_n\}}\notag\\
+       & \le  v_n + w_n, 
+      \label{}
+    \end{align}
+    where \begin{align} &v_n :=  2c \Lambda n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}} \notag \\ & w_n: =  \sumin c (\djl)^2 I_{\{(\djt)^2 > u_n\}}\notag \end{align}  and $c$ is a generic constant greater than $\vert \btghks \vert$, for all $s \in [0,1]$. Now, given  $\varepsilon > 0$ and $\delta > 0$,
+    \begin{align}
+     \p &\left(\sumin  \btghki(\dxf)^2 I_{A_i \cap B_i} > \delta \right) \le \p(v_n > \delta/2) + \p(w_n > \delta/2) \notag. 
+      \label{}
+    \end{align}
+  Meanwhile, it is the case that \begin{align} \p(v_n > \delta /2) & \le 2\delta^{-1}E(n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}}) \notag \\ & = 2\delta^{-1}\log(n) \p( (\djt)^2 > u_n) \notag \\ &\le  2\delta^{-1}\log(n) E((\Delta_1 J^s)^2))u_n^{-1}  \notag \\ &\le 2\delta^{-1} \log(n) n^{-1}\sigma^2(1)u_n^{-1}\notag \end{align}  and \begin{align} \p(w_n > \delta/2) & \le \p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > u_n\}\right) \notag \\ & \le n \p(\mu( (t_i, t_{i + 1}] \times \real) > 0 ) E( (\Delta_1 J^s)^2) u_n^{-1} \notag \\ & \le c n^{-1} \sigma^2(1) u_n^{-1}\notag \end{align} 
+\end{proof}
+

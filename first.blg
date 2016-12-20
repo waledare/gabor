@@ -25,6 +25,10 @@ You're missing a field part---line 1571 of file /home/wale/Dropbox/PhD/Bibliogra
 I'm skipping whatever remains of this entry
 Database file #5: /home/wale/Dropbox/PhD/Bibliography/Insurance.bib
 Database file #6: /home/wale/Dropbox/PhD/Bibliography/IV.bib
+Repeated entry---line 1487 of file /home/wale/Dropbox/PhD/Bibliography/IV.bib
+ : @book{Jacod2003
+ :                ,
+I'm skipping whatever remains of this entry
 Database file #7: /home/wale/Dropbox/PhD/Bibliography/Macroeconomics.bib
 I was expecting a `,' or a `}'---line 131 of file /home/wale/Dropbox/PhD/Bibliography/Macroeconomics.bib
  :   
@@ -86,4 +90,4 @@ warning$ -- 1
 while$ -- 174
 width$ -- 0
 write$ -- 281
-(There were 5 error messages)
+(There were 6 error messages)
