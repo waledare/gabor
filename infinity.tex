@@ -31,25 +31,66 @@ The following assumptions are assumed to be in force.
     
      To obtain a bound on the first item on the right of \eqref{eq:open}, we may use \eqref{eq:xj} to write
     \begin{align}
-c_n ( & X, h, k) - \cee  \notag  \\
-      & =  \sumin \btghki  (\dxf)^2 \indxff - \int^{1}_{0} \sigma^2(s) \btghks ds \notag\\
-      & + \sumin \btghki(\dxf)^2 (\indx - \indxff) \notag\\
-      &+ 2 \sumin \btghki\dxf \djt \indx \notag \\
-      & + \sumin \btghki(\djt)^2\indx.
+      \sumt &(c_n (  X, h, k) - \cee)\ghk(t)   \notag \\&= \sumt (w_{h,k} + x_{h,k} + y_{h,k} + z_{h,k}) \ghk(t),\label{eq:summands} 
+    \end{align}
+    where 
+    \begin{align}
+      &w_{h,k} :=  \sumin \btghki  (\dxf)^2 \indxff - \int^{1}_{0} \sigma^2(s) \btghks ds \notag\\
+      &x_{h,k} :=  \sumin \btghki(\dxf)^2 (\indx - \indxff) \notag\\
+      &y_{h,k}  := 2 \sumin \btghki\dxf \djt \indx \notag \\
+      &z_{h,k} := \sumin \btghki(\djt)^2\indx.
       \label{}
     \end{align}
-    By Proposition \eqref{pro:finite}, the first term tends to zero almost surely at the rate of $O(n^{-1} \log(n))$. It remains to show that the last three terms on the right converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$. Now for each outcome in $A_i \cap B_i$, it is the case that $2 u_n^{1/2} - \vert \djt \vert \le \vert \dxf \vert - \vert \djt \vert \le \vert \dxf + \djt  \vert \le u_n^{1/2}$, so that $\vert \djt \vert \ge u_n^{1/2}$ and 
+    By Proposition \eqref{pro:finite}, if $\delta > 0$ then \begin{align}  \p(\sup_{t \in [0,1]}\vert \sumt w_{h,k} \ghk(t) \vert > \delta) \le  c \delta^{-1} H_nn^{-1} \log(n), \label{eq:oneofmany} \end{align} for some $c \in \real$ .  It remains to show that the last three terms on the right converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$. Now for each outcome in $A_i \cap B_i^c$, it is the case that $2 u_n^{1/2} - \vert \djt \vert \le \vert \dxf \vert - \vert \djt \vert \le \vert \dxf + \djt  \vert \le u_n^{1/2}$, so that $\vert \djt \vert \ge u_n^{1/2}$ and 
     \begin{align}
-      \sumin & \btghki(\dxf)^2 I_{A_i \cap B_i} \le \sumin \btghki(\dxf)^2 I_{\{(\djt)^2 > u_n\}}\notag\\
-       & \le \sumin \btghki(\dxc)^2 I_{\{(\djt)^2 > u_n\}} + \sumin \btghki(\djl)^2 I_{\{(\djt)^2 > u_n\}}\notag\\
+      \sumt &  \left( \sumin \btghki(\dxf)^2 I_{A_i \cap B_i^c}\right) \ghk(t) \notag \\ 
+       & \le \sumt \left( \sumin \btghki(\dxf)^2 I_{\{(\djt)^2 > u_n\}} \right) \ghk(t) \notag\\
+       & \le \sumt \left( \sumin \btghki(\dxc)^2 I_{\{(\djt)^2 > u_n\}}\right) \ghk(t)  \notag \\ 
+       &\qquad+ \sumt \left( \sumin \btghki(\djl)^2 I_{\{(\djt)^2 > u_n\}}\right) \ghk(t)\notag\\
        & \le  v_n + w_n, 
-      \label{}
+      \label{eq:longineq}
     \end{align}
-    where \begin{align} &v_n :=  2c \Lambda n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}} \notag \\ & w_n: =  \sumin c (\djl)^2 I_{\{(\djt)^2 > u_n\}}\notag \end{align}  and $c$ is a generic constant greater than $\vert \btghks \vert$, for all $s \in [0,1]$. Now, given  $\varepsilon > 0$ and $\delta > 0$,
+    where \begin{align} &v_n :=  2c H_n \Lambda n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}} \notag \\ & w_n: = c H_n \sumin  (\djl)^2 I_{\{(\djt)^2 > u_n\}}\notag \end{align}  and $c$ is a sufficienty large constant. Let  $\delta > 0$ be given, put  $x_n(t)  :=  \sumt\left(\sumin  \btghki(\dxf)^2 I_{A_i \cap B_i^c})\right)\ghk(t)$  and note that 
     \begin{align}
-     \p &\left(\sumin  \btghki(\dxf)^2 I_{A_i \cap B_i} > \delta \right) \le \p(v_n > \delta/2) + \p(w_n > \delta/2) \notag. 
+     \p &\left(  \vert x_n (t) \vert  > \delta\right) \le \p(v_n > \delta/2) + \p(w_n > \delta/2) \notag. 
       \label{}
     \end{align}
-  Meanwhile, it is the case that \begin{align} \p(v_n > \delta /2) & \le 2\delta^{-1}E(n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}}) \notag \\ & = 2\delta^{-1}\log(n) \p( (\djt)^2 > u_n) \notag \\ &\le  2\delta^{-1}\log(n) E((\Delta_1 J^s)^2))u_n^{-1}  \notag \\ &\le 2\delta^{-1} \log(n) n^{-1}\sigma^2(1)u_n^{-1}\notag \end{align}  and \begin{align} \p(w_n > \delta/2) & \le \p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > u_n\}\right) \notag \\ & \le n \p(\mu( (t_i, t_{i + 1}] \times \real) > 0 ) E( (\Delta_1 J^s)^2) u_n^{-1} \notag \\ & \le c n^{-1} \sigma^2(1) u_n^{-1}\notag \end{align} 
+  First note that the expression on the right is independent of $t$, so that the probabilities on the right bound $\p(\vert x_n(t) \vert > \delta) $ uniformly on the unit interval. Now let  $\varepsilon > 0$ be given and note that because  $\Lambda$ is almost surely finite,   there is a sufficiently large $K > 0$ such that $\p(\Lambda > K) \le \varepsilon/2$. Hence,  \begin{align} \p(v_n > \delta /2) & \le 2cKH_n\delta^{-1}E(n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}}) + \p(\Lambda > K) \notag  \\ & = 2cK H_n\delta^{-1}\log(n) \p( (\djt)^2 > u_n)  + \varepsilon/2 \notag \\ &\le  2cK H_n\delta^{-1}\log(n) E((\Delta_1 J^s)^2))u_n^{-1}   + \varepsilon/2 \notag \\ &\le 2cKH_n\delta^{-1} \log(n) n^{-1}\sigma^2(1)u_n^{-1} +  \varepsilon/2\label{eq:asabove}. \end{align} Obviously there is a large enough $n$ such that the first expression above is less than or equal to $\varepsilon/2$.   Moreover, because $\delta >  0$,  \begin{align} \p(w_n > \delta/2) & \le \p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > u_n\}\right) \notag \\ & \le n \p(\mu( (t_i, t_{i + 1}] \times \{\vert x \vert > 1\}) > 0 ) E( (\Delta_1 J^s)^2) u_n^{-1} \notag \\ & \le c n^{-1} \sigma^2(1) u_n^{-1}\notag,\end{align} which clearly tends to zero in $n$. 
+
+Now, by Theorem 3.1 of \cite{Mancini2009}, if an outcome is  in $A_i^c \cap B_i$ then there is a sufficiently small $u_n$ such that $I_{\{\vert x \vert > 1\}} \ast \mu((t_i , t_{i + 1}  ] \times \real) = 0$. Hence, for such an outcome, it is the case that $ (\dx)^2> u_n$ if and only if  $ (\dxc + \djt)^2 > u_n$, which  in turn would hold if either $(\dxc)^2 > u_n/4$ or   $(\djt)^2 > u_n/4$. However, by theorem 3.1 of \cite{Mancini2009}, by taking $n$ large enough $\{ (\dxc)^2 > u_n/4 \} = \emptyset$. Let $\delta > 0$ be a given positive number; put $y_n(t) :=    \sumt\left(\sumin  \btghki(\dxf)^2 I_{A_i^c \cap B_i})\right)\ghk(t)$ and note that 
+\begin{align}
+  \p&(\vert y_n(t) \vert > \delta) \le \p\left(cH_n \Lambda^2n \left( I_{\{(\djt)^2 >u_n/4\}})\right) > \delta\right), \notag
+  \label{}
+\end{align}
+which tends to zero exactly as in \eqref{eq:asabove}. Hence, \begin{align} \p(\sup_{t \in [0,1]}\vert \sumt x_{h,k} \ghk(t) \vert > \delta) \to 0. \end{align}
+Now we obtain a bound for the third summand in  \eqref{eq:summands}. First, denote $C_i := \{( \djt )^2 \le 4 u_n\}$, $p_{h,k} : = 2 \sumin \btghki\dxf \djt I_{A_i \cap C_i}$, and $q_{h,k} := 2 \sumin \btghki\dxf \djt I_{A_i \cap C_i^c}$. Clearly, $y_{h,k} = p_{h,k} + q_{h,k}$. Now note that on $ A_i \cap C_i^c$, it is the case that  $2u_n^{1/2} - \vert \dxf \vert < \vert \djt\vert - \vert \dxf\vert \le \vert \dx \vert \le u_n^{1/2}$, so that $u_n^{1/2} < \vert \dxf \vert < \vert \djl \vert + \vert \dxc \vert$. In turn, the last inequlity implies that either $\vert \djl \vert > u^{1/2}_n/2$ or  $\vert \dxc \vert > u^{1/2}_n/2$. Now, for sufficiently large $n$, it is almost surely never the case that $\vert \dxc \vert > u^{1/2}_n/2$ for some $i$,  $0 \le  i  \le n -1$. Hence,  for positive $\delta$, \begin{align} \p(\vert&\sumt q_{h,k} \ghk(t) \vert > \delta/2) \notag \\ &\le \p(    \cup_i\{ \mu( (t_i, t_{i+1}] \times \{\vert x \vert > 1 \} ) > 0,  (\djt)^2 > u_n\}) \notag \\ & \le c n^{-1} \sigma^2(1) u_n^{-1}.\end{align}
+
+Meanwhile, on $A_i \cap C_i$, it is easily seen that $\vert \djl \vert - \vert \dxc + \djt \vert < \vert \dx \vert \le u_n^{1/2}$, so that $\vert \djl\vert \le u^{1/2}_n + \vert \dxc \vert + \vert \djt\vert$. On the other hand, $ \vert \djl \vert < u_n^{1/2} + \Lambda n^{-1/2} \log^{1/2}(n) + 2 u_n^{1/2} = O(u^{1/2}_n)$. Let $r_{h,k} :=  2 \sumin \btghki\dxc \djt I_{A_i \cap C_i}$ and $s_{h,k} := 2 c u_n^{1/2}\sumin \btghki \djt I_{A_i \cap C_i}$. Then 
+\begin{align}
+ \p(\vert&\sumt q_{h,k} \ghk(t) \vert > \delta/2)\notag \\&  \le\p(\vert\sumt r_{h,k} \ghk(t) \vert > \delta/4) + \p(\vert\sumt s_{h,k} \ghk(t) \vert > \delta/4).\notag
+  \label{}
+\end{align}
+Now consider that $\sumt r_{h,k} \ghk(t) \le  c H_n \sumin \dxc \djt I_{A_i \cap C_i}$, which implies that  
+\begin{align}
+  \p(&\vert\sumt r_{h,k} \ghk(t) \vert > \delta/4) \le \p(c H_n \vert \sumin \dxc \djt I_{A_i \cap C_i} \vert  > \delta/4)\notag\\& \le \p\left( \left(\sumin (\dxc)^2\right)^{1/2} \left(\sumin ( \djt I_{A_i \cap C_i})^2\right)^{1/2} > \delta (4H_nc)^{-1}\right).\notag
+  \label{}
+\end{align}
+It is a well known fact that  $\sumin (\dxc)^2 (t)$ converges to $\int_0^t\sigma^2(s)ds$ in probability uniformy on the unit interval. Hence, there is a sufficiently large $N$ such that if $n > N$ then $ \p(\vert (\sumin (\dxc)^2)^{1/2}  - (\int_0^1\sigma^2(s)ds)^{1/2}\vert > \delta ) \le  \varepsilon/4$, and because integrated volatility is almost surely finite, there is a sufficiently large $K$ satisfying  $K/2 > \delta$ such that $\p( \int_0^1\sigma^2(s)ds > K/2) \le \varepsilon/4.$ Hence, we may write
+\begin{align}
+\p(&\vert\sumt r_{h,k} \ghk(t) \vert > \delta/4) \notag \\&\le \p\left(\sumin ( \djt I_{A_i \cap C_i})^2 > \delta^2 (4K H_nc)^{-2}\right) + \varepsilon/2\notag\\&\le  \p\left( (x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}}\ast\mu)_1 > \delta^2 (4K H_nc)^{-2}\right) + \varepsilon/2\notag\\
+&\le \delta^{-2} (4K H_nc)^{2}\e\left( (x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}}\ast\mu)_1  \right) + \varepsilon/2\notag
+,
+  \label{}
+\end{align}
+which can be made less than $\varepsilon$ by choosing $H_n = o(u^{-1/4}_n)$ and noting that   $\e\left( (x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}}\ast\mu)_1  \right) = \sigma^2(1 \wedge 2 u_n^{1/2})$.
+
+Now it is easily seen that for sufficiently large $c$
+\begin{align}
+  \p(&\vert \sumt s_{h,k} \ghk(t) \vert > \delta/4) \le \p( \sumin  \djt I_{A_i \cap C_i} > (8 c u_n^{1/2})^{-1}\delta) \notag\\
+  &\le (64 c^2 u_n)\delta^{-2} \e\left( (x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}}\ast\mu)_1  \right)\notag \\
+  & \le  (64 c^2 u_n)\delta^{-2} \sigma^2(1 \wedge 2 u_n^{1/2}),
+  \label{}
+\end{align}
+which is less than $\varepsilon/4$ for sufficiently large $n$.
 \end{proof}
 
