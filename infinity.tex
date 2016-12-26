@@ -1,14 +1,29 @@
 \subsection{Infinity}
-The following assumptions are assumed to be in force.
-\begin{ass} \label{fubini}
-  \begin{enumerate}
-    \item Volatility paths have to be continuous. This is a requirement of  \cite{Zhang2008}. 
-  \end{enumerate}
-\end{ass}
+We now turn to the case of a price process specified by an \ito diffusion equipped with  possibly infinite activity \levy jumps.  That is  
+\begin{align}
+X_t  = \int_0^t b_s ds + \int_0^t \sigma_s ds +  J^l_t + J^s_t, 
+  \label{eq:j}
+\end{align}
+where
+\begin{align}
+  & J^l_t := \int^t_0 \int_\cunidisc x \;  \mu(\D t, \D x),\label{eq:j1}\\ 
+  & J^s_t := \int^t_0 \int_\unidisc x  [\mu(\D t, \D x) - \D t\nu(\D x)],  
+  \label{eq:j2}
+\end{align}
+and $\e[\mu(A)] = \nu(A)$ for all measurable sets $A$. So the above is a decomposition of $J$ into small jumps and large jumps. $J$  may exhibit infinite activity; the only restriction is that $\nu$ is a \levy measure, i.e. 
+\begin{align}
+  \int_\real (\vert x \vert^2 \wedge 1) \nu(\D x) < \infty.\notag
+  \label{}
+\end{align}
+
 \begin{prop}
-  Let the jump process of $X$ be a  \levy process specified by \eqref{eq:j}, \eqref{eq:j1}, and \eqref{eq:j2}. 
-  If conditions $(i), (ii)$ and $(iii)$ of Proposition \eqref{pro:finite} hold, then 
-  \jvn converges in \Ltwo in probability to \sv.
+  Let the price process  $X$ be specified as in  \eqref{eq:j}, \eqref{eq:j1}, and \eqref{eq:j2}. 
+  Suppose the conditions of Proposition \eqref{pro:finite} hold. Suppose in addtion that 
+  \begin{align}
+    x^2 I_{\{\vert x \vert \le u_n^{1/2}\}} \ast \nu_1 = o(H_n^{-2})
+    \label{eq:smallo}
+  \end{align}
+  as $n \to \infty$, then \jvn converges in \Ltwo in probability to \sv.
 \end{prop}
 \begin{proof}
   We wish to show that the random variable
@@ -41,7 +56,7 @@ The following assumptions are assumed to be in force.
       &z_{h,k} := \sumin \btghki(\djt)^2\indx.
       \label{}
     \end{align}
-    By Proposition \eqref{pro:finite}, if $\delta > 0$ then \begin{align}  \p(\sup_{t \in [0,1]}\vert \sumt w_{h,k} \ghk(t) \vert > \delta) \le  c \delta^{-1} H_nn^{-1} \log(n), \label{eq:oneofmany} \end{align} for some $c \in \real$ .  It remains to show that the last three terms on the right converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$. Now for each outcome in $A_i \cap B_i^c$, it is the case that $2 u_n^{1/2} - \vert \djt \vert \le \vert \dxf \vert - \vert \djt \vert \le \vert \dxf + \djt  \vert \le u_n^{1/2}$, so that $\vert \djt \vert \ge u_n^{1/2}$ and 
+    By Proposition \eqref{pro:finite}, if $\delta > 0$ then \begin{align}  \p(\sup_{t \in [0,1]}\vert \sumt w_{h,k} \ghk(t) \vert > \delta) \le  c \delta^{-1} H_nn^{-1} \log(n), \label{eq:w} \end{align} for some $c \in \real$ .  It remains to show that the last three terms on the right converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$. Now for each outcome in $A_i \cap B_i^c$, it is the case that $2 u_n^{1/2} - \vert \djt \vert \le \vert \dxf \vert - \vert \djt \vert \le \vert \dxf + \djt  \vert \le u_n^{1/2}$, so that $\vert \djt \vert \ge u_n^{1/2}$ and 
     \begin{align}
       \sumt &  \left( \sumin \btghki(\dxf)^2 I_{A_i \cap B_i^c}\right) \ghk(t) \notag \\ 
        & \le \sumt \left( \sumin \btghki(\dxf)^2 I_{\{(\djt)^2 > u_n\}} \right) \ghk(t) \notag\\
@@ -55,14 +70,14 @@ The following assumptions are assumed to be in force.
      \p &\left(  \vert x_n (t) \vert  > \delta\right) \le \p(v_n > \delta/2) + \p(w_n > \delta/2) \notag. 
       \label{}
     \end{align}
-  First note that the expression on the right is independent of $t$, so that the probabilities on the right bound $\p(\vert x_n(t) \vert > \delta) $ uniformly on the unit interval. Now let  $\varepsilon > 0$ be given and note that because  $\Lambda$ is almost surely finite,   there is a sufficiently large $K > 0$ such that $\p(\Lambda > K) \le \varepsilon/2$. Hence,  \begin{align} \p(v_n > \delta /2) & \le 2cKH_n\delta^{-1}E(n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}}) + \p(\Lambda > K) \notag  \\ & = 2cK H_n\delta^{-1}\log(n) \p( (\djt)^2 > u_n)  + \varepsilon/2 \notag \\ &\le  2cK H_n\delta^{-1}\log(n) E((\Delta_1 J^s)^2))u_n^{-1}   + \varepsilon/2 \notag \\ &\le 2cKH_n\delta^{-1} \log(n) n^{-1}\sigma^2(1)u_n^{-1} +  \varepsilon/2\label{eq:asabove}. \end{align} Obviously there is a large enough $n$ such that the first expression above is less than or equal to $\varepsilon/2$.   Moreover, because $\delta >  0$,  \begin{align} \p(w_n > \delta/2) & \le \p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > u_n\}\right) \notag \\ & \le n \p(\mu( (t_i, t_{i + 1}] \times \{\vert x \vert > 1\}) > 0 ) E( (\Delta_1 J^s)^2) u_n^{-1} \notag \\ & \le c n^{-1} \sigma^2(1) u_n^{-1}\notag,\end{align} which clearly tends to zero in $n$. 
+  First note that the expression on the right is independent of $t$, so that the probabilities on the right bound $\p(\vert x_n(t) \vert > \delta) $ uniformly on the unit interval. Now let  $\varepsilon > 0$ be given and note that because  $\Lambda$ is almost surely finite,   there is a sufficiently large $K > 0$ such that $\p(\Lambda > K) \le \varepsilon/2$. Hence,  \begin{align} \p(v_n > \delta /2) & \le 2cKH_n\delta^{-1}E(n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}}) + \p(\Lambda > K) \notag  \\ & = 2cK H_n\delta^{-1}\log(n) \p( (\djt)^2 > u_n)  + \varepsilon/2 \notag \\ &\le  2cK H_n\delta^{-1}\log(n) E((\Delta_1 J^s)^2))u_n^{-1}   + \varepsilon/2 \notag \\ &\le 2cKH_n\delta^{-1} \log(n) n^{-1}\sigma^2(1)u_n^{-1} +  \varepsilon/2\label{eq:asabove}. \end{align} Obviously there is a large enough $n$ such that the first expression above is less than or equal to $\varepsilon/2$.   Moreover, because $\delta >  0$,  \begin{align} \p(w_n > \delta/2) & \le \p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > u_n\}\right) \notag \\ & \le n \p(\mu( [0, 1/n] \times \{\vert x \vert > 1\}) > 0 ) E( (\Delta_1 J^s)^2) u_n^{-1} \notag \\ & \le c n^{-1} \sigma^2(1) u_n^{-1}\notag,\end{align} which clearly tends to zero in $n$. 
 
 Now, by Theorem 3.1 of \cite{Mancini2009}, if an outcome is  in $A_i^c \cap B_i$ then there is a sufficiently small $u_n$ such that $I_{\{\vert x \vert > 1\}} \ast \mu((t_i , t_{i + 1}  ] \times \real) = 0$. Hence, for such an outcome, it is the case that $ (\dx)^2> u_n$ if and only if  $ (\dxc + \djt)^2 > u_n$, which  in turn would hold if either $(\dxc)^2 > u_n/4$ or   $(\djt)^2 > u_n/4$. However, by theorem 3.1 of \cite{Mancini2009}, by taking $n$ large enough $\{ (\dxc)^2 > u_n/4 \} = \emptyset$. Let $\delta > 0$ be a given positive number; put $y_n(t) :=    \sumt\left(\sumin  \btghki(\dxf)^2 I_{A_i^c \cap B_i})\right)\ghk(t)$ and note that 
 \begin{align}
   \p&(\vert y_n(t) \vert > \delta) \le \p\left(cH_n \Lambda^2n \left( I_{\{(\djt)^2 >u_n/4\}})\right) > \delta\right), \notag
   \label{}
 \end{align}
-which tends to zero exactly as in \eqref{eq:asabove}. Hence, \begin{align} \p(\sup_{t \in [0,1]}\vert \sumt x_{h,k} \ghk(t) \vert > \delta) \to 0. \end{align}
+which tends to zero exactly as in \eqref{eq:asabove}. Hence, \begin{align}\label{eq:x} \p(\sup_{t \in [0,1]}\vert \sumt x_{h,k} \ghk(t) \vert > \delta) \to 0. \end{align}
 Now we obtain a bound for the third summand in  \eqref{eq:summands}. First, denote $C_i := \{( \djt )^2 \le 4 u_n\}$, $p_{h,k} : = 2 \sumin \btghki\dxf \djt I_{A_i \cap C_i}$, and $q_{h,k} := 2 \sumin \btghki\dxf \djt I_{A_i \cap C_i^c}$. Clearly, $y_{h,k} = p_{h,k} + q_{h,k}$. Now note that on $ A_i \cap C_i^c$, it is the case that  $2u_n^{1/2} - \vert \dxf \vert < \vert \djt\vert - \vert \dxf\vert \le \vert \dx \vert \le u_n^{1/2}$, so that $u_n^{1/2} < \vert \dxf \vert < \vert \djl \vert + \vert \dxc \vert$. In turn, the last inequlity implies that either $\vert \djl \vert > u^{1/2}_n/2$ or  $\vert \dxc \vert > u^{1/2}_n/2$. Now, for sufficiently large $n$, it is almost surely never the case that $\vert \dxc \vert > u^{1/2}_n/2$ for some $i$,  $0 \le  i  \le n -1$. Hence,  for positive $\delta$, \begin{align} \p(\vert&\sumt q_{h,k} \ghk(t) \vert > \delta/2) \notag \\ &\le \p(    \cup_i\{ \mu( (t_i, t_{i+1}] \times \{\vert x \vert > 1 \} ) > 0,  (\djt)^2 > u_n\}) \notag \\ & \le c n^{-1} \sigma^2(1) u_n^{-1}.\end{align}
 
 Meanwhile, on $A_i \cap C_i$, it is easily seen that $\vert \djl \vert - \vert \dxc + \djt \vert < \vert \dx \vert \le u_n^{1/2}$, so that $\vert \djl\vert \le u^{1/2}_n + \vert \dxc \vert + \vert \djt\vert$. On the other hand, $ \vert \djl \vert < u_n^{1/2} + \Lambda n^{-1/2} \log^{1/2}(n) + 2 u_n^{1/2} = O(u^{1/2}_n)$. Let $r_{h,k} :=  2 \sumin \btghki\dxc \djt I_{A_i \cap C_i}$ and $s_{h,k} := 2 c u_n^{1/2}\sumin \btghki \djt I_{A_i \cap C_i}$. Then 
@@ -92,5 +107,35 @@ Now it is easily seen that for sufficiently large $c$
   \label{}
 \end{align}
 which is less than $\varepsilon/4$ for sufficiently large $n$.
+Hence, 
+\begin{align}
+  \notag
+  \p(\sup_{t \in [0,1]}\vert \sumt y_{h,k} \ghk(t) \vert > \delta) \to 0.\label{eq:y}
+\end{align}
+
+Next,  write $z_{h,k} = a_{h,k} + b_{h,k}$ where $a_{h,k} :=  \sumin \btghki(\djt)^2I_{A_i \cap C_i}$ and  $b_{h,k} := \sumin \btghki(\djt)^2I_{A_i \cap C_i^c}$. Then 
+\begin{align}
+  \p(&\vert \sumt z_{h,k} \ghk(t) \vert   > \delta) \notag \\ &\le \p(\vert \sumt a_{h,k} \ghk(t) \vert > \delta/2) + \p(\vert \sumt b_{h,k} \ghk(t) \vert > \delta/2)\notag.
+\end{align}
+In the first instance,
+\begin{align}
+  \p(&\vert \sumt b_{h,k} \ghk(t) \vert > \delta/2) \notag \\ &\le
+\p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > 4u_n\}\right) \notag \\
+&\le n \p(I_{\{\vert x \vert > 1\}}\ast \mu( [0, 1/n] \times \real) > 0) \e((\djt)^2)(4u_n)^{-1}\notag \\
+&\le cn^{-1}\sigma^2(1)  u^{-1}_n.
+\end{align}
+which can be made as small as desired. Now consider
+\begin{align}
+  \p(&\vert \sumt a_{h,k} \ghk(t) \vert > \delta/2) \notag \\ &\le \p( \sumin (\djt)^2 I_{\{\vert \djt \vert \le 2u_n^{1/2} \}} > \delta (2 c H_n)^{-1} )\notag\\
+  &\le\delta^{-1} (2 c H_n)\e\left( x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}}\ast\mu_1  \right)\notag \\
+  &\le \delta^{-1} (2 c H_n) \sigma(1 \wedge 2u_n^{1/2})\notag
+  \label{}
+\end{align}
+which can be made arbitrarily small.
+Hence, 
+\begin{align}
+  \p(\sup_{t \in [0,1]}\vert \sumt z_{h,k} \ghk(t) \vert > \delta) \to 0.\label{eq:z}
+\end{align}
+The result follows from \eqref{eq:w},\eqref{eq:x},\eqref{eq:y}, and \eqref{eq:z}.
 \end{proof}
 

@@ -1,59 +1,64 @@
 \section{Finite activity}
-We approach the analysis in stages, starting with a specification of the price process where the jump process is a \levy process with finite activity. This is equivalent to the assumption that the jump process is a compound Poisson process. That is 
+In order to demonstrate that the global estimator of spot volatility is consistent, we will proceed by stages.  First suppose the price process is specified  as an \ito diffusion with  finite activity jumps.  That is 
 \begin{align}
-  J_t := J^l_t + J^s_t = \sum^{N_t}_{ i = 1} Y_i,
+  X_t :=  \int_0^t b_s d s + \int_0^t \sigma_s dW_s +  \sum^{N_t}_{ i = 1} Y_i,
   \label{jumpfa}
 \end{align}
-where jump sizes $Y_i$ are \iid with distribution $F$, and $N$ is a Poisson process with intensity $\lambda$, independent of $Y$.
+where jump sizes $Y_i$ are \iid with distribution $F$, and $N$ is a Poisson process with intensity $\mu$, independent of each $Y_i$.
 
 \begin{prop}\label{pro:finite}
-  Suppose the  jumps of $X$ result from a compound Poisson process specified by  \eqref{jumpfa}.  
-  If 
+  Suppose the  price process is specified as in \eqref{jumpfa}.  Assume the following conditions hold:
   \begin{enumerate}[label=\emph{(}\roman*\emph{)}]
     \item 
   the drift of $X$ satisfy with probability 1:
   \begin{align}
-    \limsup_{\Delta_n \to 0} \frac{M^*}{(\Delta_n \log(1/\Delta_n))^{1/2}} < \infty, \notag
+    \limsup_{\Delta_n \to 0} \frac{M^*}{(\Delta_n \log(1/\Delta_n))^{1/2}} \le  C< \infty, \notag
     \label{}
   \end{align}
 where $M^* : = \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} b_s \D s\vert$;
 \item the diffusion coefficient satisfies with probability 1:  $\int^T_0 \sigma^2 \D s < \infty$ and 
   \begin{align}
-\limsup_{\Delta_n \to 0} \frac{S^*}{\Delta_n} < \infty, \notag
+\limsup_{\Delta_n \to 0} \frac{S^*}{\Delta_n} \le B <\infty, \notag
     \label{}
   \end{align}
   where $S^* := \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} \sigma^2_s \D s\vert$;
-\item and   $u_n$ is a sequence in $n$ such that  
+\item and   $u_n \downarrow 0 $ is a sequence in $n$ such that  
 \begin{align}
-    \lim_{\Delta_n \to 0} \frac{\Delta_n \log (1/\Delta_n)}{u_n} = 0,\notag
+    \lim_{\Delta_n \to 0} \frac{\Delta_n \log (1/\Delta_n)}{u_n} = 0.\notag
+    \label{}
+  \end{align}
+\item let $H_n \uparrow \infty$ such that 
+  \begin{align}
+    H_n n^{-1} \log(n) = o(1).\notag
     \label{}
   \end{align}
   \end{enumerate}
-  then 
+  Then
   \jvn converges in \Ltwo in probability to \sv.
 \end{prop}
 \begin{proof}
-  Let $X^c$ denote the continuous part of $X$ so that $X = X^c + J$, and 
+  First note that, there is a finite valued random variabe $\Lambda$ such that $C + M + 1 \le \Lambda$. Now, 
+  let $X^c$ denote the continuous part of $X$ so that $X = X^c + J$, and 
   \begin{align}
   X^c_t = \int^t_0 b_s \D s + \int^t_0 \sigma_s \D W_s,
     \label{eq:contpart}
   \end{align}
   for $t$ in \domain. Denote
   \begin{align}
-    & \svn[X^c](t):=\sum_{(h,k) \in \Theta_n} \dnhk\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
+    & \svn{X^c}:=\sum_{(h,k) \in \Theta_n} \dnhk\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
   &\dnhk := \sum_{i =0}^{n-1} \btghki (\Delta X^c_i)^2.  \notag
     \label{}
   \end{align}
 We have
 \begin{align}
-  \int_0^1 & (\jvn[X](t)  - \sv(t))^2\D t \notag\\
-  & \le  3 \int_0^1  (\jvn[X](t)  - \svn[X^c](t))^2\D t +   3\int_0^1  (\svn[X^c](t) - \sv(t) )^2\D t.
+  \int_0^1 & (\jvn  - \sv(t))^2\D t \notag\\
+  & \le  2 \int_0^1  (\jvn  - \svn{X^c})^2\D t +   2\int_0^1  (\svn{X^c} - \sv(t) )^2\D t.
 \end{align}
 That the second summand on the right converges to 0 in probability is a result of Proposition (1.1). 
 Now note that
 
 \begin{align}
- \jvn[X](t)  - \svn[X^c](t) = \sum_{(h,k) \in \Theta_n} (\anhk - \dnhk)\;g_{h,k}(t),\notag
+  \jvn{X}  - \svn{X^c}(t) = \sum_{(h,k) \in \Theta_n} (\anhk - \dnhk)\;g_{h,k}(t),\notag
   \label{}
 \end{align}
 and 
@@ -68,119 +73,15 @@ By Theorem 3.1 of \cite{Mancini2009}, for almost all outcomes, there is $n'$ suc
 \end{align}
 Hence for almost all outcomes and sufficiently large $n$  
 \begin{align}
-   \anhk - \dnhk &\le \sum_{i =0}^{n-1} \btghki \vert (\Delta X^c_i)^2\vert  \indnc\notag\\
-& \le  c \Delta_n \log(1/\Delta_n)\sum_{i =0}^{n-1}\indnc \notag \\
+   \anhk - \dnhk &\le \sum_{i =0}^{n-1} \btghki  (\Delta X^c_i)^2  \indnc\notag\\
+& \le  c \Lambda \Delta_n \log(1/\Delta_n)\sum_{i =0}^{n-1}\indnc \notag \\
   \label{}
 \end{align}
 Hence for almost all outcomes,
 \begin{align}
-  \int^1_0\{\jvn[X](t)  - \svn[X^c](t)\}^2 \D t & \le c H_n^2 \Delta_n^2\log^2(1/\Delta_n) N_1^2\notag\\
+  \int^1_0\{\jvn  - \svn{X^c}\}^2 \D t & \le c \Lambda^2 H_n^2 \Delta_n^2\log^2(1/\Delta_n) N_1^2\notag\\
   & = O(H_n^2 \Delta_n^2\log^2(1/\Delta_n))\notag \\
   & \to 0.
-  \label{}
-\end{align}
-\end{proof}
-\section{Infinite activity}
-We now turn to the case of geneal \levy jump processes.  
-\begin{align}
-J = J^l + J^s, 
-  \label{eq:j}
-\end{align}
-where
-\begin{align}
-  & J^l_t := \int^t_0 \int_\cunidisc x \;  \mu(\D t, \D x),\label{eq:j1}\\ 
-  & J^s_t := \int^t_0 \int_\unidisc x  [\mu(\D t, \D x) - \D t\nu(\D x)],  
-  \label{eq:j2}
-\end{align}
-and $\e[\mu(A)] = \nu(A)$ for all measurable sets $A$. So the above is a decomposition of $J$ into small jumps and large jumps. $J$  may exhibit infinite activity; the only restriction is that $\nu$ is a \levy measure, i.e. 
-\begin{align}
-  \int_\real (\vert x \vert^2 \wedge 1) \nu(\D x) < \infty.\notag
-  \label{}
-\end{align}
-\linebreak
-\begin{prop}
-  Let the jump process of $X$ be a  \levy process specified by \eqref{eq:j}, \eqref{eq:j1}, and \eqref{eq:j2}. 
-  If conditions $(i), (ii)$ and $(iii)$ of Proposition \eqref{pro:finite} hold, then 
-  \jvn converges in \Ltwo in probability to \sv.
-\end{prop}
-\begin{proof}
-  Let 
-   $X^f := X^c + J^l$ 
-  where $X^c_t := \int^t_0 b_s \D s + \int^t_0 \sigma_s \D W_s$ is the continuous part of $X$, so that 
-\begin{align}
-  X = X^f + J^s.
-\end{align}
-  For an arbitrary process $Y$, define
-    \begin{align}
-      &\jvn[Y](t) := \sum_{(h,k) \in \Theta_n} \cnhk[Y]\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
-      &\cnhk[Y] := \sum_{i =0}^{n-1} \btghki (\Delta_nY_i)^2 \mathbbm{1}_{\{(\Delta_n Y_i)^2 \le u_n\}}.
-    \end{align}
-    We have
-\begin{align}
-  \int_0^1 & (\jvn[X](t)  - \sv(t))^2\D t \notag\\
-  & \le  3 \int_0^1  (\jvn[X](t)  - \jvn[X^f](t))^2\D t +   3\int_0^1  (\jvn[X^f](t) - \sv(t) )^2\D t. \label{eq:decom}
-\end{align}
-Since $X$ is \cadlag, it is almost surely the case that it has at most a finite number of jumps larger than 1, so that $J^l$ is a compound Poisson process. Hence, the convergence to 0  in probability of the second summand in \eqref{eq:decom} follows from Proposition \eqref{pro:finite}.  With regards the first summand, note the following
-\begin{align}
-  \cnhk&[X] - \cnhk[X^f]\notag \\
-  &=   \sum_{i =0}^{n-1} \btghki [(\dx)^2 \indx- (\Delta_nX^f_i)^2 \indxf]. \notag
-  \label{}
-\end{align}
-For each $i$, $(\dx)^2 = (\dxf)^2 + 2 \dxf \djt + (\djt)^2$, so that
-\begin{align}
- (\dx)^2 &\indx  - (\Delta_nX^f_i)^2 \indxf \notag \\
- &=(\dxf)^2(\indx - \indxff)\notag \\
- &\quad + (\dxf)^2(\indxf - \indxff)\notag \\
- &\quad +   2 \dxf \djt \indx + (\djt)^2 \indx\notag\\
- &=: E_{1,i} + E_{2,i} + E_{3,i} + E_{4,i}.
-  \label{}
-\end{align}
-So that 
-\begin{align}
-  \cnhk&[X] - \cnhk[X^f] = c\sum_{i= 0}^{n -1} [E_{1,i} + E_{2,i} + E_{3,i} + E_{4,i}],\notag
-  \label{}
-\end{align}
-where $\btghki \le c$.  
-We start with second summand. It is easy to verify that for sufficiently large $n$ [ADD INTERMEDIATE STEPS]
-\begin{align}
-  c\sumin E_{2,i} &\le\sumin \{  c (\Delta^n X^c_i)^2 \indjs +  c\Delta_n J^l_i \indjs \} \notag\\
-  &\quad + c \sumin (\Delta_n X^c_i)^2\mathbbm{1}_{\{(\Delta_n J^s_i)^2 > u_n/4\}}\\ 
-  & \le  c \frac{\sup_i (\Delta^nX^c_i)^2}{\Delta_n \log (1/\Delta_n)} \Delta_n \log (1/\Delta_n)\sumin \indjs \notag \\
-  &\quad + \sumin c \Delta_n J^l_i \indjs \notag \\
-  &\quad + c \frac{\sup_i (\Delta^nX^c_i)^2}{\Delta_n \log (1/\Delta_n)} \Delta_n \log (1/\Delta_n)\sumin \mathbbm{1}_{\{(\Delta_n J^s_i)^2 > u_n/4\}}\notag\\
-  &=: E^1_{2,n} + E^2_{2,n} + E^3_{2,n}\notag
-  \label{}
-\end{align}
-$ E^1_{2,n}$ tends to 0 in probability because 
-\begin{align}
-  \e[\vert E^1_{2,n} \vert] & \le c \Delta_n \log (1/\Delta_n)\e[  \sumin \indjs]  \notag \\
-  & =  c \Delta_n \log (1/\Delta_n) n \p [ (\Delta_1^n J^s_1)^2 > u_n] \notag \\
-  &\le c \Delta_n \log (1/\Delta_n) n  \e[(\Delta_1^n J^s_1)^2] u_n^{-1}\\
-  & \le c \Delta_n \log (1/\Delta_n)  u_n^{-1}.
-  \label{}
-\end{align}
-$ E^2_{2,n}$ tends to 0 in probability because 
-\begin{align}
-  \e[\vert E^2_{2,n}\vert] &\le c  \Delta_n\sumin \e[\vert J^l_i \vert] \e[\vert\indjs\vert] [CHECK -  \e[J1] = O(\Delta_n)] \notag\\ 
-&\le c  \Delta_n^2\sumin  \e[\vert\indjs\vert]\notag \\
-&\le c  \Delta_n  \e[ (\Delta_n J^s_1)^2]u_n^{-1}\notag \\
-&\le c  \Delta_n  u_n^{-1}\notag 
-  \label{}
-\end{align}
-$E^3_{2,n}$ tends to 0  in  probability for the same reason as $E^1_{2,n}$.
-\subsection{The cross term}
-In Remark 4.2 of \cite{Mancini2009}, it is argued that  \djt \indjst may be regarded as particular instances of the increments of the compensated jump process given by  
-\begin{align}
-  J^m_t := \int_0^t \int_\real x\ind_{\{\vert x \vert <  1 \wedge 3 \sqrt{u_n}\}} [\mu(\D s, \D x) - \D s \lm (\D x)].\notag
-  \label{}
-\end{align}
-Note that the inclusion goes only in the one direction, that is, all increments of $J^m_t$ need not be bounded by $2 \sqrt{u_n}$.
-By the Cauchy-Schwarts inequality:
-\begin{align}
-   \e[\vert \dxc \djt \indjst\vert] \le
-   \e[(\dxc)^2] \e[ (\djt)^2 \indjst]\\
-   \le 4
-  \notag
   \label{}
 \end{align}
 \end{proof}
