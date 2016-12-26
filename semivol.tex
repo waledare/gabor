@@ -71,34 +71,17 @@ The equality in \eqref{eq:fubini} results from an interchange of the expectectat
   Suppose the  price process is specified as in \eqref{eq:contsemimartingale}.  Assume the following conditions hold:
   \begin{enumerate}[label=\emph{(}\roman*\emph{)}]
     \item 
-  the drift of $X$ satisfy with probability 1:
-  \begin{align}
-    \limsup_{\Delta_n \to 0} \frac{M^*}{(\Delta_n \log(1/\Delta_n))^{1/2}} \le  C< \infty, \notag
-    \label{}
-  \end{align}
-where $M^* : = \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} b_s \D s\vert$;
-\item the diffusion coefficient satisfies with probability 1:  $\int^T_0 \sigma^2 \D s < \infty$ and 
-  \begin{align}
-\limsup_{\Delta_n \to 0} \frac{S^*}{\Delta_n} \le B <\infty, \notag
-    \label{}
-  \end{align}
-  where $S^* := \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} \sigma^2_s \D s\vert$;
-\item and   $u_n \downarrow 0 $ is a sequence in $n$ such that  
-\begin{align}
-    \lim_{\Delta_n \to 0} \frac{\Delta_n \log (1/\Delta_n)}{u_n} = 0.\notag
-    \label{}
-  \end{align}
+  the drift of $X$ satisfy with probability 1: $M^* : = \sup_{t \le 1} \vert b_t \vert $ is a finite valued random variable;
 \item let $H_n \uparrow \infty$ such that 
   \begin{align}
-    H_n n^{-1} \log(n) = o(1).\notag
+    H_n n^{-1/2} \log(n) = o(1).\notag
     \label{}
   \end{align}
   \end{enumerate}
   Then
-  \svnx converges in \Ltwo in probability to \sv.
+  \svnx converges in \Ltwo to \sv in probability.
 \end{prop}
-\begin{proof}
-\end{proof}
+\input{proofprop}
 \begin{comment}
 \begin{remark}\mbox{}
   \begin{enumerate}

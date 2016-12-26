@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  26 DEC 2016 16:16
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  26 DEC 2016 22:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1190,6 +1190,24 @@ Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'american'.
  (./first.aux
 
+LaTeX Warning: Label `eq:rone' multiply defined.
+
+
+LaTeX Warning: Label `eq:B4' multiply defined.
+
+
+LaTeX Warning: Label `eq:rthree' multiply defined.
+
+
+LaTeX Warning: Label `eq:ms' multiply defined.
+
+
+LaTeX Warning: Label `eq:Di' multiply defined.
+
+
+LaTeX Warning: Label `eq:ra1' multiply defined.
+
+
 LaTeX Warning: Label `pro:finite' multiply defined.
 
 )
@@ -1315,9 +1333,19 @@ LaTeX Font Info:    Try loading font information for U+bbm on input line 38.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [13]
-[14])) (./empirics.tex [15] [16]
+[14] (./proofprop.tex [15] [16] [17] [18])
+Underfull \hbox (badness 10000) in paragraph at lines 139--97
 
-LaTeX Warning: Reference `fig:path' on page 17 undefined on input line 41.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 139--97
+
+ []
+
+)) (./empirics.tex [19] [20]
+
+LaTeX Warning: Reference `fig:path' on page 21 undefined on input line 41.
 
 (./simtab.tex
 Overfull \hbox (75.3665pt too wide) in alignment at lines 8--19
@@ -1329,7 +1357,7 @@ Overfull \hbox (75.3665pt too wide) in alignment at lines 24--36
 [] [] [] [] [] [] [] [] 
  []
 
-[17])) (./jumps.tex [18] [19]) (./ext.tex
+[21])) (./jumps.tex [22] [23]) (./ext.tex
 Underfull \hbox (badness 10000) in paragraph at lines 44--1
 
  []
@@ -1339,7 +1367,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 44--1
 
  []
 
-[20]) (./semiapp.tex [21] [22
+[24]) (./semiapp.tex [25] [26
 
 
 ]
@@ -1349,7 +1377,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-[23
+[27
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 45--49
@@ -1366,7 +1394,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--66
 
  []
 
-[24] [25] [26]
+[28] [29] [30]
 Overfull \hbox (13.91692pt too wide) in paragraph at lines 156--158
 \T1/cmr/m/n/12 Now con-sider the fol-low-ing: if $\OML/cmm/m/it/12 ! \OMS/cmsy/
 m/n/12 2 E[]\OML/cmm/m/it/12 ; c\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 then $\OML/cm
@@ -1376,7 +1404,7 @@ m/m/it/12 ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) \OMS/cmsy/m
 12 )\OMS/cmsy/m/n/12 k[] ^^T
  []
 
-[27] [28] [29] [30] [31] [32] (./finiteactproof.tex
+[31] [32] [33] [34] [35] [36] (./finiteactproof.tex
 Underfull \hbox (badness 10000) in paragraph at lines 333--1
 
  []
@@ -1386,7 +1414,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--1
 
  []
 
-[33] [34])) (./infinity.tex
+[37] [38])) (./infinity.tex
 Underfull \hbox (badness 10000) in paragraph at lines 86--1
 
  []
@@ -1396,7 +1424,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--1
 
  []
 
-[35] [36] [37] [38] [39] [40]
+[39] [40] [41] [42] [43] [44]
 Underfull \hbox (badness 10000) in paragraph at lines 138--141
 
  []
@@ -1406,16 +1434,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 138--141
 
  []
 
-) (/home/wale/Dropbox/PhD/Bibliography/masterbiblinux.tex [41] (./first.bbl
+) (/home/wale/Dropbox/PhD/Bibliography/masterbiblinux.tex [45] (./first.bbl
 Underfull \hbox (badness 2735) in paragraph at lines 28--30
 [] [] \T1/cmr/m/n/12 (2008) \T1/cmr/m/it/12 Frames and bases: An in-tro-duc-tor
 y course\T1/cmr/m/n/12 , Boston:
  []
 
-[42
+[46
 
 
-])) [43] (./first.aux)
+])) [47] (./first.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1424,10 +1452,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17251 strings out of 493308
- 321767 string characters out of 6137822
- 374758 words of memory out of 5000000
- 20316 multiletter control sequences out of 15000+600000
+ 17255 strings out of 493308
+ 321810 string characters out of 6137822
+ 372770 words of memory out of 5000000
+ 20317 multiletter control sequences out of 15000+600000
  36491 words of font info for 107 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  69i,15n,96p,10558b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1462,10 +1490,10 @@ type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
 public/cm-super/sfti1200.pfb>
-Output written on first.pdf (43 pages, 527064 bytes).
+Output written on first.pdf (47 pages, 537905 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 190 compressed objects within 2 object streams
+ 279 PDF objects out of 1000 (max. 8388607)
+ 198 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
