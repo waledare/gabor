@@ -1,16 +1,16 @@
-\section{Finite activity}
-In order to demonstrate that the global estimator of spot volatility is consistent, we will proceed by stages.  First suppose the price process is specified  as an \ito diffusion with  finite activity jumps.  That is 
+\subsection{Finite activity \levy jumps}
+In order to demonstrate that the global estimator of spot volatility is consistent, we will proceed in stages.  First suppose the price process specified in all generality in \eqref{eq:generalsemimartingale} experiences at most a finite number of jump in any finite time interval. That is we assume that $X$ has finite activity jumps, which is equivalent to $\nu$ being finite on the complement of   $\{0\}$. The finite activity assumption also implies that the price process may be expressed as  
 \begin{align}
   X_t :=  \int_0^t b_s d s + \int_0^t \sigma_s dW_s +  \sum^{N_t}_{ i = 1} Y_i,
   \label{jumpfa}
 \end{align}
-where jump sizes $Y_i$ are \iid with distribution $F$, and $N$ is a Poisson process with intensity $\mu$, independent of each $Y_i$.
+where jump sizes $Y_i$ are \iid with distribution $F$, and $N$ is a Poisson process with intensity $\lambda$, independent of each $Y_i$. Under this conditions, we have the following:
 
 \begin{prop}\label{pro:finite}
-  Suppose the  price process is specified as in \eqref{jumpfa}.  Assume the following conditions hold:
+  Suppose the  price process is specified as in \eqref{jumpfa}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. Further assume the following conditions hold:
   \begin{enumerate}[label=\emph{(}\roman*\emph{)}]
     \item 
-  the drift of $X$ satisfy with probability 1:
+  the drift of $X$ satisfies with probability 1:
   \begin{align}
     \limsup_{\Delta_n \to 0} \frac{M^*}{(\Delta_n \log(1/\Delta_n))^{1/2}} \le  C< \infty, \notag
     \label{}
@@ -27,14 +27,14 @@ where $M^* : = \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} b_s \D s\vert$;
     \lim_{\Delta_n \to 0} \frac{\Delta_n \log (1/\Delta_n)}{u_n} = 0.\notag
     \label{}
   \end{align}
-\item let $H_n \uparrow \infty$ such that 
+\item If $H_n \uparrow \infty$ satisfies 
   \begin{align}
-    H_n n^{-1} \log(n) = o(1).\notag
+    H_n (n^{-1} \log(n))^{1/2} = o(1)\notag
     \label{}
   \end{align}
   \end{enumerate}
-  Then
-  \jvn converges in \Ltwo in probability to \sv.
+  then
+  \jvn as defined in \eqref{eq:jumpvolestimator}  converges in \Ltwo in probability to \sv.
 \end{prop}
 \begin{proof}
   First note that, there is a finite valued random variabe $\Lambda$ such that $C + M + 1 \le \Lambda$. Now, 

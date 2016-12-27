@@ -1,45 +1,38 @@
-\section{Volatility estimation: \ito semimartingale} 
+\section{Volatility estimation with jumps} 
 In this section we specify a global spot volatility estimator within a framework of prices $X$ evolving in time as \ito semimatingales with continuous diffusion coefficients. 
- Let $\tau: \real \to \real$ be bounded and satisfy $\tau(x) = x$ in a neighborhood of 0.  Let $\iota$ be the identity  function on the real line, i.e.  $\iota(x) = x$ for $x \in \real$. The price process $X$ admits the following  canonical representation:
+ Let $\tau: \real \to \real$ be bounded and satisfy $\tau(x) = x$ in a neighborhood of 0.  Let $\iota$ be the identity  function on the real line, i.e.  $\iota(x) = x$ for $x \in \real$. The price process $X$ admits the following  representation:
 \begin{align}
-  X_t & = X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s +  \tau\ast (\pme  - \nu)_t  + (\iota - \tau)\ast \pme_t ,   
+  X_t & = X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s +  \tau(x)\ast (\pme  - \nu)_t  + (\iota - \tau)(x)\ast \pme_t ,   
   \label{eq:generalsemimartingale}
 \end{align}
-for $t \ge 0$  where  \sbm is a standard Brownian motion;  $X_0$ is either known or observable at time 0;  both $b$ and $\sigma$ are adapted; $b$ is \cadlag, and $\sigma$ is continuous;  \pme is the Poisson random measure on $\real_+ \times \real$ associated with the jumps of $X$, and $\nu(\D t  \D x)   = \D t  \lambda (\D x) $, where $\lambda$ is a L\'evy  measure on \real. The  notation $``\ast"$ denotes integration with respect to a random measure. So that 
+for $t \ge 0$  where  \sbm is a standard Brownian motion;  $X_0$ is either known or observable at time 0;  both $b$ and $\sigma$ are adapted; $b$ is \cadlag, and $\sigma$ is continuous;  \pme is a Poisson random measure on $\real_+ \times \real$ with intensity $\nu$, where $\nu$ is a  $\sigma$-finite L\'evy  measure on $\real_+ \times \real$. Note that because $\mu$ is a Poisson measure, if $A$ and $B$ are disjoint Borel sets on $\real_+ \times \real$, then the random measures $\mu(A)$ and $\mu(B)$ are Poisson distributed, independent, and  and have intensity, $\nu(A)$ and $\nu(B)$, respectively. Moreover, because of the \levy assumption on $\nu$, it is the case that $\nu$ does not charge 0 and 
 \begin{align}
-  &J_{1,t} :=  \tau\ast (\pme  - \nu)_t = \int_0^t\int_\real \tau(x) [\pme(\D s, \D x)   -  \D s \lambda(\D x)], \notag\\
-  & J_{2,t}:= (\iota - \tau)\ast \pme_t = \int_0^t\int_\real [\iota(x) - \tau(x)] \pme(\D s, \D x), \notag
+  (x^2 \wedge 1) \ast\nu_t < \infty, \qquad t \in [0,1].\notag
   \label{}
 \end{align}
-for $t \ge 0$. Both  $J_1$ and $J_2$ are purely discontinuous processes. $J_1$ accounts for  small jumps; it is a square-integrable martingale with possibly infinite activity. $J_2$ accounts for large jumps, i.e. jumps with magnitude exceeding the bound on $\tau$; it neccessarily has finite activity so it is a process with finite variation. We summarize the forgoing below for easy reference.
-\begin{ass}\label{as:jump}
-  In addition to Assumption \eqref{as:vol}, the following is assumed to hold:
-  \begin{enumerate}
-    \item $\tau$ is bounded and coincides with $\iota$ in a neighborhood of 0.
-    \item $\lambda$ is a L\'evy  measure, i.e.  $\int_\real \vert x^2 \wedge 1\vert \lambda(\D x) < \infty$. 
-  \end{enumerate}
-\end{ass}
-\noindent As in the preceeding section, we observe a realization of the price process at $n + 1$ equidistant points $t_i$,  $i = 0, 1, \cdots, n$. The observation interval is normalized to \domain with practically no loss of generality.  The estimator proposed in the previous section, where there is no jump activity, will not do here. It is inconsistent on account of the presence of jumps; its quality deteriorates as a function of how active the jumps of $X$ are. We will counter this phenomenon with a modified spot variance estimator, but first we introduce the following notation. Let $\Delta^nX_i$ denote $X_{t_{i+1}} - X_{t_i}$ for $i = 0, 1,\cdots, n-1$, and let $u_n$  be a positive decreasing sequence such that 
+The  notation $``\ast"$ denotes integration with respect to a random measure. So that 
+\begin{align}
+  &J_{t}^l :=  \tau\ast (\pme  - \nu)_t = \int_0^t\int_\real \tau(x) [\pme(\D s, \D x)   -  \nu(\D s,\D x)], \notag\\
+  & J_{t}^s:= (\iota - \tau)\ast \pme_t = \int_0^t\int_\real [\iota(x) - \tau(x)] \pme(\D s, \D x), \notag
+  \label{}
+\end{align}
+for $t \ge 0$. Both  $J^l$ and $J^s$ are purely discontinuous in the sense that they are orthogonal to all continuous semimartingales. $J^s$ accounts for  small jumps; it is a square-integrable martingale with possibly infinite activity. $J_2$ accounts for large jumps, i.e. jumps with magnitude exceeding the bound on $\tau$; it neccessarily has finite activity so it is a process with finite variation. In the sequel, we will specify $\tau$ as follows:
+\begin{align}
+  \tau(x) = xI_{\{\vert x \vert \le 1\}}, \qquad x \in \real. \notag
+  \label{}
+\end{align}
+
+As in the preceeding section, we observe a realization of the price process at $n + 1$ equidistant points $t_i$,  $i = 0, 1, \cdots, n$. The observation interval is normalized to \domain with practically no loss of generality.  The estimator proposed in the previous section, where there is no jump activity, will not do here. It is inconsistent on account of the presence of jumps; its quality deteriorates as a function of how active the jumps of $X$ are. We will counter this phenomenon with a modified spot variance estimator, but first we introduce the following notation. Let $\Delta^nX_i$ denote $X_{t_{i+1}} - X_{t_i}$ for $i = 0, 1,\cdots, n-1$, and let $u_n$  be a positive decreasing sequence such that 
 \begin{align}
 u_n/\sqrt{\Delta_n\log(1/\Delta_n)}  
   \label{}
 \end{align}
  diverges to infinity with $n$. We specify the jump-robust estimator of the spot volatility as follows: 
 \begin{align}
+  \label{eq:jumpvolestimator}
   &\jvn(t) := \sum_{(h,k) \in \Theta_n} \anhk\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
   &\anhk := \sum_{i =0}^{n-1} \btghki (\dx)^2 \indx,
-  \label{eq:jumpvolestimator}
 \end{align}
 where $\{\ghk, \tghk\}$ is a pair of dual Gabor frames constructed as in Lemma \eqref{le:gabor}; $\Theta_n$ retains its meaning from \eqref{eq:theta}; and \indx is 1 if $\vert\dx\vert$ is less than or equal to  $u_n$ and 0 otherwise.  
 
-There are obvious similarities between \svn and \jvn with the key difference being that \jvn discards realized squared increments over intervals that likely contain jumps; $u_n$ determines the threshold for what is included in the computation and what is not. Clearly it makes sense to use \svn if we have reason to believe that the price process is not subject to jumps since it uses all the data and therefore may be assumed to produce more accurate results.  
-\begin{prop} \label{pr:jconsistency}
-  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \eqref{le:gabor}.   Suppose the conditions in  Assumption \eqref{as:vol}  hold. If $g$ is Lipschitz continuous and  
-  \begin{align}
-    H_n^2 \Delta_n  + H_n^{-1/2} \log H_n= o(1) \notag
-    \label{}
-  \end{align}
-  then  \jvn converges in probability in \Ltwo to \sv.
-\end{prop}
-\begin{proof} See the appendix.
-\end{proof}
+There are obvious similarities between \svnx and \jvn with the key difference being that \jvn discards realized squared increments over intervals that likely contain jumps; $u_n$ determines the threshold for what is included in the computation and what is not. Clearly it makes sense to use \svnx if we have reason to believe that the price process is not subject to jumps since it uses all the data and therefore may be assumed to produce more accurate results.  

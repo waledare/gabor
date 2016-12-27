@@ -34,9 +34,9 @@ and  for sufficiently large positive integer $H$,
 where $H_n$ is an increasing sequence\footnote{See Proposition \eqref{pr:consistency} for restrictions on the growth of $H_n$.} in $n$.    
 We propose the following estimator of the volatility coefficient:
 \begin{align}
-  &\svn(t) := \sum_{(h,k) \in \Theta_n} \cnhk\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
-  &\cnhk := \sum_{i =0}^{n-1} \btghki (X_{t_{i+1}} - X_{t_i})^2.
   \label{eq:contvolestimator}
+  &\svnx := \sum_{(h,k) \in \Theta_n} \cnhk\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
+  &\cnhk := \sum_{i =0}^{n-1} \btghki (X_{t_{i+1}} - X_{t_i})^2.
 \end{align}
 So $\Theta_n$ is the number of frame elements included in the expansion; it is also the number of coefficients to be estimated.  Note that $\vert \Theta_n\vert$, the size or number of elements in $\Theta_n$,  is $(2K_0 + 1)(2H_n+1)$; and since $K_0$ is a finite quantity, it follows that $\vert\Theta_n\vert = O(H_n)$, i.e. the number of estimated coefficients is proportional to $H_n$, and therefore will grow with observation frequency. As will be seen shortly, the growth rate of $H_n$ is asymptotically relevant.
 In the next section we show that the estimator converges to $\sigma^2$ on $[0,1]$ in a mean integrated square error sense.

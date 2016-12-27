@@ -47,9 +47,9 @@ Much like the usual integrated mean square error risk, $R_n(\alpha,c)$ admits a 
 \end{align}
 The equality in \eqref{eq:fubini} results from an interchange of the expectectation and integration operators justified by Fubini's theorem. The decomposition in line  \eqref{eq:msedecomp} results from the usual mean square error decomposition  into a square bias and a variance component for each  $t \in \domain$. The two summands in the last line are the bias and variance components and will be denoted $B_n^2(\alpha,c)$ and $V_n(\alpha,c)$, respectively; we obtain estimates for their rates of convergence below.
 \begin{prop} \label{pr:consistency}
-  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \eqref{le:gabor}.   Suppose the conditions in  Assumption \eqref{as:vol}  hold. If $g$ is Lipschitz continuous and  
+  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \eqref{le:gabor}.   Suppose the conditions in  Assumption \eqref{as:vol}  hold. If $g$ is Lipschitz continuous and $H_n \uparrow \infty$ satisfies  
   \begin{align}
-    H_n^2 \Delta_n  + H_n^{-\alpha} \log H_n= o(1) \notag
+    H_n^2 \Delta_n  = o(1) \notag
     \label{}
   \end{align}
    then $R_n(\alpha,c)$ converges to 0, with 
@@ -68,20 +68,19 @@ The equality in \eqref{eq:fubini} results from an interchange of the expectectat
   \end{enumerate}
 \end{remark}
 \begin{prop}\label{pro:finite}
-  Suppose the  price process is specified as in \eqref{eq:contsemimartingale}.  Assume the following conditions hold:
-  \begin{enumerate}[label=\emph{(}\roman*\emph{)}]
-    \item 
-  the drift of $X$ satisfy with probability 1: $M^* : = \sup_{t \le 1} \vert b_t \vert $ is a finite valued random variable;
-\item let $H_n \uparrow \infty$ such that 
+  Suppose the  price process is specified as in \eqref{eq:contsemimartingale}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. 
+If $H_n \uparrow \infty$ satisfies 
   \begin{align}
-    H_n n^{-1/2} \log(n) = o(1).\notag
+    H_n (n^{-1} \log(n))^{1/2} = o(1),\notag
     \label{}
   \end{align}
-  \end{enumerate}
-  Then
-  \svnx converges in \Ltwo to \sv in probability.
+  then
+  \svnx, defined in \eqref{eq:contvolestimator}, converges in \Ltwo to \sv in probability.
 \end{prop}
 \input{proofprop}
+\input{jumps}
+\input{finiteactproof}
+\input{infinity}
 \begin{comment}
 \begin{remark}\mbox{}
   \begin{enumerate}

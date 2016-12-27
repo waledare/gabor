@@ -1,14 +1,14 @@
-\begin{proof}
+\begin{proof} We begin by noting that 
 \begin{align}
   \svnx - \sigma^2(t) & = \sum_{(h,k) \in \Theta_n} (\cnhk\ - \chk)\;g_{h,k}(t)\notag\\
-  & \quad -\sum_{(h,k) \not\in \Theta_n} \chk\;g_{h,k}(t),\label{eq:rone} 
+  & \quad -\sum_{(h,k) \not\in \Theta_n} \chk\;g_{h,k}(t),\label{eq:ronep} 
 \end{align}
   where 
 \begin{align}  
   \cnhk &= \sum_{i =0}^{n-1} \btghki (X_{t_{i+1}} - X_{t_i})^2 \text{ and }\notag\\  
   \chk &= \int^1_0 \btghks \sigma^2(s) \D s. \notag
 \end{align}
-We tackle the summands in \eqref{eq:rone} in turn starting with the first one. But first let 
+We tackle the summands in \eqref{eq:ronep} in turn starting with the first one. But first let 
 \begin{align}
   M_i := \int_{t_i}^{t_{i+1}} b(s) \D s, \quad \text{and} \quad  S_i := \int_{t_i}^{t_{i+1}} \sigma(s) \D W_s, \notag
 \end{align}
@@ -17,7 +17,7 @@ and note that since $X_{t_{i+1}} - X_{t_i} = M_i + S_i$, it follows that
   (X_{t_{i+1}} - X_{t_i})^2 &= M_i^2  
   + 2M_iS_i +   S_i^2.\notag 
 \end{align}
-So, \eqref{eq:rone} may be written as 
+So, \eqref{eq:ronep} may be written as 
 \begin{align}
   &\svnx - \sv(t) = B_{1,n}(t) + B_{2,n}(t) + B_{3,n}(t) + B_{4,n}(t), \notag
 \end{align}
@@ -31,7 +31,7 @@ where
 \end{align}
 We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
 \begin{align}
-  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk &=  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\inner{\sigma^2}{ \tghk} \notag\\ 
+  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk &=  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\int^1_0\sigma^2 (s) { \btghks} ds \notag\\ 
 &\le c\modc{\tghk}{1/H_n}\log H_n  + c\modc{\sigma^2}{1/H_n} \log H_n\notag,
 \end{align}
 where the last  line follows from Theorem \eqref{th:fourone}. It from the \holder continuity of $\sigma$ that  that $\modc{\sigma^2}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}$.  So,  
@@ -134,7 +134,7 @@ where $c$ is a generic constant representing the bound on $\sigma^2$ and the BDG
   &\le c \Delta_n. 
   \label{}
 \end{align}
-Hence, given any $\varepsilon > 0$,  $\p( \sup_{t \in [0,1]} \vert B_{j,n}(t) \vert > \varepsilon)  = O(H_n n^{-1}) + \p(T_c < 1)$.
+Hence, given any $\varepsilon > 0$,  $\p( \sup_{t \in [0,1]} \vert B_{1,n}(t) \vert > \varepsilon)  = O(H_n n^{-1}) + \p(T_c < 1)$.
 
 Collecting the estimates for $B_{j,n}(t)$ for $j =1,\cdots,4$, it is easily seen that $\vert \svnx - \sigma^2(t) \vert$ tends to zero in probability uniformly  for all $t \in \domain$. 
 \end{proof}
