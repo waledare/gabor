@@ -198,13 +198,13 @@ where $\modc{\tghk}{\Delta_n}$ is the modulus of continuity of $\tghk$ on an int
 \end{align}
 Now, we obtain an estimate for $A_{1}$. First, let $D_i: \Omega\times[0,1] \to \real$ for $i = 0, \cdots, n-1$ be defined as follows:  
 \begin{align}
-&D_{i}(t) := \btghki\left(\int_{t_i}^{t} \sigma(u)\D W_u\right)\mathbbm{1}_{(t_i, t_{i+1}]}(t).
+&D_{i}(t) := \btghki\left(\int_{t_i}^{t} \sigma(u)\D W_u\right)I_{(t_i, t_{i+1}]}(t).
   \label{eq:Di}\\
 &D_0(0) := 0.
 \end{align}
 So, $D_i(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1}]$. Now, using the integration by parts formula for semimartingales, we may write
 \begin{align}
-  S^2_i - \int^{t_{i+ 1}}_{t_i} \sigma^2(s) \D W_s = 2\int_{t_i}^{t_{i+1}}\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\notag
+  S^2_i - \int^{t_{i+ 1}}_{t_i} \sigma^2(s) d s = 2\int_{t_i}^{t_{i+1}}\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\notag
   \label{}
 \end{align}
 so that 

@@ -9,7 +9,7 @@ A simple way to achieve this characterization is via the H\"older continuity cri
   \homo{f} := \frac{\vert f(x) - f(y)\vert}{\vert x - y \vert^\alpha} \le K. 
   \label{eq:holder}
 \end{align}
-The set of \holder continuous functions with exponent $\alpha$ is denoted by \calpha. The \holder class with $\alpha = 1$ is the familiar class of Lipschitz continuous functions. The \holder classes admit a natural ordering relation whereby if $\alpha$ is larger than  $\beta$ then every function that is \holder-continuous with exponent $\alpha$ is also  \holder-continuous with exponent $\beta$. Note that with regards regularity (smoothness), the ordering is reversed: the smoother the function the larger the \holder exponent. Consequently, the Lipschitz class ($ \alpha = 1$) is contained in every \holder class, and it is also the class with the smoothest (most regular) functions. As mentioned earlier, Brownian paths are nowhere differentiable, but using \holder classes the regularity of Brownian paths can be further qualified; this is a consequence of  the well-known L\'evy's Modulus of Continuity Theorem \citep[Theorem I.10.2]{Williams2000}, which states that, with probability one, no Brownian path is \holder-continuous with exponent larger than 1/2 on \domain.   
+The set of \holder continuous functions with exponent $\alpha$ is denoted by \calpha. The \holder class with $\alpha = 1$ is the familiar class of Lipschitz continuous functions. The \holder classes admit a natural ordering relation whereby if $\alpha$ is larger than  $\beta$ then every function that is \holder-continuous with exponent $\alpha$ is also  \holder-continuous with exponent $\beta$. Note that with regards regularity (smoothness), the ordering is reversed: the smoother the function the larger the \holder exponent. Consequently, the Lipschitz class ($ \alpha = 1$) is contained in every \holder class, and it is also the class with the smoothest (most regular) functions. As mentioned earlier, Brownian paths are nowhere differentiable, but using \holder classes the regularity of Brownian paths can be further qualified; this is a consequence of  the well-known L\'evy's Modulus of Continuity Theorem \citep[Theorem I.10.2]{Williams2000}, which states that, with probability one, no Brownian path is \holder-continuous with exponent less than 1/2 on \domain.   
 Now for a fixed exponent $\alpha$, the following norm may be defined on \calpha:
 \begin{align}
   \hono{f} := \sup_{t \in \domain} |f(t)| + \homo{f},\notag
@@ -24,26 +24,26 @@ With this device it is possible to obtain convergence rates that take into accou
 \begin{align} 
   \uball{c} := \{f \in \Linf: \Vert f \Vert_\infty \le c \}.
 \end{align}
-In this way we are able to  characterize the sample space according to the regularity of realized volatility  and the boundedness of realized drift.  This leads to the consideration of the asymptotic behavior of the estimator when  $\mu \in \uball{c}$ and $\sigma^2 \in  \hball{\alpha}{c}$ for  $c, \alpha > 0$\footnote{It is not essential to use different $c$'s for $\mu$ and $\sigma^2$.}. We denote such events by $\eball{\alpha}{c}$, i.e., 
+In this way we are able to  characterize the sample space according to the regularity of realized volatility  and the boundedness of realized drift.  This leads to the consideration of the asymptotic behavior of the estimator when  $b \in \uball{c}$ and $\sigma^2 \in  \hball{\alpha}{c}$ for  $c, \alpha > 0$\footnote{It is not essential to use different $c$'s for $b$ and $\sigma^2$.}. We denote such events by $\eball{\alpha}{c}$, i.e., 
 \begin{align}
-  \eball{\alpha}{c}  := \{ \omega : \mu(\omega) \in \uball{c}\} \cap \{\omega: \sigma^2(\omega) \in \hball{\alpha}{c}\}.\notag
+  \eball{\alpha}{c}  := \{ \omega : b(\omega) \in \uball{c}\} \cap \{\omega: \sigma^2(\omega) \in \hball{\alpha}{c}\}.\notag
   \label{}
 \end{align}
 So, an outcome $\omega$  is in \eball{\alpha}{c} if realized drift is caught between $-c$ and $c$ on \domain; realized volatility $\sigma^2(\omega)$  is \holder continuous with exponent $\alpha$,  and $\Vert \sigma^2(\omega) \Vert_\alpha \le c$. Note that the implication of the last statement is that there is some $c' \le c$ such that realized volatility is cought between $0$ and $c'$.     
 
 We are now only left with the task of making the  obvious  modification to the usual  integrated mean square error criterion :
 \begin{align}
-  R_n(\alpha, c) := \e[\Vert \svn - \sigma^2\Vert^2\indvol],\notag
+  R_n(\alpha, c) := \e[\Vert v_n - \sigma^2\Vert^2\indvol],\notag
   \label{}
 \end{align} 
 where  $\indvol$ is the indicator function of $\eball{\alpha}{c}$, $\Vert \cdot \Vert$ is the \Ltwo norm, and $n$ is the observation frequency. Note that if $\eball{\alpha}{c} = \Omega$,  the expression above will just be the usual integrated mean square error criterion. By restricting the  volatility and the drift according to  events \eball{\alpha}{c}, the asymptotic properties of the estimator may be studied with full flexibility. That is we may  obtain results of the form  $\limsup_{n \to \infty}\tilde{n}_{n,\alpha,c} R_n(\alpha,c) < \infty$, where the rate may vary for different values of $\alpha$ and $c$. 
 
 Much like the usual integrated mean square error risk, $R_n(\alpha,c)$ admits a decomposition in terms of an integrated square bias component and an integrated variance component. To see this, note the following:
 \begin{align}
-  R_n(\alpha, c ) & = \e \int_0^1  \{(\svn(t) - \sigma^2(t))\indvol\}^2 \D t \\ 
-  & = \int_0^1 \e[ \{(\svn(t) - \sigma^2(t))\indvol\}^2] \D t \label{eq:fubini}\\ 
-& = \int_0^1 \e[ (\svn(t) - \sigma^2(t))\indvol]^2 \D t \notag \\
-& \quad + \int_0^1 \var[\svn(t)\indvol] \D t. \label{eq:msedecomp}
+  R_n(\alpha, c ) & = \e \int_0^1  \{(\svnx - \sigma^2(t))\indvol\}^2 \D t \\ 
+  & = \int_0^1 \e[ \{(\svnx - \sigma^2(t))\indvol\}^2] \D t \label{eq:fubini}\\ 
+& = \int_0^1 \e[ (\svnx - \sigma^2(t))\indvol]^2 \D t \notag \\
+& \quad + \int_0^1 \var[\svnx\indvol] \D t. \label{eq:msedecomp}
 \end{align}
 The equality in \eqref{eq:fubini} results from an interchange of the expectectation and integration operators justified by Fubini's theorem. The decomposition in line  \eqref{eq:msedecomp} results from the usual mean square error decomposition  into a square bias and a variance component for each  $t \in \domain$. The two summands in the last line are the bias and variance components and will be denoted $B_n^2(\alpha,c)$ and $V_n(\alpha,c)$, respectively; we obtain estimates for their rates of convergence below.
 \begin{prop} \label{pr:consistency}

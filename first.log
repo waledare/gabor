@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  27 DEC 2016 22:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  29 DEC 2016 14:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1193,6 +1193,12 @@ Package csquotes Info: Redefining alias 'default' -> 'american'.
 LaTeX Warning: Label `pro:finite' multiply defined.
 
 
+LaTeX Warning: Label `tab:mise' multiply defined.
+
+
+LaTeX Warning: Label `fig:path' multiply defined.
+
+
 LaTeX Warning: Label `eq:B4' multiply defined.
 
 
@@ -1328,12 +1334,13 @@ Overfull \hbox (7.76958pt too wide) in paragraph at lines 11--14
 /12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1]$\T1/cmr/m/n/12 .
  []
 
-[12]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 38.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+[12] [13] [14] (./proofprop.tex [15] [16]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 102.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [13]
-[14] (./proofprop.tex [15] [16] [17] [18]) (./jumps.tex
+) [17] [18])
+(./jumps.tex
 Underfull \hbox (badness 10000) in paragraph at lines 139--1
 
  []
@@ -1363,11 +1370,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--125
 
  []
 
-))) (./empirics.tex [29] [30]
+))) (./empirics.tex [29] (./simfig.tex
+</home/wale/Dropbox/Research/Paper3/pg.pdf, id=122, 845.1575pt x 597.23125pt>
+File: /home/wale/Dropbox/Research/Paper3/pg.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `fig:path' on page 31 undefined on input line 41.
+<use /home/wale/Dropbox/Research/Paper3/pg.pdf>
+Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pg.pdf used on inpu
+t line 5.
+(pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-(./simtab.tex
+</home/wale/Dropbox/Research/Paper3/po.pdf, id=123, 845.1575pt x 597.23125pt>
+File: /home/wale/Dropbox/Research/Paper3/po.pdf Graphic file (type pdf)
+
+<use /home/wale/Dropbox/Research/Paper3/po.pdf>
+Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/po.pdf used on inpu
+t line 7.
+(pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
+
+</home/wale/Dropbox/Research/Paper3/pa.pdf, id=124, 845.1575pt x 597.23125pt>
+File: /home/wale/Dropbox/Research/Paper3/pa.pdf Graphic file (type pdf)
+
+<use /home/wale/Dropbox/Research/Paper3/pa.pdf>
+Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pa.pdf used on inpu
+t line 9.
+(pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
+
+</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=125, 845.1575pt x 597.23125pt>
+File: /home/wale/Dropbox/Research/Paper3/pcir.pdf Graphic file (type pdf)
+<use /home/wale/Dropbox/Research/Paper3/pcir.pdf>
+Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pcir.pdf used on in
+put line 10.
+(pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
+) (./simtab.tex
 Overfull \hbox (75.3665pt too wide) in alignment at lines 8--19
 [] [] [] [] [] [] [] [] 
  []
@@ -1377,7 +1411,58 @@ Overfull \hbox (75.3665pt too wide) in alignment at lines 24--36
 [] [] [] [] [] [] [] [] 
  []
 
-[31])) (./semiapp.tex [32] [33
+) [30] [31 </home/wale/Dropbox/Research/Paper3/pg.pdf, page is rotated 90 degre
+es> </home/wale/Dropbox/Research/Paper3/po.pdf, page is rotated 90 degrees> </h
+ome/wale/Dropbox/Research/Paper3/pa.pdf, page is rotated 90 degrees> </home/wal
+e/Dropbox/Research/Paper3/pcir.pdf, page is rotated 90 degrees>] (./simfig3.tex
+
+</home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf, id=162, 505.89pt x 505.8
+9pt>
+File: /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf Graphic file (type p
+df)
+ <use /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf>
+Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf u
+sed on input line 5.
+(pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
+
+</home/wale/Dropbox/Research/Paper3/Simulation/po.pdf, id=163, 505.89pt x 505.8
+9pt>
+File: /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf Graphic file (type p
+df)
+ <use /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf>
+Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf u
+sed on input line 7.
+(pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
+
+<Simulation/pa.pdf, id=164, 845.1575pt x 597.23125pt>
+File: Simulation/pa.pdf Graphic file (type pdf)
+ <use Simulation/pa.pdf>
+Package pdftex.def Info: Simulation/pa.pdf used on input line 9.
+(pdftex.def)             Requested size: 175.48943pt x 177.60332pt.
+
+</home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf, id=165, 505.89pt x 505.
+89pt>
+File: /home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf Graphic file (type 
+pdf)
+ <use /home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf>
+Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf 
+used on input line 12.
+(pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
+)
+(./simtabjp.tex
+Overfull \hbox (75.3665pt too wide) in alignment at lines 8--19
+[] [] [] [] [] [] [] [] 
+ []
+
+
+Overfull \hbox (75.3665pt too wide) in alignment at lines 24--37
+[] [] [] [] [] [] [] [] 
+ []
+
+[32])) (./semiapp.tex [33] [34 </home/wale/Dropbox/Research/Paper3/Simulation/p
+g.pdf> </home/wale/Dropbox/Research/Paper3/Simulation/po.pdf> <./Simulation/pa.
+pdf, page is rotated 90 degrees> </home/wale/Dropbox/Research/Paper3/Simulation
+/bpc.pdf>] [35
 
 
 ]
@@ -1387,7 +1472,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-[34
+[36
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 45--49
@@ -1404,7 +1489,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 63--66
 
  []
 
-[35] [36] [37]
+[37] [38] [39]
 Overfull \hbox (13.91692pt too wide) in paragraph at lines 156--158
 \T1/cmr/m/n/12 Now con-sider the fol-low-ing: if $\OML/cmm/m/it/12 ! \OMS/cmsy/
 m/n/12 2 E[]\OML/cmm/m/it/12 ; c\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 then $\OML/cm
@@ -1414,7 +1499,7 @@ m/m/it/12 ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) \OMS/cmsy/m
 12 )\OMS/cmsy/m/n/12 k[] ^^T
  []
 
-[38] [39] [40] [41] [42] [43])
+[40] [41] [42] [43] [44] [45])
 (/home/wale/Dropbox/PhD/Bibliography/masterbiblinux.tex
 Underfull \hbox (badness 10000) in paragraph at lines 333--1
 
@@ -1425,16 +1510,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--1
 
  []
 
-[44] (./first.bbl
+[46] (./first.bbl
 Underfull \hbox (badness 2735) in paragraph at lines 28--30
 [] [] \T1/cmr/m/n/12 (2008) \T1/cmr/m/it/12 Frames and bases: An in-tro-duc-tor
 y course\T1/cmr/m/n/12 , Boston:
  []
 
-[45
+[47
 
 
-])) [46] (./first.aux)
+])) [48] (./first.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1443,13 +1528,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17247 strings out of 493308
- 321745 string characters out of 6137822
- 372701 words of memory out of 5000000
- 20312 multiletter control sequences out of 15000+600000
- 36491 words of font info for 107 fonts, out of 8000000 for 9000
+ 17300 strings out of 493308
+ 323580 string characters out of 6137822
+ 376699 words of memory out of 5000000
+ 20348 multiletter control sequences out of 15000+600000
+ 37267 words of font info for 108 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 69i,15n,96p,10558b,695s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 69i,15n,96p,10558b,694s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
  </home/wale/.texlive2013/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
@@ -1469,22 +1554,23 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2013/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2013/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/cm-super/sfti1200.pfb>
-Output written on first.pdf (46 pages, 533814 bytes).
+exmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/texmf-d
+ist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/2013/texmf-dist/fo
+nts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/
+type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
+1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
+public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
+blic/cm-super/sfti1200.pfb>
+Output written on first.pdf (48 pages, 2495393 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 196 compressed objects within 2 object streams
+ 341 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
