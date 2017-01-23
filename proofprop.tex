@@ -32,22 +32,22 @@ where
 We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
 \begin{align}
   \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk &=  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\int^1_0\sigma^2 (s) { \btghks} ds \notag\\ 
-&\le c\modc{\tghk}{1/H_n}\log H_n  + c\modc{\sigma^2}{1/H_n} \log H_n\notag,
+&\le c\modc{g}{1/H_n}\log H_n  + c\modc{\sigma^2}{1/H_n} \log H_n\notag,
 \end{align}
-where the last  line follows from Theorem \eqref{th:fourone}. It from the \holder continuity of $\sigma$ that  that $\modc{\sigma^2}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}$.  So,  
+where the last  line follows from Theorem \ref{th:fourone} and Lemma \ref{lem:modtg}. It follows from the \holder continuity of $\sigma$ that   $\modc{\sigma^2}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \ref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
 \begin{align}
  B_{4,n}(t) =  O( H_n^{-\alpha}\log H_n).
   \label{eq:B4}
 \end{align}
-Note the generic use of the constant  $c$. In the sequel, we will use $c$ to denote the amalgamation of various constants resulting from multiple steps; this should be harmless since  constants are not asymptotically relevant. 
+Note the generic use of the constant  $c$. In the sequel, we will use $c$ to denote the amalgamation of various constants resulting from multiple steps. 
 
 We now obtain an estimate for  $B_{3,n}(t)$. Note the following:
 \begin{align}
   M_i^2 & = \left(\int_{t_i}^{t_{i+1}} b(s) \D s\right)^2 \notag\\
-  & \le \left(M^* n^{-1}\right)^2 
+  & \le ( (\sup_{s \in [0,1]} b_s) n^{-1})^2. 
   \label{eq:m}
 \end{align}
- Now since  $g_{h,k}$ and \tghk  are bounded independently of $h$ and $k$, and $n\Delta_n = 1$, we have
+ Now since  $g_{h,k}$ and \tghk  are bounded independently of $h$ and $k$, and $n\Delta_n = 1$, it is almost surely the case that 
 \begin{align}
   B_{3,n}(t) = O( H_n \Delta_n).
   \label{}
@@ -57,7 +57,7 @@ We now obtain an estimate for  $B_{3,n}(t)$. Note the following:
   S_i & = \int_{t_i}^{t_{i+1}} \sigma(s) \D W_s\notag \\
   & = O (\sqrt{n^{-1} \log(n)}),\label{eq:rthree}
 \end{align}
-for sufficiently large $n$ by \levy's modulus of continuity theorem. Hence
+for sufficiently large $n$ by a simple corollary to \levy's modulus of continuity theorem \citep[Theorem 10.32]{Rogers1994a}. Hence
 \begin{align}
   M_i S_i = O(\sqrt{n^{-3} \log(n)}).\label{eq:ms}
 \end{align}
@@ -91,46 +91,47 @@ where $\modc{\tghk}{\Delta_n}$ is the modulus of continuity of $\tghk$ on an int
 
 Now, we obtain an estimate for $A_{1}$. First, let 
 \begin{align}
-  T_c = \inf \{ t >0 : \sigma^2(t) > c \}\notag.
+  T_c = \inf \{ t >0 : \sigma^2(t) > c \} \wedge 1\notag.
   \label{}
 \end{align}
-By the regularity assumption on $\sigma$, $\p(T_c > t)$ can be made arbitrarily small by taking $c$ sufficiently large.  Hence, by the usual stopping time argument, it may be assumed that $\sigma^2(t)$ is bounded above by $c$ almost surely.  Now, let $D_i: \Omega\times[0,1] \to \real$ for $i = 0, \cdots, n-1$ be defined as follows:  
+By the regularity assumption on $\sigma$, $\p(T_c < 1)$ can be made arbitrarily small by taking $c$ sufficiently large.  
+Now, let $D_i: \Omega\times[0,1] \to \real$ for $i = 0, \cdots, n-1$ be defined as follows:  
 \begin{align}
-&D_{i}(t) := \btghki\left(\int_{t_i}^{t} \sigma(u)\D W_u\right)\mathbbm{1}_{(t_i, t_{i+1}]}(t).
+&D_{i}(t) := \btghki\left(\int_{t_i}^{t} \sigma(u)\D W_u\right)\mathbbm{1}_{(t_i, t_{i+1} \wedge T_c]}(t).
   \label{eq:Di}\\
 &D_0(0) := 0.
 \end{align}
-So, $D_i(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1}]$.
+So, $D_i(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1} \wedge T_c]$.
 
 
 Now, using the integration by parts formula for semimartingales, we may write
 \begin{align}
-  S^2_i - \int^{t_{i+ 1}}_{t_i} \sigma^2(s) \D W_s = 2\int_{t_i}^{t_{i+1}}\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\notag
+  \left(\int^{t_{i+1} \wedge T_c}_{t_i} \sigma(s) d W_s\right)^2  & - \int^{t_{i+ 1}\wedge T_c}_{t_i} \sigma^2(s) \D_s \notag \\ &= 2\int_{t_i}^{t_{i+1}\wedge T_c }\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\notag
   \label{}
 \end{align}
 so that 
 \begin{align}
-  \e(\vert A_1 \vert )  &= 2\,\e\left[\sumin\int_{t_i}^{t_{i+1}}\btghki\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\right ]\notag \\
-  & \le 2\,\e\left[\left\vert\int_0^{1}\sumin D_i(s) \sigma(s) \D W_s\right\vert \right].\notag 
+  \e(\vert A_1^{T_c} \vert )  &= 2\,\e\left[\sumin\int_{t_i}^{t_{i+1} \wedge T_c}\btghki\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\right ]\notag \\
+  & \le 2\,\e\left[\left\vert\int_0^{1 \wedge T_c}\sumin D_i(s) \sigma(s) \D W_s\right\vert \right].\notag 
   \label{}
 \end{align}
-Now using the fact that $\int_0^{t}\sumin D_i(s) \sigma(s) \D W_s$ is a  martingale, we may make an appeal to the BDG inequality to yield:
+Now using the fact that $\int_0^{t \wedge T_c}\sumin D_i(s) \sigma(s) \D W_s$ is a  martingale, we may make an appeal to the Burkholder-Davis-Gundy (BDG) inequality \citep[Theorem 10.36][]{He1992} to yield:
 \begin{align}
-  \e(\vert A_1 \vert) & \le c\e\left[\left\vert\int_0^{1}\left(\sumin D_i(s) \sigma(s)\right)^2 \D s\right\vert^{1/2} \right]\notag \\
-  & \le c\e\left[\left\vert\int_0^{1}\sumin \{D_i(s) \sigma(s)\}^2 \D s\right\vert^{1/2} \right]\notag,
+  \e(\vert A_1^{T_c} \vert) & \le c\e\left[\left\vert\int_0^{1\wedge T_c}\left(\sumin D_i(s) \sigma(s)\right)^2 \D s\right\vert^{1/2} \right]\notag \\
+  & \le c\e\left[\left\vert\int_0^{1 \wedge T_c}\sumin \{D_i(s) \sigma(s)\}^2 \D s\right\vert^{1/2} \right]\notag,
   \notag
   \label{}
 \end{align}
-where the last line follows because $D_i (s) D_j(s) = 0$ whenever $i \not= j$. Now if  we define $D^*_i := \sup_{t_i <s \le t_{i+1}} D_i(s)$, and use the fact that $\sigma^2$ is less than  $c$ before $T_c$ then
+where the last line follows because $D_i (s) D_j(s) = 0$ whenever $i \not= j$. Now if  we define $D^*_i := \sup_{t_i <s \le t_{i+1} \wedge T_c} D_i(s)$, and use the fact that $\sigma^2$ is less than  $c$ before $T_c$ then
 \begin{align}
-  \e(\vert A_1\vert ) & \le c\e\left[\left\vert\sumin \Delta_n(D_i^*)^2 \right\vert^{1/2} \right] \notag\\
+  \e(\vert A_1^{T_c}\vert ) & \le c\e\left[\left\vert\sumin \Delta_n(D_i^*)^2 \right\vert^{1/2} \right] \notag\\
   & \le c\e\left[\left\vert\sumin \Delta_n(D_i^*)^2 \right\vert \right] \notag\\
   & \le c\Delta_n\sumin\e[(D_i^*)^2]   
   \label{eq:ra1}
 \end{align}
 where $c$ is a generic constant representing the bound on $\sigma^2$ and the BDG constant.  Note  from the definition of  $D_i$  that it  is itself a martingale, so we may bound  $D^*_i$  with yet another application of the BDG inequality. That is
 \begin{align}
-  \e((D^*_i)^2) &\le \e\left(\int^{t_{i+1}}_{t_i} \sigma^2(s) \D s\right) \notag\\
+  \e((D^*_i)^2) &\le \e\left(\int^{t_{i+1} \wedge T_c}_{t_i} \sigma^2(s) \D s\right) \notag\\
   &\le c \Delta_n. 
   \label{}
 \end{align}

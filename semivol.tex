@@ -1,7 +1,7 @@
 \subsection{Asymptotic properties} \label{sec:deviation}
 In this section we obtain an estimate of the rate of convergence of  the Gabor frame estimator on compact intervals of the real line. We will take \domain as the prototype for such intervals. The usual way to think about  $\sigma^2$ is as a stochastic process, but it is just as natural to think of it as a random element. A random element is an extension  of the familiar concept of a random variable to include  situations where the state space can be any metric space $E$. Because our interest is in studying the convergence of the estimator on \domain,  $E$ will be set equal to \Ltwo, the set of real-valued, square integrable function on \domain. Now, due to the path continuity assumption on $\sigma^2$, we will restrict our attention to \czero,  the set of real-valued, continuous  functions on \domain equipped with the \Ltwo norm. So, given  an outcome $\omega$ in the sample space  $\Omega$, the restriction of realized volatility $\sigma^2(\omega)$ to \domain is a  continuous function defined on \domain. Now, with regards smoothness, \state  is  a very diverse class, comprising    functions that are infinitely differentiable,  those that are nowhere differentiable, and everything in-between. For a random volatility coefficient it may very well be the case that for some outcome $\omega$, realized volatility $\sigma^2(\omega)$ is very smooth with finite derivatives of all orders, whereas for outcome $\omega'$,  $\sigma^2(\omega')$  is very rough with kinks everywhere. For instance, with probability one, the one-dimesional Brownian motion  maps outcomes $\omega$  to continuous functions in  \state, but it is  almost surely  the case that none of these functions will be  differentiable. 
 
-Now,  a good estimator should  yield successively better approximations with increasing observation frequency, regarless of the degree of smoothness  of the realized volatility function. But in all probability, the \emph{rate} of convergence of the approximation would depend on the smoothness of the realized volatility, with faster rates achieved for smooth functions. That is, for outcomes $\omega, \omega'$ in $\Omega$, if $\sigma^2(\omega)$ is  smoother as a function of time than $\sigma^2(\omega')$ then the number of observations required to achieve a given level of accuracy when $\sigma^2(\omega)$ is realized should not exceed  the required number when $\sigma^2(\omega')$ is realized.  So, while an estimator might eventually converge regardless of the regularity of volatility, the convergence rate may be outcome- or state-dependent. 
+Now,  a good estimator should  yield successively better approximations with increasing observation frequency, regarless of the degree of smoothness  of the realized volatility function. More realistically, the \emph{rate} of convergence of the approximation would depend on the smoothness of the realized volatility, with faster rates achieved for smooth functions. That is, for outcomes $\omega, \omega'$ in $\Omega$, if $\sigma^2(\omega)$ is  smoother as a function of time than $\sigma^2(\omega')$ then the number of observations required to achieve a given level of accuracy when $\sigma^2(\omega)$ is realized should not exceed  the required number when $\sigma^2(\omega')$ is realized.  So, while an estimator might eventually converge regardless of the regularity of volatility, the convergence rate may be outcome- or state-dependent. 
 
 To develop an asymptotic theory for the Gabor frame estimator which can account for state-dependency in convergence rates, we characterize the effective  state space of the volatility coefficient, viewed as a random element in \state, according to a smoothness criterion.
 A simple way to achieve this characterization is via the H\"older continuity criterion. Let $0 < \alpha \le 1$, a function $f$ in \state is said to be H\"older continuous with exponent $\alpha$ if  there is a finite constant $K$ such that whenever $x$ and $y$ are distinct numbers in \domain then 
@@ -9,7 +9,7 @@ A simple way to achieve this characterization is via the H\"older continuity cri
   \homo{f} := \frac{\vert f(x) - f(y)\vert}{\vert x - y \vert^\alpha} \le K. 
   \label{eq:holder}
 \end{align}
-The set of \holder continuous functions with exponent $\alpha$ is denoted by \calpha. The \holder class with $\alpha = 1$ is the familiar class of Lipschitz continuous functions. The \holder classes admit a natural ordering relation whereby if $\alpha$ is larger than  $\beta$ then every function that is \holder-continuous with exponent $\alpha$ is also  \holder-continuous with exponent $\beta$. Note that with regards regularity (smoothness), the ordering is reversed: the smoother the function the larger the \holder exponent. Consequently, the Lipschitz class ($ \alpha = 1$) is contained in every \holder class, and it is also the class with the smoothest (most regular) functions. As mentioned earlier, Brownian paths are nowhere differentiable, but using \holder classes the regularity of Brownian paths can be further qualified; this is a consequence of  the well-known L\'evy's Modulus of Continuity Theorem \citep[Theorem I.10.2]{Williams2000}, which states that, with probability one, no Brownian path is \holder-continuous with exponent less than 1/2 on \domain.   
+The set of \holder continuous functions with exponent $\alpha$ is denoted by \calpha. The \holder class with $\alpha = 1$ is the familiar class of Lipschitz continuous functions.  \holder classes admit a natural ordering relation whereby if $\alpha$ is larger than  $\beta$ then every function that is \holder-continuous with exponent $\alpha$ is also  \holder-continuous with exponent $\beta$. Note that with regards regularity (smoothness), the ordering is reversed: the smoother the function the larger the \holder exponent. Consequently, the Lipschitz class ($ \alpha = 1$) is contained in every \holder class, and it is also the class with the smoothest (most regular) functions. As mentioned earlier, Brownian paths are nowhere differentiable, but using \holder classes the regularity of Brownian paths can be further qualified; this is a consequence of  the well-known L\'evy's Modulus of Continuity Theorem \citep[Theorem I.10.2]{Williams2000}, which states that, with probability one, no Brownian path is \holder-continuous with exponent less than 1/2 on \domain.   
 Now for a fixed exponent $\alpha$, the following norm may be defined on \calpha:
 \begin{align}
   \hono{f} := \sup_{t \in \domain} |f(t)| + \homo{f},\notag
@@ -20,7 +20,7 @@ where \homo{f} is defined in \eqref{eq:holder}. The norm is obviously well-defin
   \hball{\alpha}{c}  := \{f \in \calpha : \hono{f} \le c\}.\notag
   \label{}
 \end{align}
-With this device it is possible to obtain convergence rates that take into account the regularity of realized volatility. While this is already quiet satisfying,  it is also of some interest to achieve  flexibility with regards the drift coefficient. Where the drift is concerned, regularity or even continuity for that matter is irrelevant; what is key is pathwise boundedness. The natural way to achieve flexibility in this respect is to group realized drift according to membership in  balls of radius $c$ in $\Linf$, that is,   
+With this device it is possible to obtain convergence rates that take into account the regularity of realized volatility. While this is already quiet satisfying,  it is also of some interest to achieve  flexibility with regards the drift coefficient. Where the drift is concerned, regularity or even continuity for that matter is irrelevant; what is key is pathwise boundedness. The natural way to achieve flexibility in this respect is to group the  realized drift according to membership in  balls of radius $c$ in $\Linf$, that is,   
 \begin{align} 
   \uball{c} := \{f \in \Linf: \Vert f \Vert_\infty \le c \}.
 \end{align}
@@ -29,14 +29,14 @@ In this way we are able to  characterize the sample space according to the regul
   \eball{\alpha}{c}  := \{ \omega : b(\omega) \in \uball{c}\} \cap \{\omega: \sigma^2(\omega) \in \hball{\alpha}{c}\}.\notag
   \label{}
 \end{align}
-So, an outcome $\omega$  is in \eball{\alpha}{c} if realized drift is caught between $-c$ and $c$ on \domain; realized volatility $\sigma^2(\omega)$  is \holder continuous with exponent $\alpha$,  and $\Vert \sigma^2(\omega) \Vert_\alpha \le c$. Note that the implication of the last statement is that there is some $c' \le c$ such that realized volatility is cought between $0$ and $c'$.     
+So, an outcome $\omega$  is in \eball{\alpha}{c} if the  realized drift is caught between $-c$ and $c$ on \domain, and if  realized volatility $\sigma^2(\omega)$  is \holder continuous with exponent $\alpha$,  and $\Vert \sigma^2(\omega) \Vert_\alpha \le c$. Note that the implication of the last statement is that there is some $c' \le c$ such that realized volatility is cought between $0$ and $c'$.     
 
 We are now only left with the task of making the  obvious  modification to the usual  integrated mean square error criterion :
 \begin{align}
   R_n(\alpha, c) := \e[\Vert v_n - \sigma^2\Vert^2\indvol],\notag
   \label{}
 \end{align} 
-where  $\indvol$ is the indicator function of $\eball{\alpha}{c}$, $\Vert \cdot \Vert$ is the \Ltwo norm, and $n$ is the observation frequency. Note that if $\eball{\alpha}{c} = \Omega$,  the expression above will just be the usual integrated mean square error criterion. By restricting the  volatility and the drift according to  events \eball{\alpha}{c}, the asymptotic properties of the estimator may be studied with full flexibility. That is we may  obtain results of the form  $\limsup_{n \to \infty}\tilde{n}_{n,\alpha,c} R_n(\alpha,c) < \infty$, where the rate may vary for different values of $\alpha$ and $c$. 
+where  $\indvol$ is the indicator function of $\eball{\alpha}{c}$, $\Vert \cdot \Vert$ is the \Ltwo norm, and $n$ is the number of observations. Note that if $\eball{\alpha}{c} = \Omega$,  the expression above will just be the usual integrated mean square error criterion. By restricting the  volatility and the drift according to  events \eball{\alpha}{c}, the asymptotic properties of the estimator may be studied with full flexibility. That is we may  obtain results of the form  $\limsup_{n \to \infty}\tilde{n}_{n,\alpha,c} R_n(\alpha,c) < \infty$, where $\tilde{n}_{n,\alpha,c}$ may vary for different values of $\alpha$ and $c$. 
 
 Much like the usual integrated mean square error risk, $R_n(\alpha,c)$ admits a decomposition in terms of an integrated square bias component and an integrated variance component. To see this, note the following:
 \begin{align}
@@ -45,9 +45,24 @@ Much like the usual integrated mean square error risk, $R_n(\alpha,c)$ admits a 
 & = \int_0^1 \e[ (\svnx - \sigma^2(t))\indvol]^2 \D t \notag \\
 & \quad + \int_0^1 \var[\svnx\indvol] \D t. \label{eq:msedecomp}
 \end{align}
-The equality in \eqref{eq:fubini} results from an interchange of the expectectation and integration operators justified by Fubini's theorem. The decomposition in line  \eqref{eq:msedecomp} results from the usual mean square error decomposition  into a square bias and a variance component for each  $t \in \domain$. The two summands in the last line are the bias and variance components and will be denoted $B_n^2(\alpha,c)$ and $V_n(\alpha,c)$, respectively; we obtain estimates for their rates of convergence below.
+The equality in \eqref{eq:fubini} results from an interchange of the expectectation and integration operators justified by Fubini's theorem. The decomposition in line  \eqref{eq:msedecomp} results from the usual mean square error decomposition  into a square bias and a variance component for each  $t \in \domain$. The two summands in the last line are the bias and variance components and will be denoted $B_n^2(\alpha,c)$ and $V_n(\alpha,c)$, respectively; we obtain estimates for their rates of convergence below. First, we recall  aTheorem 4.1 from \cite{Zhang2008}, which plays a crucial role in our demonstrations. 
+
+\begin{thm} \label{th:fourone}
+  Let $\{\ghk, \tghk\}$ be a pair of compactly supported dual Gabor frames satisfying the conditions of Lemma \eqref{le:gabor}. If $f \in \LtwoR$ is bounded and continuous on \real then for any positive integer $l$, if $K > (l + \vert s \vert + \vert r \vert)/ b$ and $H$ is a positive integer then  the partial sums 
+  \begin{align}
+    S_{H,K} (t) := \sum_{\vert h \vert \le H} \sum_{\vert k \vert \le K} \inner{f}{\ghk} \tghk(t)  \notag
+    \label{}
+  \end{align}
+  satisfies
+  \begin{align}
+    S_{H,K} (t) & - f(t) \notag \\  &= O({\Vert g \Vert_{\infty}}/{ab}) \{ \Vert g \Vert_{\infty}\modc{f}{1/aH} + \Vert f \Vert_{\infty} \modc{g}{1/aH}\} \log H\notag, 
+    \label{}
+  \end{align}
+for all $t$ such that $\vert t\vert \le l$.
+\end{thm}
+The following two propositions are the main results of this section.
 \begin{prop} \label{pr:consistency}
-  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \eqref{le:gabor}.   Suppose the conditions in  Assumption \eqref{as:vol}  hold. If $g$ is Lipschitz continuous and $H_n \uparrow \infty$ satisfies  
+  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \eqref{le:gabor}.   Suppose the conditions in  Assumption \ref{as:vol}  hold. If $g$ is Lipschitz continuous and $H_n \uparrow \infty$ satisfies  
   \begin{align}
     H_n^2 \Delta_n  = o(1) \notag
     \label{}
@@ -58,17 +73,17 @@ The equality in \eqref{eq:fubini} results from an interchange of the expectectat
     & V_n(\alpha,c)  = O(H_n^2 \Delta_n),
     \label{}
   \end{align}
-  where  $\Delta_n = 1/n$ is the step size, and $H_n$ is the order of magnitude of the number of estimated frame coefficients. 
+  where  
+  \begin{align}
+    \Delta_n := 1/n = t_{i + 1}  - t_i,   \qquad 0 \le i \le n - 1,   
+\end{align} is the step size, and $H_n$ is the order of magnitude of the number of estimated frame coefficients. 
 \end{prop}
 \proof{ See the appendix.}
 \begin{remark}\mbox{}
-  \begin{enumerate}  
-    \item First, the above bounds are remarkably similar to those achievable using an orthonormal basis such as wavelets \citep{GenonCatalot1992}. The variance component is slower by a factor of $H_n$. This comes about because the vectors in a frame need not be orthogonal. The bias term is slower by a logarithmic factor. Intuitively, the logarithmic term shows up because we are expanding \sv using a frame, which may be thought of as containing some redundant term. Overall, the rate of convergence of the integrated mean square error differ only by logarithmic term. In practical implementations, this is an insignificant price to pay for the added flexibility and robustness gained by using frames. 
-    \item Second, this result shows that the variance component of the MISE does not depend on the smoothness properties of either $\sigma^2$ and $g$.  
-  \end{enumerate}
+The above bounds are remarkably similar to those achievable using an orthonormal basis such as wavelets \citep{GenonCatalot1992}. The variance component is slower by a factor of $H_n$. This comes about because the vectors in a frame need not be orthogonal. The bias term is also  slower by a logarithmic factor. Intuitively, the logarithmic term shows up because frames unlike orthonormal basis may contain  redundant terms. In practical implementations, this differences are likely to be insignificant. 
 \end{remark}
 \begin{prop}\label{pro:finite}
-  Suppose the  price process is specified as in \eqref{eq:contsemimartingale}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. 
+  Suppose the  price process is specified as in \eqref{eq:contsemimartingale}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \ref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. 
 If $H_n \uparrow \infty$ satisfies 
   \begin{align}
     H_n (n^{-1} \log(n))^{1/2} = o(1),\notag

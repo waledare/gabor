@@ -1,13 +1,14 @@
-\begin{table}[ht]
+\begin{landscape}
+  \begin{table}[ht] 
   %\tabcolsep=0.11cm
 \begin{threeparttable}
   %\footnotesize
 %\centering
-  \caption{Mean integrated square error (MISE) of the frame-based estimator $\hat{\sigma}_n^2$ for popular price models.\label{tab:mise}}
+  \caption{Mean integrated square error (MISE) of  $\jvn$.\label{tab:misej}}
   
 \begin{tabular*} {\columnwidth}{@{\extracolsep{\stretch{1}}}*{8}{r}@{}}
     \toprule 
-   & \multicolumn{3}{c}{FP} & &\multicolumn{3}{c}{OU}\\
+   & \multicolumn{3}{c}{ABM + JMP} & &\multicolumn{3}{c}{OU + JMP}\\
     \cmidrule{2-4} 
     \cmidrule{5-8} 
 \multicolumn{1}{c}{$n$} & \multicolumn{1}{c}{MISE} & \multicolumn{1}{c}{Sq. Bias} & \multicolumn{1}{c}{Var} && \multicolumn{1}{c}{MISE}& \multicolumn{1}{c}{Sq. Bias} & \multicolumn{1}{c}{Var}\\
@@ -23,7 +24,7 @@
 %\centering
 \begin{tabular*} {\columnwidth}{@{\extracolsep{\stretch{1}}}*{8}{r}@{}}
     \midrule
-   & \multicolumn{3}{c}{GBM} & &\multicolumn{3}{c}{CIR}\\
+   & \multicolumn{3}{c}{GBM + JMP} & &\multicolumn{3}{c}{CIR + JMP}\\
     \cmidrule{2-4} 
     \cmidrule{5-8} 
 \multicolumn{1}{c}{$n$} & \multicolumn{1}{c}{MISE} & \multicolumn{1}{c}{Sq. Bias} & \multicolumn{1}{c}{Var} && \multicolumn{1}{c}{MISE}& \multicolumn{1}{c}{Sq. Bias} & \multicolumn{1}{c}{Var}\\
@@ -40,4 +41,4 @@
 Note: The mean of the integrated square errors are obtained by taking an average over 50 sample paths generated  for each  model/number of observations pair.
 \end{threeparttable}
 \end{table}
-
+\end{landscape}

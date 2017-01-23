@@ -1,30 +1,135 @@
-\input{../Paper2/header}
+\documentclass[a4paper, 12pt]{article}
+\usepackage{wdmisc}
+%\usepackage{mathtools}
+\newcommand{\wmi}{\ensuremath{W_{b_m}\left(\frac{x-Y_{t_i}}{b_m}\right) }\xspace}
+\newcommand{\wmj}{\ensuremath{W_{b_m}(({x-Y_{t_i}})/{b_m}) }\xspace}
+\newcommand{\kmj}{\ensuremath{K(({x-X_{t_i}})/{b_m}) }\xspace}
+\newcommand{\kmi}{\ensuremath{K\left(\frac{X_{t_i} - x}{b_m}\right) }\xspace}
+\newcommand{\Xtm}{\ensuremath{X_{t-}}\xspace}
+\newcommand{\sbm}{\ensuremath{W}\xspace}
+\newcommand{\etn}{\ensuremath{\varepsilon_i^{T_n}}\xspace}
+\newcommand{\Wbn}{\ensuremath{W_{b_n}}\xspace}
+\newcommand{\ms}{\ensuremath{m^*}\xspace}
+\newcommand{\Rs}{\ensuremath{R^*}\xspace}
+\newcommand{\lw}{\ensuremath{{L}^W_n(x, T)}\xspace}
+\newcommand{\lk}{\ensuremath{{L}^K_n(x, T)}\xspace}
+\newcommand{\iid}{i.i.d.\xspace}
+\newcommand{\ito}{It\^o\xspace}
+\newcommand{\lbm}{\ensuremath{(\triangle_m\ln(1/\triangle_m))}\xspace}
+\newcommand{\lbn}{\ensuremath{(\triangle_n\ln(1/\triangle_n))}\xspace}
+%\counterwithin*{equation}{chapter}
+%\sisetup{output-exponent-marker=\ensuremath{\mathrm{E}}}
+\renewcommand{\i}{\mathrm{i}} 
+\newcommand{\sumn}{\ensuremath{\sum_{k \in \nats}}\xspace}
+\newcommand{\sumin}{\ensuremath{\sum_{i = 0}^{n-1}}\xspace}
+\newcommand{\sumi}{\ensuremath{\sum_{k \in \ints}}\xspace}
+\newcommand{\sumt}{\ensuremath{\sum_{(h,k) \in \Theta_n}}\xspace}
+\newcommand{\sumnt}{\ensuremath{\sum_{(h,k) \not\in \Theta_n}}\xspace}
+\newcommand{\sv}{\ensuremath{\sigma^2}\xspace}
+\newcommand{\bsv}{\ensuremath{\bar{\sigma}^2}\xspace}
+\newcommand{\svnt}{\ensuremath{\sigma^2}\xspace}
+\newcommand{\svhk}{\ensuremath{\sigma^2_{h,k}}\xspace}
+\newcommand{\vh}{\ensuremath{V_h(\phi)}\xspace}
+\newcommand{\idp}{\ensuremath{\mu}\xspace}
+\newcommand{\svn}[1]{\ensuremath{v_n(#1, t)}\xspace}
+\newcommand{\jvn}{\ensuremath{V_n(X, t)}\xspace}
+\newcommand{\svnx}{\ensuremath{v_n(X, t)}\xspace}
+\newcommand{\jvnf}{\ensuremath{V_n(X^f, t)}\xspace}
+\newcommand{\Svn}{\ensuremath{\hat{\Sigma}_n}\xspace}
+\newcommand{\svnb}{\ensuremath{\hat{\sigma}_{n,b}^2}\xspace}
+\newcommand{\svnN}{\ensuremath{\hat{\sigma}_{t}^2}\xspace}
+\newcommand{\hs}{\ensuremath{\mcal{H}}\xspace}
+\newcommand{\T}{\ensuremath{\tau}\xspace}
+\newcommand{\chk}{\ensuremath{{c}_{h,k}}\xspace}
+\newcommand{\cnhk}{\ensuremath{\hat{c}_{h,k}}\xspace}
+\newcommand{\ceen}[1]{\ensuremath{{c}_n(#1, h, k)}\xspace}
+\newcommand{\cee}{\ensuremath{{c}(X, h, k)}\xspace}
+\newcommand{\dnhk}{\ensuremath{\hat{d}_{h,k}}\xspace}
+\newcommand{\anhk}{\ensuremath{\hat{a}_{h,k}}\xspace}
+\newcommand{\ivp}{\ensuremath{\sigma}\xspace}
+\newcommand{\inner}[2]{\ensuremath{\langle{#1},{#2}\rangle}\xspace}
+\newcommand{\hn}[1]{\ensuremath{\vert{#1}\vert_{\calpha}}\xspace}
+\newcommand{\ghk}{\ensuremath{g_{h,k}}\xspace}
+\newcommand{\tghk}{\ensuremath{\tilde{g}_{h,k}}\xspace}
+\newcommand{\btghki}{\ensuremath{\overline{\tilde{g}_{h,k}(t_i)}}\xspace}
+\newcommand{\btghks}{\ensuremath{\overline{\tilde{g}_{h,k}(s)}}\xspace}
+\newcommand{\tg}{\ensuremath{\tilde{g}}\xspace}
+\newcommand{\czero}{\ensuremath{C^0[0,1]}\xspace}
+\newcommand{\domain}{\ensuremath{[0,1]}\xspace}
+\newcommand{\calpha}{\ensuremath{C^{0,\alpha}[0,1]}\xspace}
+\newcommand{\state}{\czero}
+\newcommand{\hkints}{\ensuremath{h,k \in \ints}\xspace}
+\newcommand{\mise}{integrated mean aquare error\xspace}
+\newcommand{\isqb}{integrated square bias\xspace}
+\newcommand{\ivar}{integated variance\xspace}
+\newcommand{\holder}{H\"older\xspace}
+\newcommand{\homo}[1]{\ensuremath{{| #1 |}_{\alpha}}\xspace}
+\newcommand{\hono}[1]{\ensuremath{{\Vert #1 \Vert}_{\alpha}}\xspace}
+\newcommand{\hball}[2]{\ensuremath{\mcal{H}{(#1},{#2})}\xspace}
+\newcommand{\eball}[2]{\ensuremath{\mcal{E}{(#1},{#2})}\xspace}
+\newcommand{\uball}[1]{\ensuremath{\mcal{U}{(#1})}\xspace}
+\newcommand{\indvol}{I_{ \eball{\alpha}{c}}}
+\newcommand{\ind}{I}
+%\newcommand{\indvol}{\mathrm{I}_{\{\sigma^2 \in \hball{\alpha}{c}\}}}
+\newcommand{\eind}{{E}_{\eball{\alpha}{c}}} 
+\newcommand{\varind}{\var_{\eball{\alpha}{c}}} 
+\newcommand{\covind}{\cov_{\eball{\alpha}{c}}} 
+\newcommand{\equ}[1]{\begin{align}{#1} \notag\end{align}}
+\newcommand{\cadlag}{c\`adl\`ag\xspace}
+\renewcommand{\D}{\ensuremath{d}\xspace}
+\newcommand{\levy}{L\'evy\xspace}
+\newcommand{\modc}[2]{\ensuremath{{\bar{\omega}}({#1},#2)}\xspace}
+\newcommand{\as}{\ensuremath{\mathrm{a.s.}}\xspace}
+\newcommand{\ap}{\ensuremath{\mcal{A}}\xspace}
+\newcommand{\pme}{\ensuremath{\mu}\xspace}
+\newcommand{\lm}{\ensuremath{\nu}\xspace}
+\newcommand{\dx}{\ensuremath{\Delta_i X}\xspace}
+\newcommand{\djt}{\ensuremath{\Delta_i J^s}\xspace}
+\newcommand{\djl}{\ensuremath{\Delta_i J^l}\xspace}
+\newcommand{\dxf}{\ensuremath{\Delta_i X^f}\xspace}
+\newcommand{\dxc}{\ensuremath{\Delta_i X^c}\xspace}
+\newcommand{\indx}{\ensuremath{\ind_{\{(\dx)^2  \le u_n\}}}\xspace}
+\newcommand{\indxf}{\ensuremath{\ind_{\{(\Delta_i X^f)^2  \le u_n\}}}\xspace}
+\newcommand{\indxff}{\ensuremath{\ind_{\{(\Delta_i X^f)^2  \le 4u_n\}}}\xspace}
+\newcommand{\indn}{\ensuremath{\ind_{\{\Delta_i N = 0\}}}\xspace}
+\newcommand{\indnc}{\ensuremath{\ind_{\{\Delta_i N \not= 0\}}}\xspace}
+\newcommand{\indno}{\ensuremath{\ind_{\{\Delta_1 N \not= 0\}}}\xspace}
+\newcommand{\unidisc}{{\ensuremath{\vert x \vert \le 1}\xspace}}
+\newcommand{\cunidisc}{{\ensuremath{\vert x \vert > 1}\xspace}}
+\newcommand{\indjs}{\ensuremath{I_{\{(\Delta J^s_i)^2 > u_n\}}}\xspace}
+\newcommand{\indjst}{\ensuremath{I_{\{\vert\Delta J^s_i\vert \le 2 \sqrt{u_n}\}}}\xspace}
 \usepackage[toc,page]{appendix}
 \usepackage{epsf}
 \usepackage{bbm}
 \usepackage{subfig}
 \usepackage{graphicx}
+\usepackage{lscape}
 %\usepackage{float}
 %\restylefloat{table}
 %\floatstyle{plaintop}
-\author{Wale Dare}
-\title {Estimating realized spot volatility with Gabor frames.}
+\author{Wale Dare and Matthias Fengler}
+\title {Functional estimation of realized instantaneous volatility in the presence of \levy price jumps.}
 \begin{document}
-%\maketitle
+\maketitle
+\begin{abstract}
+  We propose functional estimators of the instantaneous volatility of asset prices. We introduce a Gabor frame estimator of spot  volatility, and show that the estimator is convergent  in  probability and  in the integrated mean squares error sense, when prices are without discontinuities. We also propose a  second estimator for when prices cannot be assumed to be continuous,  and show that the proposed estimator converges in probability in the presence of both finite and infinite activity price jumps. 
+\end{abstract}
 %\tableofcontents
-\chapter {Estimating realized spot volatility with Gabor frames.}
 Volatility estimation using discretely observed asset prices has received a great deal of attention recently, however,  much of that effort has been focused on 
 estimating the \emph{integrated} volatility and, to a lesser extent, the \emph{spot} volatility at a given point in time. 
 Notable contributions to this literature include  the papers by \cite{Foster1996}, \cite{Fan2008},   \cite{Florens1993}, and  \cite{BN2004}.
-In these studies, the object of interest is local in nature: spot volatility at a given point in time or integrated volatility up to a terminal point in time. In contrast,  estimators which aim  to obtain  volatility estimates  for  entire time windows  have received much less coverage. These are the so-called global estimators; the objects of interest are global:   random elements whose realizations are sample paths, i.e. functions defined on  nontrivial time intervals.     
+In these studies, the object of interest is local in nature: spot volatility at a given point in time or integrated volatility up to a terminal point in time. In contrast,  estimators which aim  to obtain  \emph{spot} volatility estimates  for  entire time windows  have received much less coverage. These are the so-called global spot volatility estimators. Here,  the objects of interest are global:   random elements whose realizations are sample paths, i.e. functions defined on  nontrivial time intervals.     
 
+There are some potential benefits to obtaining global estimators of volatility. First, given an estimate of spot volatility $\sigma^2$ over an interval $[0,T]$, the  integrated volatility at any point in the observation window can be obtained easily  by integrating the estimated spot volatility up to that point in time.  In fact, by the continuous mapping theorem, any continuous function of the global spot volatility estimator is immediately available. Hence, integrated powers of spot volatility, $\int^t_0\sigma^p_s \D s$, $p > 0$,  the running maximum of spot volatility, $\sigma^*_t := \sup_{s \le t} \vert \sigma_s \vert$, and volatility in  excess of a given threshold, $\sigma^a_t:=  \sigma_t  I_{\{\vert \sigma_t \vert > a\}}$, $a > 0$,  to name just a few, are easily obtained via  the obvious  transformation of the estimated  global spot volatility.   This flexibility is the primary  reason for the growing interest in this class of estimators.
 
-In the global volatility estimation literature, two estimators stand out: the Fourier-based estimator proposed by \cite{Malliavin2002} and the wavelet-based estimator proposed by \cite{GenonCatalot1992} and later developed by \cite{Hoffmann2012}. The Fourier-based  estimator is built up  by first obtaining an estimate of  the Fourier series expansion  of the price process. The estimated Fourier coefficients of the price process are then used to obtain estimates for the Fourier coefficients of the volatility function. While there is no doubt that the Fourier-based estimator works (converges) both in theory and in practice \citep[See][]{Malliavin2007,Malliavin2009}, the theoretical investigation of the estimator seems somewhat incomplete.
+Two estimators  of global volatility have stood out in the recent literature: the Fourier-based estimator proposed by \cite{Malliavin2002} and the wavelet-based estimator proposed by \cite{GenonCatalot1992} and later developed by \cite{Hoffmann2012}. The Fourier-based  estimator is built up  by first obtaining an estimate of  the Fourier series expansion  of the price process. The estimated Fourier coefficients of the price process are then used to obtain estimates for the Fourier coefficients of the volatility function. While there is no doubt that the Fourier-based estimator works (converges) both in theory and in practice \citep[See][]{Malliavin2007,Malliavin2009}, the theoretical investigation of the estimator seems somewhat incomplete.
 For instance, \citeauthor{Malliavin2002} show that estimates of the individual coefficients  in the Fourier expansion converge in a mean square sense but  stopped short of providing an explicit rate of convergence for the entire volatility function. On the other hand,  a lot more is known about the wavelet-based estimator; for instance, explicit rates of convergence for the entire volatility function are  well known.  
 
-In both the Fourier and the wavelet approaches, there is a reliance  on orthonormal bases: the Fourier and wavelet orthonormal bases, respectively.   Now the use of orthonormal bases  in \emph{practical} work is optimal  if  the  individual coefficients in the orthonormal basis expansion can be estimated with good precision. A coefficient with a large estimation error may be expected to cause a proportional distortion in the overall estimate of the volatility function. In practical work, where  we must rely on a finite  number of data points to obtain estimates for the bases coefficients, it is  clear that coefficient error can easily become an issue. The global spot volatility estimator we propose  is aimed squarely at this problem; it  employs a Gabor frame methodology to mitigate the effects of bases coefficient error. Frames are very flexible and yield robust estimates in practical situations where coefficients lack  precision or have been entirely \emph{erased}.  This robustness may be  particularly pertinent in a high-frequency setting, where price measurements are subject to market microstructure noise. We elaborate on these points further below.
+In both the Fourier and the wavelet approaches, there is a reliance  on orthonormal bases: the Fourier and wavelet orthonormal bases, respectively.   Now the use of orthonormal bases  in \emph{practical} work is optimal  if  the  individual coefficients in the orthonormal basis expansion can be estimated with good precision. A coefficient with a large estimation error may be expected to cause a proportional distortion in the overall estimate of the volatility function. In practical work, where  we must rely on a finite  number of data points to obtain estimates for the bases coefficients, it is  clear that coefficient error can easily become an issue. The global spot volatility estimator we propose  is aimed squarely at this problem; it  employs a Gabor frame methodology to mitigate the effects of bases coefficient error. Frames are very flexible and yield robust estimates in practical situations where coefficients lack  precision or have been entirely \emph{erased}.  
 
-The rest of this paper is organized as follows: Section \ref{sec:model} gives a description of the dynamics of  observed prices; Section \ref{sec:gabor} briefly reviews  Gabor frames theory; Section \ref{sec:estimator} gives a specification of the Gabor frame based estimator; Section \ref{sec:deviation} discusses the asymptotic convergence of the frame-based estimator; Section \ref{sec:simulation} provides further support for the estimator via a simulation exercise; Section \ref{sec:empirics} provides a descriptive analysis of the diurnal pattern of intraday volatility in the bond  markets; Section \ref{sec:extension} proposes a multivariate extension; finally,  Section \ref{sec:conclusion} concludes and briefly discusses future work. The main technical arguments  are contained in the Appendix.
+Perhaps, the principal contribution of the current paper besides bringing the flexibility of Gabor frames to volatility estimation, is the proposal of a global estimator of spot volatility that remains consistent, in a probabilistic sense,  even if prices are subject to price jumps. The two estimators described above do not have this property, so that in situations where it is hard to justify the assumption that prices have no discontinuities,   the current estimator may be the only reasonable option.  
+
+The rest of this paper is organized as follows: Section \ref{sec:model} gives a description of the dynamics of  observed prices; Section \ref{sec:gabor} briefly reviews  Gabor frames theory; Section \ref{sec:estimator} gives a specification of the Gabor frame based estimator  in the case of continuous prices. We obtain a highly flexible mean integrated square error rate of convergence as a function of different bounds on the paths of both instantaneous mean and volatility. We also obtain an explicit  convergence in probability result.   Section 4 contains the main result of this paper; we apply the results of the previous section to establish the consistency result for a jump-robust estimator of global spot volatility.  Section \ref{sec:simulation} provides further support for the various estimators via a simulation exercise. These simulations suggest potential directions for future research. 
 \input{jumpsgeneral}
 \section{ Frames}\label{sec:gabor} 
 Frames generalize the notion of orthonormal bases in  Hilbert spaces. If $\{f_k\}_{k \in \nats}$ is a frame for a separable Hilbert space \hs then every vector $f \in \hs$ may be expressed as a linear combination of the frame elements, i.e.
@@ -32,7 +137,7 @@ Frames generalize the notion of orthonormal bases in  Hilbert spaces. If $\{f_k\
   f = \sumn c_k f_k.
   \label{eq:framerep}
 \end{align}
-This is similar to how elements in a Hilbert space may be expressed in terms of orthonormal basis; but unlike orthonormal basis, the representation in \eqref{eq:framerep} need not be unique, and the frame elements need not be orthogonal. Loosely speaking, frames contain redundant elements. The absence of uniqueness in the frame representation is by no means a shortcoming; on the contrary, we are afforded a great deal of flexibility and stability as a result. In fact, given a finite data sample, the estimated basis expansion coefficients are likely to be imprecise. This lack of precision can create significant distortions when using an orthonormal basis. These distortions are somewhat mitigated when using frames because of the built-in redundancies  they contain. Of course, we end up computing more coefficients but there is no hard limit on the number of coefficients we should compute; we use the same $n$ data points whether we compute $k$ or $k+ 10$ coefficients.   
+This is similar to how elements in a Hilbert space may be expressed in terms of orthonormal basis; but unlike orthonormal basis, the representation in \eqref{eq:framerep} need not be unique, and the frame elements need not be orthogonal. Loosely speaking, frames contain redundant elements. The absence of uniqueness in the frame representation is by no means a shortcoming; on the contrary, we are afforded a great deal of flexibility and stability as a result. In fact, given a finite data sample, the estimated basis expansion coefficients are likely to be imprecise. This lack of precision can create significant distortions when using an orthonormal basis. These distortions are somewhat mitigated when using frames because of the built-in redundancy of frame elements. 
 
 
 
@@ -54,7 +159,7 @@ In the sequel if $z$ is a complex number then we shall denote respectively by $\
    \Vert c \Vert := \left( \sum_{k \in \nats} c_k \overline{c_k} \right)^{1/2} <   \infty, \qquad \forall c \in \ltwo,\notag
    \label{}
  \end{align}
- where $c_k$ is the $k$-th component of $c$. The inner product of two sequences $c$ and $e$ in \ltwo is $\langle c, e \rangle := \sum_{k \in \nats} c_k \overline{e_k}$. Now we may give a definition for frames:
+ where $c_k$ is the $k$-th component of $c$. The inner product of two sequences $c$ and $d$ in \ltwo is $\langle c, d \rangle := \sum_{k \in \nats} c_k \overline{d_k}$. Now we may give a definition for frames:
 \begin{defn}\label{eq:frbound}
    A sequence $\{f_k\}_{k \in \nats} \subset \LtwoR$ is a frame if there exists positive constants $C_1$ and $C_2$ such that
   \begin{align}
@@ -62,8 +167,8 @@ In the sequel if $z$ is a complex number then we shall denote respectively by $\
   \qquad  \forall f \in \LtwoR. \notag 
   \end{align}
 \end{defn}
-\noindent The  constants $C_1$ and $C_2$ are called   \emph{frame bounds}. If $C_1 = C_2$ then $\{f_k \}_{k \in \nats}$ is said to be \emph{tight}. Because an  orthonormal basis satisfies  Parceval's equality\footnote{
-  Parceval's equality states that if $\{f_k\}_{k \in \nats}$ is an orthonormal basis for $\mcal{H}$ a separable Hilbert space then
+\noindent The  constants $C_1$ and $C_2$ are called   \emph{frame bounds}. If $C_1 = C_2$ then $\{f_k \}_{k \in \nats}$ is said to be \emph{tight}. Because an  orthonormal basis satisfies  Parseval's equality\footnote{
+  Parseval's equality states that if $\{f_k\}_{k \in \nats}$ is an orthonormal basis for $\mcal{H}$, a separable Hilbert space, then
   \begin{align}
     \Vert f \Vert^2 = \sum_{k \in \nats} \vert \langle f, f_k \rangle \vert^2 =\Vert \hat{f} \Vert^2, \qquad \forall f \in \mcal{H},  \notag
     \label{}
@@ -79,7 +184,7 @@ Because $\mcal{A}$ takes a function defined on a continuum (\real) to a sequence
   \mcal{A}^* c = \sum_{k \in \nats} c_k f_k, \qquad \forall c \in \ltwo,\notag
   \label{}
 \end{align}
-where $c_k$ is the $k$-th component of the sequence $c$. The adjoint, $\mcal{A}^*$, may be thought of as reversing the operation or effect of the analysis operator; for this reason it is known as the \emph{synthesis} operator \footnote{It is also occasionally referred to as the \emph{reconstruction} operator}.
+where $c_k$ is the $k$-th component of the sequence $c$. The adjoint, $\mcal{A}^*$, may be thought of as reversing the operation or effect of the analysis operator; for this reason it is known as the \emph{synthesis} operator.
 \begin{comment}
 By composing the analysis and the synthesis operators, we obtain the \emph{frame operator} $F:\LtwoR \to \LtwoR$ defined as: 
 \begin{align}
@@ -116,7 +221,7 @@ so that the analysis operator of the canonical dual frame is fully characterized
 Thus, in a manner reminiscent of orthonormal basis representations, every function in \LtwoR is expressible as a linear combination of the frame elements, with the frame coefficients given by  $\langle f, \tilde{f}_k\rangle$, the correlation between the function and the elements of the dual frame. It follows from the first equality in \eqref{eq:frep} and the commutativity of the duality relationship that functions in \LtwoR may also be written as linear combinations of the elements in $\{\tilde{f}_k\}_{k \in \nats}$, with coefficients given by $\langle f, {f}_k\rangle$, i.e. $f = \sum_{k \in \nats} \langle f, {f}_k\rangle \tilde{f}_k$.
 
 
-Now let $\mcal{P}:= \tilde{\mcal{A}}\mcal{A}^*  = \mcal{A}\tilde{\mcal{A}}^*$. A consequence of the noncommutativity\footnote{A binary operation $\star$ is noncommutative if $A\star B$ is generally not equal to $B\star A$. A classic  example is matrix multiplication.}   of the composition operator is that even though $\mcal{A}^*\tilde{\mcal{A}} = \mcal{I}$  \eqref{eq:frep}, the operator $\mcal{P}$   need not be equal to $\mcal{I}$. In fact, Proposition 3.2.3 in \citep{Daubechies1992} shows that in the general case $\mcal{P}$ is the orthogonal projection operator of \ltwo onto $R(\ap)$, the range space of $\mcal{A}$\footnote{$R(\mcal{A}) := \{c \in \ltwo : c = \mcal{A} f, \text{ for some } f \in \LtwoR\}$.}.   That $R(\mcal{A})$ in general may not coincide  with \ltwo is a consequence of the fact that  frames  may be redundant, i.e.  that they may contain ``more'' elements than is required, and thus may be linearly dependent. The level of redundancy is inversely related to the ``size'' of  $R(\mcal{A})$. So that the more redundancy the frame contains the smaller the range space of \ap. To see this, let $\{f_k\}_{k \in \nats}$ be a  frame  such that $f_1 = f_2 + f_3$; so, $\{f_k\}_{k \in \nats}$ is redundant and  linearly dependent. Now if $c$ is in the range space of \ap, the associated analysis operator, then  the $k$-th coordinate of $c$ must satisfy $c_k = \inner{f}{f_k}$  for some $f \in \LtwoR$.  By the linearity of the inner product, $c_1 = c_2 + c_3$. Thus every element of $R(\ap)$ must satisfy the restriction that its first component must equal the sum of the second and the third. Since not every element of  \ltwo is subject to this restriction, $R(\ap)$ must be a proper subset of \ltwo. So, dependence relationships among the frame elements serve to restrict the range of \ap; the greater the number of dependence relationships there are, the smaller $R(\ap)$ becomes.   As we shall see shortly, this fact has important consequences for how coefficient error affects the precision of the synthesis operator. Of course if the frame has no redundancy, then $R(\mcal{A})$   will coincide with \ltwo and $\mcal{P}$ will just be the identity operator. 
+Now let $\mcal{P}:= \tilde{\mcal{A}}\mcal{A}^*  = \mcal{A}\tilde{\mcal{A}}^*$. A consequence of the noncommutativity\footnote{A binary operation $\star$ is noncommutative if $A\star B$ is generally not equal to $B\star A$. A classic  example is matrix multiplication.}   of the composition operator is that even though $\mcal{A}^*\tilde{\mcal{A}} = \mcal{I}$  \eqref{eq:frep}, the operator $\mcal{P}$   need not be equal to $\mcal{I}$. In fact, Proposition 3.2.3 in \citep{Daubechies1992} shows that in the general case $\mcal{P}$ is the orthogonal projection operator of \ltwo onto $R(\ap)$, the range space of $\mcal{A}$, that is, {$R(\mcal{A}) := \{c \in \ltwo : c = \mcal{A} f, \text{ for some } f \in \LtwoR\}$}.   That $R(\mcal{A})$ in general may not coincide  with \ltwo is a consequence of the fact that  frames  may be redundant, i.e.  that they may contain ``more'' elements than is required, and thus may be linearly dependent. The level of redundancy is inversely related to the ``size'' of  $R(\mcal{A})$. So that the more redundancy the frame contains the smaller the range space of \ap. To see this, let $\{f_k\}_{k \in \nats}$ be a  frame  such that $f_1 = f_2 + f_3$; so, $\{f_k\}_{k \in \nats}$ is redundant and  linearly dependent. Now if $c$ is in the range space of \ap, the associated analysis operator, then  the $k$-th coordinate of $c$ must satisfy $c_k = \inner{f}{f_k}$  for some $f \in \LtwoR$.  By the linearity of the inner product, $c_1 = c_2 + c_3$. Thus every element of $R(\ap)$ must satisfy the restriction that its first component must equal the sum of the second and the third. Since not every element of  \ltwo is subject to this restriction, $R(\ap)$ must be a proper subset of \ltwo. So, dependence relationships among the frame elements serve to restrict the range of \ap; the greater the number of dependence relationships there are, the smaller $R(\ap)$ becomes.   As we shall see shortly, this fact has important consequences for how coefficient error affects the precision of the synthesis operator. Of course if the frame has no redundancy, then $R(\mcal{A})$   will coincide with \ltwo and $\mcal{P}$ will just be the identity operator. 
 \subsection{Why use frames?}\label{sub:why}
 The main reason we might be interested in frame methods for estimating volatility is robustness to coefficient noise. By this we mean the imprecision that may result by virtue of the fact that in practice the frame coefficients may not be known with precision and must be estimated. Coefficient error has many sources: error resulting from using a finite data sample, rounding or quantization error,  and error arising from the use of data contaminated with market microstructure noise. 
 
@@ -131,7 +236,7 @@ The robustness of redundant frames to coefficient error is well-documented. For 
 \end{align}
 From the discussion in the previous section,   the orthogonal projector of \ltwo onto $R(\mcal{A})$  is  $\tilde{\mcal{A}}\mcal{A}^* = \mcal{P}$. Combining this with the equation above, we have $\mcal{I} =  \tilde{\mcal{A}}^* \mcal{P} {\mcal{A}}$. So the representation result in \eqref{eq:frepresent} can be expressed as 
 \begin{align}
-  f = \tilde{\ap}^*\ap f.\notag
+  f = \tilde{\ap}^* \mcal{P} \ap f.\notag
   \label{}
 \end{align}
 Now assuming the coefficients of $f$ under the operation of the analysis operator were contaminated by white noise sequence $\varepsilon$, we would have at our disposal ${\ap}f + \varepsilon$ instead of simply ${\ap} f$. Further assume that $\varepsilon$ is decomposable as  follows:  $\varepsilon = \varepsilon_{\mcal{A}^\perp}+ \varepsilon_A$, where $\varepsilon_A$ resides in the range space of \ap, and  $\varepsilon_{\mcal{A}^\perp}$ resides in the orthogonal complement  of $R(\ap)$. So, by definition, $\mcal{P} \varepsilon_{\mcal{A}^\perp} = 0$.  The operation of reconstructing a function from the noisy coefficients may now be expressed as 
@@ -139,37 +244,37 @@ Now assuming the coefficients of $f$ under the operation of the analysis operato
   f_\varepsilon = \tilde{\mcal{A}}^*\mcal{P}({\mcal{A}}f + \varepsilon) = \tilde{\mcal{A}}^*\mcal{P}({\mcal{A}}f + \varepsilon_A + \varepsilon_{\mcal{A}^\perp}) = \tilde{\mcal{A}}^*\mcal{P}({\mcal{A}}f + \varepsilon_A ). \notag
   \label{}
 \end{align}
-It is thus clear the deviation of the approximation $\Vert f - f_\varepsilon \Vert = \Vert\tilde{\ap}^*\mcal{P}\varepsilon_A \Vert$  should be lower than $\Vert \varepsilon \Vert$ to the extent that the range space of $\mcal{A}$ is small, which is another way of saying that the approximation error is reduced to the extent that the frame is redundant. As was noted by \cite{Daubechies1992}, this explanation is heuristic and probably accounts for only a small portion of the noise reduction gain observed in practical work. Nevertheless,  it provides a starting point for thinking about the source of the robustness of frames. 
+It is thus clear  that the deviation of the approximation, $\Vert f - f_\varepsilon \Vert$, equals  $\Vert\tilde{\ap}^*\mcal{P}\varepsilon_A \Vert$, which  should be lower than $\Vert \varepsilon \Vert$ to the extent that the range space of $\mcal{A}$ is small; this is another way of saying that the approximation error is reduced to the extent that the frame is redundant. As noted on \cite[][pp. 98]{Daubechies1992}, this explanation is heuristic and probably accounts for only a small portion of the noise reduction  observed in practical work. Nevertheless,  it provides a starting point for thinking about the source of the robustness of frames. 
 \subsection{ Gabor frames}
 Next, we specialize the discussion to Gabor frames. The analysis of Gabor frames involves two operators: the \emph{translation} operator  $\mcal{T}$ and  the \emph{modulation} operator $\mcal{M}$ defined as follows: 
 \begin{align}
   & \mcal{T}_bf(t) := f(t -  b), &\qquad b \in \real, f \in \LtwoR, \label{eq:translation}\\
-  & \mcal{M}_af(t) := e^{2\pi \i at}f(t), &\qquad a \in \real, f \in \LtwoR,\label{eq:modulation} 
+  & \mcal{M}_af(t) := \exp({2\pi \i at})f(t), &\qquad a \in \real, f \in \LtwoR,\label{eq:modulation} 
 \end{align}
-where $\i$ is the imaginary number, i.e.  $\i = \sqrt{-1}$.  Both $\mcal{T}$ and $\mcal{M}$ are shift operators: $\mcal{T}$ is a shift or translation operator on the time axis, whereas $\mcal{M}$ performs shifts on the frequency axis. A Gabor system is constructed by performing time-frequency shifts on a single function $g \in \LtwoR$. For example,  if $a$ and $b$ are real numbers then the sequence of functions  
+where $\i$ is the imaginary number, i.e.  $\i = \sqrt{-1}$.  Both $\mcal{T}$ and $\mcal{M}$ are shift operators: $\mcal{T}$ is a shift or translation operator on the time axis, whereas $\mcal{M}$ performs shifts on the frequency axis. A Gabor system is constructed by fixing $a, b \in \real$, and  performing shifts of a single nontrivial  function $g \in \LtwoR$  in time-frequency space. For example,  if $a$ and $b$ are real numbers then the sequence of functions  
 \begin{align}
   \{\mcal{M}_{ha} \mcal{T}_{kb} g\}_{h,k \in \ints},\notag
   \label{}
 \end{align}
-constitutes  a Gabor system. A Gabor system need not be a frame.
+constitutes  a Gabor system. 
 \begin{defn}
   Let $g \in \LtwoR$, and let  $a > 0$, $b > 0$ be  positive real numbers. Define for $t \in \real$    
 \begin{align}
-  g_{h,k}(t) := e^{2 \pi \i h a t }g(t - k b), \qquad  \forall h,k \in \ints. \notag    
+  g_{h,k}(t) := \exp({2 \pi \i h a t })g(t - k b), \qquad  \forall h,k \in \ints. \notag    
  \end{align}
  If the sequence $\{g_{h,k}\}_{h,k \in \ints}$ constitutes a  frame for \LtwoR, then it is called a Gabor frame\footnote{It is also sometimes referred to as a \emph{Weyl-Heisenberg} frame.}. 
 \end{defn}
 \noindent The fixed function $g$ is known as  the \emph{Gabor frame generator}\footnote{It is  referred to elsewhere as the \emph{window function}.}; $a$ is known as the \emph{modulation parameter}; and $b$ is known as the \emph{translation parameter}.   
-In order to obtain sharp asymptotic rates, we require $g$ and its dual \tg (see \eqref{eq:frepresent}) to be continuous and compactly supported. The following Lemma taken from \cite{Christensen2006} and \cite{Zhang2008} tells us exactly how to construct such dual pairs. We restate the Lemma here without proof.
+In order to obtain sharp asymptotic rates, we require $g$ and its dual \tg (see \eqref{eq:frepresent}) to be continuous and compactly supported. The following result, stated  in  \cite[Lemma 1.2]{Christensen2006} and in  \cite[Proposition 2.4]{Zhang2008}, tells us exactly how to construct such dual pairs.
 \begin{lem}\label{le:gabor}
   Let $[r,s]$ be a finite interval,  let $a> 0$, $b > 0$  be positive constants,  and let $g$ be a continuous function. If $g(t) \ne 0$ when $t \in (r,s)$; $g(t) = 0$ when $t \notin (r,s)$;  and  $a$, $b$ satisfy: $a < 1/(s-r)$, $0<b<s-r$; then  $\{g,\tilde{g}\}$ is a pair of dual Gabor frame generators, with the dual Gabor generator given by  
 \begin{align}
-  &\tilde{g}(t)  := g(t)/G(t), \text{ where} \label{eq:dualg}\\
+  &\tilde{g}(t)  :=  g(t)/G(t), \text{ where} \label{eq:dualg}\\
   &G(t) := \sumi|g(t-kb)|^2/a.\label{eq:capg}
 \end{align}
 Furthermore, 
 \begin{align}
-  \tilde{g}_{h,k}(t) := e^{2\pi\i h a t} \tilde{g}(t - kb), \qquad \forall h, k \in \ints \label{eq:dualghk}
+  \tilde{g}_{h,k}(t) := \exp({2\pi\i h a t}) \tilde{g}(t - kb), \qquad \forall h, k \in \ints \label{eq:dualghk}
 \end{align}
 is compactly supported.   
 \end{lem}
@@ -177,7 +282,7 @@ is compactly supported.
 \begin{lem} \label{lem:modtg}
   Let the dual Gabor frame generator $\tilde{g}$ be constructed as in \eqref{eq:dualg}. If $\modc{g}{\delta}$ denotes the modulus of continuity of $g$, i.e. $\modc{g}{\delta} := \sup \{|g(t) - g(t')| : t,t' \in \real \text{ and } |t -t'| < \delta\}$,  then   
   \begin{align}
-    \modc{\tilde{g}_{j,k}}{\delta} = C \modc{g}{\delta} \qquad \forall \hkints\notag,
+    \modc{\tilde{g}_{j,k}}{\delta} \le C \modc{g}{\delta} \qquad \forall \hkints\notag,
     \label{}
   \end{align}
   where $C$ is a positive constant.
@@ -185,7 +290,7 @@ is compactly supported.
 \begin{proof}
   See Appendix \ref{ap:proof}.
 \end{proof}
-\noindent In the sequel,  we assume the Gabor frame setup in Lemma \eqref{le:gabor}.
+\noindent In the sequel,  we assume the Gabor frame setup in Lemma\ref{le:gabor}.
 \begin{comment}
 Frames are quite general objects. What is needed is some control over the type of redundancies allowed in a frame. Without such a restriction results about the rate of convergence of the frame expansion would be impossible to come by. A Riesz basis provides just the type of control needed. Informally, a Riesz basis is a frame whose elements are all essential. 
 \begin{defn}
@@ -216,6 +321,8 @@ To proceed in our analysis, we specialize further the type of Riesz basis to tho
 We proposed an estimator for the spot volatility function using Gabor frame methods. We showed that the estimator converges in a MISE sense and obtained an explicit convergence rate.  The evidence for the validity of the proposed estimator will be further reinforced in a simulation study. We will also take the estimator to task using data from the Forex and bond market. 
 \end{comment}
 %\input{app}
+\input{conclusion}
+\pagebreak
 \input{semiapp}
 \input{/home/wale/Dropbox/PhD/Bibliography/masterbiblinux}
 \end{document}

@@ -1,11 +1,11 @@
-\begin{appendices}
-  \chapter{Proofs}\label{ap:proof}
+\Section{appendices}
+  \section{Proofs}\label{ap:proof}
   We now give the proof of Lemma \eqref{lem:modtg}. \\ \\
   \begin{proof}
    $G$ is bounded away from zero. To see this, note that since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b := [(s+r -b)/2, (s+r +b)/2]$, then
   \begin{align}
     \min_{t\in\real} G(t) &=  \min_{t \in I_b} G(t) \notag\\
-    & \ge (2\pi/a) \min_{t \in I_b}\vert g(t)\vert^2.\notag
+    & \ge \min_{t \in I_b}\vert g(t)\vert^2/a.\notag
     \label{}
   \end{align}  
   Because $g$ is continuous and $g$ doesn't vanish in $(r,s)$, we conclude that $G_*:=\min_{t \in \real}G(t) > 0$. It is also straight forward that $G^* := \max_{t \in \real}G(t) < \infty$. Now, let $t, t' \in \real$ such that $\vert t - t' \vert \le \delta$, then 
@@ -162,4 +162,4 @@ Since $ \alpha_{2,i} = O(H_n^2)$, it follows that $V_{2,n} := O(H^2_n\Delta_n)$.
 \end{proof}
 %\chapter{Extensions} \label{ap:ext}
 \input{semiapp}
-\end{appendices}
+%\end{appendices}

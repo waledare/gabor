@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  29 DEC 2016 14:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  23 JAN 2017 11:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,21 +6,19 @@ entering extended mode
 (./first.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 78 languages loaded.
-(../Paper2/header.tex
-(/usr/local/texlive/2013/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
-\c@chapter=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
@@ -264,13 +262,13 @@ Package: amsbsy 1999/11/29 v1.2d
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count88
+\inf@bad=\count87
 LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count89
-\leftroot@=\count90
+\uproot@=\count88
+\leftroot@=\count89
 LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count91
-\DOTSCASE@=\count92
+\classnum@=\count90
+\DOTSCASE@=\count91
 LaTeX Info: Redefining \ldots on input line 378.
 LaTeX Info: Redefining \dots on input line 381.
 LaTeX Info: Redefining \cdots on input line 466.
@@ -279,15 +277,15 @@ LaTeX Info: Redefining \cdots on input line 466.
 \big@size=\dimen105
 LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count93
-\c@MaxMatrixCols=\count94
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
 \dotsspace@=\muskip10
-\c@parentequation=\count95
-\dspbrk@lvl=\count96
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
 \tag@help=\toks17
-\row@=\count97
-\column@=\count98
-\maxfields@=\count99
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
 \andhelp@=\toks18
 \eqnshift@=\dimen106
 \alignsep@=\dimen107
@@ -307,19 +305,19 @@ Package: xifthen 2009/04/17 v1.3 Extended ifthen features
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/etex-pkg/etex.sty
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count100
+\et@xins=\count99
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count101
-\calc@Bcount=\count102
+\calc@Acount=\count100
+\calc@Bcount=\count101
 \calc@Adimen=\dimen112
 \calc@Bdimen=\dimen113
 \calc@Askip=\skip46
 \calc@Bskip=\skip47
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count103
+\calc@Ccount=\count102
 \calc@Cskip=\skip48
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
@@ -359,11 +357,11 @@ Package: xkeyval 2012/10/14 v2.6b package option processing (HA)
 (/usr/local/texlive/2013/texmf-dist/tex/generic/xkeyval/xkeyval.tex
 \XKV@toks=\toks27
 \XKV@tempa@toks=\toks28
-\XKV@depth=\count104
+\XKV@depth=\count103
 File: xkeyval.tex 2012/10/14 v2.6b key=value parser (HA)
 
 (/usr/local/texlive/2013/texmf-dist/tex/generic/xkeyval/keyval.tex)))
-\xargs@max=\count105
+\xargs@max=\count104
 \xargs@toksa=\toks29
 \xargs@toksb=\toks30
 )
@@ -378,21 +376,21 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@outerparindent=\dimen114
 \enit@toks=\toks33
 \enit@inbox=\box28
-\enitdp@description=\count106
+\enitdp@description=\count105
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2011/10/22 v5.1d context-sensitive quotations
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
-\etb@tempcnta=\count107
+\etb@tempcnta=\count106
 )
-\csq@reset=\count108
-\csq@gtype=\count109
-\csq@glevel=\count110
-\csq@qlevel=\count111
-\csq@maxlvl=\count112
-\csq@tshold=\count113
+\csq@reset=\count107
+\csq@gtype=\count108
+\csq@glevel=\count109
+\csq@qlevel=\count110
+\csq@maxlvl=\count111
+\csq@tshold=\count112
 \csq@ltx@everypar=\toks34
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/csquotes/csquotes.def
@@ -416,12 +414,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen122
 \cmidrulekern=\dimen123
 \defaultaddspace=\dimen124
-\@cmidla=\count114
-\@cmidlb=\count115
+\@cmidla=\count113
+\@cmidlb=\count114
 \@aboverulesep=\dimen125
 \@belowrulesep=\dimen126
-\@thisruleclass=\count116
-\@lastruleclass=\count117
+\@thisruleclass=\count115
+\@lastruleclass=\count116
 \@thisrulewidth=\dimen127
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/tabulary/tabulary.sty
@@ -435,7 +433,7 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip53
 \backup@length=\skip54
 )
-\TY@count=\count118
+\TY@count=\count117
 \TY@linewidth=\dimen130
 \tymin=\dimen131
 \tymax=\dimen132
@@ -448,7 +446,7 @@ Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 \TX@old@col=\dimen136
 \TX@target=\dimen137
 \TX@delta=\dimen138
-\TX@cols=\count119
+\TX@cols=\count118
 \TX@ftn=\toks36
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/tabu/tabu.sty
@@ -457,16 +455,16 @@ Package: tabu 2011/02/26 v2.8 - flexible LaTeX tabulars (FC)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/varwidth/varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box29
-\sift@deathcycles=\count120
+\sift@deathcycles=\count119
 \@vwid@loff=\dimen139
 \@vwid@roff=\dimen140
 )
-\c@taburow=\count121
-\tabu@nbcols=\count122
-\tabu@cnt=\count123
-\tabu@Xcol=\count124
-\tabu@alloc=\count125
-\tabu@nested=\count126
+\c@taburow=\count120
+\tabu@nbcols=\count121
+\tabu@cnt=\count122
+\tabu@Xcol=\count123
+\tabu@alloc=\count124
+\tabu@nested=\count125
 \tabu@target=\dimen141
 \tabu@spreadtarget=\dimen142
 \tabu@naturalX=\dimen143
@@ -501,7 +499,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \caption@parindent=\dimen155
 \caption@hangindent=\dimen156
 )
-\c@ContinuedFloat=\count127
+\c@ContinuedFloat=\count126
 Package caption Info: threeparttable package is loaded.
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/siunitx/siunitx.sty
@@ -528,18 +526,18 @@ Package: l3seq 2013/12/14 v4623 L3 Sequences and stacks
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3int.sty
 Package: l3int 2013/08/02 v4583 L3 Integers
-\c_max_int=\count128
-\l_tmpa_int=\count129
-\l_tmpb_int=\count130
-\g_tmpa_int=\count131
-\g_tmpb_int=\count132
+\c_max_int=\count127
+\l_tmpa_int=\count128
+\l_tmpb_int=\count129
+\g_tmpa_int=\count130
+\g_tmpb_int=\count131
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3quark.sty
 Package: l3quark 2013/12/14 v4623 L3 Quarks
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3prg.sty
 Package: l3prg 2014/01/04 v4642 L3 Control structures
-\g__prg_map_int=\count133
+\g__prg_map_int=\count132
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3clist.sty
 Package: l3clist 2013/07/28 v4581 L3 Comma separated lists
@@ -555,11 +553,11 @@ Package: l3msg 2013/07/28 v4581 L3 Messages
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3file.sty
 Package: l3file 2013/10/13 v4596 L3 File and I/O operations
-\l_iow_line_count_int=\count134
-\l__iow_target_count_int=\count135
-\l__iow_current_line_int=\count136
-\l__iow_current_word_int=\count137
-\l__iow_current_indentation_int=\count138
+\l_iow_line_count_int=\count133
+\l__iow_target_count_int=\count134
+\l__iow_current_line_int=\count135
+\l__iow_current_word_int=\count136
+\l__iow_current_indentation_int=\count137
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3skip.sty
 Package: l3skip 2013/07/28 v4581 L3 Dimensions and skips
@@ -584,20 +582,20 @@ Package: l3skip 2013/07/28 v4581 L3 Dimensions and skips
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3keys.sty
 Package: l3keys 2013/12/08 v4614 L3 Experimental key-value interfaces
-\g__keyval_level_int=\count139
-\l_keys_choice_int=\count140
+\g__keyval_level_int=\count138
+\l_keys_choice_int=\count139
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3fp.sty
 Package: l3fp 2014/01/04 v4642 L3 Floating points
-\c__fp_leading_shift_int=\count141
-\c__fp_middle_shift_int=\count142
-\c__fp_trailing_shift_int=\count143
-\c__fp_big_leading_shift_int=\count144
-\c__fp_big_middle_shift_int=\count145
-\c__fp_big_trailing_shift_int=\count146
-\c__fp_Bigg_leading_shift_int=\count147
-\c__fp_Bigg_middle_shift_int=\count148
-\c__fp_Bigg_trailing_shift_int=\count149
+\c__fp_leading_shift_int=\count140
+\c__fp_middle_shift_int=\count141
+\c__fp_trailing_shift_int=\count142
+\c__fp_big_leading_shift_int=\count143
+\c__fp_big_middle_shift_int=\count144
+\c__fp_big_trailing_shift_int=\count145
+\c__fp_Bigg_leading_shift_int=\count146
+\c__fp_Bigg_middle_shift_int=\count147
+\c__fp_Bigg_trailing_shift_int=\count148
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3box.sty
 Package: l3box 2013/07/28 v4581 L3 Experimental boxes
@@ -634,8 +632,8 @@ Package: l3color 2012/08/29 v4156 L3 Experimental color support
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3luatex.sty
 Package: l3luatex 2013/07/28 v4581 L3 Experimental LuaTeX-specific functions
-\g__cctab_allocate_int=\count150
-\g__cctab_stack_int=\count151
+\g__cctab_allocate_int=\count149
+\g__cctab_stack_int=\count150
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3kernel/l3candidates.sty
 Package: l3candidates 2014/01/06 v4643 L3 Experimental additions to l3kernel
@@ -662,11 +660,11 @@ Package ifpdf Info: pdfTeX in PDF mode is detected.
 ))
 (/usr/local/texlive/2013/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2013/12/31 v4634 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count152
-\l__xparse_m_args_int=\count153
-\l__xparse_mandatory_args_int=\count154
-\l__xparse_processor_int=\count155
-\l__xparse_v_nesting_int=\count156
+\l__xparse_current_arg_int=\count151
+\l__xparse_m_args_int=\count152
+\l__xparse_mandatory_args_int=\count153
+\l__xparse_processor_int=\count154
+\l__xparse_v_nesting_int=\count155
 )
 Package: siunitx 2013/07/31 v2.5s A comprehensive (SI) units package
 
@@ -676,30 +674,30 @@ Package: l3keys2e 2013/12/31 v4634 LaTeX2e option processing using LaTeX3 keys
 Variant \tl_if_blank:VTF already defined; not changing it on line 50
 \l__siunitx_tmp_box=\box50
 \l__siunitx_tmp_dim=\dimen188
-\l__siunitx_tmp_int=\count157
+\l__siunitx_tmp_int=\count156
 Variant \prop_get:NVNT already defined; not changing it on line 371
 Variant \prop_get:NVNF already defined; not changing it on line 372
 Variant \prop_get:NVNTF already defined; not changing it on line 373
-\l__siunitx_number_mantissa_length_int=\count158
-\l__siunitx_number_uncert_length_int=\count159
-\l__siunitx_round_int=\count160
-\l__siunitx_process_decimal_int=\count161
-\l__siunitx_process_uncertainty_int=\count162
-\l__siunitx_process_fixed_int=\count163
-\l__siunitx_process_integer_min_int=\count164
-\l__siunitx_process_precision_int=\count165
-\l__siunitx_group_min_int=\count166
+\l__siunitx_number_mantissa_length_int=\count157
+\l__siunitx_number_uncert_length_int=\count158
+\l__siunitx_round_int=\count159
+\l__siunitx_process_decimal_int=\count160
+\l__siunitx_process_uncertainty_int=\count161
+\l__siunitx_process_fixed_int=\count162
+\l__siunitx_process_integer_min_int=\count163
+\l__siunitx_process_precision_int=\count164
+\l__siunitx_group_min_int=\count165
 \l__siunitx_angle_marker_box=\box51
 \l__siunitx_angle_unit_box=\box52
 \l__siunitx_angle_marker_dim=\dimen189
 \l__siunitx_angle_unit_dim=\dimen190
-\l__siunitx_unit_int=\count167
-\l__siunitx_unit_denominator_int=\count168
-\l__siunitx_unit_numerator_int=\count169
-\l__siunitx_unit_prefix_int=\count170
-\l__siunitx_unit_prefix_base_int=\count171
-\l__siunitx_unit_prefix_gram_int=\count172
-\l__siunitx_number_product_int=\count173
+\l__siunitx_unit_int=\count166
+\l__siunitx_unit_denominator_int=\count167
+\l__siunitx_unit_numerator_int=\count168
+\l__siunitx_unit_prefix_int=\count169
+\l__siunitx_unit_prefix_base_int=\count170
+\l__siunitx_unit_prefix_gram_int=\count171
+\l__siunitx_number_product_int=\count172
 \c__siunitx_one_fill_skip=\skip62
 \l__siunitx_table_unit_align_skip=\skip63
 \l__siunitx_table_exponent_dim=\dimen191
@@ -862,7 +860,7 @@ Language: english 2012/08/20 v3.3p English support from the babel system
 
 (/usr/local/texlive/2013/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2013/12/03 3.9h Babel common definitions
-\babel@savecnt=\count174
+\babel@savecnt=\count173
 \U@D=\dimen200
 )
 \l@canadian = a dialect from \language\l@american 
@@ -877,7 +875,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip66
 \bibsep=\skip67
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count175
+\c@NAT@ctr=\count174
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
@@ -907,7 +905,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count176
+\Gread@gobject=\count175
 ))
 Normal \dimen register pool exhausted, switching to extended pool.
 \Gin@req@height=\dimen256
@@ -1131,24 +1129,24 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@in@stream=\read2
 )
 (/home/wale/Dropbox/Latex/localtexmf/tex/latex/packages/theorems.sty
-\c@example=\count177
-\c@exercise=\count178
-\c@thm=\count179
-\c@prop=\count180
-\c@axiom=\count181
-\c@lem=\count182
-\c@cor=\count183
-\c@defn=\count184
-\c@ass=\count185
-\c@remark=\count186
+\c@example=\count176
+\c@exercise=\count177
+\c@thm=\count178
+\c@prop=\count179
+\c@axiom=\count180
+\c@lem=\count181
+\c@cor=\count182
+\c@defn=\count183
+\c@ass=\count184
+\c@remark=\count185
 )
-\c@sketch=\count187
-))
+\c@sketch=\count186
+)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count188
-\c@@ppsavesec=\count189
-\c@@ppsaveapp=\count190
+\c@@pps=\count187
+\c@@ppsavesec=\count188
+\c@@ppsaveapp=\count189
 )
 (/usr/local/texlive/2013/texmf-dist/tex/generic/epsf/epsf.sty
 This is `epsf.tex' v2.7.4 <14 February 2011>
@@ -1170,19 +1168,22 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count191
+\c@KVtest=\count190
 \sf@farskip=\skip68
 \sf@captopadj=\dimen266
 \sf@capskip=\skip69
 \sf@nearskip=\skip70
-\c@subfigure=\count192
-\c@subfigure@save=\count193
-\c@lofdepth=\count194
-\c@subtable=\count195
-\c@subtable@save=\count196
-\c@lotdepth=\count197
+\c@subfigure=\count191
+\c@subfigure@save=\count192
+\c@lofdepth=\count193
+\c@subtable=\count194
+\c@subtable@save=\count195
+\c@lotdepth=\count196
 \sf@top=\skip71
 \sf@bottom=\skip72
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
@@ -1191,12 +1192,6 @@ Package csquotes Info: Redefining alias 'default' -> 'american'.
  (./first.aux
 
 LaTeX Warning: Label `pro:finite' multiply defined.
-
-
-LaTeX Warning: Label `tab:mise' multiply defined.
-
-
-LaTeX Warning: Label `fig:path' multiply defined.
 
 
 LaTeX Warning: Label `eq:B4' multiply defined.
@@ -1216,24 +1211,25 @@ LaTeX Warning: Label `eq:ra1' multiply defined.
 )
 \openout1 = `first.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 112.
+LaTeX Font Info:    ... okay on input line 112.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 112.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 112.
+
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    ... okay on input line 112.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1247,17 +1243,17 @@ ons.cfg
 File: siunitx-abbreviations.cfg 2013/07/31 v2.5s siunitx: Abbreviated units
 ) (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count198
+\scratchcounter=\count197
 \scratchdimen=\dimen267
 \scratchbox=\box58
-\nofMPsegments=\count199
-\nofMParguments=\count200
+\nofMPsegments=\count198
+\nofMParguments=\count199
 \everyMPshowfont=\toks41
-\MPscratchCnt=\count201
+\MPscratchCnt=\count200
 \MPscratchDim=\dimen268
+\MPnumerator=\count201
 Normal \count register pool exhausted, switching to extended pool.
-\MPnumerator=\count277
-\makeMPintoPDFobject=\count278
+\makeMPintoPDFobject=\count277
 \everyMPtoPDFconversion=\toks42
 ) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -1288,69 +1284,56 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c__siunitx_mathsf_int=\count279
-LaTeX Font Info:    Try loading font information for U+msa on input line 12.
+\c__siunitx_mathsf_int=\count278
+LaTeX Font Info:    Try loading font information for U+msa on input line 112.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 12.
+LaTeX Font Info:    Try loading font information for U+msb on input line 112.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count280
+\c__siunitx_mathtt_int=\count279
+ [1
 
-Chapter 1.
-[1
-
-
-{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Reference `sec:empirics' on page 2 undefined on input line 27.
-
-
-LaTeX Warning: Reference `sec:extension' on page 2 undefined on input line 27.
-
-
-LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 27.
-
-
-(./jumpsgeneral.tex [2]) [3] [4] [5] [6]
-Overfull \hbox (3.85939pt too wide) in paragraph at lines 124--125
+{/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+(./jumpsgeneral.tex [3]) [4] [5] [6]
+Overfull \hbox (3.85939pt too wide) in paragraph at lines 229--230
 []\T1/cmr/m/n/12 The ro-bust-ness of re-dun-dant frames to co-ef-fi-cient er-ro
 r is well-documented.
  []
 
-[7] [8] (./volatility.tex
-Underfull \hbox (badness 10000) in paragraph at lines 185--1
+[7] [8] [9] (./volatility.tex
+Underfull \hbox (badness 10000) in paragraph at lines 290--1
 
  []
 
-(./semiass.tex [9]) [10] (./semivol.tex [11]
+(./semiass.tex) [10] (./semivol.tex [11] [12]
 Overfull \hbox (7.76958pt too wide) in paragraph at lines 11--14
 \T1/cmr/m/n/12 The set of Hölder con-tin-u-ous func-tions with ex-po-nent $\OML
 /cmm/m/it/12 $ \T1/cmr/m/n/12 is de-noted by $\OML/cmm/m/it/12 C[]\OT1/cmr/m/n
 /12 [0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1]$\T1/cmr/m/n/12 .
  []
 
-[12] [13] [14] (./proofprop.tex [15] [16]
-LaTeX Font Info:    Try loading font information for U+bbm on input line 102.
+[13] [14] [15] (./proofprop.tex [16] [17]
+LaTeX Font Info:    Try loading font information for U+bbm on input line 103.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [17] [18])
+) [18] [19])
 (./jumps.tex
-Underfull \hbox (badness 10000) in paragraph at lines 139--1
+Underfull \hbox (badness 10000) in paragraph at lines 140--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 139--1
+Underfull \hbox (badness 10000) in paragraph at lines 140--1
 
  []
 
-[19] [20]) (./finiteactproof.tex [21] [22]) (./infinity.tex
+[20]) (./finiteactproof.tex [21] [22] [23]) (./infinity.tex
 Underfull \hbox (badness 10000) in paragraph at lines 86--1
 
  []
@@ -1360,7 +1343,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 86--1
 
  []
 
-[23] [24] [25] [26] [27] [28]
+[24] [25] [26] [27] [28]
 Underfull \hbox (badness 10000) in paragraph at lines 122--125
 
  []
@@ -1371,7 +1354,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--125
  []
 
 ))) (./empirics.tex [29] (./simfig.tex
-</home/wale/Dropbox/Research/Paper3/pg.pdf, id=122, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pg.pdf, id=125, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pg.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/pg.pdf>
@@ -1379,7 +1362,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pg.pdf used on inpu
 t line 5.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/po.pdf, id=123, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/po.pdf, id=126, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/po.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/po.pdf>
@@ -1387,7 +1370,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/po.pdf used on inpu
 t line 7.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/pa.pdf, id=124, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pa.pdf, id=127, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pa.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/pa.pdf>
@@ -1395,28 +1378,27 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pa.pdf used on inpu
 t line 9.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=125, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=128, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pcir.pdf Graphic file (type pdf)
 <use /home/wale/Dropbox/Research/Paper3/pcir.pdf>
 Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pcir.pdf used on in
 put line 10.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
-) (./simtab.tex
-Overfull \hbox (75.3665pt too wide) in alignment at lines 8--19
-[] [] [] [] [] [] [] [] 
+) (./simtab.tex [30] [31 </home/wale/Dropbox/Research/Paper3/pg.pdf, page is ro
+tated 90 degrees> </home/wale/Dropbox/Research/Paper3/po.pdf, page is rotated 9
+0 degrees> </home/wale/Dropbox/Research/Paper3/pa.pdf, page is rotated 90 degre
+es> </home/wale/Dropbox/Research/Paper3/pcir.pdf, page is rotated 90 degrees>] 
+[32
+
+]) [33
+
+]
+Overfull \hbox (24.5548pt too wide) in paragraph at lines 53--53
+[] 
  []
 
-
-Overfull \hbox (75.3665pt too wide) in alignment at lines 24--36
-[] [] [] [] [] [] [] [] 
- []
-
-) [30] [31 </home/wale/Dropbox/Research/Paper3/pg.pdf, page is rotated 90 degre
-es> </home/wale/Dropbox/Research/Paper3/po.pdf, page is rotated 90 degrees> </h
-ome/wale/Dropbox/Research/Paper3/pa.pdf, page is rotated 90 degrees> </home/wal
-e/Dropbox/Research/Paper3/pcir.pdf, page is rotated 90 degrees>] (./simfig3.tex
-
-</home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf, id=162, 505.89pt x 505.8
+[34] (./simfig3.tex
+</home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf, id=172, 505.89pt x 505.8
 9pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf Graphic file (type p
 df)
@@ -1425,7 +1407,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf u
 sed on input line 5.
 (pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
 
-</home/wale/Dropbox/Research/Paper3/Simulation/po.pdf, id=163, 505.89pt x 505.8
+</home/wale/Dropbox/Research/Paper3/Simulation/po.pdf, id=173, 505.89pt x 505.8
 9pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf Graphic file (type p
 df)
@@ -1434,13 +1416,13 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf u
 sed on input line 7.
 (pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
 
-<Simulation/pa.pdf, id=164, 845.1575pt x 597.23125pt>
+<Simulation/pa.pdf, id=174, 845.1575pt x 597.23125pt>
 File: Simulation/pa.pdf Graphic file (type pdf)
  <use Simulation/pa.pdf>
 Package pdftex.def Info: Simulation/pa.pdf used on input line 9.
 (pdftex.def)             Requested size: 175.48943pt x 177.60332pt.
 
-</home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf, id=165, 505.89pt x 505.
+</home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf, id=175, 505.89pt x 505.
 89pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf Graphic file (type 
 pdf)
@@ -1449,48 +1431,35 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf
 used on input line 12.
 (pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
 )
-(./simtabjp.tex
-Overfull \hbox (75.3665pt too wide) in alignment at lines 8--19
-[] [] [] [] [] [] [] [] 
- []
+(./simtabjp.tex [35] [36 </home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf>
+ </home/wale/Dropbox/Research/Paper3/Simulation/po.pdf> <./Simulation/pa.pdf, p
+age is rotated 90 degrees> </home/wale/Dropbox/Research/Paper3/Simulation/bpc.p
+df>] [37
 
-
-Overfull \hbox (75.3665pt too wide) in alignment at lines 24--37
-[] [] [] [] [] [] [] [] 
- []
-
-[32])) (./semiapp.tex [33] [34 </home/wale/Dropbox/Research/Paper3/Simulation/p
-g.pdf> </home/wale/Dropbox/Research/Paper3/Simulation/po.pdf> <./Simulation/pa.
-pdf, page is rotated 90 degrees> </home/wale/Dropbox/Research/Paper3/Simulation
-/bpc.pdf>] [35
-
+])) (./conclusion.tex) (./semiapp.tex [38
 
 ]
-Appendix A.
-
 Underfull \hbox (badness 10000) in paragraph at lines 3--6
 
  []
 
-[36
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 45--49
-
- []
-
-
-Overfull \hbox (16.29941pt too wide) in paragraph at lines 60--60
+Overfull \hbox (24.60793pt too wide) in paragraph at lines 26--26
 [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 63--66
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 51--57
 
  []
 
-[37] [38] [39]
-Overfull \hbox (13.91692pt too wide) in paragraph at lines 156--158
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--57
+
+ []
+
+[40] [41] [42]
+Overfull \hbox (13.91692pt too wide) in paragraph at lines 147--149
 \T1/cmr/m/n/12 Now con-sider the fol-low-ing: if $\OML/cmm/m/it/12 ! \OMS/cmsy/
 m/n/12 2 E[]\OML/cmm/m/it/12 ; c\OT1/cmr/m/n/12 )$ \T1/cmr/m/n/12 then $\OML/cm
 m/m/it/12 ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) \OMS/cmsy/m
@@ -1499,42 +1468,38 @@ m/m/it/12 ^^[[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 !\OT1/cmr/m/n/12 ) \OMS/cmsy/m
 12 )\OMS/cmsy/m/n/12 k[] ^^T
  []
 
-[40] [41] [42] [43] [44] [45])
+[43] [44] [45] [46] [47])
 (/home/wale/Dropbox/PhD/Bibliography/masterbiblinux.tex
-Underfull \hbox (badness 10000) in paragraph at lines 333--1
+Underfull \hbox (badness 10000) in paragraph at lines 324--1
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 333--1
+Underfull \hbox (badness 10000) in paragraph at lines 324--1
 
  []
 
-[46] (./first.bbl
+[48] (./first.bbl
 Underfull \hbox (badness 2735) in paragraph at lines 28--30
 [] [] \T1/cmr/m/n/12 (2008) \T1/cmr/m/it/12 Frames and bases: An in-tro-duc-tor
 y course\T1/cmr/m/n/12 , Boston:
  []
 
-[47
+[49
 
-
-])) [48] (./first.aux)
-
-LaTeX Warning: There were undefined references.
-
+])) [50] (./first.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 17300 strings out of 493308
- 323580 string characters out of 6137822
- 376699 words of memory out of 5000000
- 20348 multiletter control sequences out of 15000+600000
- 37267 words of font info for 108 fonts, out of 8000000 for 9000
+ 17318 strings out of 493308
+ 323956 string characters out of 6137822
+ 368614 words of memory out of 5000000
+ 20364 multiletter control sequences out of 15000+600000
+ 40214 words of font info for 119 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 69i,15n,96p,10558b,694s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 67i,14n,96p,10533b,720s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
  </home/wale/.texlive2013/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></us
 r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
@@ -1565,12 +1530,14 @@ s/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dist/fonts/
 type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
 1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
-blic/cm-super/sfti1200.pfb>
-Output written on first.pdf (48 pages, 2495393 bytes).
+public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/pu
+blic/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
+ic/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/cm-super/sfti1200.pfb>
+Output written on first.pdf (50 pages, 2519600 bytes).
 PDF statistics:
- 341 PDF objects out of 1000 (max. 8388607)
- 241 compressed objects within 3 object streams
+ 356 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,65 +1,56 @@
 \begin{appendices}
-  \chapter{Proofs}\label{ap:proof}
+  \section{Proofs}\label{ap:proof}
   We now give the proof of Lemma \eqref{lem:modtg}. \\ \\
   \begin{proof}
-   $G$ is bounded away from zero. To see this, note that since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b := [(s+r -b)/2, (s+r +b)/2]$, then
+   $G$ is bounded away from zero. To see this, note that since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b$ denote the interval $[(s+r -b)/2, (s+r +b)/2]$, then
   \begin{align}
     \min_{t\in\real} G(t) &=  \min_{t \in I_b} G(t) \notag\\
-    & \ge (2\pi/a) \min_{t \in I_b}\vert g(t)\vert^2.\notag
+    & \ge  a^{-1}\min_{t \in I_b}\vert g(t)\vert^2.\notag
     \label{}
   \end{align}  
-  Because $g$ is continuous and $g$ doesn't vanish in $(r,s)$, we conclude that $G_*:=\min_{t \in \real}G(t) > 0$. It is also straight forward that $G^* := \max_{t \in \real}G(t) < \infty$. Now, let $t, t' \in \real$ such that $\vert t - t' \vert \le \delta$, then 
+  Because $g$ is continuous and $g$ doesn't vanish in $(r,s)$, we conclude that $G_*:=\min_{t \in \real}G(t) > 0$. It is also straight forward that $G^* := \max_{t \in \real}G(t) < \infty$. Now, let $t, t' \in \real$, $ t > t'$,  such that $\vert t - t' \vert \le \delta$, then 
   \begin{align}
-    \vert \tg(t) - \tg(t')\vert & = \vert (G(t)G(t'))^{-1}(g(t)G(t') - g(t')G(t))\vert  \notag\\
+     \vert \tg(t) - \tg(t')\vert & = \vert (G(t)G(t'))^{-1}(g(t)G(t') - g(t')G(t))\vert  \notag\\
     & \le (G_*^{-2})\{\vert g(t)\vert \vert G(t) - G(t') \vert + \vert G(t)\vert \vert g(t) - g(t')\vert\}. 
     \label{eq:difftg}
   \end{align}
-Let $\tau := r +  (t \bmod {b})$, and $\tau':=r + (t' \bmod{b})$. It is straight forward to verify that if  $\vert \tau - \tau' \vert \le \delta$, then
+For a real number  $x$, denote $\lfloor x \rfloor$  the largest integer less than or equal to $x$ and $\lceil x \rceil$  the smallest integer that is greater  than or equal to $x$. Now,
+Let $A$ denote the set of integers $i$ such that $r < t - ib < s$. By definition of $g$, $g(t - j b) = 0$, whenever $j \not\in A$. Since $b > 0$, $A$ contains at most $\lceil( 1 + \vert s \vert + \vert r \vert)/b \rceil$ number of elements.  Let $\tau := \min \{t - ib: i \in A\}$, i.e. $\tau$ is the smallest $t - ib$ such that $i \in A$. Because $A$ contains at most a finite number of elements, there exists an integer $k$ such that $\tau = t - kb$. Set $\tau' := t'-kb$.   
+  
+   It is straight forward to verify that  $\vert \tau - \tau' \vert \le \delta$ and 
 \begin{align}
-  \vert G(t) - G(t') \vert & \le  \sum_{j = 0}^{\lfloor (s + r)/b \rfloor} \vert g(\tau + j b)^2 - g(\tau' + j b)^2\vert\notag\\
-  & \le \sum_{j = 0}^{\lfloor (s + r)/b \rfloor} \vert g(\tau + j b) - g(\tau' + j b) \vert \vert g(\tau + j b) + g(\tau' + j b)\vert\notag\\
-  & \le 2 \lceil (s + r)/b\rceil g^*\modc{g}{\delta},
+a  \vert G(t) - G(t') \vert & \le  \sum_{j = 0}^{\lceil ( 1 + \vert s \vert  +\vert r \vert )/b \rceil} \vert g(\tau + j b)^2 - g(\tau' + j b)^2\vert\notag\\
+  & \le \sum_{j = 0}^{\lceil (1 + \vert s \vert  +\vert r\vert )/b \rceil} \vert g(\tau + j b) - g(\tau' + j b) \vert \vert g(\tau + j b) + g(\tau' + j b)\vert\notag\\
+  & \le 2 \lceil (1 + \vert s \vert  + \vert r \vert)/b\rceil g^*\modc{g}{\delta},
   \label{}
 \end{align}
-where $g^* := \max_{t \in \real} \vert g(t)\vert $. On the other hand, if $\vert \tau - \tau'\vert > \delta$, then 
+where $g^* := \max_{t \in \real} \vert g(t)\vert $.
+\begin{comment}
+On the other hand, if $\vert \tau - \tau'\vert > \delta$, then 
 \begin{align}
-  &\vert G(t) - G(t') \vert \notag \\
+  &a\vert G(t) - G(t') \vert \notag \\
   &\quad \le \vert g(\tau')^2 - g(r)^2\vert +   \vert g(s)^2 - g(\tau + c)^2 \vert\notag \\
-  &\qquad +\sum_{j = 1}^{\lfloor (s + r)/b \rfloor} \{\vert g(\tau + (j-1) b)^2 - g(\tau' + j b)^2\vert\}.  \notag
+  &\qquad +\sum_{j = 1}^{\lceil (s + r)/b \rceil} \{\vert g(\tau + (j-1) b)^2 - g(\tau' + j b)^2\vert\}.  \notag
   \label{}
 \end{align}
-where $c = \lfloor (s + r)/b \rfloor b $. It follows as above that 
+where $c = \lfloor (\vert s\vert  + \vert r \vert )/b \rfloor b $. It follows as above that 
 \begin{align}
-\vert G(t) - G(t') \vert \le 2 (\lceil (s + r)/b\rceil +1)g^*\modc{g}{\delta}.
+\vert G(t) - G(t') \vert \le 2a (\lceil (s + r)/b\rceil +1)g^*\modc{g}{\delta}.
 \end{align}
+\end{comment}
 Returning to \eqref{eq:difftg}, we see that
 \begin{align}
   \vert \tg(t) - \tg(t')\vert \le C_{\tg} \modc{g}{\delta},\notag
   \label{}
 \end{align}
-where $C_{\tg} = G_*^2(2 (\lceil (s + r)/b\rceil +1)(g^*)^2 + G^*)$. Now let \hkints, then
+where $C_{\tg} = G_*^2(2a (\lceil ( 1 + \vert s \vert  +\vert r\vert)/b\rceil)(g^*)^2 + G^*)$. Now let \hkints, then
 \begin{align}
-  \vert \tghk(t) - \tghk(t')\vert & = \vert e^{\i h a t} (\tg(t - kb) -\tg(t'-kb) \vert\notag\\
-  &\le \vert (\tg(t - kb) -\tg(t'-kb) \vert \le C_{\tg} \modc{g}{\delta}.
+  \vert \tghk(t) - \tghk(t')\vert & = \vert \exp({2 \pi \i h a t}) (\tg(t - kb) -\tg(t'-kb)) \vert\notag\\
+  &\le \vert \tg(t - kb) -\tg(t'-kb) \vert \le C_{\tg} \modc{g}{\delta}.
   \label{}
 \end{align}
 The last inequality follows because translating a function leaves its modulus of continuity unchanged.\\
 \end{proof}
-The proof of Proposition \eqref{pr:consistency} depends in a crucial  way on Theorem 4.1 in \cite{Zhang2008}. We recall it here for convenience.
-
-\begin{thm} \label{th:fourone}
-  Let $\{\ghk, \tghk\}$ be a pair of compactly supported dual Gabor frames satisfying the conditions of Lemma \eqref{le:gabor}. If $f \in \LtwoR$ is bounded and continuous on \real then for any positive integer $l$, if $K > (l + \vert s \vert + \vert r \vert)/ b$ and $H$ is a positive integer then  the partial sums 
-  \begin{align}
-    S_{H,K} (t) := \sum_{\vert h \vert \le H} \sum_{\vert k \vert \le K} \inner{f}{\ghk} \tghk(t)  \notag
-    \label{}
-  \end{align}
-  satisfies
-  \begin{align}
-    S_{H,K} (t) - f(t) = O({\Vert g \Vert_{\infty}}/{ab}) ( \Vert g \Vert_{\infty}\modc{f}{1/aH} + \Vert f \Vert_{\infty} \modc{g}{1/aH}) \log H\notag, 
-    \label{}
-  \end{align}
-for all $t$ such that $\vert t\vert \le l$.
-\end{thm}
 \noindent Now we prove Proposition \eqref{pr:consistency}.\\\\
 \begin{proof}
 Without loss of generality let $X_0 = 0$, and  take $\alpha  \in (0, 1]$ and $c > 0$ as given. We begin with $B^2_n(\alpha, c)$, the integrated square bias component of $R_n(\alpha,c)$, which is defined as:
@@ -83,7 +74,7 @@ for all random variables $X$. We proceed by first obtaining an  upper bound  for
 \end{align}
 We tackle the summands in \eqref{eq:rone} in turn starting with the first one. But first let 
 \begin{align}
-  M_i := \int_{t_i}^{t_{i+1}} \mu(s) \D s, \quad \text{and} \quad  S_i := \int_{t_i}^{t_{i+1}} \sigma(s) \D W_s, \notag
+  M_i := \int_{t_i}^{t_{i+1}} b(s) \D s, \quad \text{and} \quad  S_i := \int_{t_i}^{t_{i+1}} \sigma(s) \D W_s, \notag
 \end{align}
 and note that since $X_{t_{i+1}} - X_{t_i} = M_i + S_i$, it follows that
 \begin{align}
@@ -109,7 +100,7 @@ We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
 &\le c\e[\modc{\tghk}{1/H_n}\log H_n] \notag \\
 &\quad + c\e[\modc{\sigma^2\indvol}{1/H_n} \log H_n]\notag,
 \end{align}
-where the last  line follows from Theorem \eqref{th:fourone}. But since  $\sigma^2 \indvol$ is bounded by $c$ if it is in the \holder ball \hball{\alpha}{c}  and $0$ otherwise, it follows that $\modc{\sigma^2\indvol}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}$.  So,  
+where the last  line follows from Theorem \eqref{th:fourone}. But since  $\sigma^2 \indvol$ is bounded by $c$ if it is in the \holder ball \hball{\alpha}{c}  and $0$ otherwise, it follows that $\modc{\sigma^2\indvol}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
 \begin{align}
  B_{4,n}(t) =  O( H_n^{-\alpha}\log H_n).
   \label{eq:B4}
@@ -118,12 +109,12 @@ Note the generic use of the constant  $c$. In the sequel, we will use $c$ to den
 
 We now obtain an estimate for  $B_{3,n}(t)$. Note the following:
 \begin{align}
-  \eind[ M_i^2] & = \e\left[\left(\int_{t_i}^{t_{i+1}} \mu(s) \D s\right)^2\indvol\right] \notag\\
-  & = \e\left[\left(\int_{t_i}^{t_{i+1}} \mu(s)\indvol \D s\right)^2\right] \notag\\
-& \le \e\left[\left(\int_{t_i}^{t_{i+1}}\vert \mu(s)\indvol\vert \D s\right)^2\right] \notag
+  \eind[ M_i^2] & = \e\left[\left(\int_{t_i}^{t_{i+1}} b(s) \D s\right)^2\indvol\right] \notag\\
+  & = \e\left[\left(\int_{t_i}^{t_{i+1}} b(s)\indvol \D s\right)^2\right] \notag\\
+& \le \e\left[\left(\int_{t_i}^{t_{i+1}}\vert b(s)\indvol\vert \D s\right)^2\right] \notag
   \label{}
 \end{align}
-Note that $\vert\mu(s)\indvol\vert$ is either 0 or less than $c$, so   
+Note that $\vert b(s)\indvol\vert$ is either 0 or less than $c$, so   
 \begin{align}
  \eind[ M_i^2] \le c \Delta_n^2. 
   \label{eq:msq}
@@ -136,14 +127,14 @@ Note that $\vert\mu(s)\indvol\vert$ is either 0 or less than $c$, so
 We obtain an estimate for $B_{2,n}(t)$ next, but first let 
 \begin{align}
 &T_{\sigma^2}(c)   := \inf\{t \in  (0,1]: \sigma^2(t) > c\}, \\ 
-  &T_{\mu}(c)  := \inf\{t \in (0,1]: \mu(t) > c\}. \notag
+  &T_{b}(c)  := \inf\{t \in (0,1]: b(t) > c\}. \notag
   \label{}
 \end{align}
-So, $T_{\sigma^2}(c)$ and $T_{\mu}(c)$ are the hitting times of the open set $(c, \infty)$ by $\mu$ and $\sigma^2$, respectively; and they record the instant just before these coefficients exceed $c$. Because both processes are adapted and at least \cadlag, both hitting times  are stopping times. Now, set 
+So, $T_{\sigma^2}(c)$ and $T_{b}(c)$ are the hitting times of the open set $(c, \infty)$ by $b$ and $\sigma^2$, respectively; and they record the instant just before these coefficients exceed $c$. Because both processes are adapted and at least \cadlag, both hitting times  are stopping times. Now, set 
 \begin{align}
-T_i(c)  :=  T_{\sigma^2}(c) \wedge  T_{\mu}(c) \wedge  t_i, \qquad i= 1, \cdots, n. \notag
+T_i(c)  :=  T_{\sigma^2}(c) \wedge  T_{b}(c) \wedge  t_i, \qquad i= 1, \cdots, n. \notag
 \end{align}
-Because  $T_{\sigma^2}(c)$ and   $T_{\mu}(c)$ are stopping times, so are the  $T_i(c)$'s. The important thing to note is that at all times before  $T_i(c)$, both $\mu$ and $\sigma^2$ are bounded by $c$.  
+Because  $T_{\sigma^2}(c)$ and   $T_{b}(c)$ are stopping times, so are the  $T_i(c)$'s. The important thing to note is that at all times before  $T_i(c)$, both $b$ and $\sigma^2$ are bounded by $c$.  
 
 Returning to $B_{2,n}(t)$ note that $\indvol^2 = \indvol$ so that
 $\eind[M_iS_i] = \e[(M_i \indvol) (S_i \indvol)]$. By the Cauchy-Schwarz inequality, 
@@ -154,7 +145,7 @@ Now, by repeating the same steps as in the case of  $B_{3,n}(t)$ above, we  may 
 \begin{align} 
   \e[(M_i \indvol)^2]^{1/2} \le  c \Delta_n \label{eq:rtwo}.
 \end{align}
-Now consider the following: if $\omega \in \eball{\alpha}{c}$ then $\sigma^2(\omega) \in \hball{\alpha}{c}$ and $\Vert \sigma^2(\omega) \Vert_\infty \le \Vert \sigma^2(\omega)\Vert_\alpha \le c$ so  that $T_{\sigma^2(\omega)}(c) = 1$. Similarly $T_{\mu(\omega)}(c) = 1$ so that $T_i(c) = t_i$.  Hence, 
+Now consider the following: if $\omega \in \eball{\alpha}{c}$ then $\sigma^2(\omega) \in \hball{\alpha}{c}$ and $\Vert \sigma^2(\omega) \Vert_\infty \le \Vert \sigma^2(\omega)\Vert_\alpha \le c$ so  that $T_{\sigma^2(\omega)}(c) = 1$. Similarly $T_{b(\omega)}(c) = 1$ so that $T_i(c) = t_i$.  Hence, 
 \begin{align}
   \e[ (S_i \indvol)^2] &= \e\left[\left(\int_{t_i}^{t_{i+1}} \sigma(s) \D W_s\right)^2\indvol\right]\notag\\
 &= \e\left[\left(\int_{t_i}^{T_{i+1}(c)} \sigma(s) \D W_s\right)^2\indvol\right]\notag\\
@@ -265,7 +256,7 @@ So that by the definition of the estimator, we may write
  We will estimate these quantities in turn starting with $V_1$, but first let  
 \begin{align}
   &Y_i := \left(\int^{t_{i+1}}_{t_i} \sigma(s) \D W_s\right)^2 ,\notag\\
-  &Z_i := \left(\int^{t_{i+1}}_{t_i} \mu(s) \D s\right)^2 + 2\left(\int^{t_{i+1}}_{t_i} \mu(s) \D s\right)\left(\int^{t_{i+1}}_{t_i} \sigma(s) \D W_s\right), \notag\\ 
+  &Z_i := \left(\int^{t_{i+1}}_{t_i} b(s) \D s\right)^2 + 2\left(\int^{t_{i+1}}_{t_i} b(s) \D s\right)\left(\int^{t_{i+1}}_{t_i} \sigma(s) \D W_s\right), \notag\\ 
   &\beta_{1,i} := \sum_{(h,k) \in \Theta_n} g^2_{h,k}(t_i)\left( \int_0^1 g_{h,k}^2(t) \D t\right),\notag
   \label{}
 \end{align}

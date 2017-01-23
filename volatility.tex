@@ -1,22 +1,22 @@
-\section{Volatility estimation: Continuous \ito semimartingale } \label{sec:estimator}
+\section{Volatility estimation: continuous prices } \label{sec:estimator}
 In this section we specify a consistent estimator of the spot volatility within a framework of continuous prices. That is $J_t = 0$ and \eqref{eq:semimartingale} reduces to:
 \begin{align}
-X_t & = X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s    \qquad t \ge 0 
+  X_t & = X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s    \qquad t \in [0,1] 
   \label{eq:contsemimartingale},
 \end{align}
-where both $b$ and $\sigma$ are adapted, $b$ is \cadlag, and $\sigma$ is continuous.  This is similar to the framework considered by \cite{Hoffmann2012}; the only difference is that   spot volatility  is \cadlag in their setting, whereas here it is continuous\footnote{The slight extension to the \cadlag spot volatility setting is underway.}.  We label these assumptions for easy reference.
+where $X_0$ is a constant, both $b$ and $\sigma$ are adapted, $b$ is \cadlag, and $\sigma$ is continuous.    We restate these assumptions for easy reference.
 \input{semiass}
-Let $\{g, \tg\}$ be a pair of dual Gabor frame generators constructed as in Lemma \eqref{le:gabor}, then   \sv admits a Gabor frame expansion given by:  
+Let $\{g, \tg\}$ be a pair of dual Gabor frame generators constructed as in Lemma \ref{le:gabor}, then   \sv admits a Gabor frame expansion given by:  
 \begin{align}
   &\sv(t)  = \sum_{h,k \in \ints} \chk \;g_{h,k}(t), \text{ where } 
 \\
 &\chk = \langle \sv, \tilde{g}_{h,k} \rangle.
 \end{align}
-Note that both $\sv$ and $\tg$ have compact support. Indeed \sv has support in $[0,1]$, whereas  \tg has support in $[s,r]$. So, $\chk \ne 0$ only if  the supports of \sv and \tghk overlap.  Furthermore, we note from \eqref{eq:dualghk} that $\tilde{g}_{h,k+1}$ is simply \tghk shifted by $b$ units; so, $\chk = 0$ if $|k| > K_0$ with 
+Note that both $\sv$ and $\tg$ have compact support. Indeed \sv has support in $[0,1]$, whereas  \tg has support in $[s,r]$. So, $\chk \ne 0$ only if  the supports of \sv and \tghk overlap.  Furthermore, we note from \eqref{eq:dualghk} that $\tilde{g}_{h,k+1}$ is simply \tghk shifted by $b$ units; so, $\chk = 0$ if $|k| \ge K_0$ with 
 \begin{align}
-  K_0:= \lceil (1 + |s| + |r|)/b \rceil,
+  K_0:= \lceil ( 1 + |s| + |r|)/b \rceil,
 \end{align}
-where $\lceil x\rceil$ is the smallest positive integer larger than $x \in \real$.  Thus \sv admits a  representation of the form: 
+where $\lceil x\rceil$, $x \in \real$, is the least  integer that is greater than or equal to   $x$.  Thus \sv admits a  representation of the form: 
 \begin{align}
   \sv(t) =  \sum_{\substack{(h,k) \in \ints^2\\\vert k \vert \le K_0}} \chk\;g_{h,k}(t) ,\notag
 \end{align}
@@ -31,14 +31,14 @@ and  for sufficiently large positive integer $H$,
   \Theta_n := \{(h,k) \in \ints^2 : |h| \le H_n \text{ and }|k| \le K_0\},
   \label{eq:theta}
 \end{align}
-where $H_n$ is an increasing sequence\footnote{See Proposition \eqref{pr:consistency} for restrictions on the growth of $H_n$.} in $n$.    
+where $H_n$ is an increasing sequence in $n$.    
 We propose the following estimator of the volatility coefficient:
 \begin{align}
   \label{eq:contvolestimator}
   &\svnx := \sum_{(h,k) \in \Theta_n} \cnhk\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
   &\cnhk := \sum_{i =0}^{n-1} \btghki (X_{t_{i+1}} - X_{t_i})^2.
 \end{align}
-So $\Theta_n$ is the number of frame elements included in the expansion; it is also the number of coefficients to be estimated.  Note that $\vert \Theta_n\vert$, the size or number of elements in $\Theta_n$,  is $(2K_0 + 1)(2H_n+1)$; and since $K_0$ is a finite quantity, it follows that $\vert\Theta_n\vert = O(H_n)$, i.e. the number of estimated coefficients is proportional to $H_n$, and therefore will grow with observation frequency. As will be seen shortly, the growth rate of $H_n$ is asymptotically relevant.
+So $\vert \Theta_n \vert $ is the number of frame elements included in the expansion. Specifically,   $\vert \Theta_n\vert = (2K_0 + 1)(2H_n+1)$; and since $K_0$ is a finite quantity, it follows that $\vert\Theta_n\vert = O(H_n)$, i.e. the number of estimated coefficients is proportional to $H_n$, and therefore, will grow with the number of observations, $n$. 
 In the next section we show that the estimator converges to $\sigma^2$ on $[0,1]$ in a mean integrated square error sense.
 \input{semivol}
 \begin{comment}
@@ -60,7 +60,7 @@ where
   &V_n :=  \int_\real \e[\{\svn(t) - \e[\svn(t)]\}^2] \lambda(t) \D t. \label{eq:ivar}
 \end{align}
 \begin{prop} \label{pr:consistency}
-  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \eqref{le:gabor}.   Suppose the conditions in  Assumptions \eqref{as:vol} and \eqref{as:barvol} hold. If  $H_n^2 \Delta_n, H_n\omega_g(\Delta_n)$, and  $\omega_{\sigma^2}(1/H_n) \log H_n\to 0$, then the mean integrated square error
+  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \ref{le:gabor}.   Suppose the conditions in  Assumptions \ref{as:vol} and \eqref{as:barvol} hold. If  $H_n^2 \Delta_n, H_n\omega_g(\Delta_n)$, and  $\omega_{\sigma^2}(1/H_n) \log H_n\to 0$, then the mean integrated square error
   $R_n$ tends to 0 as $n$ tends to infinity, with 
   \begin{align}
     & B_n^2 = O(H_n^2\Delta_n + \{H_n\omega_g(\Delta_n)\}^2 + \{\omega_{\sigma^2}(1/H_n) \log H_n\}^2)\notag \\
