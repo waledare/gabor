@@ -1,5 +1,6 @@
 \documentclass[a4paper, 12pt]{article}
 \usepackage{wdmisc}
+\usepackage{commath}
 %\usepackage{mathtools}
 \newcommand{\wmi}{\ensuremath{W_{b_m}\left(\frac{x-Y_{t_i}}{b_m}\right) }\xspace}
 \newcommand{\wmj}{\ensuremath{W_{b_m}(({x-Y_{t_i}})/{b_m}) }\xspace}
@@ -76,7 +77,7 @@
 \newcommand{\covind}{\cov_{\eball{\alpha}{c}}} 
 \newcommand{\equ}[1]{\begin{align}{#1} \notag\end{align}}
 \newcommand{\cadlag}{c\`adl\`ag\xspace}
-\renewcommand{\D}{\ensuremath{d}\xspace}
+\renewcommand{\D}{\ensuremath{\dif}\xspace}
 \newcommand{\levy}{L\'evy\xspace}
 \newcommand{\modc}[2]{\ensuremath{{\bar{\omega}}({#1},#2)}\xspace}
 \newcommand{\as}{\ensuremath{\mathrm{a.s.}}\xspace}
@@ -179,7 +180,7 @@ In the sequel if $z$ is a complex number then we shall denote respectively by $\
   &\mcal{A} f  = c \qquad \text{where} \qquad c_k = \langle f, f_k\rangle, \qquad \forall k \in \nats. 
   \label{eq:analysis}
 \end{align}
-Because $\mcal{A}$ takes a function defined on a continuum (\real) to a sequence, which is a function defined on the discrete set \nats, $\mcal{A}$ is known as the \emph{analysis} operator associated with the frame $\{f_k\}_{k \in \nats}$. The boundedness of the analysis operator follows from the frame bounds in  Definition \eqref{eq:frbound}. Now $\mcal{A}^*$, the adjoint\footnote{The adjoint is the operator counterpart of the transpose of a real matrix.}  of $\mcal{A}$, is well-defined and takes sequences in \ltwo to functions in \LtwoR.  Using the fact that  $\mcal{A}^*$ must satisfy the equality $\langle \mcal{A} f  , c\rangle = \langle f,\mcal{A}^*c\rangle$ for all $f \in \LtwoR$ and $c \in \ltwo$, it may be deduced that
+Because $\mcal{A}$ takes a function defined on a continuum (\real) to a sequence, which is a function defined on the discrete set \nats, $\mcal{A}$ is known as the \emph{analysis} operator associated with the frame $\{f_k\}_{k \in \nats}$. The boundedness of the analysis operator follows from the frame bounds in  Definition \eqref{eq:frbound}. Now $\mcal{A}^*$, the adjoint   of $\mcal{A}$, is well-defined and takes sequences in \ltwo to functions in \LtwoR.  Using the fact that  $\mcal{A}^*$ must satisfy the equality $\langle \mcal{A} f  , c\rangle = \langle f,\mcal{A}^*c\rangle$ for all $f \in \LtwoR$ and $c \in \ltwo$, it may be deduced that
 \begin{align}
   \mcal{A}^* c = \sum_{k \in \nats} c_k f_k, \qquad \forall c \in \ltwo,\notag
   \label{}
@@ -249,7 +250,7 @@ It is thus clear  that the deviation of the approximation, $\Vert f - f_\varepsi
 Next, we specialize the discussion to Gabor frames. The analysis of Gabor frames involves two operators: the \emph{translation} operator  $\mcal{T}$ and  the \emph{modulation} operator $\mcal{M}$ defined as follows: 
 \begin{align}
   & \mcal{T}_bf(t) := f(t -  b), &\qquad b \in \real, f \in \LtwoR, \label{eq:translation}\\
-  & \mcal{M}_af(t) := \exp({2\pi \i at})f(t), &\qquad a \in \real, f \in \LtwoR,\label{eq:modulation} 
+  & \mcal{M}_af(t) := \mathrm{e}^{2\pi \i at}f(t), &\qquad a \in \real, f \in \LtwoR,\label{eq:modulation} 
 \end{align}
 where $\i$ is the imaginary number, i.e.  $\i = \sqrt{-1}$.  Both $\mcal{T}$ and $\mcal{M}$ are shift operators: $\mcal{T}$ is a shift or translation operator on the time axis, whereas $\mcal{M}$ performs shifts on the frequency axis. A Gabor system is constructed by fixing $a, b \in \real$, and  performing shifts of a single nontrivial  function $g \in \LtwoR$  in time-frequency space. For example,  if $a$ and $b$ are real numbers then the sequence of functions  
 \begin{align}
@@ -260,7 +261,7 @@ constitutes  a Gabor system.
 \begin{defn}
   Let $g \in \LtwoR$, and let  $a > 0$, $b > 0$ be  positive real numbers. Define for $t \in \real$    
 \begin{align}
-  g_{h,k}(t) := \exp({2 \pi \i h a t })g(t - k b), \qquad  \forall h,k \in \ints. \notag    
+  g_{h,k}(t) := \mathrm{e}^{2 \pi \i h a t }g(t - k b), \qquad  \forall h,k \in \ints. \notag    
  \end{align}
  If the sequence $\{g_{h,k}\}_{h,k \in \ints}$ constitutes a  frame for \LtwoR, then it is called a Gabor frame\footnote{It is also sometimes referred to as a \emph{Weyl-Heisenberg} frame.}. 
 \end{defn}
@@ -274,7 +275,7 @@ In order to obtain sharp asymptotic rates, we require $g$ and its dual \tg (see 
 \end{align}
 Furthermore, 
 \begin{align}
-  \tilde{g}_{h,k}(t) := \exp({2\pi\i h a t}) \tilde{g}(t - kb), \qquad \forall h, k \in \ints \label{eq:dualghk}
+  \tilde{g}_{h,k}(t) := \mathrm{e}^{2\pi\i h a t} \tilde{g}(t - kb), \qquad \forall h, k \in \ints \label{eq:dualghk}
 \end{align}
 is compactly supported.   
 \end{lem}
@@ -290,7 +291,7 @@ is compactly supported.
 \begin{proof}
   See Appendix \ref{ap:proof}.
 \end{proof}
-\noindent In the sequel,  we assume the Gabor frame setup in Lemma\ref{le:gabor}.
+\noindent In the sequel,  we assume the Gabor frame setup in Lemma \ref{le:gabor}.
 \begin{comment}
 Frames are quite general objects. What is needed is some control over the type of redundancies allowed in a frame. Without such a restriction results about the rate of convergence of the frame expansion would be impossible to come by. A Riesz basis provides just the type of control needed. Informally, a Riesz basis is a frame whose elements are all essential. 
 \begin{defn}

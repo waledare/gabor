@@ -31,10 +31,10 @@ where
 \end{align}
 We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
 \begin{align}
-  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk &=  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\int^1_0\sigma^2 (s) { \btghks} ds \notag\\ 
-&\le c\modc{g}{1/H_n}\log H_n  + c\modc{\sigma^2}{1/H_n} \log H_n\notag,
+  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk &=  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\int^1_0\sigma^2 (s) { \btghks} \D s \notag\\ 
+&\le c\modc{\tg}{1/H_n}\log H_n  + c\modc{\sigma^2}{1/H_n} \log H_n\notag,
 \end{align}
-where the last  line follows from Theorem \ref{th:fourone} and Lemma \ref{lem:modtg}. It follows from the \holder continuity of $\sigma$ that   $\modc{\sigma^2}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \ref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
+where the last  line follows from Lemma \ref{th:fourone} and Lemma \ref{lem:modtg}. It follows from the \holder continuity of $\sigma^2$ that   $\modc{\sigma^2}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \ref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
 \begin{align}
  B_{4,n}(t) =  O( H_n^{-\alpha}\log H_n).
   \label{eq:B4}

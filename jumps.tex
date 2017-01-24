@@ -7,32 +7,34 @@ In this section we specify a global spot volatility estimator within a framework
 \end{align}
 for $t \ge 0$  where  \sbm is a standard Brownian motion;  $X_0$ is either known or observable at time 0;  both $b$ and $\sigma$ are adapted; $b$ is \cadlag, and $\sigma$ is continuous;  \pme is a Poisson random measure on $\real_+ \times \real$ with intensity $\nu$, where $\nu$ is a  $\sigma$-finite L\'evy  measure on $\real_+ \times \real$. Note that because $\mu$ is a Poisson measure, if $A$ and $B$ are disjoint Borel sets on $\real_+ \times \real$, then the random measures $\mu(A)$ and $\mu(B)$ are Poisson distributed, independent, and  and have intensity, $\nu(A)$ and $\nu(B)$, respectively. Moreover, because of the \levy assumption on $\nu$, it is the case that $\nu$ does not charge 0 and 
 \begin{align}
-  (x^2 \wedge 1) \ast\nu_t < \infty, \qquad t \in [0,1].\notag
+  (x^2 \wedge 1) \ast\nu_t < \infty, \qquad t \in [0,1],\notag
   \label{}
 \end{align}
-The  notation $``\ast"$ denotes integration with respect to a random measure. So that 
+where $a \wedge b$, with  $a,b \in \real$, denotes the minimum of $a$ and $b$. The  notation $``\ast"$ denotes integration with respect to a random measure. So that 
 \begin{align}
   &J_{t}^l :=  \tau\ast (\pme  - \nu)_t = \int_0^t\int_\real \tau(x) [\pme(\D s, \D x)   -  \nu(\D s,\D x)], \notag\\
   & J_{t}^s:= (\iota - \tau)\ast \pme_t = \int_0^t\int_\real [\iota(x) - \tau(x)] \pme(\D s, \D x), \notag
   \label{}
 \end{align}
-for $t \ge 0$. Both  $J^l$ and $J^s$ are purely discontinuous in the sense that they are orthogonal to all continuous semimartingales. $J^s$ accounts for  small jumps; it is a square-integrable martingale with possibly infinite activity. $J_2$ accounts for large jumps, i.e. jumps with magnitude exceeding the bound on $\tau$; it neccessarily has finite activity so it is a process with finite variation. In the sequel, we will specify $\tau$ as follows:
+for $t \ge 0$. Both  $J^l$ and $J^s$ are purely discontinuous in the sense that they are orthogonal to all continuous semimartingales. $J^s$ accounts for  small jumps; it is a square-integrable martingale with possibly infinite activity. $J^l$ accounts for large jumps, i.e. jumps with magnitude exceeding the bound on $\tau$; it neccessarily has finite activity so it is a process with finite variation. In the sequel, we will specify $\tau$ as follows:
 \begin{align}
   \tau(x) = xI_{\{\vert x \vert \le 1\}}, \qquad x \in \real. \notag
   \label{}
 \end{align}
-
-As in the preceeding section, we observe a realization of the price process at $n + 1$ equidistant points $t_i$,  $i = 0, 1, \cdots, n$. The observation interval is normalized to \domain with practically no loss of generality.  The estimator proposed in the previous section, where there is no jump activity, will not do here. It is inconsistent on account of the presence of jumps; its quality deteriorates as a function of how active the jumps of $X$ are. We will counter this phenomenon with a modified spot variance estimator, but first we introduce the following notation. Let $\Delta^nX_i$ denote $X_{t_{i+1}} - X_{t_i}$ for $i = 0, 1,\cdots, n-1$, and let $u_n$  be a positive decreasing sequence such that 
+As in the preceeding section, we observe a realization of the price process at $n + 1$ equidistant points $t_i$,  $i = 0, 1, \cdots, n$. The observation interval is normalized to \domain with practically no loss of generality.  The estimator proposed in the previous section, where there is no jump activity, will not do here. It is inconsistent on account of the presence of jumps; its quality deteriorates as a function of how active the jumps of $X$ are. We will counter this phenomenon with a modified spot variance estimator, but first we introduce the following notation. Let $\dx$ denote $X_{t_{i+1}} - X_{t_i}$ for $i = 0, 1,\cdots, n-1$, and let $u_n$  be a positive decreasing sequence such that 
 \begin{align}
-u_n/\sqrt{\Delta_n\log(1/\Delta_n)}  
+  u_n (n^{-1} \log(n))^{-1/2} 
   \label{}
 \end{align}
- diverges to infinity with $n$. We specify the jump-robust estimator of the spot volatility as follows: 
+ diverges to infinity with $n$. We specify the jump-robust global estimator of  spot volatility as follows: 
 \begin{align}
   \label{eq:jumpvolestimator}
   &\jvn(t) := \sum_{(h,k) \in \Theta_n} \anhk\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
   &\anhk := \sum_{i =0}^{n-1} \btghki (\dx)^2 \indx,
 \end{align}
-where $\{\ghk, \tghk\}$ is a pair of dual Gabor frames constructed as in Lemma \eqref{le:gabor}; $\Theta_n$ retains its meaning from \eqref{eq:theta}; and \indx is 1 if $\vert\dx\vert$ is less than or equal to  $u_n$ and 0 otherwise.  
+where $\{\ghk, \tghk\}$ is a pair of dual Gabor frames constructed as in Lemma \eqref{le:gabor}; $\Theta_n$ retains its meaning from \eqref{eq:theta}; and \indx is one if $(\dx)^2$ is less than or equal to  $u_n$ and zero otherwise.  
 
-There are obvious similarities between \svnx and \jvn with the key difference being that \jvn discards realized squared increments over intervals that likely contain jumps; $u_n$ determines the threshold for what is included in the computation and what is not. Clearly it makes sense to use \svnx if we have reason to believe that the price process is not subject to jumps since it uses all the data and therefore may be assumed to produce more accurate results.  
+
+There are obvious similarities between \svnx, defined at  \eqref{eq:contvolestimator},  and \jvn with the key difference being that \jvn discards realized squared increments over intervals that likely contain jumps; $u_n$ determines the threshold for what is included in the computation and what is not. This determination becomes more accurate as the observation interval becomes infinitessimally small. Clearly it makes sense to use \svnx if we have reason to believe that the price process is not subject to jumps; \svnx will always employ   all available data and therefore may be assumed to produce more accurate results.  
+
+

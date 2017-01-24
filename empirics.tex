@@ -5,9 +5,9 @@ In this section, we  confirm via simulations the results established analyticall
 We simulate prices using the following stochastic differential equations:
 \begin{align}
   & X_t = 0.8 +  0.5  t + 0.2  W_t,\notag & \text{(ABM)}\\
-  & X_t = 0.8 -\int_0^t 4 X_s d s + \int^t_0 0.2 d W_s,\notag & \text{(OU)}\\
-  & X_t = 0.8 + \int_0^t 0.5 X_s d s + \int^t_0 0.2 X_s d W_s,\notag & \text{(GBM)}\\
-  & X_t = 0.8 + \int_0^t(0.1 - 0.5 X_s)d s +\int^t_0  0.2 \sqrt{X_s} d W_s,\notag & \text{(CIR)}
+  & X_t = 0.8 -\int_0^t 4 X_s \D s + \int^t_0 0.2 \D W_s,\notag & \text{(OU)}\\
+  & X_t = 0.8 + \int_0^t 0.5 X_s \D s + \int^t_0 0.2 X_s \D W_s,\notag & \text{(GBM)}\\
+  & X_t = 0.8 + \int_0^t(0.1 - 0.5 X_s) \D s +\int^t_0  0.2 \sqrt{X_s} \D W_s,\notag & \text{(CIR)}
   \label{}
 \end{align}
 where $W_t$ is a standard Brownian motion. For convenience, the observation interval is set to the unit interval $[0,1]$. In all 4 cases, $X_0 = 0.8$. For each price model, we obtain estimates for the MISE, the square bias, and the variance of the estimator  when the number of  observations are 500, 5000, and 50000, respectively. In a high-frequency framework, 500 observations for an actively traded stock is likely too small; 5,000 is about right, but 50,000 is not entirely unheard of. At any rate, our objective is not to capture the average number of trades of any particular security, but rather,  to obtain support for our asymptotic results by showing an inverse relationship between the number of observations and the MISE, and thereby gain a better understanding of the finite sample behavior of the estimator.
@@ -46,9 +46,9 @@ For instance, to arrive at the integrated square bias figures, average spot vari
  In Propositions \eqref{pro:finite} and \eqref{pro:infinity}, we demonstrate analytically that $\jvn$ is consistent in term of the \Ltwo distance when prices contain jumps of finite and infinite activity, respectivey. These results, however, do not assert the convergence of the mean integrated squared error of the estimator. Nevertherless, the consistency results lead us to suspect that the MISE of the estimator is also convergent. We investigate this analysis by simulating for price prosesses with jumps:    
 \begin{align}
   & X_t = 0.8 +  0.5  t + 0.2  W_t + \sum_{i = 1}^N Y_i,\notag & \text{(ABM + JMP)}\\
-  & X_t = 0.8 -\int_0^t 4 X_s d s + \int^t_0 0.2 d W_s +  \sum_{i = 1}^N Y_i ,\notag & \text{(OU + JMP)}\\
-  & X_t = 0.8 + \int_0^t 0.5 X_s d s + \int^t_0 0.2 X_s d W_s + \sum_{i = 1}^N Y_i,\notag & \text{(GBM + JMP)}\\
-  & X_t = 0.8 + \int_0^t(0.1 - 0.5 X_s)d s +\int^t_0  0.2 \sqrt{X_s} d W_s + \sum_{i = 1}^N Y_i,\notag & \text{(CIR + JMP)}
+  & X_t = 0.8 -\int_0^t 4 X_s \D s + \int^t_0 0.2 \D W_s +  \sum_{i = 1}^N Y_i ,\notag & \text{(OU + JMP)}\\
+  & X_t = 0.8 + \int_0^t 0.5 X_s \D s + \int^t_0 0.2 X_s \D W_s + \sum_{i = 1}^N Y_i,\notag & \text{(GBM + JMP)}\\
+  & X_t = 0.8 + \int_0^t(0.1 - 0.5 X_s) \D s +\int^t_0  0.2 \sqrt{X_s} \D W_s + \sum_{i = 1}^N Y_i,\notag & \text{(CIR + JMP)}
   \label{}
 \end{align}
 wher $N$ is a Poisson random variable with intensity $5$ and $Y_i$, $1 \le  i\le N$, is a normal random variable with mean zero and standard deviation 0.4.  

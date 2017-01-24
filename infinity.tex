@@ -11,7 +11,7 @@ We now turn to the case of a price process specified in full generality by \eqre
 \end{prop}
 \begin{proof}
   We wish to show that the random variable
-  $\int_0^1 (\jvn - \sigma^2(t))^2dt$ tends to zero in probability. The regularity conditions on $X$ and $\sigma^2$ imply that  $\sup_{t \in [0,1]} (\jvn - \sigma^2(t))^2$ is a random variable and that the previous claim would follow as soon as $\sup_{t \in [0,1]} (\jvn - \sigma^2(t))^2$ is shown  to converge to  zero in probability.  To that end consider the following decomposition of the process $X$:
+  $\int_0^1 (\jvn - \sigma^2(t))^2\D t$ tends to zero in probability. The regularity conditions on $X$ and $\sigma^2$ imply that  $\sup_{t \in [0,1]} (\jvn - \sigma^2(t))^2$ is a random variable and that the previous claim would follow as soon as $\sup_{t \in [0,1]} (\jvn - \sigma^2(t))^2$ is shown  to converge to  zero in probability.  To that end consider the following decomposition of the process $X$:
   \begin{align}
     &X = X^f + J^s\label{eq:xj},\\
     &X^f = X^c + J^l\label{eq:xjc},
@@ -26,7 +26,7 @@ We now turn to the case of a price process specified in full generality by \eqre
 & \quad - \sumnt \cee \ghk(t).
       \label{eq:open}
     \end{align}
-    By Theorem 4.1 of \cite{Zhang2008} (See Theorem A.1 of the Appendix), the last term on the right converges uniformly  on the unit  interval  to zero, almost surely, as $n \to \infty$. 
+    By Theorem 4.1 of \cite{Zhang2008} (See Lemma \ref{th:fourone} ), the last term on the right converges uniformly  on the unit  interval  to zero, almost surely, as $n \to \infty$. 
     
      To obtain a bound on the first item on the right of \eqref{eq:open}, we may use \eqref{eq:xj} to write
     \begin{align}
@@ -34,7 +34,7 @@ We now turn to the case of a price process specified in full generality by \eqre
     \end{align}
     where 
     \begin{align}
-      &w_{h,k} :=  \sumin \btghki  (\dxf)^2 \indxff - \int^{1}_{0} \sigma^2(s) \btghks ds \notag\\
+      &w_{h,k} :=  \sumin \btghki  (\dxf)^2 \indxff - \int^{1}_{0} \sigma^2(s) \btghks \D s \notag\\
       &x_{h,k} :=  \sumin \btghki(\dxf)^2 (\indx - \indxff) \notag\\
       &y_{h,k}  := 2 \sumin \btghki\dxf \djt \indx \notag \\
       &z_{h,k} := \sumin \btghki(\djt)^2\indx.
@@ -73,7 +73,7 @@ Now consider that $\sumt r_{h,k} \ghk(t) \le  c H_n \sumin \dxc \djt I_{A_i \cap
   \p(&\vert\sumt r_{h,k} \ghk(t) \vert > \delta/4) \le \p(c H_n \vert \sumin \dxc \djt I_{A_i \cap C_i} \vert  > \delta/4)\notag\\& \le \p\left( \left(\sumin (\dxc)^2\right)^{1/2} \left(\sumin ( \djt I_{A_i \cap C_i})^2\right)^{1/2} > \delta (4H_nc)^{-1}\right).\notag
   \label{}
 \end{align}
-It is a well known fact that  $\sumin (\dxc)^2 (t)$ converges to $\int_0^t\sigma^2(s)ds$ in probability uniformy on the unit interval. Hence, there is a sufficiently large $N$ such that if $n > N$ then $ \p(\vert (\sumin (\dxc)^2)^{1/2}  - (\int_0^1\sigma^2(s)ds)^{1/2}\vert > \delta ) \le  \varepsilon/4$, and because integrated volatility is almost surely finite, there is a sufficiently large $K$ satisfying  $K/2 > \delta$ such that $\p( \int_0^1\sigma^2(s)ds > K/2) \le \varepsilon/4.$ Hence, we may write
+It is a well known fact that  $\sumin (\dxc)^2 (t)$ converges to $\int_0^t\sigma^2(s)\D s$ in probability uniformy on the unit interval. Hence, there is a sufficiently large $N$ such that if $n > N$ then $ \p(\vert (\sumin (\dxc)^2)^{1/2}  - (\int_0^1\sigma^2(s) \D s)^{1/2}\vert > \delta ) \le  \varepsilon/4$, and because integrated volatility is almost surely finite, there is a sufficiently large $K$ satisfying  $K/2 > \delta$ such that $\p( \int_0^1\sigma^2(s) \D s > K/2) \le \varepsilon/4.$ Hence, we may write
 \begin{align}
 \p(&\vert\sumt r_{h,k} \ghk(t) \vert > \delta/4) \notag \\&\le \p\left(\sumin ( \djt I_{A_i \cap C_i})^2 > \delta^2 (4K H_nc)^{-2}\right) + \varepsilon/2\notag\\&\le  \p\left( (x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}}\ast\mu)_1 > \delta^2 (4K H_nc)^{-2}\right) + \varepsilon/2\notag\\
 &\le \delta^{-2} (4K H_nc)^{2}\e\left( (x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}}\ast\mu)_1  \right) + \varepsilon/2\notag\\

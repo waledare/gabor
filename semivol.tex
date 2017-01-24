@@ -45,9 +45,9 @@ Much like the usual integrated mean square error risk, $R_n(\alpha,c)$ admits a 
 & = \int_0^1 \e[ (\svnx - \sigma^2(t))\indvol]^2 \D t \notag \\
 & \quad + \int_0^1 \var[\svnx\indvol] \D t. \label{eq:msedecomp}
 \end{align}
-The equality in \eqref{eq:fubini} results from an interchange of the expectectation and integration operators justified by Fubini's theorem. The decomposition in line  \eqref{eq:msedecomp} results from the usual mean square error decomposition  into a square bias and a variance component for each  $t \in \domain$. The two summands in the last line are the bias and variance components and will be denoted $B_n^2(\alpha,c)$ and $V_n(\alpha,c)$, respectively; we obtain estimates for their rates of convergence below. First, we recall  aTheorem 4.1 from \cite{Zhang2008}, which plays a crucial role in our demonstrations. 
+The equality in \eqref{eq:fubini} results from an interchange of the expectectation and integration operators justified by Fubini's theorem. The decomposition in line  \eqref{eq:msedecomp} results from the usual mean square error decomposition  into a square bias and a variance component for each  $t \in \domain$. The two summands in the last line are the bias and variance components and will be denoted $B_n^2(\alpha,c)$ and $V_n(\alpha,c)$, respectively; we obtain estimates for their rates of convergence below. First, we recall  Theorem 4.1 from \cite{Zhang2008}, which plays a crucial role in our demonstrations. 
 
-\begin{thm} \label{th:fourone}
+\begin{lem}[Theorem 4.1, \cite{Zhang2008}] \label{th:fourone}
   Let $\{\ghk, \tghk\}$ be a pair of compactly supported dual Gabor frames satisfying the conditions of Lemma \eqref{le:gabor}. If $f \in \LtwoR$ is bounded and continuous on \real then for any positive integer $l$, if $K > (l + \vert s \vert + \vert r \vert)/ b$ and $H$ is a positive integer then  the partial sums 
   \begin{align}
     S_{H,K} (t) := \sum_{\vert h \vert \le H} \sum_{\vert k \vert \le K} \inner{f}{\ghk} \tghk(t)  \notag
@@ -59,7 +59,7 @@ The equality in \eqref{eq:fubini} results from an interchange of the expectectat
     \label{}
   \end{align}
 for all $t$ such that $\vert t\vert \le l$.
-\end{thm}
+\end{lem}
 The following two propositions are the main results of this section.
 \begin{prop} \label{pr:consistency}
   Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \eqref{le:gabor}.   Suppose the conditions in  Assumption \ref{as:vol}  hold. If $g$ is Lipschitz continuous and $H_n \uparrow \infty$ satisfies  

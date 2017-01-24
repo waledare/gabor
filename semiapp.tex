@@ -45,7 +45,7 @@ Returning to \eqref{eq:difftg}, we see that
 \end{align}
 where $C_{\tg} = G_*^2(2a (\lceil ( 1 + \vert s \vert  +\vert r\vert)/b\rceil)(g^*)^2 + G^*)$. Now let \hkints, then
 \begin{align}
-  \vert \tghk(t) - \tghk(t')\vert & = \vert \exp({2 \pi \i h a t}) (\tg(t - kb) -\tg(t'-kb)) \vert\notag\\
+  \vert \tghk(t) - \tghk(t')\vert & = \vert \mathrm{e}^{2 \pi \i h a t} (\tg(t - kb) -\tg(t'-kb)) \vert\notag\\
   &\le \vert \tg(t - kb) -\tg(t'-kb) \vert \le C_{\tg} \modc{g}{\delta}.
   \label{}
 \end{align}
@@ -100,7 +100,7 @@ We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
 &\le c\e[\modc{\tghk}{1/H_n}\log H_n] \notag \\
 &\quad + c\e[\modc{\sigma^2\indvol}{1/H_n} \log H_n]\notag,
 \end{align}
-where the last  line follows from Theorem \eqref{th:fourone}. But since  $\sigma^2 \indvol$ is bounded by $c$ if it is in the \holder ball \hball{\alpha}{c}  and $0$ otherwise, it follows that $\modc{\sigma^2\indvol}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
+where the last  line follows from Lemma \ref{th:fourone}. But since  $\sigma^2 \indvol$ is bounded by $c$ if it is in the \holder ball \hball{\alpha}{c}  and $0$ otherwise, it follows that $\modc{\sigma^2\indvol}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
 \begin{align}
  B_{4,n}(t) =  O( H_n^{-\alpha}\log H_n).
   \label{eq:B4}
