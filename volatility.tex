@@ -10,7 +10,7 @@ Let $\{g, \tg\}$ be a pair of dual Gabor frame generators constructed as in Lemm
 \begin{align}
   &\sv(t)  = \sum_{h,k \in \ints} \chk \;g_{h,k}(t), \text{ where } 
 \\
-&\chk = \langle \sv, \tilde{g}_{h,k} \rangle.
+&\chk = \langle \sv, \tilde{g}_{h,k} \rangle. \label{eq:chk}
 \end{align}
 Note that both $\sv$ and $\tg$ have compact support. Indeed \sv has support in $[0,1]$, whereas  \tg has support in $[s,r]$. So, $\chk \ne 0$ only if  the supports of \sv and \tghk overlap.  Furthermore, we note from \eqref{eq:dualghk} that $\tilde{g}_{h,k+1}$ is simply \tghk shifted by $b$ units; so, $\chk = 0$ if $|k| \ge K_0$ with 
 \begin{align}
@@ -35,7 +35,7 @@ where $H_n$ is an increasing sequence in $n$.
 We propose the following estimator of the volatility coefficient:
 \begin{align}
   \label{eq:contvolestimator}
-  &\svnx := \sum_{(h,k) \in \Theta_n} \cnhk\;g_{h,k}(t), \qquad \forall t \in [0,1], \text{ where}\\
+  &\svnx := \sum_{(h,k) \in \Theta_n} \cnhk\;g_{h,k}(t), \qquad  t \in [0,1], \text{ where}\\
   &\cnhk := \sum_{i =0}^{n-1} \btghki (X_{t_{i+1}} - X_{t_i})^2.
 \end{align}
 So $\vert \Theta_n \vert $ is the number of frame elements included in the expansion. Specifically,   $\vert \Theta_n\vert = (2K_0 + 1)(2H_n+1)$; and since $K_0$ is a finite quantity, it follows that $\vert\Theta_n\vert = O(H_n)$, i.e. the number of estimated coefficients is proportional to $H_n$, and therefore, will grow with the number of observations, $n$. 
@@ -60,7 +60,7 @@ where
   &V_n :=  \int_\real \e[\{\svn(t) - \e[\svn(t)]\}^2] \lambda(t) \D t. \label{eq:ivar}
 \end{align}
 \begin{prop} \label{pr:consistency}
-  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \ref{le:gabor}.   Suppose the conditions in  Assumptions \ref{as:vol} and \eqref{as:barvol} hold. If  $H_n^2 \Delta_n, H_n\omega_g(\Delta_n)$, and  $\omega_{\sigma^2}(1/H_n) \log H_n\to 0$, then the mean integrated square error
+  Let $\{g, \tg\}$ be pair of dual Gabor generators constructed as in Lemma \ref{le:gabor}.   Suppose the conditions in  Assumption \ref{as:vol} and \eqref{as:barvol} hold. If  $H_n^2 \Delta_n, H_n\omega_g(\Delta_n)$, and  $\omega_{\sigma^2}(1/H_n) \log H_n\to 0$, then the mean integrated square error
   $R_n$ tends to 0 as $n$ tends to infinity, with 
   \begin{align}
     & B_n^2 = O(H_n^2\Delta_n + \{H_n\omega_g(\Delta_n)\}^2 + \{\omega_{\sigma^2}(1/H_n) \log H_n\}^2)\notag \\

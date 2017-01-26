@@ -21,7 +21,7 @@ From an implementation perspective, using a  B-spline  makes the construction of
 \end{align}
 If $0 < ab \le 1/(2 p -1)$ then  $\{\mcal{D}_a h, \mcal{D}_a\tilde{h}\}$, where 
 \begin{align}
-  \tilde{h}(x) = ab h(x) + 2 a b \sum^{p-1}_{n=1} h(x+n), \qquad \forall x \in \real, 
+  \tilde{h}(x) = ab h(x) + 2 a b \sum^{p-1}_{n=1} h(x+n), \qquad  x \in \real, 
   \label{eq:gt}
 \end{align}
 is a pair of  dual Gabor  frame generators. So if we start with a B-spline $h$ then the dual generator will be a finite linear combination of scaled translates of $h$; consequently, the  dual generator will be a spline, with similar regularity properties.  For our simulation, we used a third-order B-spline. Our choice of the third order B-spline is motivated by a desire for a generator with a  Fourier transform that decays like a quadratic polynomial.   Specifically, we set

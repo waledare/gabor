@@ -51,6 +51,35 @@ where $C_{\tg} = G_*^2(2a (\lceil ( 1 + \vert s \vert  +\vert r\vert)/b\rceil)(g
 \end{align}
 The last inequality follows because translating a function leaves its modulus of continuity unchanged.\\
 \end{proof}
+The following is a simple corollary to \levy's modulus of continuity theorem. 
+
+\begin{lem} \label{lem:mylevy}
+  Suppose $\int^1_0\sigma^2(s) \D s < \infty$, almost surely,   where $\sigma$ is adapted, strictly positive,  and continuous. If $W$ is an $\mcal{F}_t$-Brownian motion, then for sufficiently large $n$, it is almost surely the case that  
+  \begin{align}
+    \sup_{0 \le i \le n -1} \left \vert \int_{t_i}^{t_{i+1}} \sigma(s)  \D W_s   \right \vert \le C (n^{-1}  \log (n))^{1/2}, \notag
+    \label{}
+  \end{align}
+  where $C$ is a finite-valued random variable.
+\end{lem}
+\begin{proof} Let $T_t := \inf\{s > 0: \int_0^s \sigma^2(u) \D u > t\}$ and  $\mcal{G}_t := \mcal{F}_{T_t}$. Then,  by Theorem 42 of \cite{Protter2004}, it is almost surely  the case that 
+  \begin{align}
+    \int_{0}^{t} \sigma(s)  \D W_s = B_{T_t},   \notag
+    \label{}
+  \end{align}
+  where $B$ is a $\mcal{G}_t$-Brownian motion.
+   Applying \levy's modulus of continuity result \citep[Theorem 10.32]{Rogers1994a} to $ B_{T_t} $, we have, almost surely,  for sufficiently large $n$
+  \begin{align}
+    \sup_{ 0 \le i \le n-1}\left\vert \int_{t_i}^{t_{i +  1}} \sigma(s)  \D W_s \right \vert  (2 \delta_i \log(1/\delta_i))^{-1/2} \le 1, 
+    \label{}
+  \end{align}
+  where $\delta_i := T_{t_{i+1}} - T_{t_i} = \int^{t_{i + 1}}_{t_i} \sigma^2(s) \D s$. Because $\sigma$ is continuous and strictly positive on \domain, there are finite-valued random variables $c^* \ge c_* > 0$, such that $c^* \ge \sigma^2(s) \ge c_*$, $s \in \domain$. Hence, 
+  \begin{align}
+    (2 \delta_i \log(1/\delta_i))^{1/2} & \le  (2 c^*n^{-1} \log(n/c_*))^{1/2}\notag\\
+    &= (2 c^*n^{-1} \log(n) - 2 c^*n^{-1} \log(c_*)  )^{1/2}\notag\\
+    &\le (2 c^*n^{-1} \log(n))^{1/2}\notag.
+    \label{}
+  \end{align}
+\end{proof}
 \noindent Now we prove Proposition \eqref{pr:consistency}.\\\\
 \begin{proof}
 Without loss of generality let $X_0 = 0$, and  take $\alpha  \in (0, 1]$ and $c > 0$ as given. We begin with $B^2_n(\alpha, c)$, the integrated square bias component of $R_n(\alpha,c)$, which is defined as:

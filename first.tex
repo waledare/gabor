@@ -43,8 +43,8 @@
 \newcommand{\T}{\ensuremath{\tau}\xspace}
 \newcommand{\chk}{\ensuremath{{c}_{h,k}}\xspace}
 \newcommand{\cnhk}{\ensuremath{\hat{c}_{h,k}}\xspace}
-\newcommand{\ceen}[1]{\ensuremath{{c}_n(#1, h, k)}\xspace}
-\newcommand{\cee}{\ensuremath{{c}(X, h, k)}\xspace}
+\newcommand{\ceen}[1]{\ensuremath{\hat{a}_{h,k}}\xspace}
+\newcommand{\cee}{\ensuremath{\chk}\xspace}
 \newcommand{\dnhk}{\ensuremath{\hat{d}_{h,k}}\xspace}
 \newcommand{\anhk}{\ensuremath{\hat{a}_{h,k}}\xspace}
 \newcommand{\ivp}{\ensuremath{\sigma}\xspace}
@@ -150,14 +150,14 @@ Furthermore, if $\{f_k\}_{k \in \nats}$ is a frame for \hs, then surjective, bou
 Our discussion of  frame theory will be  rather brief; we only mention concepts needed for our specification of the volatility estimator.  For a  more detailed treatment see the book by \cite{Christensen2008}. 
 In the sequel if $z$ is a complex number then we shall denote respectively by $\bar{z}$ and $\vert z \vert$ the complex conjugate and magnitude of $z$. Let \LtwoR denote the space of complex-valued functions defined on the real line with finite norm given by 
 \begin{align}
-  \Vert f \Vert := \left(\int_\real f(t) \overline{f(t)} \D t\right)^{1/2} < \infty, \qquad \forall f \in \LtwoR.\notag
+  \Vert f \Vert := \left(\int_\real f(t) \overline{f(t)} \D t\right)^{1/2} < \infty, \qquad  f \in \LtwoR.\notag
   \label{}
 \end{align}
  Define the  inner product of two elements $f$ and $g$ in $\LtwoR$ as $\langle f,g\rangle :=  \int_\real f(t) \overline{g(t)} \D t$.
 
  Denote by \ltwo the set of  complex-valued sequences defined on the set of natural numbers \nats with finite norm given by 
  \begin{align}
-   \Vert c \Vert := \left( \sum_{k \in \nats} c_k \overline{c_k} \right)^{1/2} <   \infty, \qquad \forall c \in \ltwo,\notag
+   \Vert c \Vert := \left( \sum_{k \in \nats} c_k \overline{c_k} \right)^{1/2} <   \infty, \qquad c \in \ltwo,\notag
    \label{}
  \end{align}
  where $c_k$ is the $k$-th component of $c$. The inner product of two sequences $c$ and $d$ in \ltwo is $\langle c, d \rangle := \sum_{k \in \nats} c_k \overline{d_k}$. Now we may give a definition for frames:
@@ -165,24 +165,24 @@ In the sequel if $z$ is a complex number then we shall denote respectively by $\
    A sequence $\{f_k\}_{k \in \nats} \subset \LtwoR$ is a frame if there exists positive constants $C_1$ and $C_2$ such that
   \begin{align}
     C_1\Vert f \Vert^2 \le \sum_{k \in \nats}\vert \langle f, f_k\rangle \vert^2 \le  C_2 \Vert f \Vert^2,
-  \qquad  \forall f \in \LtwoR. \notag 
+  \qquad   f \in \LtwoR. \notag 
   \end{align}
 \end{defn}
 \noindent The  constants $C_1$ and $C_2$ are called   \emph{frame bounds}. If $C_1 = C_2$ then $\{f_k \}_{k \in \nats}$ is said to be \emph{tight}. Because an  orthonormal basis satisfies  Parseval's equality\footnote{
   Parseval's equality states that if $\{f_k\}_{k \in \nats}$ is an orthonormal basis for $\mcal{H}$, a separable Hilbert space, then
   \begin{align}
-    \Vert f \Vert^2 = \sum_{k \in \nats} \vert \langle f, f_k \rangle \vert^2 =\Vert \hat{f} \Vert^2, \qquad \forall f \in \mcal{H},  \notag
+    \Vert f \Vert^2 = \sum_{k \in \nats} \vert \langle f, f_k \rangle \vert^2 =\Vert \hat{f} \Vert^2, \qquad  f \in \mcal{H},  \notag
     \label{}
   \end{align}
   where $\hat{f}$ is the Fourier transform of $f$.
 }, it follows that an orthonormal basis is a tight frame with frame bounds identically equal to 1, i.e. $C_1 = C_2 = 1$.  Now if $\{f_k\}$ is a frame, we may associate with it a bounded operator $\mcal{A}$ that maps every function  $f$ in  \LtwoR to a sequence $c$ in \ltwo in the following way:
 \begin{align}
-  &\mcal{A} f  = c \qquad \text{where} \qquad c_k = \langle f, f_k\rangle, \qquad \forall k \in \nats. 
+  &\mcal{A} f  = c \qquad \text{where} \qquad c_k = \langle f, f_k\rangle, \qquad  k \in \nats. 
   \label{eq:analysis}
 \end{align}
 Because $\mcal{A}$ takes a function defined on a continuum (\real) to a sequence, which is a function defined on the discrete set \nats, $\mcal{A}$ is known as the \emph{analysis} operator associated with the frame $\{f_k\}_{k \in \nats}$. The boundedness of the analysis operator follows from the frame bounds in  Definition \eqref{eq:frbound}. Now $\mcal{A}^*$, the adjoint   of $\mcal{A}$, is well-defined and takes sequences in \ltwo to functions in \LtwoR.  Using the fact that  $\mcal{A}^*$ must satisfy the equality $\langle \mcal{A} f  , c\rangle = \langle f,\mcal{A}^*c\rangle$ for all $f \in \LtwoR$ and $c \in \ltwo$, it may be deduced that
 \begin{align}
-  \mcal{A}^* c = \sum_{k \in \nats} c_k f_k, \qquad \forall c \in \ltwo,\notag
+  \mcal{A}^* c = \sum_{k \in \nats} c_k f_k, \qquad  c \in \ltwo,\notag
   \label{}
 \end{align}
 where $c_k$ is the $k$-th component of the sequence $c$. The adjoint, $\mcal{A}^*$, may be thought of as reversing the operation or effect of the analysis operator; for this reason it is known as the \emph{synthesis} operator.
@@ -199,7 +199,7 @@ The frame operator $F$ is bounded, invertible, and self-adjoint\footnote{See \ci
 \end{align}
 The sequence $\{F^{-1}f_k\}_{k \in \nats}$ is also a frame, and it is called the \emph{canonical dual} of $\{f_k\}_{k \in \nats}$. A frame will generally have other duals besides the canonical dual. That is, there exists  sequences $\{\tilde{f}_k\}_{k \in \nats}$ besides the canonical sequence such that 
 \begin{align}
-  f = \sumn \langle f, \tilde{f}_k\rangle f_k \qquad \forall f \in \LtwoR.
+  f = \sumn \langle f, \tilde{f}_k\rangle f_k \qquad  f \in \LtwoR.
   \label{eq:dual}
 \end{align}
 \end{comment}
@@ -261,7 +261,7 @@ constitutes  a Gabor system.
 \begin{defn}
   Let $g \in \LtwoR$, and let  $a > 0$, $b > 0$ be  positive real numbers. Define for $t \in \real$    
 \begin{align}
-  g_{h,k}(t) := \mathrm{e}^{2 \pi \i h a t }g(t - k b), \qquad  \forall h,k \in \ints. \notag    
+  g_{h,k}(t) := \mathrm{e}^{2 \pi \i h a t }g(t - k b), \qquad   h,k \in \ints. \notag    
  \end{align}
  If the sequence $\{g_{h,k}\}_{h,k \in \ints}$ constitutes a  frame for \LtwoR, then it is called a Gabor frame\footnote{It is also sometimes referred to as a \emph{Weyl-Heisenberg} frame.}. 
 \end{defn}
@@ -275,7 +275,7 @@ In order to obtain sharp asymptotic rates, we require $g$ and its dual \tg (see 
 \end{align}
 Furthermore, 
 \begin{align}
-  \tilde{g}_{h,k}(t) := \mathrm{e}^{2\pi\i h a t} \tilde{g}(t - kb), \qquad \forall h, k \in \ints \label{eq:dualghk}
+  \tilde{g}_{h,k}(t) := \mathrm{e}^{2\pi\i h a t} \tilde{g}(t - kb), \qquad  h, k \in \ints \label{eq:dualghk}
 \end{align}
 is compactly supported.   
 \end{lem}
@@ -283,7 +283,7 @@ is compactly supported.
 \begin{lem} \label{lem:modtg}
   Let the dual Gabor frame generator $\tilde{g}$ be constructed as in \eqref{eq:dualg}. If $\modc{g}{\delta}$ denotes the modulus of continuity of $g$, i.e. $\modc{g}{\delta} := \sup \{|g(t) - g(t')| : t,t' \in \real \text{ and } |t -t'| < \delta\}$,  then   
   \begin{align}
-    \modc{\tilde{g}_{j,k}}{\delta} \le C \modc{g}{\delta} \qquad \forall \hkints\notag,
+    \modc{\tilde{g}_{j,k}}{\delta} \le C \modc{g}{\delta} \qquad  \hkints\notag,
     \label{}
   \end{align}
   where $C$ is a positive constant.
