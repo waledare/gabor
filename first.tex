@@ -109,11 +109,12 @@
 %\restylefloat{table}
 %\floatstyle{plaintop}
 \author{Wale Dare and Matthias Fengler}
-\title {Functional estimation of realized instantaneous volatility in the presence of \levy price jumps.}
+\title {Global estimation of realized instantaneous volatility in the presence of \levy price jumps.}
 \begin{document}
 \maketitle
 \begin{abstract}
-  We propose functional estimators of the instantaneous volatility of asset prices. We introduce a Gabor frame estimator of spot  volatility, and show that the estimator is convergent  in  probability and  in the integrated mean squares error sense, when prices are without discontinuities. We also propose a  second estimator for when prices cannot be assumed to be continuous,  and show that the proposed estimator converges in probability in the presence of both finite and infinite activity price jumps. 
+  We present a non-parametric methodology for estimating the realized spot volatility of a price process described by  an \ito semimartingale with \levy jumps. The procedure is based on the Gabor frame expansion of the   instantaneous volatility of the process and  a threshold-based jump elimination technique. We study the convergence in probability of the estimator in $L^2([0,T])$, in the general case,  as well as the convergence to zero of the mean integrated  squared error of the estmator  in the case of continuous asset prices. Our analysis assumes  the time interval between price observations tends to zero; as a result, the intended application is the analysis of high frequency financial data.    
+
 \end{abstract}
 %\tableofcontents
 Volatility estimation using discretely observed asset prices has received a great deal of attention recently, however,  much of that effort has been focused on 
@@ -223,7 +224,7 @@ Thus, in a manner reminiscent of orthonormal basis representations, every functi
 
 
 Now let $\mcal{P}:= \tilde{\mcal{A}}\mcal{A}^*  = \mcal{A}\tilde{\mcal{A}}^*$. A consequence of the noncommutativity\footnote{A binary operation $\star$ is noncommutative if $A\star B$ is generally not equal to $B\star A$. A classic  example is matrix multiplication.}   of the composition operator is that even though $\mcal{A}^*\tilde{\mcal{A}} = \mcal{I}$  \eqref{eq:frep}, the operator $\mcal{P}$   need not be equal to $\mcal{I}$. In fact, Proposition 3.2.3 in \citep{Daubechies1992} shows that in the general case $\mcal{P}$ is the orthogonal projection operator of \ltwo onto $R(\ap)$, the range space of $\mcal{A}$, that is, {$R(\mcal{A}) := \{c \in \ltwo : c = \mcal{A} f, \text{ for some } f \in \LtwoR\}$}.   That $R(\mcal{A})$ in general may not coincide  with \ltwo is a consequence of the fact that  frames  may be redundant, i.e.  that they may contain ``more'' elements than is required, and thus may be linearly dependent. The level of redundancy is inversely related to the ``size'' of  $R(\mcal{A})$. So that the more redundancy the frame contains the smaller the range space of \ap. To see this, let $\{f_k\}_{k \in \nats}$ be a  frame  such that $f_1 = f_2 + f_3$; so, $\{f_k\}_{k \in \nats}$ is redundant and  linearly dependent. Now if $c$ is in the range space of \ap, the associated analysis operator, then  the $k$-th coordinate of $c$ must satisfy $c_k = \inner{f}{f_k}$  for some $f \in \LtwoR$.  By the linearity of the inner product, $c_1 = c_2 + c_3$. Thus every element of $R(\ap)$ must satisfy the restriction that its first component must equal the sum of the second and the third. Since not every element of  \ltwo is subject to this restriction, $R(\ap)$ must be a proper subset of \ltwo. So, dependence relationships among the frame elements serve to restrict the range of \ap; the greater the number of dependence relationships there are, the smaller $R(\ap)$ becomes.   As we shall see shortly, this fact has important consequences for how coefficient error affects the precision of the synthesis operator. Of course if the frame has no redundancy, then $R(\mcal{A})$   will coincide with \ltwo and $\mcal{P}$ will just be the identity operator. 
-\subsection{Why use frames?}\label{sub:why}
+\subsection{Coefficient noise reduction}\label{sub:why}
 The main reason we might be interested in frame methods for estimating volatility is robustness to coefficient noise. By this we mean the imprecision that may result by virtue of the fact that in practice the frame coefficients may not be known with precision and must be estimated. Coefficient error has many sources: error resulting from using a finite data sample, rounding or quantization error,  and error arising from the use of data contaminated with market microstructure noise. 
 
 
@@ -279,6 +280,7 @@ Furthermore,
 \end{align}
 is compactly supported.   
 \end{lem}
+%\begin{comment}
 \noindent Next, we state here and prove in the Appendix that the dual generator \tg  inherits the continuity properties of $g$.
 \begin{lem} \label{lem:modtg}
   Let the dual Gabor frame generator $\tilde{g}$ be constructed as in \eqref{eq:dualg}. If $\modc{g}{\delta}$ denotes the modulus of continuity of $g$, i.e. $\modc{g}{\delta} := \sup \{|g(t) - g(t')| : t,t' \in \real \text{ and } |t -t'| < \delta\}$,  then   
@@ -291,6 +293,7 @@ is compactly supported.
 \begin{proof}
   See Appendix \ref{ap:proof}.
 \end{proof}
+%\end{comment}
 \noindent In the sequel,  we assume the Gabor frame setup in Lemma \ref{le:gabor}.
 \begin{comment}
 Frames are quite general objects. What is needed is some control over the type of redundancies allowed in a frame. Without such a restriction results about the rate of convergence of the frame expansion would be impossible to come by. A Riesz basis provides just the type of control needed. Informally, a Riesz basis is a frame whose elements are all essential. 

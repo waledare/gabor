@@ -34,7 +34,7 @@ We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
   \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk &=  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\int^1_0\sigma^2 (s) { \btghks} \D s \notag\\ 
 &\le c\modc{\tg}{1/H_n}\log H_n  + c\modc{\sigma^2}{1/H_n} \log H_n\notag,
 \end{align}
-where the last  line follows from Lemma \ref{th:fourone} and Lemma \ref{lem:modtg}. It follows from the \holder continuity of $\sigma^2$ that   $\modc{\sigma^2}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \ref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
+where the last  line follows from Lemma \ref{th:fourone} after swapping the labels $g$ and $\tg$ in Lemma \ref{le:gabor}. It follows from the \holder continuity of $\sigma^2$ that   $\modc{\sigma^2}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \ref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
 \begin{align}
  B_{4,n}(t) =  O( H_n^{-\alpha}\log H_n).
   \label{eq:B4}
@@ -106,7 +106,7 @@ So, $D_i(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1} \wedge T_c]$.
 
 Now, using the integration by parts formula for semimartingales, we may write
 \begin{align}
-  \left(\int^{t_{i+1} \wedge T_c}_{t_i} \sigma(s) d W_s\right)^2  & - \int^{t_{i+ 1}\wedge T_c}_{t_i} \sigma^2(s) \D_s \notag \\ &= 2\int_{t_i}^{t_{i+1}\wedge T_c }\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\notag
+  \left(\int^{t_{i+1} \wedge T_c}_{t_i} \sigma(s) \D W_s\right)^2  & - \int^{t_{i+ 1}\wedge T_c}_{t_i} \sigma^2(s) \D s \notag \\ &= 2\int_{t_i}^{t_{i+1}\wedge T_c }\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\notag
   \label{}
 \end{align}
 so that 

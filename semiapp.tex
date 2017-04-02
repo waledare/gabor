@@ -1,5 +1,6 @@
 \begin{appendices}
   \section{Proofs}\label{ap:proof}
+%  \begin{comment}
   We now give the proof of Lemma \eqref{lem:modtg}. \\ \\
   \begin{proof}
    $G$ is bounded away from zero. To see this, note that since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b$ denote the interval $[(s+r -b)/2, (s+r +b)/2]$, then
@@ -25,19 +26,6 @@ a  \vert G(t) - G(t') \vert & \le  \sum_{j = 0}^{\lceil ( 1 + \vert s \vert  +\v
   \label{}
 \end{align}
 where $g^* := \max_{t \in \real} \vert g(t)\vert $.
-\begin{comment}
-On the other hand, if $\vert \tau - \tau'\vert > \delta$, then 
-\begin{align}
-  &a\vert G(t) - G(t') \vert \notag \\
-  &\quad \le \vert g(\tau')^2 - g(r)^2\vert +   \vert g(s)^2 - g(\tau + c)^2 \vert\notag \\
-  &\qquad +\sum_{j = 1}^{\lceil (s + r)/b \rceil} \{\vert g(\tau + (j-1) b)^2 - g(\tau' + j b)^2\vert\}.  \notag
-  \label{}
-\end{align}
-where $c = \lfloor (\vert s\vert  + \vert r \vert )/b \rfloor b $. It follows as above that 
-\begin{align}
-\vert G(t) - G(t') \vert \le 2a (\lceil (s + r)/b\rceil +1)g^*\modc{g}{\delta}.
-\end{align}
-\end{comment}
 Returning to \eqref{eq:difftg}, we see that
 \begin{align}
   \vert \tg(t) - \tg(t')\vert \le C_{\tg} \modc{g}{\delta},\notag
@@ -51,6 +39,7 @@ where $C_{\tg} = G_*^2(2a (\lceil ( 1 + \vert s \vert  +\vert r\vert)/b\rceil)(g
 \end{align}
 The last inequality follows because translating a function leaves its modulus of continuity unchanged.\\
 \end{proof}
+%\end{comment}
 The following is a simple corollary to \levy's modulus of continuity theorem. 
 
 \begin{lem} \label{lem:mylevy}
@@ -129,7 +118,7 @@ We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
 &\le c\e[\modc{\tghk}{1/H_n}\log H_n] \notag \\
 &\quad + c\e[\modc{\sigma^2\indvol}{1/H_n} \log H_n]\notag,
 \end{align}
-where the last  line follows from Lemma \ref{th:fourone}. But since  $\sigma^2 \indvol$ is bounded by $c$ if it is in the \holder ball \hball{\alpha}{c}  and $0$ otherwise, it follows that $\modc{\sigma^2\indvol}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
+where the last  line follows from Lemma \ref{th:fourone} after swapping the label $g$ with $\tg$ in Lemma \ref{le:gabor}. But since  $\sigma^2 \indvol$ is bounded by $c$ if it is in the \holder ball \hball{\alpha}{c}  and $0$ otherwise, it follows that $\modc{\sigma^2\indvol}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
 \begin{align}
  B_{4,n}(t) =  O( H_n^{-\alpha}\log H_n).
   \label{eq:B4}
