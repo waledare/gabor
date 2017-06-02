@@ -125,8 +125,8 @@ Now using the fact that $\int_0^{t \wedge T_c}\sumin D_i(s) \sigma(s) \D W_s$ is
 where the last line follows because $D_i (s) D_j(s) = 0$ whenever $i \not= j$. Now if  we define $D^*_i := \sup_{t_i <s \le t_{i+1} \wedge T_c} D_i(s)$, and use the fact that $\sigma^2$ is less than  $c$ before $T_c$ then
 \begin{align}
   \e(\vert A_1^{T_c}\vert ) & \le c\e\left[\left\vert\sumin \Delta_n(D_i^*)^2 \right\vert^{1/2} \right] \notag\\
-  & \le c\e\left[\left\vert\sumin \Delta_n(D_i^*)^2 \right\vert \right] \notag\\
-  & \le c\Delta_n\sumin\e[(D_i^*)^2]   
+  & \le c\Delta_n^{1/2}\e\left[\left\vert\sumin (D_i^*)^2 \right\vert^{1/2} \right] \notag\\
+  & \le c\Delta_n^{1/2}\sumin\e[D_i^*]   
   \label{eq:ra1}
 \end{align}
 where $c$ is a generic constant representing the bound on $\sigma^2$ and the BDG constant.  Note  from the definition of  $D_i$  that it  is itself a martingale, so we may bound  $D^*_i$  with yet another application of the BDG inequality. That is

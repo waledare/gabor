@@ -1,7 +1,7 @@
 \subsection{Asymptotic properties} \label{sec:deviation}
 In this section we obtain an estimate of the rate of convergence of  the Gabor frame estimator on compact intervals of the real line. We will take \domain as the prototype for such intervals. The usual way to think about  $\sigma^2$ is as a stochastic process, but it is just as natural to think of it as a random element. A random element is an extension  of the familiar concept of a random variable to include  situations where the state space can be any metric space $E$. Because our interest is in studying the convergence of the estimator on \domain,  $E$ will be set equal to \Ltwo, the set of real-valued, square integrable function on \domain. Now, due to the path continuity assumption on $\sigma^2$, we will restrict our attention to \czero,  the set of real-valued, continuous  functions on \domain equipped with the \Ltwo norm. So, given  an outcome $\omega$ in the sample space  $\Omega$, the restriction of realized volatility $\sigma^2(\omega)$ to \domain is a  continuous function defined on \domain. Now, with regards smoothness, \state  is  a very diverse class, comprising    functions that are infinitely differentiable,  those that are nowhere differentiable, and everything in-between. For a random volatility coefficient it may very well be the case that for some outcome $\omega$, realized volatility $\sigma^2(\omega)$ is very smooth with finite derivatives of all orders, whereas for outcome $\omega'$,  $\sigma^2(\omega')$  is very rough with kinks everywhere. For instance, with probability one, the one-dimesional Brownian motion  maps outcomes $\omega$  to continuous functions in  \state, but it is  almost surely  the case that none of these functions will be  differentiable. 
 
-Now,  a good estimator should  yield successively better approximations with increasing observation frequency, regarless of the degree of smoothness  of the realized volatility function. More realistically, the \emph{rate} of convergence of the approximation would depend on the smoothness of the realized volatility, with faster rates achieved for smooth functions. That is, for outcomes $\omega, \omega'$ in $\Omega$, if $\sigma^2(\omega)$ is  smoother as a function of time than $\sigma^2(\omega')$ then the number of observations required to achieve a given level of accuracy when $\sigma^2(\omega)$ is realized should not exceed  the required number when $\sigma^2(\omega')$ is realized.  So, while an estimator might eventually converge regardless of the regularity of volatility, the convergence rate may be outcome- or state-dependent. 
+Now,  a good estimator should  yield successively better approximations with increasing observation frequency, regardless of the degree of smoothness  of the realized volatility function. More realistically, the \emph{rate} of convergence of the approximation would depend on the smoothness of the realized volatility, with faster rates achieved for smooth functions. That is, for outcomes $\omega, \omega'$ in $\Omega$, if $\sigma^2(\omega)$ is  smoother as a function of time than $\sigma^2(\omega')$ then the number of observations required to achieve a given level of accuracy when $\sigma^2(\omega)$ is realized should not exceed  the required number when $\sigma^2(\omega')$ is realized.  So, while an estimator might eventually converge regardless of the regularity of volatility, the convergence rate may be outcome- or state-dependent. 
 
 To develop an asymptotic theory for the Gabor frame estimator which can account for state-dependency in convergence rates, we characterize the effective  state space of the volatility coefficient, viewed as a random element in \state, according to a smoothness criterion.
 A simple way to achieve this characterization is via the H\"older continuity criterion. Let $0 < \alpha \le 1$, a function $f$ in \state is said to be H\"older continuous with exponent $\alpha$ if  there is a finite constant $K$ such that whenever $x$ and $y$ are distinct numbers in \domain then 
@@ -24,7 +24,7 @@ With this device it is possible to obtain convergence rates that take into accou
 \begin{align} 
   \uball{c} := \{f \in \Linf: \Vert f \Vert_\infty \le c \}.
 \end{align}
-In this way we are able to  characterize the sample space according to the regularity of realized volatility  and the boundedness of realized drift.  This leads to the consideration of the asymptotic behavior of the estimator when  $b \in \uball{c}$ and $\sigma^2 \in  \hball{\alpha}{c}$ for  $c, \alpha > 0$\footnote{It is not essential to use different $c$'s for $b$ and $\sigma^2$.}. We denote such events by $\eball{\alpha}{c}$, i.e., 
+In this way we are able to  characterize the sample space according to the regularity of realized volatility  and the boundedness of realized drift.  This leads to the consideration of the asymptotic behavior of the estimator when  $b \in \uball{c}$ and $\sigma^2 \in  \hball{\alpha}{c}$ for  $c, \alpha > 0$.\footnote{It is not essential to use different $c$'s for $b$ and $\sigma^2$.} We denote such events by $\eball{\alpha}{c}$, i.e., 
 \begin{align}
   \eball{\alpha}{c}  := \{ \omega : b(\omega) \in \uball{c}\} \cap \{\omega: \sigma^2(\omega) \in \hball{\alpha}{c}\}.\notag
   \label{}
@@ -48,17 +48,17 @@ Much like the usual integrated mean square error risk, $R_n(\alpha,c)$ admits a 
 The equality in \eqref{eq:fubini} results from an interchange of the expectectation and integration operators justified by Fubini's theorem. The decomposition in line  \eqref{eq:msedecomp} results from the usual mean square error decomposition  into a square bias and a variance component for each  $t \in \domain$. The two summands in the last line are the bias and variance components and will be denoted $B_n^2(\alpha,c)$ and $V_n(\alpha,c)$, respectively; we obtain estimates for their rates of convergence below. First, we recall  Theorem 4.1 from \cite{Zhang2008}, which plays a crucial role in our demonstrations. 
 
 \begin{lem}[Theorem 4.1, \cite{Zhang2008}] \label{th:fourone}
-  Let $\{\ghk, \tghk\}$ be a pair of compactly supported dual Gabor frames satisfying the conditions of Lemma \eqref{le:gabor}. If $f \in \LtwoR$ is bounded and continuous on \real then for any positive integer $l$, if $K > (l + \vert s \vert + \vert r \vert)/ b$ and $H$ is a positive integer then  the partial sums 
+  Let $\{\ghk, \tghk\}$ be a pair of compactly supported dual Gabor frames satisfying the conditions of Lemma \eqref{le:gabor}. If $f \in \LtwoR$ is bounded and continuous on \real then for any positive integer $l$, if $K > (l + \vert s \vert + \vert r \vert)/ b$ and $H$ is a positive integer then  the partial sum 
   \begin{align}
     S_{H,K} (t) := \sum_{\vert h \vert \le H} \sum_{\vert k \vert \le K} \inner{f}{\ghk} \tghk(t)  \notag
     \label{}
   \end{align}
   satisfies
   \begin{align}
-    S_{H,K} (t) & - f(t) \notag \\  &= O({\Vert g \Vert_{\infty}}/{ab}) \{ \Vert g \Vert_{\infty}\modc{f}{1/aH} + \Vert f \Vert_{\infty} \modc{g}{1/aH}\} \log H\notag, 
+    S_{H,K}& (t)  - f(t) \notag \\  &= O({\Vert g \Vert_{\infty}}(ab)^{-1}) \{ \Vert g \Vert_{\infty}\modc{f}{(aH)^{-1}} + \Vert f \Vert_{\infty} \modc{g}{(aH)^{-1}}\} \log H\notag, 
     \label{}
   \end{align}
-for all $t$ such that $\vert t\vert \le l$.
+  for all $t$ such that $\vert t\vert \le l$, where $a$ and $b$ are positive real numbers defined in Definition \ref{defn:def}.
 \end{lem}
 The following two propositions are the main results of this section.
 \begin{prop} \label{pr:consistency}
