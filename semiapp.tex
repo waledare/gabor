@@ -43,7 +43,7 @@ The last inequality follows because translating a function leaves its modulus of
 The following is a simple corollary to \levy's modulus of continuity theorem. 
 
 \begin{lem} \label{lem:mylevy}
-  Suppose $\int^1_0\sigma^2(s) \D s < \infty$, almost surely,   where $\sigma$ is adapted, strictly positive,  and continuous. If $W$ is an $\mcal{F}_t$-Brownian motion, then for sufficiently large $n$, it is almost surely the case that  
+  Suppose $\int^1_0\sigma^2_s \D s < \infty$, almost surely,   where $\sigma$ is adapted, strictly positive,  and \cadlag. If $W$ is an $\mcal{F}_t$-Brownian motion, then for sufficiently large $n$, it is almost surely the case that  
   \begin{align}
     \sup_{0 \le i \le n -1} \left \vert \int_{t_i}^{t_{i+1}} \sigma(s)  \D W_s   \right \vert \le C (n^{-1}  \log (n))^{1/2}, \notag
     \label{}
@@ -61,7 +61,7 @@ The following is a simple corollary to \levy's modulus of continuity theorem.
     \sup_{ 0 \le i \le n-1}\left\vert \int_{t_i}^{t_{i +  1}} \sigma(s)  \D W_s \right \vert  (2 \delta_i \log(1/\delta_i))^{-1/2} \le 1, 
     \label{}
   \end{align}
-  where $\delta_i := T_{t_{i+1}} - T_{t_i} = \int^{t_{i + 1}}_{t_i} \sigma^2(s) \D s$. Because $\sigma$ is continuous and strictly positive on \domain, there are finite-valued random variables $c^* \ge c_* > 0$, such that $c^* \ge \sigma^2(s) \ge c_*$, $s \in \domain$. Hence, 
+where $\delta_i := T_{t_{i+1}} - T_{t_i} = \int^{t_{i + 1}}_{t_i} \sigma^2(s) \D s$. Because $\sigma$ is \cadlag and strictly positive on \domain, there are finite-valued random variables $c^* \ge c_* > 0$, such that $c^* \ge \sigma^2(s) \ge c_*$, $s \in \domain$. Hence, 
   \begin{align}
     (2 \delta_i \log(1/\delta_i))^{1/2} & \le  (2 c^*n^{-1} \log(n/c_*))^{1/2}\notag\\
     &= (2 c^*n^{-1} \log(n) - 2 c^*n^{-1} \log(c_*)  )^{1/2}\notag\\

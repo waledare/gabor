@@ -1,3 +1,13 @@
+\begin{prop}\label{pro:finite}
+  Suppose the  price process is specified as in \eqref{eq:contsemimartingale} and satisfies the conditions of Assumption \ref{as:vol}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \ref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. 
+If $H_n \uparrow \infty$ satisfies 
+  \begin{align}
+    H_n \Delta_n^{1/2} = o(1),\notag
+    \label{}
+  \end{align}
+  then
+  \svnx, defined in \eqref{eq:contvolestimator}, converges in \Ltwo to \sv in probability.
+\end{prop}
 \begin{proof} We begin by noting that 
 \begin{align}
   \svnx - \sigma^2(t) & = \sum_{(h,k) \in \Theta_n} (\cnhk\ - \chk)\;g_{h,k}(t)\notag\\
@@ -29,92 +39,136 @@ where
   &B_{4,n}(t) := - \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk. 
   \label{}
 \end{align}
-We will estimate the summands starting with $B_{4,n}(t)$. Note the following:
+We start by recalling the well-known fact that  frame expansions converge unconditionally in \Ltwo, that is, the expansion converges regardless of the order of summation \citep[Theorem 5.1.7]{Christensen2008}, so that  
 \begin{align}
-  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk &=  \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\int^1_0\sigma^2 (s) { \btghks} \D s \notag\\ 
-&\le c\modc{\tg}{1/H_n}\log H_n  + c\modc{\sigma^2}{1/H_n} \log H_n\notag,
-\end{align}
-where the last  line follows from Lemma \ref{th:fourone} after swapping the labels $g$ and $\tg$ in Lemma \ref{le:gabor}. It follows from the \holder continuity of $\sigma^2$ that   $\modc{\sigma^2}{1/H_n} \le c H_n^{-\alpha}$. Furthermore, by Lemma \ref{lem:modtg} and the Lipschitz continuity of $g$ we have $\modc{\tghk}{1/H_n} \le c H^{-1}_n$.  So,  
-\begin{align}
- B_{4,n}(t) =  O( H_n^{-\alpha}\log H_n).
-  \label{eq:B4}
-\end{align}
-Note the generic use of the constant  $c$. In the sequel, we will use $c$ to denote the amalgamation of various constants resulting from multiple steps. 
-
-We now obtain an estimate for  $B_{3,n}(t)$. Note the following:
-\begin{align}
-  M_i^2 & = \left(\int_{t_i}^{t_{i+1}} b(s) \D s\right)^2 \notag\\
-  & \le ( (\sup_{s \in [0,1]} b_s) n^{-1})^2. 
-  \label{eq:m}
-\end{align}
- Now since  $g_{h,k}$ and \tghk  are bounded independently of $h$ and $k$, and $n\Delta_n = 1$, it is almost surely the case that 
-\begin{align}
-  B_{3,n}(t) = O( H_n \Delta_n).
+  \Vert B_{4, n}  \Vert_{L^2[0.1]} = o_{a.s.}(1).\notag
   \label{}
 \end{align}
-  Now consider the following, 
+We now obtain an estimate for  $B_{3,n}(t)$. Suppose without loss of generality that $b_0 = \sigma =  0$ and let $\{T_m\}$ be a localizing sequence for $b$ and $\sigma$.  Then, by Jensen's inequality
 \begin{align}
-  S_i & = \int_{t_i}^{t_{i+1}} \sigma(s) \D W_s\notag \\
-  & = O (\sqrt{n^{-1} \log(n)}),\label{eq:rthree}
+ E\left(\int_{t_i}^{t_{i+1}} b_{s \wedge T_m}  \D s\right)^2  &\le \Delta_n E\left(\int_{t_i}^{t_{i+1}} b_{s \wedge T_m}^2  \D s\right) \notag \\
+&\le \Delta_n \int_{t_i}^{t_{i+1}} E(b_{s \wedge T_m}^2)  \D s \notag\\
+&\le \Delta_n \int_{t_i}^{t_{i+1}} E(\sup_{u \le T_m}b_{u}^4)^{1/2}  \D s \notag\\
+& \le c \Delta_n^2,
+  \label{eq:m}
 \end{align}
-for sufficiently large $n$ by a simple corollary to \levy's modulus of continuity theorem (See Lemma \ref{lem:mylevy}). Hence
+where the change in the order of integration is justified by Fubini's theorem.  Set $M_i^m = \int_{t_i}^{t_{i+1}} b_{s \wedge T_m}^2  \D s$ and 
 \begin{align}
-  M_i S_i = O(\sqrt{n^{-3} \log(n)}).\label{eq:ms}
+  B^m_{3,n}(t) = \sumt g_{h,k}(t)\left( \sum_{i=0}^{n-1} \btghki (M_i^m)^2 \right)\notag
+  \label{}
 \end{align}
-Since  $g_{h,k}$ and \tghk  are bounded independently of $h$ and $k$, and $n\Delta_n = 1$, we have
+and note that given $\eta > 0$,
 \begin{align}
-  B_{2,n}(t) = O( H_n \sqrt{n^{-1} \log(n)}).
+ \p(\sup_{t \in \domain} \vert B_{3,n}(t)\vert >  \eta ) \le \p(T_m < 1) + \p( \sup_{t \in \domain} \vert B_{3,n}^m(t)\vert > \eta). \notag
+  \label{}
+\end{align}
+Since $T_m \uparrow \infty$ a.s., the first term on the right becomes arbitrarily small as $m$ tends to infinity. Now since  $g_{h,k}$ and \tghk  are bounded independently of $h$ and $k$, and $n\Delta_n = 1$, it follows by Markov's inequality and \eqref{eq:m} that 
+\begin{align}
+  \p( \sup_{t \in \domain} \vert B_{3,n}^m(t)\vert > \eta) \le  c H^n \Delta_n.  \notag
+  \label{}
+\end{align}
+Hence,
+\begin{align}
+  \sup_{t \in \domain} \vert B_{3,n}(t)\vert = o_{P}( 1).
+  \label{}
+\end{align}
+Now set $S_i^m := \int_{t_i}^{t_{i + 1}} \sigma_{s \wedge T_m} d W_s$. Note the following  
+\begin{align}
+  E((S_i^m)^2)   & = E\left(\int_{t_i}^{t_{i+1}} \sigma^2_{s \wedge T_m} \D s \right)\notag \\
+                & = \int_{t_i}^{t_{i+1}} E(\sigma^2_{s \wedge T_m}) \D s \notag \\
+                & = \int_{t_i}^{t_{i+1}} (E(\sup_{u \wedge T_m} \sigma^4_{u})^{1/2}) \D s \notag \\
+  & \le c \Delta_n.\label{eq:news}
+\end{align}
+By \holder's inequality, \eqref{eq:m}, and \eqref{eq:news},  we have
+\begin{align}
+  E(M_i^m S_i^m) & = (E(M_i^m)^2 E( S^m_i)^2)^{1/2} \notag\\
+  & \le c\Delta_n^{3/2}.\label{eq:ms}
+\end{align}
+Set 
+\begin{align}
+ B_{2,n}^m(t) := 2 \sumt g_{h,k}(t)\left(\sum_{i=0}^{n-1} \btghki S_i^m M_i^m \right) \notag.
+  \label{}
+\end{align}
+Then for each $m$,  because  $g_{h,k}$ and \tghk  are bounded independently of $h$ and $k$, and $n\Delta_n = 1$, we conclude by an appeal to Markov's inequality  that  $\p( \sup_{t \in \domain} \vert B_{2,n}^m(t)\vert > \eta) \le  c H^n \Delta_n^{1/2}$. By the previously used localization argument, 
+\begin{align}
+  \sup_{t\in\domain}\vert B_{2,n}(t)\vert = o_{P}(1).
   \label{}
 \end{align}
 Now we tackle the final piece $B_{1,n}(t)$. Let 
 \begin{align}
-  A  := \sum_{i=0}^{n-1}\btghki S_i^2 -\int_{0}^{1} \sigma^2(s) \btghks \D s.
+  A^n  := \sum_{i=0}^{n-1}\btghki S_i^2 -\int_{0}^{1} \sigma^2(s) \btghks \D s.
 \end{align}
-We will first obtain an upper bound for $A$; we proceed by adding and subtracting $\sumin\int_{t_i}^{t_{i+1}}\btghki \sigma^2(s)  \D s$  from  $A$ to yield: 
+We will first obtain an upper bound for $A^n$; we proceed by adding and subtracting $\sumin\int_{t_i}^{t_{i+1}}\btghki \sigma^2(s)  \D s$  from  $A$ to yield: 
 \begin{align}
-  A & = \sumin\btghki \left(S_i^2 -\int_{t_i}^{t_{i+1}} \sigma^2(s) \D s\right)\notag \\
+  A^n & = \sumin\btghki \left(S_i^2 -\int_{t_i}^{t_{i+1}} \sigma^2(s) \D s\right)\notag \\
   &\quad +  \sumin\left(\int_{t_i}^{t_{i+1}} \sigma^2(s) \{\btghki - \btghks\} \D s\right) \notag\\
-  &=:A_{1} + A_{2} \notag.
+  &=:A_{1}^n + A_{2}^n \notag.
   \label{}
 \end{align}
-We obtain estimates in turn for the summands. By linearity of expectation 
+We obtain estimates in turn for the summands. By Assumption \ref{as:vol}, $\sigma$ is \cadlag so that it is almost surely  bounded on \domain;  by the continuity of \tghk   and Lemma \eqref{lem:modtg}, we have 
 \begin{align}
-  A_{2} &= \sumin \int_{t_i}^{t_{i+1}} \sigma^2(s)  \{\btghki - \btghks\} \D s\notag\\
-  &\le c\modc{\tghk}{\Delta_n},\notag
+  A_{2}^n &= \sumin \int_{t_i}^{t_{i+1}} \sigma^2(s)  \{\btghki - \btghks\} \D s\notag\\
+  &\le c\modc{\tghk}{\Delta_n},\quad a.s.,\notag
   \label{}
 \end{align}
-where $\modc{\tghk}{\Delta_n}$ is the modulus of continuity of $\tghk$ on an interval of length $\Delta_n$. By  Lemma \eqref{lem:modtg} and the Lipschitz continuity of $g$ we have, 
+where $\modc{\tghk}{\Delta_n}$ is the modulus of continuity of $\tghk$ on an interval of length $\Delta_n$.  By the Lipschitz continuity of $g$ we have, 
 \begin{align}
-  A_{2} \le c\modc{g}{\Delta_n} \le c \Delta_n.\notag 
+  A_{2}^n = O_{a.s.}(\modc{g}{\Delta_n}) = O_{a.s.}( \Delta_n). \notag 
   \label{}
 \end{align}
+Now, we obtain an estimate for $A_{1}^n$.
+First, let $D_i^n: \Omega\times[0,1] \to \real$ for $i = 0, \cdots, n-1$ be defined as follows:  
+\begin{align}
+&D_{i}^n(t) := \btghki\left(\int_{t_i}^{t} \sigma_{u \wedge T_m}\D W_u\right)\mathbbm{1}_{(t_i, t_{i+1}]}(t).
+  \label{eq:Di}\\
+&D_0^n(0) := 0.
+\end{align}
+So, $D_i^n(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1}]$. Moreover,  
+\begin{align}
+  D_i^n (t) D_j^n(t) = 0, \qquad i \not = j.\notag
+  \label{}
+\end{align}
+Now, for $t \in (t_i, t_{i+1}]$,
+\begin{align}
+E(D_i^n(t)^4) &= \btghki^4\mathbbm{1}_{(t_i, t_{i+1}]}(t)\e\left( \left(\int_{t_i}^{t} \sigma_{u\wedge T_m}\D W_u\right)^4\right)& \notag\\
+& \le c\mathbbm{1}_{(t_i, t_{i+1}]}(t)\e\left( \left(\int_{t_i}^{t} \sigma_{u\wedge T_m}^2\D u\right)^2\right) &\text{B.D.G}\notag\\
+& \le c(t - t_i)\mathbbm{1}_{(t_i, t_{i+1}]}(t) \e \left(\int_{t_i}^{t} \sigma_{u\wedge T_m}^4\D u\right)&\text{Jensen}\notag\\
+  & \le c\Delta_n\mathbbm{1}_{(t_i, t_{i+1}]}(t)\int_{t_i}^{t_{i+1}} \e\left(\sigma_{u\wedge T_m}^4\right) \D u &\text{Fubini}\notag \\
+  %& \le c \Delta_n \mathbbm{1}_{(t_i, t_{i+1}]}(t)\int_{t_i}^{t_{i+1}} \e\left(\sup_{s \le T_m}\sigma_s^4\right) \D u& \notag \\
+  & \le c \mathbbm{1}_{(t_i, t_{i+1}]}(t)\Delta_n^2 &
+  \label{eq:dz}
+\end{align}
+where the application of Fubini's theorem \citep[Theorem VII.36.B]{Halmos1950} is justified by the fact that $\sigma^4$ is non negative and measurable with respect to the product $\sigma$-algebra on $\domain\times\Omega$.
+Now, using \ito's integration by parts formula, we may write
+\begin{align}
+  \e((A_1^n)^2)  &= \e\left(2\,\sumin\int_{t_i}^{t_{i+1} }\btghki\left(\int_{t_i}^{s} \sigma_{u \wedge T_m}\D W_u\right)\sigma_{s\wedge T_m} \D W_s\right)^2\notag \\
+  & = 4 \e\left(\int_0^{1 }\sumin D_i^n(s) \sigma_{s\wedge T_m} \D W_s\right)^2 \notag \\
+  %& = 4 \e\left(\int_0^{1 }\sumin D_i^n(s)^2 \sigma_{s\wedge T_m}^2 \D s\right) \notag \\
+  & \le c \int_0^{1 }\sumin\e( D_i^n(s)^2 \sigma_{s\wedge T_m}^2) \D s  \notag \\
+  & \le c \int_0^{1 }\sumin\e( D_i^n(s)^4)^{1/2} \e( \sigma_{s\wedge T_m}^4)^{1/2} \D s  \notag \\
+  & \le  c \int_0^{1 }\sumin \mathbbm{1}_{(t_i, t_{i+1}]}(s)\Delta_n  \D s  \notag \\
+  %& \le  c \Delta_n\int_0^{1 }\sumin \mathbbm{1}_{(t_i, t_{i+1}]}(s)  \D s  \notag \\
+  & \le  c \Delta_n.  \notag 
+  \label{}
+\end{align}
+\begin{comment}
+We now note that since $4 \int_0^{1 }\left(\sumin D_i^n(s) \sigma_s\right)^2 \D s$ is increasing finite and continuous, it is locally bounded and therefore locally integrable. It is thus the case that the process defined by, $A_1^n(t) := 2 \int_0^{t}\sumin D_i^n(s) \sigma_s \D W_s$, $t \in \domain$, is a continuous local martingale. As such  $A_1^n(\cdot)$ is locally square integrable with predictable quadratic variation given by    $\langle A_1^n(\cdot) \rangle := 4 \int_0^{\cdot }\left(\sumin D_i^n(s) \sigma_s\right)^2 \D s$. Now let $\{T_n\}$ be a localizing sequence for $A_1^n(\cdot)$, then for any bounded stopping time $T$, we have
+$  \e((A_1^n(T\wedge T_n) )^2) = \e(\langle A_1^n (\cdot) \rangle_{T \wedge T_n})$. By Fatou's Lemma $  \e( (A_1^n(T) )^2)  \le \e(\langle A_1^n(\cdot) \rangle_T)$. In other words $(A_1^n(\cdot))^2$ is L-dominated\footnote{The Lenglart domination property is defined in \citet[I.3.29]{Jacod2003}. } by $\langle A_1^n(\cdot) \rangle$.   
 
-Now, we obtain an estimate for $A_{1}$. First, let 
+Now given $\varepsilon >  0$, we have by Lenglart's inequality for predictable majorants that 
+  \begin{align}
+    P(A_1^n \ge \varepsilon)  & \le P(\sup_s (A_1^n(s))^2 \ge \varepsilon^2)\notag\\
+    & \le \varepsilon^{-2} \e(\langle A_1^n(\cdot) \rangle_1 \wedge \gamma) + P(\langle A_1^n(\cdot) \rangle_1 \le \gamma),
+  \end{align}
+where $\gamma > 0$ is arbitrary. Because $\langle A_1^n(\cdot) \rangle_1$ is almost surely finite, letting $\gamma \downarrow 0$ simultaneousy as $n \uparrow \infty$, it is easily seen that $A^n_1$ tends to zero in probability.
+\end{comment}
+\begin{comment}
 \begin{align}
   T_c = \inf \{ t >0 : \sigma^2(t) > c \} \wedge 1\notag.
   \label{}
 \end{align}
 By the regularity assumption on $\sigma$, $\p(T_c < 1)$ can be made arbitrarily small by taking $c$ sufficiently large.  
-Now, let $D_i: \Omega\times[0,1] \to \real$ for $i = 0, \cdots, n-1$ be defined as follows:  
-\begin{align}
-&D_{i}(t) := \btghki\left(\int_{t_i}^{t} \sigma(u)\D W_u\right)\mathbbm{1}_{(t_i, t_{i+1} \wedge T_c]}(t).
-  \label{eq:Di}\\
-&D_0(0) := 0.
-\end{align}
-So, $D_i(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1} \wedge T_c]$.
 
-
-Now, using the integration by parts formula for semimartingales, we may write
-\begin{align}
-  \left(\int^{t_{i+1} \wedge T_c}_{t_i} \sigma(s) \D W_s\right)^2  & - \int^{t_{i+ 1}\wedge T_c}_{t_i} \sigma^2(s) \D s \notag \\ &= 2\int_{t_i}^{t_{i+1}\wedge T_c }\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\notag
-  \label{}
-\end{align}
-so that 
-\begin{align}
-  \e(\vert A_1^{T_c} \vert )  &= 2\,\e\left[\sumin\int_{t_i}^{t_{i+1} \wedge T_c}\btghki\left(\int_{t_i}^{s} \sigma(u)\D W_u\right)\sigma(s) \D W_s\right ]\notag \\
-  & \le 2\,\e\left[\left\vert\int_0^{1 \wedge T_c}\sumin D_i(s) \sigma(s) \D W_s\right\vert \right].\notag 
-  \label{}
-\end{align}
 Now using the fact that $\int_0^{t \wedge T_c}\sumin D_i(s) \sigma(s) \D W_s$ is a  martingale, we may make an appeal to the Burkholder-Davis-Gundy (BDG) inequality \citep[Theorem 10.36][]{He1992} to yield:
 \begin{align}
   \e(\vert A_1^{T_c} \vert) & \le c\e\left[\left\vert\int_0^{1\wedge T_c}\left(\sumin D_i(s) \sigma(s)\right)^2 \D s\right\vert^{1/2} \right]\notag \\
@@ -136,6 +190,12 @@ where $c$ is a generic constant representing the bound on $\sigma^2$ and the BDG
   \label{}
 \end{align}
 Hence, given any $\varepsilon > 0$,  $\p( \sup_{t \in [0,1]} \vert B_{1,n}(t) \vert > \varepsilon)  = O(H_n n^{-1}) + \p(T_c < 1)$.
-
-Collecting the estimates for $B_{j,n}(t)$ for $j =1,\cdots,4$, it is easily seen that $\vert \svnx - \sigma^2(t) \vert$ tends to zero in probability uniformly  for all $t \in \domain$. 
+\end{comment}
+By Chebyshev's inequality and the previously used stopping time argument, we have
+$A^n = O_P(\Delta_n)$. By the boundedness of \ghk, we have
+\begin{align}
+  \sup_{t \in \domain} \vert B_{1,n}(t)\vert = o_P(1).\notag
+  \label{}
+\end{align}
+Hence, $B_{j,n}(t)$ for $j =1,\cdots,4$, tends to zero in \Ltwo in probability.
 \end{proof}

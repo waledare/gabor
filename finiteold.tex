@@ -1,0 +1,90 @@
+\subsection{Finite activity \levy jumps}
+In order to demonstrate that the global estimator of spot volatility is consistent, we will proceed in stages.  First suppose the price process specified in all generality in \eqref{eq:generalsemimartingale} experiences at most a finite number of \levy jumps in any finite time interval. That is we assume that $X$ has finite activity  \levy jumps, which is equivalent to $\nu$ being finite on the complement of   $\{0\}$. The finite activity assumption  also implies that the price process may be expressed as  
+\begin{align}
+  X_t :=  \int_0^t b(s) \D s + \int_0^t \sigma(s) \D W_s +  \sum^{N_t}_{ i = 1} Y_i, \qquad t \in [0,1], 
+  \label{jumpfa}
+\end{align}
+where the $Y_i$'s are  \iid jump sizes; $N$ is a Poisson process with intensity $\lambda$, independent of each $Y_i$. Under this conditions, we have the following:
+
+\begin{prop}\label{pro:finite}
+  Suppose the  price process is specified as in \eqref{jumpfa} with $\sigma$ and $b$ satisfying Assumption \ref{as:vol}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. If 
+  \begin{comment}
+  \begin{enumerate}[label=\emph{(}\roman*\emph{)}]
+    \item 
+  the drift of $X$ satisfies with probability 1:
+  \begin{align}
+    \limsup_{\Delta_n \to 0} \frac{M^*}{(\Delta_n \log(1/\Delta_n))^{1/2}} \le  C< \infty, \notag
+    \label{}
+  \end{align}
+where $M^* : = \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} b(s) \D s\vert$;
+\item the diffusion coefficient satisfies with probability 1:  $\int^1_0 \sigma^2(s) \D s < \infty$ and 
+  \begin{align}
+\limsup_{\Delta_n \to 0} \frac{S^*}{\Delta_n} \le B <\infty, \notag
+    \label{}
+  \end{align}
+  where $S^* := \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} \sigma^2(s) \D s\vert$;
+  \end{enumerate}
+  \end{comment}
+ $u_n \downarrow 0 $ is a sequence in $n$ such that  
+\begin{align}
+    n^{-1} \log (n)u_n^{-1} = o(1),\notag
+    \label{}
+  \end{align}
+and the sequence $H_n \uparrow \infty$ satisfies 
+  \begin{align}
+    H_n (n^{-1} \log(n))^{1/2} = o(1),\notag
+    \label{}
+  \end{align}
+  then
+  \jvn as defined in \eqref{eq:jumpvolestimator}  converges in \Ltwo in probability to \sv.
+\end{prop}
+\begin{proof} 
+  Let $X^c$ denote the continuous part of $X$ so that $X = X^c + J$, and 
+  \begin{align}
+  X^c_t = \int^t_0 b(s) \D s + \int^t_0 \sigma(s) \D W_s,
+    \label{eq:contpart}
+  \end{align}
+  for $t$ in \domain. Denote
+  \begin{align}
+    & \svn{X^c}:=\sum_{(h,k) \in \Theta_n} \dnhk\;g_{h,k}(t), \qquad  t \in [0,1], \text{ where}\\
+  &\dnhk := \sum_{i =0}^{n-1} \btghki (\dxc)^2.  \notag
+    \label{}
+  \end{align}
+We have
+\begin{align}
+  \int_0^1 & (\jvn  - \sv(t))^2\D t \notag\\
+  & \le  2 \int_0^1  (\jvn  - \svn{X^c})^2\D t +   2\int_0^1  (\svn{X^c} - \sv(t) )^2\D t.
+\end{align}
+That the second summand on the right converges to 0 in probability is a result of Proposition (1.1). 
+Now note that
+
+\begin{align}
+  \jvn{X}  - \svn{X^c}(t) = \sum_{(h,k) \in \Theta_n} (\anhk - \dnhk)\;g_{h,k}(t),\notag
+  \label{}
+\end{align}
+and 
+\begin{align}
+  \anhk - \dnhk = \sum_{i =0}^{n-1} \btghki\{ (\dx)^2 \indx- (\Delta_i X^c)^2\}.\notag
+  \label{}
+\end{align}
+By Corrollary 1 of \cite{Mancini2009}, for almost all outcomes, there is $n'$ such that for all $n \ge n'$ 
+\begin{align}
+  \indx =\indn. \notag
+  \label{}
+\end{align}
+Hence for almost all outcomes and sufficiently large $n$  
+\begin{align}
+   \anhk - \dnhk &\le \sum_{i =0}^{n-1} \btghki  (\dxc)^2  \indnc\notag\\
+   & =  O_{a.s}( \Delta_n \log(1/\Delta_n)\sum_{i =0}^{n-1}\indnc),  \notag 
+  \label{}
+\end{align}
+where the last line follows from \eqref{eq:contpart}, the pathwise boundedness of $b$, and Lemma \ref{lem:mylevy}.
+Hence for almost all outcomes,
+\begin{align}
+  \int^1_0\{\jvn  - \svn{X^c}\}^2 \D t & = O_{a.s}( H_n^2 \Delta_n^2\log^2(1/\Delta_n) (N_1)^2)\notag\\
+& = O_{a.s}(H_n^2 \Delta_n^2\log^2(1/\Delta_n))\notag \\
+  & \to 0,
+  \label{}
+\end{align}
+almost surely.
+\end{proof}

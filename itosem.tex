@@ -1,0 +1,15 @@
+%\subsection{Ito semimartingales}
+We fix a filtered probability space $(\Omega, \mcal{F}, \{\mcal{F}_t\}_{t \ge 0}, \p)$, and start by recalling the definition of an \ito semimartingale. 
+\begin{defn}
+  An $\real$-valued process $X$ is an \ito semimartingale if it admits the representation:
+  \begin{align}
+    X_t = X_0 + \int^t_0 b_s ds + \int^t_0 \sigma_s d W_s  + x  I_{\{\vert x \vert > 1\}} \ast \mu_t  + x  I_{\{\vert x \vert \le  1\}} \ast (\mu - \nu)_t 
+    \label{eq:semimartingale}
+  \end{align}
+  with 
+  \begin{align}
+    \nu(dt, dx) = F_t(dx) dt, \notag
+    \label{}
+  \end{align}
+  where $W$ is a Brownian motion, $\sigma$ and $b$ are \real-valued progressively measurable processes, $\mu$ is an integer-valued measure induced by the jumps  of $X$, $\nu$ is its \levy system, and $F_t(dx)$ is a progressively measurerable $\sigma$-finite measure on \real.  
+\end{defn}

@@ -1,10 +1,10 @@
 \section{Volatility estimation: continuous prices } \label{sec:estimator}
-In this section we specify a consistent estimator of the spot volatility within a framework of continuous prices. That is $J_t = 0$ and \eqref{eq:semimartingale} reduces to:
+In this section we specify a consistent estimator of  spot volatility within a framework of continuous prices. That is, we simplify the general setup of \eqref{eq:semimartingale} to:
 \begin{align}
-  X_t & = X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s    \qquad t \in [0,1] 
-  \label{eq:contsemimartingale},
+  X_t & = X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s,    \qquad t \ge 0 
+  \label{eq:contsemimartingale}.
 \end{align}
-where $X_0$ is a constant, both $b$ and $\sigma$ are adapted, $b$ is \cadlag, and $\sigma$ is continuous.    We restate these assumptions here for ease of reference.
+We further restrict the processes $b$ and $\sigma$ as follows: 
 \input{semiass}
 Let $\{g, \tg\}$ be a pair of dual Gabor frame generators constructed as in Lemma \ref{le:gabor}, then   \sv admits a Gabor frame expansion given by:  
 \begin{align}

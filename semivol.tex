@@ -1,3 +1,4 @@
+\begin{comment}
 \subsection{Asymptotic properties} \label{sec:deviation}
 In this section we obtain an estimate of the rate of convergence of  the Gabor frame estimator on compact intervals of the real line. We will take \domain as the prototype for such intervals. The usual way to think about  $\sigma^2$ is as a stochastic process, but it is just as natural to think of it as a random element. A random element is an extension  of the familiar concept of a random variable to include  situations where the state space can be any metric space $E$. Because our interest is in studying the convergence of the estimator on \domain,  $E$ will be set equal to \Ltwo, the set of real-valued, square integrable function on \domain. Now, due to the path continuity assumption on $\sigma^2$, we will restrict our attention to \czero,  the set of real-valued, continuous  functions on \domain equipped with the \Ltwo norm. So, given  an outcome $\omega$ in the sample space  $\Omega$, the restriction of realized volatility $\sigma^2(\omega)$ to \domain is a  continuous function defined on \domain. Now, with regards smoothness, \state  is  a very diverse class, comprising    functions that are infinitely differentiable,  those that are nowhere differentiable, and everything in-between. For a random volatility coefficient it may very well be the case that for some outcome $\omega$, realized volatility $\sigma^2(\omega)$ is very smooth with finite derivatives of all orders, whereas for outcome $\omega'$,  $\sigma^2(\omega')$  is very rough with kinks everywhere. For instance, with probability one, the one-dimesional Brownian motion  maps outcomes $\omega$  to continuous functions in  \state, but it is  almost surely  the case that none of these functions will be  differentiable. 
 
@@ -82,16 +83,7 @@ The following two propositions are the main results of this section.
 \begin{remark}\mbox{}
 The above bounds are remarkably similar to those achievable using an orthonormal basis such as wavelets \citep{GenonCatalot1992}. The variance component is slower by a factor of $H_n$. This comes about because the vectors in a frame need not be orthogonal. The bias term is also  slower by a logarithmic factor. Intuitively, the logarithmic term shows up because frames unlike orthonormal basis may contain  redundant terms. In practical implementations, this differences are likely to be insignificant. 
 \end{remark}
-\begin{prop}\label{pro:finite}
-  Suppose the  price process is specified as in \eqref{eq:contsemimartingale}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \ref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. 
-If $H_n \uparrow \infty$ satisfies 
-  \begin{align}
-    H_n (n^{-1} \log(n))^{1/2} = o(1),\notag
-    \label{}
-  \end{align}
-  then
-  \svnx, defined in \eqref{eq:contvolestimator}, converges in \Ltwo to \sv in probability.
-\end{prop}
+\end{comment}
 \input{proofprop}
 \input{jumps}
 \input{finiteactproof}

@@ -1,13 +1,15 @@
 \subsection{Finite activity \levy jumps}
 In order to demonstrate that the global estimator of spot volatility is consistent, we will proceed in stages.  First suppose the price process specified in all generality in \eqref{eq:generalsemimartingale} experiences at most a finite number of \levy jumps in any finite time interval. That is we assume that $X$ has finite activity  \levy jumps, which is equivalent to $\nu$ being finite on the complement of   $\{0\}$. The finite activity assumption  also implies that the price process may be expressed as  
 \begin{align}
-  X_t :=  \int_0^t b(s) \D s + \int_0^t \sigma(s) \D W_s +  \sum^{N_t}_{ i = 1} Y_i, \qquad t \in [0,1], 
+  &X_t^c :=  X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s, \notag\\ 
+  &A_t :=  xI_{\{\vert x \vert > 1 \}} \ast \mu, \notag \\
+  &X^f_t := X^c_t + A_t,
   \label{jumpfa}
 \end{align}
-where the $Y_i$'s are  \iid jump sizes; $N$ is a Poisson process with intensity $\lambda$, independent of each $Y_i$. Under this conditions, we have the following:
+for $t \in \domain$ where the $Y_i$'s are  \iid jump sizes; $N$ is a Poisson process with intensity $\lambda$, independent of each $Y_i$. Under this conditions, we have the following:
 
-\begin{prop}\label{pro:finite}
-  Suppose the  price process is specified as in \eqref{jumpfa} with $\sigma$ and $b$ satisfying Assumption \ref{as:vol}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. If 
+\begin{lem}\label{lem:finite}
+  Let $X^f$ be specified as in \eqref{jumpfa} with $\sigma$ and $b$ satisfying Assumption \ref{as:vol}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. If 
   \begin{comment}
   \begin{enumerate}[label=\emph{(}\roman*\emph{)}]
     \item 
@@ -25,66 +27,93 @@ where $M^* : = \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} b(s) \D s\vert$;
   where $S^* := \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} \sigma^2(s) \D s\vert$;
   \end{enumerate}
   \end{comment}
- $u_n \downarrow 0 $ is a sequence in $n$ such that  
+ $u_n \downarrow 0 $ and $H_n \uparrow \infty$ are sequences satisfying  
 \begin{align}
-    n^{-1} \log (n)u_n^{-1} = o(1),\notag
-    \label{}
-  \end{align}
-and the sequence $H_n \uparrow \infty$ satisfies 
-  \begin{align}
-    H_n (n^{-1} \log(n))^{1/2} = o(1),\notag
+  u_n^{-1} H^n \Delta_n^{1/2} = o(1),\notag
     \label{}
   \end{align}
   then
-  \jvn as defined in \eqref{eq:jumpvolestimator}  converges in \Ltwo in probability to \sv.
-\end{prop}
+  $V_n(X^f, t)$ as defined in \eqref{eq:jumpvolestimator}  converges in \Ltwo in probability to \sv.
+\end{lem}
 \begin{proof} 
-  Let $X^c$ denote the continuous part of $X$ so that $X = X^c + J$, and 
-  \begin{align}
-  X^c_t = \int^t_0 b(s) \D s + \int^t_0 \sigma(s) \D W_s,
-    \label{eq:contpart}
-  \end{align}
-  for $t$ in \domain. Denote
-  \begin{align}
-    & \svn{X^c}:=\sum_{(h,k) \in \Theta_n} \dnhk\;g_{h,k}(t), \qquad  t \in [0,1], \text{ where}\\
-  &\dnhk := \sum_{i =0}^{n-1} \btghki (\dxc)^2.  \notag
-    \label{}
-  \end{align}
 We have
 \begin{align}
-  \int_0^1 & (\jvn  - \sv(t))^2\D t \notag\\
-  & \le  2 \int_0^1  (\jvn  - \svn{X^c})^2\D t +   2\int_0^1  (\svn{X^c} - \sv(t) )^2\D t.
+V_n(X^f,t)  - \sv(t) & = \{V_n(X^f,t)  - V_n(X^c, t)\}  + \{V_n(X^c,t)  - \svn{X^c}\} \notag \\
+& \quad +  \{ \svn{X^c} - \sv(t)\}. \label{eq:now}
 \end{align}
-That the second summand on the right converges to 0 in probability is a result of Proposition (1.1). 
+That the third summand on the right converges to 0 in \Ltwo in  probability is the content of Proposition \ref{pro:finite}. 
+Set
+    $\hat{b}_{h,k} := \sum_{i =0}^{n-1} \btghki (\dxc)^2I_{\{(\dxc)^2 \le  u_n\}}$ and  
+  $\dnhk := \sum_{i =0}^{n-1} \btghki (\dxc)^2$.
 Now note that
+$V_n(X^c,t)  - \svn{X^c} = \sum_{(h,k) \in \Theta_n} (\hat{b}_{h,k}  - \dnhk)\;g_{h,k}(t)$ 
+with 
+\begin{align}
+  \hat{b}_{h,k}  - \dnhk &= \sum_{i =0}^{n-1} \btghki\{ (\dxc)^2 \indxc- (\Delta_i X^c)^2\}\notag\\
+  &= \sum_{i =0}^{n-1} \btghki (\dxc)^2 \indxcn \notag.
+  %& = \sum_{i =0}^{n-1} \btghki\{ (\dxc)^2 (\indxc- I_{\{(\dxc)^2 \le 4 u_n\}}\}\notag \\
+  %& \quad +\sum_{i =0}^{n-1} \btghki\{(\dxc)^2 I_{\{(\dxc)^2 \le 4 u_n\}} - (\Delta_i X^c)^2\}\notag\\
+  %& =: E^1_n + E_n^2.
+  \label{}
+\end{align} 
+Without loss of generality, suppose $b_0 = \sigma_0 = 0$; let $\{T_m\}$ be a localizing sequence for $b$ and $\sigma$.   
+Set $\Delta_i M_m := \int_{t_i}^{t_{i+1}} \sigma_{s\wedge T_m} \D W_s$, $\Delta_i S_m := \int_{t_i}^{t_{i+1}} b_{s\wedge T_m} \D s$, and $\dxc_m :=  \Delta_i M_m + \Delta_i S_m$. Define $\hat{b}^m_{h,k}  - \dnhk^m$ as above by substituting $\dxc_m$ for \dxc. Now note the following
+\begin{align}
+  \e(\vert \hat{b}^m_{h,k}  - \dnhk^m \vert ) &\le c n \e( (\dxc_m)^2 I_{\{( \dxc_m)^2 > u_n\}})\notag\\
+  & \le c n \e( (\dxc_m)^4)^{1/2}  \p(( \dxc_m)^2 > u_n)^{1/2}\notag\\
+  & \le c n u_n^{-1} \e( (\dxc_m)^4)^{1/2}  \e(( \dxc_m)^2)^{1/2}\notag.
+  \label{}
+\end{align}
+Arguing as in Proposition \ref{pro:finite}, it is easily verified that $\e( (\dxc_m)^4) \le  c (\Delta_n^4 + \Delta_n^3 + \Delta_n^2)$ and $ \e( (\dxc_m)^2)  \le  c(\Delta_n^2 + \Delta_n^{3/2} + \Delta_n)$. Hence, $\e(\vert \hat{b}^m_{h,k}  - \dnhk^m \vert ) \le c n u_n^{-1}\Delta^{3/2}_n = c u_n^{-1}\Delta^{1/2}_n $. Because \tghk is bounded, this allows us to conclude by way of Markov's inequality that given $\eta > 0$, 
+\begin{align}
+  \p(\sup_{t \in \domain} \vert V_n(X^c,t)  - \svn{X^c} \vert > \eta) \le \p(T_m > 1) + c u^{-1}_n H^n \Delta_n^{1/2},\notag
+  \label{}
+\end{align}
+which becomes arbitrarily small as $m$ and $n$ tend to infinity simultaneously.
 
+To obtain an estimate for the first summand in \eqref{eq:now}, denote
+    $\hat{e}_{h,k} := \sum_{i =0}^{n-1} \btghki (\dxf)^2I_{\{(\dxf)^2 \le  u_n\}}$ 
+  and observe that 
+  $V_n(X^f,t)  - V_n(X^c, t) = \sum_{(h,k) \in \Theta_n} (\hat{e}_{h,k} - \hat{b}_{h,k})\;g_{h,k}(t)$ 
+with 
 \begin{align}
-  \jvn{X}  - \svn{X^c}(t) = \sum_{(h,k) \in \Theta_n} (\anhk - \dnhk)\;g_{h,k}(t),\notag
+  \hat{e}_{h,k} - \hat{b}_{h,k}  &= \sum_{i =0}^{n-1} \btghki\{ (\dxf)^2 \indxf- (\dxc)^2 \indxc\}.\notag
   \label{}
 \end{align}
-and 
+By definition $X^f = X^c + A$, where $A$ represents the jumps of $X$ in excess of $1$.  
+We may write $ (\dxf)^2 \indxf- (\dxc)^2 \indxc = \gamma^1_i + \gamma^2_i + \gamma^3_i$ with 
+  \begin{align}
+  &\gamma^1_i := (\dxc)^2 (\indxf-  \indxc), \notag \\
+  &\gamma^2_i := (\dxc \Delta_i A) \indxf, \notag\\ 
+  &\gamma^3_i := (\Delta_i A)^2 \indxf. 
+  \end{align}
+Because, $X$ is \cadlag, there is at most a finite number of  jumps in excess of 1  per outcome in \domain. For sufficiently large $n$, each interval $(t_{i} , t_{i + 1}]$  contains at most one  jump.  If the $i$-th interval does not contains a jump    then $\gamma^2_i = \gamma^3_i = 0$ because $\Delta_i A = 0$.   If the $i$-th interval contains a jump, we have  
 \begin{align}
-  \anhk - \dnhk = \sum_{i =0}^{n-1} \btghki\{ (\dx)^2 \indx- (\Delta_i X^c)^2\}.\notag
+  \vert\Delta_i X^f\vert = \vert\Delta_i A+ \Delta_i X^c\vert \ge 1 - \vert \dxc \vert.\label{eq:well1}
+\end{align}
+Now observe that because $X^c$ has  continuous paths, it is uniformly continuous on the compact domain \domain, so that   as $n$ tends to infinity, $1 - \sup_{i < n}\vert \dxc \vert \uparrow 1$;  meanwhile, $u_n^{1/2} \downarrow 0$. Hence, for $n$ large enough, we have $\vert \dxf \vert \ge u_n^{1/2}$ so that, almost surely,  $\gamma^2_i$ and $\gamma_i^3$, for all $i$,  are uniformly  eventually zero.
+
+To pin down $\gamma^1_i$, we introduce the following events
+\begin{align}
+&\Omega_n^1 := \{\omega : \mu(\omega,  (t_i, t_{i+1}] \times \{\vert x \vert > 1\} ) \le 1, \text{ for all } i <n  \}, & n \in \nats, \notag\\
+&\Omega_n^2 := \{ \omega: \vert\Delta_i X^f(\omega)\vert > u_n^{1/2} , \text{ for all }i < n   \},& n \in \nats,\notag\\
+&\Omega_k := \{\omega : \mu(\omega, \domain  \times \{\vert x \vert > 1\} ) \le k \}.  & k \in \nats.\notag
   \label{}
 \end{align}
-By Corrollary 1 of \cite{Mancini2009}, for almost all outcomes, there is $n'$ such that for all $n \ge n'$ 
+Set $\Omega_n := \Omega_n^1 \cap \Omega_n^2$.  As previously argued (see \eqref{eq:well1}), $\p(\Omega^2_n) \to 0$ as $n \to \infty$.  Because $X$ is \cadlag, $\mu(  \domain \times \{\vert x \vert > 1\} ) $ is almost surely finite, so that  $\p(\Omega^1_n) \to 1$ as $n \to \infty$.    Hence, $\p(\Omega_n) \to 1$ as $n \to \infty$. It is also the case that $\p(\Omega_k) \to 1$ as $k \to \infty$ since $X$ is \cadlag and the number of jumps larger than one in any bounded interval must be finite almost surely. Now, recall that $\{T_m \}$ is a localizing sequence for $b$ and $\sigma$;  set $\Omega(m,n,k) := \Omega_n \cap \Omega_k \cap \{T_m > 1\}$ and note that $\p(\Omega(m,n,k)) \to 1$ as $n,m, k \to \infty$.  Thus, on $\Omega(m,n,k)$ there is at most $k$ jumps jumps larger than  one with no more than one  jump per interval; the increments of $X^c$ are small enough to ensure the increment of $X^f$ exceed $u_n^{1/2}$; and the processes $\sigma^4$ and $b^4$ are integrable. 
+
+Set $\gamma^1_i(n, m, k) = \gamma^1_i I_{\Omega(m,n,k)}$  and  denote  $G_i := \{\vert \Delta_i A\vert  > 0\}$. By triangle inequality,  $E(\vert \gamma_i^1(n, m, k) \vert) \le E(\vert \gamma_i^1(n, m, k)  I_{G_i}\vert)  + E(\vert \gamma_i^1(n,m, k) I_{G^c_i}\vert)$. Clearly, $\gamma^1_i(n,m, k) = 0$ on $G^c_i$  so that 
 \begin{align}
-  \indx =\indn. \notag
+\sum_{i =0}^{n-1} \btghki E(\vert \gamma_i^1(n,m, k) \vert) & \le\sum_{i =0}^{n-1} \btghki E(\vert \gamma_i^1(n,m, k) I_{G_i}\vert) \notag\\
+ & =  \sum_{i =1}^{k} \btghki\e( (\dxc_m)^2 I_{\{(\dxc_m)^2 \le u_n\}}I_{G_i})\notag\\
+ &\le \sum_{i =1}^{k} \btghki\e((\dxc_m)^2)\notag \\
+ &\le c k \Delta_n\notag.
   \label{}
 \end{align}
-Hence for almost all outcomes and sufficiently large $n$  
+Hence, given $\eta > 0$, 
 \begin{align}
-   \anhk - \dnhk &\le \sum_{i =0}^{n-1} \btghki  (\dxc)^2  \indnc\notag\\
-   & =  O_{a.s}( \Delta_n \log(1/\Delta_n)\sum_{i =0}^{n-1}\indnc),  \notag 
+  \p(\sup_{t \in \domain} \vert V_n(X^f,t)  - V_n(X^c, t) \vert > \eta) \le \p(\Omega(m,n,k)) + c H^n k \Delta_n.\notag
   \label{}
 \end{align}
-where the last line follows from \eqref{eq:contpart}, the pathwise boundedness of $b$, and Lemma \ref{lem:mylevy}.
-Hence for almost all outcomes,
-\begin{align}
-  \int^1_0\{\jvn  - \svn{X^c}\}^2 \D t & = O_{a.s}( H_n^2 \Delta_n^2\log^2(1/\Delta_n) (N_1)^2)\notag\\
-& = O_{a.s}(H_n^2 \Delta_n^2\log^2(1/\Delta_n))\notag \\
-  & \to 0,
-  \label{}
-\end{align}
-almost surely.
+By taking $m,n,k$ large enough, the first term can be made as small as required; for fixed $m,k$, letting $n\to \infty$ will make the second term as small as desired. This completes the proof. 
 \end{proof}
