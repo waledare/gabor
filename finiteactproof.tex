@@ -1,13 +1,17 @@
-\subsection{Finite activity \levy jumps}
+\begin{comment} \subsection{Finite activity \levy jumps}
 In order to demonstrate that the global estimator of spot volatility is consistent, we will proceed in stages.  First suppose the price process specified in all generality in \eqref{eq:generalsemimartingale} experiences at most a finite number of \levy jumps in any finite time interval. That is we assume that $X$ has finite activity  \levy jumps, which is equivalent to $\nu$ being finite on the complement of   $\{0\}$. The finite activity assumption  also implies that the price process may be expressed as  
+\end{comment}
+We now proceed to prove the consistency of the estimator. First we introduce the following notation and prove an intermediate lemma. Set 
 \begin{align}
   &X_t^c :=  X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s, \notag\\ 
-  &A_t :=  xI_{\{\vert x \vert > 1 \}} \ast \mu, \notag \\
-  &X^f_t := X^c_t + A_t,
+  &A_t :=  xI_{\{\vert x \vert > 1 \}} \ast \mu_t, \notag \\
+  &X^f_t := X^c_t + A_t.
   \label{jumpfa}
 \end{align}
+We now prove the following:
+\begin{comment}
 for $t \in \domain$ where the $Y_i$'s are  \iid jump sizes; $N$ is a Poisson process with intensity $\lambda$, independent of each $Y_i$. Under this conditions, we have the following:
-
+\end{comment}
 \begin{lem}\label{lem:finite}
   Let $X^f$ be specified as in \eqref{jumpfa} with $\sigma$ and $b$ satisfying Assumption \ref{as:vol}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. If 
   \begin{comment}
@@ -27,9 +31,9 @@ where $M^* : = \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} b(s) \D s\vert$;
   where $S^* := \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} \sigma^2(s) \D s\vert$;
   \end{enumerate}
   \end{comment}
- $u_n \downarrow 0 $ and $H_n \uparrow \infty$ are sequences satisfying  
+ $u_n = O(\Delta_n^\beta), 0 <\beta <1,$ and $H_n \uparrow \infty$ are sequences satisfying  
 \begin{align}
-  u_n^{-1} H^n \Delta_n^{1/2} = o(1),\notag
+  u_n^{-1/2} (H^n)^2 \Delta_n^{1/2} = o(1),\notag
     \label{}
   \end{align}
   then
@@ -61,12 +65,12 @@ Set $\Delta_i M_m := \int_{t_i}^{t_{i+1}} \sigma_{s\wedge T_m} \D W_s$, $\Delta_
 \begin{align}
   \e(\vert \hat{b}^m_{h,k}  - \dnhk^m \vert ) &\le c n \e( (\dxc_m)^2 I_{\{( \dxc_m)^2 > u_n\}})\notag\\
   & \le c n \e( (\dxc_m)^4)^{1/2}  \p(( \dxc_m)^2 > u_n)^{1/2}\notag\\
-  & \le c n u_n^{-1} \e( (\dxc_m)^4)^{1/2}  \e(( \dxc_m)^2)^{1/2}\notag.
+  & \le c n u_n^{-1/2} \e( (\dxc_m)^4)^{1/2}  \e(( \dxc_m)^2)^{1/2}\notag.
   \label{}
 \end{align}
-Arguing as in Proposition \ref{pro:finite}, it is easily verified that $\e( (\dxc_m)^4) \le  c (\Delta_n^4 + \Delta_n^3 + \Delta_n^2)$ and $ \e( (\dxc_m)^2)  \le  c(\Delta_n^2 + \Delta_n^{3/2} + \Delta_n)$. Hence, $\e(\vert \hat{b}^m_{h,k}  - \dnhk^m \vert ) \le c n u_n^{-1}\Delta^{3/2}_n = c u_n^{-1}\Delta^{1/2}_n $. Because \tghk is bounded, this allows us to conclude by way of Markov's inequality that given $\eta > 0$, 
+Arguing as in Proposition \ref{pro:finite}, it is easily verified that $\e( (\dxc_m)^4) \le  c (\Delta_n^4 + \Delta_n^3 + \Delta_n^2)$ and $ \e( (\dxc_m)^2)  \le  c(\Delta_n^2 + \Delta_n^{3/2} + \Delta_n)$. Hence, $\e(\vert \hat{b}^m_{h,k}  - \dnhk^m \vert ) \le c n u_n^{-1/2}\Delta^{3/2}_n = c u_n^{-1/2}\Delta^{1/2}_n $. Because \tghk is bounded, this allows us to conclude by way of Markov's inequality that given $\eta > 0$, 
 \begin{align}
-  \p(\sup_{t \in \domain} \vert V_n(X^c,t)  - \svn{X^c} \vert > \eta) \le \p(T_m > 1) + c u^{-1}_n H^n \Delta_n^{1/2},\notag
+  \p(\sup_{t \in \domain} \vert V_n(X^c,t)  - \svn{X^c} \vert > \eta) \le \p(T_m \le 1) + c u^{-1/2}_n H^n \Delta_n^{1/2},\notag
   \label{}
 \end{align}
 which becomes arbitrarily small as $m$ and $n$ tend to infinity simultaneously.
@@ -91,7 +95,7 @@ Because, $X$ is \cadlag, there is at most a finite number of  jumps in excess of
 \begin{align}
   \vert\Delta_i X^f\vert = \vert\Delta_i A+ \Delta_i X^c\vert \ge 1 - \vert \dxc \vert.\label{eq:well1}
 \end{align}
-Now observe that because $X^c$ has  continuous paths, it is uniformly continuous on the compact domain \domain, so that   as $n$ tends to infinity, $1 - \sup_{i < n}\vert \dxc \vert \uparrow 1$;  meanwhile, $u_n^{1/2} \downarrow 0$. Hence, for $n$ large enough, we have $\vert \dxf \vert \ge u_n^{1/2}$ so that, almost surely,  $\gamma^2_i$ and $\gamma_i^3$, for all $i$,  are uniformly  eventually zero.
+Now observe that because $X^c$ has  continuous paths, it is uniformly continuous on the compact domain \domain, so that   as $n$ tends to infinity, $1 - \sup_{i < n}\vert \dxc \vert \uparrow 1$;  meanwhile, $u_n^{1/2} \downarrow 0$. Hence, for $n$ large enough, we have $\vert \dxf \vert > u_n^{1/2}$ so that, almost surely,  $\gamma^2_i$ and $\gamma_i^3$, for all $i$,  are uniformly  eventually zero.
 
 To pin down $\gamma^1_i$, we introduce the following events
 \begin{align}
@@ -112,7 +116,7 @@ Set $\gamma^1_i(n, m, k) = \gamma^1_i I_{\Omega(m,n,k)}$  and  denote  $G_i := \
 \end{align}
 Hence, given $\eta > 0$, 
 \begin{align}
-  \p(\sup_{t \in \domain} \vert V_n(X^f,t)  - V_n(X^c, t) \vert > \eta) \le \p(\Omega(m,n,k)) + c H^n k \Delta_n.\notag
+  \p(\sup_{t \in \domain} \vert V_n(X^f,t)  - V_n(X^c, t) \vert > \eta) \le \p(\Omega(m,n,k)^c) + c H^n k \Delta_n.\notag
   \label{}
 \end{align}
 By taking $m,n,k$ large enough, the first term can be made as small as required; for fixed $m,k$, letting $n\to \infty$ will make the second term as small as desired. This completes the proof. 

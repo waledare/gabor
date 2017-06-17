@@ -1,0 +1,15 @@
+\begin{ass} \label{as:nu}
+  \mbox{}
+ %   \item  There is a sequence of stopping times $T_m \uparrow \infty$, a.s., and a sequence $\{F^m\}$ of deterministic $\sigma$-finite measures  on the real line satisfying 
+  %    \begin{align} 
+   %     \int_\real (x^2 \wedge \vert x \vert)  F^m(dx) <\infty\end{align}
+   %     such that $\sup_{t \wedge T_m} F_t (B) \le F^m(B)$ almost surely for all Borel sets $B$.
+    %\item $x^2  \ast \nu_t = \int_0^t \int_\real x^2 F_t(dx) dt < \infty$,
+  The \levy measure $F$ satisfies the following condition
+  $(x^2I_{\{\vert x \vert \le u\}})\ast \nu_t = \int_0^t \int_{-u}^{u} x^2 F(dx) dt = O(u)$ as $u \to 0$.
+\end{ass}
+\begin{remark}
+% The first requirement implies the existence of $T_m \uparrow \infty$, a.s., such that $X_{t \wedge T_m} - X_0$ has square integrable small jumps and large jumps  of integrable variataion for each $m$.  The requirement is met by price processes with locally bounded jumps. %It also implies that the jumps of $X$  in excess of one are of locally integrable varaition, so that $X$ is a special martingale.
+
+  The  requirement  is satisfied by price processes with finite jump activity. It is also satisfied if, $F$ is absolutely continuous with density $f$ satisfying $x^2 f(x) = O(1)$ as $x \to 0$.
+\end{remark}
