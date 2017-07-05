@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  29 JUN 2017 15:12
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  5 JUL 2017 13:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1143,11 +1143,19 @@ Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
 \c@sketch=\count186
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/commath/commath.sty)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/preprint/authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip68
+\@affilsep=\skip69
+\c@Maxaffil=\count187
+\c@authors=\count188
+\c@affil=\count189
+)
 (/usr/local/texlive/2013/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count187
-\c@@ppsavesec=\count188
-\c@@ppsaveapp=\count189
+\c@@pps=\count190
+\c@@ppsavesec=\count191
+\c@@ppsaveapp=\count192
 )
 (/usr/local/texlive/2013/texmf-dist/tex/generic/epsf/epsf.sty
 This is `epsf.tex' v2.7.4 <14 February 2011>
@@ -1169,19 +1177,19 @@ LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count190
-\sf@farskip=\skip68
+\c@KVtest=\count193
+\sf@farskip=\skip70
 \sf@captopadj=\dimen266
-\sf@capskip=\skip69
-\sf@nearskip=\skip70
-\c@subfigure=\count191
-\c@subfigure@save=\count192
-\c@lofdepth=\count193
-\c@subtable=\count194
-\c@subtable@save=\count195
-\c@lotdepth=\count196
-\sf@top=\skip71
-\sf@bottom=\skip72
+\sf@capskip=\skip71
+\sf@nearskip=\skip72
+\c@subfigure=\count194
+\c@subfigure@save=\count195
+\c@lofdepth=\count196
+\c@subtable=\count197
+\c@subtable@save=\count198
+\c@lotdepth=\count199
+\sf@top=\skip73
+\sf@bottom=\skip74
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
@@ -1190,28 +1198,33 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'american'.
- (./first.aux)
+
+
+LaTeX Warning: Unused global option(s):
+    [preprint].
+
+(./first.aux)
 \openout1 = `first.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 116.
-LaTeX Font Info:    ... okay on input line 116.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 116.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 116.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 121.
+LaTeX Font Info:    ... okay on input line 121.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 121.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 121.
 
  (/usr/local/texlive/2013/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 116.
+LaTeX Font Info:    ... okay on input line 121.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -1225,17 +1238,17 @@ ons.cfg
 File: siunitx-abbreviations.cfg 2013/07/31 v2.5s siunitx: Abbreviated units
 ) (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count197
+\scratchcounter=\count200
 \scratchdimen=\dimen267
 \scratchbox=\box58
-\nofMPsegments=\count198
-\nofMParguments=\count199
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count200
-\MPscratchDim=\dimen268
-\MPnumerator=\count201
+\nofMPsegments=\count201
 Normal \count register pool exhausted, switching to extended pool.
-\makeMPintoPDFobject=\count277
+\nofMParguments=\count277
+\everyMPshowfont=\toks41
+\MPscratchCnt=\count278
+\MPscratchDim=\dimen268
+\MPnumerator=\count279
+\makeMPintoPDFobject=\count280
 \everyMPtoPDFconversion=\toks42
 ) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -1266,40 +1279,36 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c__siunitx_mathsf_int=\count278
-LaTeX Font Info:    Try loading font information for U+msa on input line 116.
+\c__siunitx_mathsf_int=\count281
+LaTeX Font Info:    Try loading font information for U+msa on input line 121.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 116.
+LaTeX Font Info:    Try loading font information for U+msb on input line 121.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count279
+\c__siunitx_mathtt_int=\count282
  [1
 
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./jump
 sgeneral.tex
-(./itosem.tex [2])) [3] [4]
+[2] (./itosem.tex)) [3] [4]
 
-LaTeX Warning: Characters dropped after `\end{comment}' on input line 181.
+LaTeX Warning: Characters dropped after `\end{comment}' on input line 186.
 
 [5]
 
-LaTeX Warning: Characters dropped after `\end{comment}' on input line 229.
+LaTeX Warning: Characters dropped after `\end{comment}' on input line 234.
 
-[6] (./volatility.tex (./semiass.tex) [7] (./semivol.tex (./proofprop.tex
-[8] [9] [10] [11]
-
-LaTeX Warning: Reference `lem:modtg' on page 12 undefined on input line 108.
-
+[6] (./volatility.tex (./semiass.tex [7]) [8] (./semivol.tex (./proofprop.tex
+[9] [10] [11]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 125.
-(/usr/local/texlive/2013/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+ (/usr/local/texlive/2013/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [12])
-(./jumps.tex
+) [12] [13]) (./jumps.tex
 Underfull \hbox (badness 10000) in paragraph at lines 199--1
 
  []
@@ -1309,7 +1318,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--1
 
  []
 
-[13] (./juass.tex) [14]) (./finiteactproof.tex
+(./juass.tex) [14]) (./finiteactproof.tex
 Overfull \hbox (3.59084pt too wide) in paragraph at lines 47--55
 \T1/cmr/m/n/12 is the con-tent of Propo-si-tion 3.1[]. Set $[] []\OT1/cmr/m/n/1
 2 = [][] [](^^A[]\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 I[]$
@@ -1349,7 +1358,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 284--373
  []
 
 ))) (./empirics.tex [24] (./simfig.tex
-</home/wale/Dropbox/Research/Paper3/pg.pdf, id=104, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pg.pdf, id=105, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pg.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/pg.pdf>
@@ -1357,7 +1366,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pg.pdf used on inpu
 t line 5.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/po.pdf, id=105, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/po.pdf, id=106, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/po.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/po.pdf>
@@ -1365,7 +1374,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/po.pdf used on inpu
 t line 7.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/pa.pdf, id=106, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pa.pdf, id=107, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pa.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/pa.pdf>
@@ -1373,7 +1382,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pa.pdf used on inpu
 t line 9.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=107, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=108, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pcir.pdf Graphic file (type pdf)
 <use /home/wale/Dropbox/Research/Paper3/pcir.pdf>
 Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pcir.pdf used on in
@@ -1393,7 +1402,7 @@ Overfull \hbox (29.39915pt too wide) in paragraph at lines 53--53
  []
 
 (./simfig3.tex
-</home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf, id=148, 505.89pt x 505.8
+</home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf, id=149, 505.89pt x 505.8
 9pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf Graphic file (type p
 df)
@@ -1402,7 +1411,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf u
 sed on input line 5.
 (pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
 
-</home/wale/Dropbox/Research/Paper3/Simulation/po.pdf, id=149, 505.89pt x 505.8
+</home/wale/Dropbox/Research/Paper3/Simulation/po.pdf, id=150, 505.89pt x 505.8
 9pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf Graphic file (type p
 df)
@@ -1411,13 +1420,13 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf u
 sed on input line 7.
 (pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
 
-<Simulation/pa.pdf, id=150, 845.1575pt x 597.23125pt>
+<Simulation/pa.pdf, id=151, 845.1575pt x 597.23125pt>
 File: Simulation/pa.pdf Graphic file (type pdf)
  <use Simulation/pa.pdf>
 Package pdftex.def Info: Simulation/pa.pdf used on input line 9.
 (pdftex.def)             Requested size: 175.48943pt x 177.60332pt.
 
-</home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf, id=151, 505.89pt x 505.
+</home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf, id=152, 505.89pt x 505.
 89pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf Graphic file (type 
 pdf)
@@ -1442,51 +1451,63 @@ y course\T1/cmr/m/n/12 , Boston:
 
 [33
 
-])) [34] (./first.aux)
+])) [34] (./app.tex
+Overfull \hbox (24.60793pt too wide) in paragraph at lines 80--80
+[] 
+ []
 
-LaTeX Warning: There were undefined references.
+[35]
+Underfull \hbox (badness 10000) in paragraph at lines 92--95
 
- ) 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--95
+
+ []
+
+) [36] (./first.aux) ) 
 Here is how much of TeX's memory you used:
- 17343 strings out of 493308
- 323825 string characters out of 6137822
- 370252 words of memory out of 5000000
- 20386 multiletter control sequences out of 15000+600000
+ 17419 strings out of 493308
+ 324681 string characters out of 6137822
+ 372570 words of memory out of 5000000
+ 20454 multiletter control sequences out of 15000+600000
  38273 words of font info for 114 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  67i,14n,96p,10472b,720s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
- </home/wale/.texlive2013/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></us
-r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/l
-ocal/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
-exlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texliv
-e/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
-013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/
-2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2013
-/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2013/tex
-mf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2013/texmf
--dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2013/texmf-d
-ist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2013/texmf-dist/
-fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2013/texmf-dist/fo
-nts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2013/texmf-dist/font
-s/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013/texmf-dist/fonts/
-type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
-pe1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/cm-super/sfti1200.pfb>
-Output written on first.pdf (34 pages, 2416923 bytes).
+{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/cm-su
+per/cm-super-t1.enc} </home/wale/.texlive2013/texmf-var/fonts/pk/ljfour/public/
+bbm/bbm12.600pk></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12
+.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
+usr/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></us
+r/local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/
+local/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/loca
+l/texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/
+texlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/te
+xlive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texl
+ive/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texliv
+e/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/
+2013/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/20
+13/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2013
+/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2013/t
+exmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/tex
+mf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on first.pdf (36 pages, 2435511 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 197 compressed objects within 2 object streams
+ 289 PDF objects out of 1000 (max. 8388607)
+ 204 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

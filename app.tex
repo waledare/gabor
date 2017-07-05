@@ -1,6 +1,15 @@
-\Section{appendices}
-  \section{Proofs}\label{ap:proof}
-  We now give the proof of Lemma \eqref{lem:modtg}. \\ \\
+\section{appendix}
+%  \section{Proofs}\label{ap:proof}
+
+\begin{lem} \label{lem:modtg}
+  Let the dual Gabor frame generator $\tilde{g}$ be constructed as in \eqref{eq:dualg}. If $\modc{g}{\delta}$ denotes the modulus of continuity of $g$, i.e. $\modc{g}{\delta} := \sup \{|g(t) - g(t')| : t,t' \in \real \text{ and } |t -t'| < \delta\}$,  then   
+  \begin{align}
+    \modc{\tilde{g}_{j,k}}{\delta} \le C \modc{g}{\delta} \qquad  \hkints\notag,
+    \label{}
+  \end{align}
+  where $C$ is a positive constant.
+\end{lem}
+\begin{comment}
   \begin{proof}
    $G$ is bounded away from zero. To see this, note that since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b := [(s+r -b)/2, (s+r +b)/2]$, then
   \begin{align}
@@ -45,6 +54,49 @@ where $C_{\tg} = G_*^2(2 (\lceil (s + r)/b\rceil +1)(g^*)^2 + G^*)$. Now let \hk
 \end{align}
 The last inequality follows because translating a function leaves its modulus of continuity unchanged.\\
 \end{proof}
+\end{comment}
+  \begin{proof}
+   $G$ is bounded away from zero. To see this, note that since $g$ has support in  $[r,s]$, the series on the left hand side of \eqref{eq:capg} has finitely many terms for each $t$.  In addition, it is straight forward to verify that $G(t) = G(t+b)$ for all $t$; so,  $G$ is periodic with period $b$. It is also clear that because $g$ is continuous, so is $G$. It follows that $G$ attains its min and max on any interval of length $b$. Let $I_b$ denote the interval $[(s+r -b)/2, (s+r +b)/2]$, then
+  \begin{align}
+    \min_{t\in\real} G(t) &=  \min_{t \in I_b} G(t) \notag\\
+    & \ge  a^{-1}\min_{t \in I_b}\vert g(t)\vert^2.\notag
+    \label{}
+  \end{align}  
+  Because $g$ is continuous and $g$ doesn't vanish in $(r,s)$, we conclude that $G_*:=\min_{t \in \real}G(t) > 0$. It is also straight forward that $G^* := \max_{t \in \real}G(t) < \infty$. Now, let $t, t' \in \real$, $ t > t'$,  such that $\vert t - t' \vert \le \delta$, then 
+  \begin{align}
+     \vert \tg(t) - \tg(t')\vert & = \vert (G(t)G(t'))^{-1}(g(t)G(t') - g(t')G(t))\vert  \notag\\
+    & \le (G_*^{-2})\{\vert g(t)\vert \vert G(t) - G(t') \vert + \vert G(t)\vert \vert g(t) - g(t')\vert\}. 
+    \label{eq:difftg}
+  \end{align}
+For a real number  $x$, denote $\lfloor x \rfloor$  the largest integer less than or equal to $x$ and $\lceil x \rceil$  the smallest integer that is greater  than or equal to $x$. Now,
+Let $A$ denote the set of integers $i$ such that $r < t - ib < s$. By definition of $g$, $g(t - j b) = 0$, whenever $j \not\in A$. Since $b > 0$, $A$ contains at most $\lceil( 1 + \vert s \vert + \vert r \vert)/b \rceil$ number of elements.  Let $\tau := \min \{t - ib: i \in A\}$, i.e. $\tau$ is the smallest $t - ib$ such that $i \in A$. Because $A$ contains at most a finite number of elements, there exists an integer $k$ such that $\tau = t - kb$. Set $\tau' := t'-kb$.   
+  
+   It is straight forward to verify that  $\vert \tau - \tau' \vert \le \delta$ and 
+\begin{align}
+a  \vert G(t) - G(t') \vert & \le  \sum_{j = 0}^{\lceil ( 1 + \vert s \vert  +\vert r \vert )/b \rceil} \vert g(\tau + j b)^2 - g(\tau' + j b)^2\vert\notag\\
+  & \le \sum_{j = 0}^{\lceil (1 + \vert s \vert  +\vert r\vert )/b \rceil} \vert g(\tau + j b) - g(\tau' + j b) \vert \vert g(\tau + j b) + g(\tau' + j b)\vert\notag\\
+  & \le 2 \lceil (1 + \vert s \vert  + \vert r \vert)/b\rceil g^*\modc{g}{\delta},
+  \label{}
+\end{align}
+where $g^* := \max_{t \in \real} \vert g(t)\vert $.
+Returning to \eqref{eq:difftg}, we see that
+\begin{align}
+  \vert \tg(t) - \tg(t')\vert \le C_{\tg} \modc{g}{\delta},\notag
+  \label{}
+\end{align}
+where $C_{\tg} = G_*^2(2a (\lceil ( 1 + \vert s \vert  +\vert r\vert)/b\rceil)(g^*)^2 + G^*)$. Now let \hkints, then
+\begin{align}
+  \vert \tghk(t) - \tghk(t')\vert & = \vert \mathrm{e}^{2 \pi \i h a t} (\tg(t - kb) -\tg(t'-kb)) \vert\notag\\
+  &\le \vert \tg(t - kb) -\tg(t'-kb) \vert \le C_{\tg} \modc{g}{\delta}.
+  \label{}
+\end{align}
+The last inequality follows because translating a function leaves its modulus of continuity unchanged.\\
+\end{proof}
+
+
+
+
+\begin{comment}
 Next, we provide a proof of Proposition \eqref{pr:consistency}. \\\\
 \begin{proof}
   We begin with $B^2_n$, the bias component of the integrated mean square error. Using \ito's product formula \citep[p. 257]{Applebaum2009}, we may express, using \ito's isometry theorem, the average deviation at time $t$ as follows:
@@ -163,3 +215,4 @@ Since $ \alpha_{2,i} = O(H_n^2)$, it follows that $V_{2,n} := O(H^2_n\Delta_n)$.
 %\chapter{Extensions} \label{ap:ext}
 \input{semiapp}
 %\end{appendices}
+\end{comment}

@@ -1,6 +1,7 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt,preprint]{article}
 \usepackage{wdmisc}
 \usepackage{commath}
+\usepackage{authblk}
 %\usepackage{mathtools}
 \newcommand{\wmi}{\ensuremath{W_{b_m}\left(\frac{x-Y_{t_i}}{b_m}\right) }\xspace}
 \newcommand{\wmj}{\ensuremath{W_{b_m}(({x-Y_{t_i}})/{b_m}) }\xspace}
@@ -111,19 +112,23 @@
 %\usepackage{float}
 %\restylefloat{table}
 %\floatstyle{plaintop}
-\author{Wale Dare and Matthias Fengler}
-\title {Global estimation of realized instantaneous volatility in the presence of price jumps.}
+%\author{Wale Dare and Matthias Fengler}
+\author{Wale Dare\thanks{wale.dare@unisg.ch} } 
+\author{Matthias Fengler\thanks{matthias.fengler@unisg.ch}}
+\affil{Department of Mathematics and Statistics \\  University of St.Gallen \\  Switzerland}
+\date{PRELIMINARY AND INCOMPLETE. PLEASE DO NOT CIRCULATE.} 
+\title {Global estimation of realized instantaneous volatility in the presence of price jumps}
 \begin{document}
 \maketitle
 \begin{abstract}
-  We propose a non-parametric procedure for estimating the realized spot volatility of a price process described by  an \ito semimartingale with \levy jumps. The procedure integrates the threshold jump elimination technique of \cite{Mancini2009}  with a  frame (Gabor)  expansion of the realized trajectory of  spot volatility.  We show that the procedure  converges in probability  in $L^2([0,T])$ for a wide class of spot volatility processes, including those with discontinuous paths. Our analysis assumes  the time interval between price observations tends to zero; as a result, the intended application is the analysis of high frequency financial data.    
+  We propose a non-parametric procedure for estimating the realized spot volatility of a price process described by  an \ito semimartingale with \levy jumps. The procedure integrates the threshold jump elimination technique of \cite{Mancini2009}  with a  frame (Gabor)  expansion of the realized trajectory of  spot volatility.  We show that the procedure  converges in probability  in $L^2([0,T])$ for a wide class of spot volatility processes, including those with discontinuous paths. Our analysis assumes  the time interval between price observations tends to zero; as a result, the intended application is for the analysis of high frequency financial data.    
 
 \end{abstract}
 %\tableofcontents
 Volatility estimation using discretely observed asset prices has received a great deal of attention recently, however,  much of that effort has been focused on 
 estimating the \emph{integrated} volatility and, to a lesser extent, the \emph{spot} volatility at a given point in time. 
 Notable contributions to the literature on volatility estimation include the papers by \cite{Foster1996}, \cite{Fan2008},   \cite{Florens1993}, and  \cite{BN2004}.
-In these studies, the object of interest is local in nature: spot volatility at a given point in time or integrated volatility up to a terminal point in time. In contrast,  estimators which aim  to obtain {spot} volatility estimates  for  entire time windows  have received much less coverage. These are the so-called ``global'' spot volatility estimators. These estimators derive their name from   the fact that the objects of interest are not localized. Typically, a global estimator would be a    random elements whose realizations are  elements of some function space.     
+In these studies, the object of interest is local in nature: spot volatility at a given point in time or integrated volatility up to a terminal point in time. In contrast,  estimators which aim  to obtain {spot} volatility estimates  for  entire time windows  have received much less coverage. These are the so-called ``global'' spot volatility estimators. These estimators derive their name from   the fact that the objects of interest are not localized. Typically, a global estimator would be a    random element whose realizations would be  elements of some function space.     
 
 There are potential benefits to adopting global estimators of spot volatility. Given a consistent global estimate of spot volatility $\sigma^2$ over an interval $[0,T]$, the  integrated volatility at any point $t$ within $[0,T]$ may be consistently estimated  by integrating $\sigma^2$ over the interval $[0,t]$.  In fact, by the continuous mapping theorem, consistent estimates of continuous transformations of $\sigma^2$ are immediately available. Hence, integrated powers of spot volatility, $\int^t_0\sigma^p_s \D s$, $p > 0$,  the running maximum of spot volatility, $\sigma^*_t := \sup_{s \le t} \vert \sigma_s \vert$, and volatility in  excess of a given threshold, $\sigma^a_t:=  \sigma_t  I_{\{\vert \sigma_t \vert > a\}}$, $a > 0$,  to name just a few, are easily obtained via  the obvious  transformation of the estimated  global spot volatility.   This flexibility is one of the more appealing features  of this class of estimators.
 
@@ -133,7 +138,7 @@ Another  important contribution to the global spot volatility estimation literat
 
 In the current work, we extend the study of the realized path of spot volatility to situations where the price process  or  the volatility coefficient   itself cannot be assumed to be continuous.  That is we describe a procedure for consistently estimating \cadlag volatility paths in the presence of price jumps. By employing Gabor frames in our analysis we are able to leverage the excellent time-frequency localization property of Gabor frames to obtain the sparsest  representation for the realized trajectories of spot volatility. 
 
-The rest of this paper is organized as follows: in Section \ref{sec:model} we introduce notation and give general description of  the dynamics  of  observed prices. In  Section \ref{sec:gabor} we introduce   Gabor frames and review the basic theory required for our subsequent analysis. We present our main results in  Section \ref{sec:estimator} and 4. We specify the estimator and give proof of its consistency. Section \ref{sec:simulation} describes simulation exercises that lend further support to the theoretical analysis of Sections \ref{sec:estimator} and 4.  Section 6 concludes. 
+The rest of this paper is organized as follows: in Section \ref{sec:model} we introduce notation and give general description of  the dynamics  of  observed prices. In  Section \ref{sec:gabor} we introduce   Gabor frames and review the basic theory required for our subsequent analysis. We present our main results in  Section \ref{sec:estimator} and 4, where we specify the estimator and give proof of its consistency. Section \ref{sec:simulation} describes simulation exercises that lend further support to the theoretical analysis.  Section 6 contains concluding remarks. 
 \input{jumpsgeneral}
 \section{ Frames}\label{sec:gabor} 
 Frames generalize the notion of orthonormal bases in  Hilbert spaces. If $\{f_k\}_{k \in \nats}$ is a frame for a separable Hilbert space \hs then every vector $f \in \hs$ may be expressed as a linear combination of the frame elements, i.e.
@@ -329,10 +334,11 @@ To proceed in our analysis, we specialize further the type of Riesz basis to tho
 \section{Conclusion} \label{sec:conclusion}
 We proposed an estimator for the spot volatility function using Gabor frame methods. We showed that the estimator converges in a MISE sense and obtained an explicit convergence rate.  The evidence for the validity of the proposed estimator will be further reinforced in a simulation study. We will also take the estimator to task using data from the Forex and bond market. 
 \end{comment}
-%\input{app}
 \input{conclusion}
 %\pagebreak
 %\input{semiapp}
 \input{/home/wale/Dropbox/PhD/Bibliography/masterbiblinux}
+\pagebreak
+\input{app}
 \end{document}
 

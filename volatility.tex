@@ -39,7 +39,7 @@ We propose the following estimator of the volatility coefficient:
   &\cnhk := \sum_{i =0}^{n-1} \btghki (X_{t_{i+1}} - X_{t_i})^2.
 \end{align}
 So $\vert \Theta_n \vert $ is the number of frame elements included in the expansion. Specifically,   $\vert \Theta_n\vert = (2K_0 + 1)(2H_n+1)$; and since $K_0$ is a finite quantity, it follows that $\vert\Theta_n\vert = O(H_n)$, i.e. the number of estimated coefficients is proportional to $H_n$, and therefore, will grow with the number of observations, $n$. 
-In the next section we show that the estimator converges to $\sigma^2$ on $[0,1]$ in a mean integrated square error sense.
+In the next section we show that the estimator converges to $\sigma^2$ on $[0,1]$ in probability.
 \input{semivol}
 \begin{comment}
 \section{Asymptotic properties} \label{sec:deviation}
