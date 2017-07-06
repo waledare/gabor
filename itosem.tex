@@ -1,17 +1,19 @@
 %\subsection{Ito semimartingales}
-We fix a filtered probability space $(\Omega, \mcal{F}, \{\mcal{F}_t\}_{t \ge 0}, \p)$. We recall the definition of an \ito semimartingale with \levy jumps.  
+We fix a filtered probability space $(\Omega, \mcal{F}, \{\mcal{F}_t\}_{t \ge 0}, \p)$ and  recall the definition of an \ito semimartingale with \levy jumps.  
 \begin{defn}
   An $\real$-valued process $X$ is an \ito semimartingale with \levy jumps if it admits the representation:
   \begin{align}
-    X_t = X_0 + \int^t_0 b_s ds + \int^t_0 \sigma_s d W_s  + x  I_{\{\vert x \vert > 1\}} \ast \mu_t  + x  I_{\{\vert x \vert \le  1\}} \ast (\mu - \nu)_t 
+    X_t = X_0 + \int^t_0 b_s ds + \int^t_0 \sigma_s d W_s  + J^l_t + J^s_t, \qquad t \ge 0, 
     \label{eq:semimartingale}
   \end{align}
   with 
   \begin{align}
-    \nu(dt, dx) = F(dx) dt, \notag
+    & J^l := x  I_{\{\vert x \vert > 1\}} \ast \mu, \notag \\
+    & J^s := x  I_{\{\vert x \vert \le  1\}} \ast (\mu - \nu), \notag\\
+    &\nu(dt, dx) = F(dx) dt, \notag
     \label{}
   \end{align}
-  $t \ge 0$, where $W$ is a Brownian motion, $\sigma$ and $b$ are \real-valued progressively measurable processes, $\mu$ is an integer-valued measure induced by the jumps  of $X$, $\nu$ is its \levy system, and $F(dx)$ is a  deterministic $\sigma$-finite measure on \real. 
+  where $W$ is a Brownian motion, $\sigma$ and $b$ are \real-valued progressively measurable processes, $\mu$ is an integer-valued measure induced by the jumps  of $X$, $\nu$ is its \levy system, and $F(dx)$ is a  deterministic constant-in-time $\sigma$-finite measure on \real. 
 \end{defn}
 \begin{remark}
   Generally, \ito semimartingales are those with characteristic triplet  that is absolutely continuous with respect to the Lebesgue measure. Here, we further restrict the \levy system $\nu$ to be deterministic. This assumption ensures the jump measure $\mu$ is a Poisson random measure. 

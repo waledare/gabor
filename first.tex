@@ -132,9 +132,9 @@ In these studies, the object of interest is local in nature: spot volatility at 
 
 There are potential benefits to adopting global estimators of spot volatility. Given a consistent global estimate of spot volatility $\sigma^2$ over an interval $[0,T]$, the  integrated volatility at any point $t$ within $[0,T]$ may be consistently estimated  by integrating $\sigma^2$ over the interval $[0,t]$.  In fact, by the continuous mapping theorem, consistent estimates of continuous transformations of $\sigma^2$ are immediately available. Hence, integrated powers of spot volatility, $\int^t_0\sigma^p_s \D s$, $p > 0$,  the running maximum of spot volatility, $\sigma^*_t := \sup_{s \le t} \vert \sigma_s \vert$, and volatility in  excess of a given threshold, $\sigma^a_t:=  \sigma_t  I_{\{\vert \sigma_t \vert > a\}}$, $a > 0$,  to name just a few, are easily obtained via  the obvious  transformation of the estimated  global spot volatility.   This flexibility is one of the more appealing features  of this class of estimators.
 
-The estimator by \cite{GenonCatalot1992} is an early contribution to the study of the realized trajectory of spot volatility. Working within the context of continuous asset prices and deterministic spot volatility, the authors  decribed an estimator of the realized trajectory of spot volatility using wavelet projection methods.  This basic framework  has since  been extended by  \cite{Hoffmann2012}. The authors proposed   adaptive estimators of  spot volatility  in the framework of asset  prices subject to market microstructure noise.
+The estimator by \cite{GenonCatalot1992} is an early contribution to the study of the realized trajectory of spot volatility. Working within the context of continuous asset prices and deterministic spot volatility, the authors  decribed an estimator of the realized trajectory of spot volatility using wavelet projection methods.  Their basic framework  has   been extended by  \cite{Hoffmann2012}, who proposed   an adaptive estimator of  spot volatility  for continuous asset  prices subject to market microstructure noise contaminations.
 
-Another  important contribution to the global spot volatility estimation literature  is the estimator  proposed by \cite{Malliavin2002}, which relies on Fourier methods to  estimate the realized path of spot volatility in the context of continuous prices. In their procedure,  Fourier coefficients of the realized price path are first estimated and the used to derive expressions for  the Fourier coefficients of the realized path of spot volatility.     
+Another  important contribution to the global spot volatility estimation literature  is the estimator  studied by \cite{Malliavin2002}, which relies on Fourier methods to  estimate the realized path of spot volatility for assets with continuous prices. In their procedure,  Fourier coefficients of the realized price path are first estimated and the used to derive expressions for  the Fourier coefficients of the realized path of spot volatility.     
 
 In the current work, we extend the study of the realized path of spot volatility to situations where the price process  or  the volatility coefficient   itself cannot be assumed to be continuous.  That is we describe a procedure for consistently estimating \cadlag volatility paths in the presence of price jumps. By employing Gabor frames in our analysis we are able to leverage the excellent time-frequency localization property of Gabor frames to obtain the sparsest  representation for the realized trajectories of spot volatility. 
 
@@ -155,7 +155,7 @@ Furthermore, if $\{f_k\}_{k \in \nats}$ is a frame for \hs, then surjective, bou
 
 %Another reason frames might be a good idea is that high-frequency financial data is seldom without market microstructure noise, while Fourier and wavelet methods have noise reduction capabilities, Gabor frames are particularly efficient in this regards. As a result, Gabor frames can potentially yield much sparser representations of the volatility process when working in a noisy environment.  We will not deal explicitly with market microstructure noise here, we will do so in a second paper.  
 
-Our discussion of  frame theory will be  rather brief; we only mention concepts needed for our specification of the volatility estimator.  For a  more detailed treatment see the book by \cite{Christensen2008}. 
+Our discussion of  frame theory will be  rather brief; we only mention concepts needed for our specification of the volatility estimator.  For a  more detailed treatment we refer the reader to  \citep{Christensen2008}. 
 In the sequel if $z$ is a complex number then we shall denote respectively by $\bar{z}$ and $\vert z \vert$ the complex conjugate and magnitude of $z$. Let \LtwoR denote the space of complex-valued functions defined on the real line with finite norm given by 
 \begin{align}
   \Vert f \Vert := \left(\int_\real f(t) \overline{f(t)} \D t\right)^{1/2} < \infty, \qquad  f \in \LtwoR.\notag
@@ -183,7 +183,8 @@ In the sequel if $z$ is a complex number then we shall denote respectively by $\
     \label{}
   \end{align}
   where $\hat{f}$ is the Fourier transform of $f$.
-}\end{comment}, it follows that an orthonormal basis is a tight frame with frame bounds identically equal to 1, i.e. $C_1 = C_2 = 1$.  Now if $\{f_k\}$ is a frame, we may associate with it a bounded operator $\mcal{A}$ that maps every function  $f$ in  \LtwoR to a sequence $c$ in \ltwo in the following way:
+}\end{comment}
+, it follows that an orthonormal basis is a tight frame with frame bounds identically equal to 1, i.e. $C_1 = C_2 = 1$.  Now if $\{f_k\}$ is a frame, we may associate with it a bounded operator $\mcal{A}$ that maps every function  $f$ in  \LtwoR to a sequence $c$ in \ltwo in the following way:
 \begin{align}
   &\mcal{A} f  = c \qquad \text{where} \qquad c_k = \langle f, f_k\rangle, \qquad  k \in \nats. 
   \label{eq:analysis}
