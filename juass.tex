@@ -6,10 +6,24 @@
    %     such that $\sup_{t \wedge T_m} F_t (B) \le F^m(B)$ almost surely for all Borel sets $B$.
     %\item $x^2  \ast \nu_t = \int_0^t \int_\real x^2 F_t(dx) dt < \infty$,
   The \levy measure $F$ satisfies the following condition
-  $(x^2I_{\{\vert x \vert \le u\}})\ast \nu_t = \int_0^t \int_{-u}^{u} x^2 F(dx) dt = O(u)$ as $u \to 0$.
+  $(x^2I_{\{\vert x \vert \le u\}})\ast \nu_t = \int_0^t \int_{-u}^{u} x^2 F( \D x) \D t = O(u)$ as $u \to 0$.
 \end{ass}
 \begin{remark}
 % The first requirement implies the existence of $T_m \uparrow \infty$, a.s., such that $X_{t \wedge T_m} - X_0$ has square integrable small jumps and large jumps  of integrable variataion for each $m$.  The requirement is met by price processes with locally bounded jumps. %It also implies that the jumps of $X$  in excess of one are of locally integrable varaition, so that $X$ is a special martingale.
 
-  The  requirement  is satisfied if $F$ is absolutely continuous with bounded density $f$, as is the case with the Gaussian; more generally, it is satisfied  if  $f(x) = O(x^{-2})$ as $x \to 0$.
+  The  requirement  is satisfied if $F$ is absolutely continuous with bounded density $f$, as is the case with the Gaussian distribution; more generally, it is satisfied  if  $f(x) = O(x^{-2})$ as $x \to 0$; these include the \levy$(\gamma, \delta)$ distribution with density 
+  \begin{align}
+    f(x) = (\gamma/2 \pi)^{1/2} (x - \delta)^{-3/2} \exp(-\gamma/ 2(x - \delta)),  \qquad x \in \real, \notag
+    \label{}
+  \end{align}
+  and the Cauchy$(\gamma, \delta)$ distribution with density
+  \begin{align}
+    f(x) = (\gamma/\pi) (\gamma^2 + (x - \delta)^2)^{-1}, \qquad x > \delta.\notag
+    \label{}
+  \end{align}
+
+  We also remark that for general semimartingales $(x^2 \wedge 1)\ast  \nu_t$ is increasing and locally integrable. By the \levy assumption, we simply have that  $(x^2 \wedge 1) *  \nu$ is finite. In addition, it is a consequence of the \levy assumption that the price process has no fixed time of discontinuity \citep[II.4.3]{Jacod2003}. Hence, by \ito's integration by parts formula 
+  \begin{align}
+    \e((x^2\wedge 1)\ast \mu_t) = t(x^2 \wedge 1) *  \nu = O(t), \qquad t \ge 0. \label{eq:secmo}
+  \end{align}
 \end{remark}

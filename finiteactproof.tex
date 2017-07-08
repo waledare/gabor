@@ -1,19 +1,18 @@
 \begin{comment} \subsection{Finite activity \levy jumps}
 In order to demonstrate that the global estimator of spot volatility is consistent, we will proceed in stages.  First suppose the price process specified in all generality in \eqref{eq:generalsemimartingale} experiences at most a finite number of \levy jumps in any finite time interval. That is we assume that $X$ has finite activity  \levy jumps, which is equivalent to $\nu$ being finite on the complement of   $\{0\}$. The finite activity assumption  also implies that the price process may be expressed as  
 \end{comment}
-We now proceed to prove the consistency of the estimator. First we introduce the following notation and prove an intermediate lemma. Set 
+We now proceed to prove the consistency of the estimator. First we introduce the following notation and prove an intermediate lemma.  
 \begin{align}
   &X_t^c :=  X_0 + \int_0^t b_s \D s + \int_0^t \sigma_s \D W_s, \notag\\ 
-  &A_t :=  xI_{\{\vert x \vert > 1 \}} \ast \mu_t, \notag \\
-  &X^f_t := X^c_t + A_t.
+  &J^l_t :=  xI_{\{\vert x \vert > 1 \}} \ast \mu_t, \notag \\
+  &X^f_t := X^c_t + J^l_t. 
   \label{jumpfa}
 \end{align}
-We now prove the following:
 \begin{comment}
 for $t \in \domain$ where the $Y_i$'s are  \iid jump sizes; $N$ is a Poisson process with intensity $\lambda$, independent of each $Y_i$. Under this conditions, we have the following:
 \end{comment}
 \begin{lem}\label{lem:finite}
-  Let $X^f$ be specified as in \eqref{jumpfa} with $\sigma$ and $b$ satisfying Assumption \ref{as:vol}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. If 
+  Let $X^f$ be specified as in \eqref{jumpfa} with $\sigma$ and $b$ satisfying Assumption \ref{as:vol}. Let $\{g, \tg\}$ denote a pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} with  $g$ Lipschitz continuous on the unit interval. Let  $\{H_n\}$ be an increasing sequence and   
   \begin{comment}
   \begin{enumerate}[label=\emph{(}\roman*\emph{)}]
     \item 
@@ -31,9 +30,9 @@ where $M^* : = \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} b(s) \D s\vert$;
   where $S^* := \sup_{1 \le i <n} \vert \int^{t_{i+1}}_{t_i} \sigma^2(s) \D s\vert$;
   \end{enumerate}
   \end{comment}
- $u_n = O(\Delta_n^\beta), 0 <\beta <1,$ and $H_n \uparrow \infty$ are sequences satisfying  
+  $\{u_n\}$  a decreasing sequence satisfying   $u_n = O(\Delta_n^\beta)$  with $0 <\beta <1$. If   
 \begin{align}
-  u_n^{-1/2} (H^n)^2 \Delta_n^{1/2} = o(1),\notag
+  u_n^{-1/2} (H^n)^2 \Delta_n^{1/2} = o(1)\notag
     \label{}
   \end{align}
   then
@@ -45,7 +44,8 @@ We have
 V_n(X^f,t)  - \sv(t) & = \{V_n(X^f,t)  - V_n(X^c, t)\}  + \{V_n(X^c,t)  - \svn{X^c}\} \notag \\
 & \quad +  \{ \svn{X^c} - \sv(t)\}. \label{eq:now}
 \end{align}
-That the third summand on the right converges to 0 in \Ltwo in  probability is the content of Proposition \ref{pro:finite}. 
+That the third summand on the right converges to zero
+in \Ltwo in  probability is the content of Proposition \ref{pro:finite}. 
 Set
     $\hat{b}_{h,k} := \sum_{i =0}^{n-1} \btghki (\dxc)^2I_{\{(\dxc)^2 \le  u_n\}}$ and  
   $\dnhk := \sum_{i =0}^{n-1} \btghki (\dxc)^2$.
@@ -61,11 +61,11 @@ with
   \label{}
 \end{align} 
 Without loss of generality, suppose $b_0 = \sigma_0 = 0$; let $\{T_m\}$ be a localizing sequence for $b$ and $\sigma$.   
-Set $\Delta_i M_m := \int_{t_i}^{t_{i+1}} \sigma_{s\wedge T_m} \D W_s$, $\Delta_i S_m := \int_{t_i}^{t_{i+1}} b_{s\wedge T_m} \D s$, and $\dxc_m :=  \Delta_i M_m + \Delta_i S_m$. Define $\hat{b}^m_{h,k}  - \dnhk^m$ as above by substituting $\dxc_m$ for \dxc. Now note the following
+Set $\Delta_i S_m := \int_{t_i}^{t_{i+1}} \sigma_{s\wedge T_m} \D W_s$, $\Delta_i M_m := \int_{t_i}^{t_{i+1}} b_{s\wedge T_m} \D s$, and $\dxc_m :=  \Delta_i M_m + \Delta_i S_m$. Define $\hat{b}^m_{h,k}  - \dnhk^m$ as above by substituting $\dxc_m$ for \dxc. Now note the following
 \begin{align}
   \e(\vert \hat{b}^m_{h,k}  - \dnhk^m \vert ) &\le c n \e( (\dxc_m)^2 I_{\{( \dxc_m)^2 > u_n\}})\notag\\
-  & \le c n \e( (\dxc_m)^4)^{1/2}  \p(( \dxc_m)^2 > u_n)^{1/2}\notag\\
-  & \le c n u_n^{-1/2} \e( (\dxc_m)^4)^{1/2}  \e(( \dxc_m)^2)^{1/2}\notag.
+  & \le c n (\e( (\dxc_m)^4))^{1/2}  (\p(( \dxc_m)^2 > u_n))^{1/2}\notag\\
+  & \le c n u_n^{-1/2} (\e( (\dxc_m)^4))^{1/2}  (\e(( \dxc_m)^2))^{1/2}\notag.
   \label{}
 \end{align}
 Arguing as in Proposition \ref{pro:finite}, it is easily verified that $\e( (\dxc_m)^4) \le  c (\Delta_n^4 + \Delta_n^3 + \Delta_n^2)$ and $ \e( (\dxc_m)^2)  \le  c(\Delta_n^2 + \Delta_n^{3/2} + \Delta_n)$. Hence, $\e(\vert \hat{b}^m_{h,k}  - \dnhk^m \vert ) \le c n u_n^{-1/2}\Delta^{3/2}_n = c u_n^{-1/2}\Delta^{1/2}_n $. Because \tghk is bounded, this allows us to conclude by way of Markov's inequality that given $\eta > 0$, 
@@ -84,16 +84,16 @@ with
   \hat{e}_{h,k} - \hat{b}_{h,k}  &= \sum_{i =0}^{n-1} \btghki\{ (\dxf)^2 \indxf- (\dxc)^2 \indxc\}.\notag
   \label{}
 \end{align}
-By definition $X^f = X^c + A$, where $A$ represents the jumps of $X$ in excess of $1$.  
-We may write $ (\dxf)^2 \indxf- (\dxc)^2 \indxc = \gamma^1_i + \gamma^2_i + \gamma^3_i$ with 
+By definition $X^f = X^c + J^l$, where $J^l$ represents the jumps of $X$ in excess of $1$.  
+We may write $ (\dxf)^2 \indxf- (\dxc)^2 \indxc = \gamma^1_i + 2\gamma^2_i + \gamma^3_i$ with 
   \begin{align}
   &\gamma^1_i := (\dxc)^2 (\indxf-  \indxc), \notag \\
-  &\gamma^2_i := (\dxc \Delta_i A) \indxf, \notag\\ 
-  &\gamma^3_i := (\Delta_i A)^2 \indxf. 
+  &\gamma^2_i := (\dxc \Delta_i J^l) \indxf, \notag\\ 
+  &\gamma^3_i := (\Delta_i J^l)^2 \indxf. 
   \end{align}
-Because, $X$ is \cadlag, there is at most a finite number of  jumps in excess of 1  per outcome in \domain. For sufficiently large $n$, each interval $(t_{i} , t_{i + 1}]$  contains at most one  jump.  If the $i$-th interval does not contains a jump    then $\gamma^2_i = \gamma^3_i = 0$ because $\Delta_i A = 0$.   If the $i$-th interval contains a jump, we have  
+Because, $X$ is \cadlag, there is at most a finite number of  jumps in excess of 1  per outcome in \domain. For sufficiently large $n$, each interval $(t_{i} , t_{i + 1}]$  contains at most one  jump.  If the $i$-th interval does not contains a jump    then $\gamma^2_i = \gamma^3_i = 0$ because $\Delta_i J^l= 0$.   If the $i$-th interval contains a jump, we have  
 \begin{align}
-  \vert\Delta_i X^f\vert = \vert\Delta_i A+ \Delta_i X^c\vert \ge 1 - \vert \dxc \vert.\label{eq:well1}
+  \vert\Delta_i X^f\vert = \vert\Delta_i J^l+ \Delta_i X^c\vert \ge 1 - \vert \dxc \vert.\label{eq:well1}
 \end{align}
 Now observe that because $X^c$ has  continuous paths, it is uniformly continuous on the compact domain \domain, so that   as $n$ tends to infinity, $1 - \sup_{i < n}\vert \dxc \vert \uparrow 1$;  meanwhile, $u_n^{1/2} \downarrow 0$. Hence, for $n$ large enough, we have $\vert \dxf \vert > u_n^{1/2}$ so that, almost surely,  $\gamma^2_i$ and $\gamma_i^3$, for all $i$,  are uniformly  eventually zero.
 
@@ -106,7 +106,7 @@ To pin down $\gamma^1_i$, we introduce the following events
 \end{align}
 Set $\Omega_n := \Omega_n^1 \cap \Omega_n^2$.  As previously argued (see \eqref{eq:well1}), $\p(\Omega^2_n) \to 1$ as $n \to \infty$.  Because $X$ is \cadlag, $\mu(  \domain \times \{\vert x \vert > 1\} ) $ is almost surely finite, so that  $\p(\Omega^1_n) \to 1$ as $n \to \infty$.    Hence, $\p(\Omega_n) \to 1$ as $n \to \infty$. It is also the case that $\p(\Omega_k) \to 1$ as $k \to \infty$ since $X$ is \cadlag and the number of jumps larger than one in any bounded interval must be finite almost surely. Now, recall that $\{T_m \}$ is a localizing sequence for $b$ and $\sigma$;  set $\Omega(m,n,k) := \Omega_n \cap \Omega_k \cap \{T_m > 1\}$ and note that $\p(\Omega(m,n,k)) \to 1$ as $n,m, k \to \infty$.  Thus, on $\Omega(m,n,k)$ there is at most $k$ jumps larger than  one with no more than one  jump per interval; the increments of $X^c$ are small enough to ensure the increments of $X^f$ exceed $u_n^{1/2}$; and the processes $\sigma^4$ and $b^4$ are integrable. 
 
-Set $\gamma^1_i(n, m, k) = \gamma^1_i I_{\Omega(m,n,k)}$  and  denote  $G_i := \{\vert \Delta_i A\vert  > 0\}$. By triangle inequality,  $E(\vert \gamma_i^1(n, m, k) \vert) \le E(\vert \gamma_i^1(n, m, k)  I_{G_i}\vert)  + E(\vert \gamma_i^1(n,m, k) I_{G^c_i}\vert)$. Clearly, $\gamma^1_i(n,m, k) = 0$ on $G^c_i$  so that 
+Set $\gamma^1_i(n, m, k) = \gamma^1_i I_{\Omega(m,n,k)}$  and  denote  $G_i := \{\vert \Delta_i J^l\vert  > 0\}$. By the triangle  inequality,  $E(\vert \gamma_i^1(n, m, k) \vert) \le E(\vert \gamma_i^1(n, m, k)  I_{G_i}\vert)  + E(\vert \gamma_i^1(n,m, k) I_{G^c_i}\vert)$. Clearly, $\gamma^1_i(n,m, k) = 0$ on $G^c_i$  so that 
 \begin{align}
 \sum_{i =0}^{n-1} \btghki E(\vert \gamma_i^1(n,m, k) \vert) & \le\sum_{i =0}^{n-1} \btghki E(\vert \gamma_i^1(n,m, k) I_{G_i}\vert) \notag\\
  & =  \sum_{i =1}^{k} \btghki\e( (\dxc_m)^2 I_{\{(\dxc_m)^2 \le u_n\}}I_{G_i})\notag\\

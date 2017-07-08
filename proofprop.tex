@@ -1,5 +1,5 @@
 \begin{prop}\label{pro:finite}
-  Suppose the  price process is specified as in \eqref{eq:contsemimartingale} and satisfies the conditions of Assumption \ref{as:vol}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \ref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval. 
+  Suppose the  price process is specified as in \eqref{eq:contsemimartingale} and satisfies the conditions of Assumption \ref{as:vol}. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \ref{le:gabor} with $g$  Lipschitz continuous on the unit interval. 
 If $H_n \uparrow \infty$ satisfies 
   \begin{align}
     (H_n)^2 \Delta_n^{1/2} = o(1),\notag
@@ -39,7 +39,7 @@ where
   &B_{4,n}(t) := - \sum_{\substack{(h,k) \not\in \Theta_n }}g_{h,k}(t)\chk. 
   \label{}
 \end{align}
-We start by recalling the well-known fact that  frame expansions converge unconditionally in \Ltwo, that is, the expansion converges regardless of the order of summation \citep[Theorem 5.1.7]{Christensen2008}, so that  
+We start by recalling the well-known fact that  frame expansions converge unconditionally in \Ltwo, that is, the expansion converges regardless of the order of summation \citep[Theorem 5.1.7]{Christensen2008}.  Hence,   
 \begin{align}
   \Vert B_{4, n}  \Vert_{L^2[0,1]} = o_{a.s.}(1).\notag
   \label{}
@@ -72,19 +72,19 @@ Hence,
   \sup_{t \in \domain} \vert B_{3,n}(t)\vert = o_{P}( 1).
   \label{}
 \end{align}
-Now set $S_i^m := \int_{t_i}^{t_{i + 1}} \sigma_{s \wedge T_m} d W_s$. Note the following  
+We now tackle $B_{2,n}(t)$. To that end, denote  $S_i^m := \int_{t_i}^{t_{i + 1}} \sigma_{s \wedge T_m} d W_s$ and  note that 
 \begin{align}
   E((S_i^m)^2)   & = E\left(\int_{t_i}^{t_{i+1}} \sigma^2_{s \wedge T_m} \D s \right)\notag \\
                 & = \int_{t_i}^{t_{i+1}} E(\sigma^2_{s \wedge T_m}) \D s \notag \\
-                & = \int_{t_i}^{t_{i+1}} (E(\sup_{u \wedge T_m} \sigma^4_{u})^{1/2}) \D s \notag \\
+                & \le \int_{t_i}^{t_{i+1}} (E(\sup_{u \wedge T_m} \sigma^4_{u})^{1/2}) \D s \notag \\
   & \le c \Delta_n.\label{eq:news}
 \end{align}
 By \holder's inequality, \eqref{eq:m}, and \eqref{eq:news},  we have
 \begin{align}
-  E(M_i^m S_i^m) & = (E(M_i^m)^2 E( S^m_i)^2)^{1/2} \notag\\
+  E(M_i^m S_i^m) & \le (E(M_i^m)^2 E( S^m_i)^2)^{1/2} \notag\\
   & \le c\Delta_n^{3/2}.\label{eq:ms}
 \end{align}
-Set 
+Next,  set 
 \begin{align}
  B_{2,n}^m(t) := 2 \sumt g_{h,k}(t)\left(\sum_{i=0}^{n-1} \btghki S_i^m M_i^m \right) \notag.
   \label{}
@@ -123,12 +123,12 @@ First, let $D_i^n: \Omega\times[0,1] \to \real$ for $i = 0, \cdots, n-1$ be defi
   \label{eq:Di}\\
 &D_0^n(0) := 0.
 \end{align}
-So, $D_i^n(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1}]$. Moreover,  
+So, $D_i^n(t)$ is 0 on $[0,1]$ except when $t$ is in $(t_i, t_{i+1}]$. Moreover   
 \begin{align}
-  D_i^n (t) D_j^n(t) = 0, \qquad i \not = j.\notag
+  D_i^n (t) D_j^n(t) = 0, \qquad i \not = j,\notag
   \label{}
 \end{align}
-Now, for $t \in (t_i, t_{i+1}]$,
+for $t$ in \domain. Now, for each  $i$, $0 \le i < n$, if    $t \in (t_i, t_{i+1}]$, we have  
 \begin{align}
 E(D_i^n(t)^4) &= \btghki^4\mathbbm{1}_{(t_i, t_{i+1}]}(t)\e\left( \left(\int_{t_i}^{t} \sigma_{u\wedge T_m}\D W_u\right)^4\right)& \notag\\
 & \le c\mathbbm{1}_{(t_i, t_{i+1}]}(t)\e\left( \left(\int_{t_i}^{t} \sigma_{u\wedge T_m}^2\D u\right)^2\right) &\text{B.D.G}\notag\\
@@ -145,7 +145,7 @@ Now, using \ito's integration by parts formula, we may write
   & = 4 \e\left(\int_0^{1 }\sumin D_i^n(s) \sigma_{s\wedge T_m} \D W_s\right)^2 \notag \\
   %& = 4 \e\left(\int_0^{1 }\sumin D_i^n(s)^2 \sigma_{s\wedge T_m}^2 \D s\right) \notag \\
   & \le c \int_0^{1 }\sumin\e( D_i^n(s)^2 \sigma_{s\wedge T_m}^2) \D s  \notag \\
-  & \le c \int_0^{1 }\sumin\e( D_i^n(s)^4)^{1/2} \e( \sigma_{s\wedge T_m}^4)^{1/2} \D s  \notag \\
+  & \le c \int_0^{1 }\sumin(\e( D_i^n(s)^4))^{1/2} (\e( \sigma_{s\wedge T_m}^4))^{1/2} \D s  \notag \\
   & \le  c \int_0^{1 }\sumin \mathbbm{1}_{(t_i, t_{i+1}]}(s)\Delta_n  \D s  \notag \\
   %& \le  c \Delta_n\int_0^{1 }\sumin \mathbbm{1}_{(t_i, t_{i+1}]}(s)  \D s  \notag \\
   & \le  c \Delta_n.  \notag 

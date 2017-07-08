@@ -25,6 +25,10 @@ You're missing a field part---line 1571 of file /home/wale/Dropbox/PhD/Bibliogra
 I'm skipping whatever remains of this entry
 Database file #5: /home/wale/Dropbox/PhD/Bibliography/Insurance.bib
 Database file #6: /home/wale/Dropbox/PhD/Bibliography/IV.bib
+Repeated entry---line 1487 of file /home/wale/Dropbox/PhD/Bibliography/IV.bib
+ : @book{Jacod2003
+ :                ,
+I'm skipping whatever remains of this entry
 Database file #7: /home/wale/Dropbox/PhD/Bibliography/Macroeconomics.bib
 I was expecting a `,' or a `}'---line 131 of file /home/wale/Dropbox/PhD/Bibliography/Macroeconomics.bib
  :   
@@ -46,45 +50,45 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Warning--can't use both author and editor fields in Christensen2008
 Warning--can't use both author and editor fields in Halmos1950
-You've used 13 entries,
+You've used 14 entries,
             6548 wiz_defined-function locations,
-            1339 strings with 11732 characters,
-and the built_in function-call counts, 14485 in all, are:
-= -- 2352
-> -- 490
-< -- 36
-+ -- 167
-- -- 154
-* -- 834
-:= -- 1959
-add.period$ -- 13
-call.type$ -- 13
-change.case$ -- 98
-chr.to.int$ -- 13
-cite$ -- 15
-duplicate$ -- 435
-empty$ -- 733
-format.name$ -- 158
-if$ -- 3681
+            1346 strings with 11847 characters,
+and the built_in function-call counts, 15546 in all, are:
+= -- 2516
+> -- 542
+< -- 39
++ -- 184
+- -- 170
+* -- 894
+:= -- 2115
+add.period$ -- 14
+call.type$ -- 14
+change.case$ -- 108
+chr.to.int$ -- 17
+cite$ -- 16
+duplicate$ -- 466
+empty$ -- 786
+format.name$ -- 174
+if$ -- 3948
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 54
-num.names$ -- 124
-pop$ -- 209
+newline$ -- 57
+num.names$ -- 134
+pop$ -- 231
 preamble$ -- 2
-purify$ -- 88
+purify$ -- 96
 quote$ -- 0
-skip$ -- 957
+skip$ -- 1021
 stack$ -- 0
-substring$ -- 1234
-swap$ -- 94
+substring$ -- 1302
+swap$ -- 95
 text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 197
+type$ -- 206
 warning$ -- 2
-while$ -- 126
+while$ -- 135
 width$ -- 0
-write$ -- 205
-(There were 5 error messages)
+write$ -- 220
+(There were 6 error messages)

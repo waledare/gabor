@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  5 JUL 2017 18:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  7 JUL 2017 10:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1299,12 +1299,14 @@ sgeneral.tex
 
 LaTeX Warning: Characters dropped after `\end{comment}' on input line 235.
 
-[6] (./volatility.tex (./semiass.tex [7]) [8] (./semivol.tex (./proofprop.tex
-[9] [10] [11]
+[6] (./volatility.tex [7] (./semiass.tex) [8] (./semivol.tex (./proofprop.tex
+[9] [10] [11] [12]
 LaTeX Font Info:    Try loading font information for U+bbm on input line 125.
- (/usr/local/texlive/2013/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [12] [13]) (./jumps.tex
+) [13])
+(./jumps.tex
 Underfull \hbox (badness 10000) in paragraph at lines 199--1
 
  []
@@ -1314,47 +1316,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--1
 
  []
 
-(./juass.tex [14])) (./finiteactproof.tex [15]
-Overfull \hbox (3.59084pt too wide) in paragraph at lines 47--55
-\T1/cmr/m/n/12 is the con-tent of Propo-si-tion 3.1[]. Set $[] []\OT1/cmr/m/n/1
-2 = [][] [](^^A[]\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 I[]$
+(./juass.tex [14]) [15]) (./finiteactproof.tex
+Overfull \hbox (19.90628pt too wide) in paragraph at lines 46--55
+\T1/cmr/m/n/12 ity is the con-tent of Propo-si-tion 3.1[]. Set $[] []\OT1/cmr/m
+/n/12 = [][] [](^^A[]\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 )[]\OML/cmm/m/it/12 I[
+]$
  []
 
-
+[16]
 Overfull \hbox (1.94766pt too wide) in paragraph at lines 86--86
 [] 
  []
 
-[16] [17]) (./infinity.tex
+[17]) (./infinity.tex
 Underfull \hbox (badness 10000) in paragraph at lines 121--5
 
  []
 
 [18] [19] [20]
-Overfull \hbox (17.36061pt too wide) in paragraph at lines 161--163
+Overfull \hbox (17.36061pt too wide) in paragraph at lines 162--164
 \OT1/cmr/m/n/12 2 [][] []^^A[]\OML/cmm/m/it/12 X[]\OT1/cmr/m/n/12 ^^A[]\OML/cmm
 /m/it/12 J[]I[]$\T1/cmr/m/n/12 . Clearly, $[][] \OML/cmm/m/it/12 y[]g[]\OT1/cmr
 /m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 ) = [][](\OML/cmm/m/it/12 p[] \OT1/c
 mr/m/n/12 +
  []
 
-[21]
-Overfull \hbox (32.52199pt too wide) in paragraph at lines 234--234
+[21] [22]
+Overfull \hbox (32.52199pt too wide) in paragraph at lines 235--235
 [] 
  []
 
-[22] [23]
-Underfull \hbox (badness 10000) in paragraph at lines 284--373
+[23] [24]
+Underfull \hbox (badness 10000) in paragraph at lines 285--374
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--373
+Underfull \hbox (badness 10000) in paragraph at lines 285--374
 
  []
 
-[24]))) (./empirics.tex (./simfig.tex
-</home/wale/Dropbox/Research/Paper3/pg.pdf, id=105, 845.1575pt x 597.23125pt>
+))) (./empirics.tex [25] (./simfig.tex
+</home/wale/Dropbox/Research/Paper3/pg.pdf, id=109, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pg.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/pg.pdf>
@@ -1362,7 +1365,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pg.pdf used on inpu
 t line 5.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/po.pdf, id=106, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/po.pdf, id=110, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/po.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/po.pdf>
@@ -1370,7 +1373,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/po.pdf used on inpu
 t line 7.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/pa.pdf, id=107, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pa.pdf, id=111, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pa.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/pa.pdf>
@@ -1378,19 +1381,19 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pa.pdf used on inpu
 t line 9.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=108, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=112, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pcir.pdf Graphic file (type pdf)
 <use /home/wale/Dropbox/Research/Paper3/pcir.pdf>
 Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pcir.pdf used on in
 put line 10.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
-) (./simtab.tex [25] [26 </home/wale/Dropbox/Research/Paper3/pg.pdf, page is ro
+) (./simtab.tex [26] [27 </home/wale/Dropbox/Research/Paper3/pg.pdf, page is ro
 tated 90 degrees> </home/wale/Dropbox/Research/Paper3/po.pdf, page is rotated 9
 0 degrees> </home/wale/Dropbox/Research/Paper3/pa.pdf, page is rotated 90 degre
 es> </home/wale/Dropbox/Research/Paper3/pcir.pdf, page is rotated 90 degrees>] 
-[27
+[28
 
-]) [28
+]) [29
 
 ]
 Overfull \hbox (29.39915pt too wide) in paragraph at lines 53--53
@@ -1398,7 +1401,7 @@ Overfull \hbox (29.39915pt too wide) in paragraph at lines 53--53
  []
 
 (./simfig3.tex
-</home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf, id=149, 505.89pt x 505.8
+</home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf, id=152, 505.89pt x 505.8
 9pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf Graphic file (type p
 df)
@@ -1407,7 +1410,7 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf u
 sed on input line 5.
 (pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
 
-</home/wale/Dropbox/Research/Paper3/Simulation/po.pdf, id=150, 505.89pt x 505.8
+</home/wale/Dropbox/Research/Paper3/Simulation/po.pdf, id=153, 505.89pt x 505.8
 9pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf Graphic file (type p
 df)
@@ -1416,13 +1419,13 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/po.pdf u
 sed on input line 7.
 (pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
 
-<Simulation/pa.pdf, id=151, 845.1575pt x 597.23125pt>
+<Simulation/pa.pdf, id=154, 845.1575pt x 597.23125pt>
 File: Simulation/pa.pdf Graphic file (type pdf)
  <use Simulation/pa.pdf>
 Package pdftex.def Info: Simulation/pa.pdf used on input line 9.
 (pdftex.def)             Requested size: 175.48943pt x 177.60332pt.
 
-</home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf, id=152, 505.89pt x 505.
+</home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf, id=155, 505.89pt x 505.
 89pt>
 File: /home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf Graphic file (type 
 pdf)
@@ -1431,13 +1434,13 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/Simulation/bpc.pdf
 used on input line 12.
 (pdftex.def)             Requested size: 175.49881pt x 175.49713pt.
 )
-(./simtabjp.tex [29] [30 </home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf>
+(./simtabjp.tex [30] [31 </home/wale/Dropbox/Research/Paper3/Simulation/pg.pdf>
  </home/wale/Dropbox/Research/Paper3/Simulation/po.pdf> <./Simulation/pa.pdf, p
 age is rotated 90 degrees> </home/wale/Dropbox/Research/Paper3/Simulation/bpc.p
-df>] [31
+df>] [32
 
 ])) (./conclusion.tex)
-(/home/wale/Dropbox/PhD/Bibliography/masterbiblinux.tex [32
+(/home/wale/Dropbox/PhD/Bibliography/masterbiblinux.tex [33
 
 ] (./first.bbl
 Underfull \hbox (badness 2735) in paragraph at lines 28--30
@@ -1445,29 +1448,29 @@ Underfull \hbox (badness 2735) in paragraph at lines 28--30
 y course\T1/cmr/m/n/12 , Boston:
  []
 
-[33
+[34
 
-])) [34] (./app.tex
-Overfull \hbox (24.60793pt too wide) in paragraph at lines 80--80
+])) [35] (./app.tex
+Overfull \hbox (24.60793pt too wide) in paragraph at lines 81--81
 [] 
  []
 
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 92--95
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 92--95
+Underfull \hbox (badness 10000) in paragraph at lines 93--96
 
  []
 
-) [36] (./first.aux) ) 
+) [37] (./first.aux) ) 
 Here is how much of TeX's memory you used:
- 17419 strings out of 493308
- 324681 string characters out of 6137822
- 371570 words of memory out of 5000000
- 20454 multiletter control sequences out of 15000+600000
+ 17423 strings out of 493308
+ 324742 string characters out of 6137822
+ 372625 words of memory out of 5000000
+ 20458 multiletter control sequences out of 15000+600000
  38273 words of font info for 114 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  67i,14n,96p,10472b,720s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1500,10 +1503,10 @@ e/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2013/t
 exmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on first.pdf (36 pages, 2436975 bytes).
+Output written on first.pdf (37 pages, 2439041 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
- 204 compressed objects within 3 object streams
+ 295 PDF objects out of 1000 (max. 8388607)
+ 209 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

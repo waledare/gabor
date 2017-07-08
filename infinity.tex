@@ -50,11 +50,10 @@ The first statement follows because $(x^2 \wedge 1) \ast \mu_t$ is dominated by 
 \end{comment}
 We now give the main result of the paper.
 \begin{prop} \label{pro:infinity}
-  Let the price process  $X$ be specified as in  \eqref{eq:semimartingale}. We assume that the requirements of Assumption \ref{as:vol} and \ref{as:nu} are met. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} such that $g$ is Lipschitz continuous on the unit interval.
-  Suppose the sequences $u_n = O(\Delta_n^\beta), 0 <\beta<1 ,$ and $H_n \uparrow \infty$ satisfy 
+  Let the price process  $X$ be specified as in  \eqref{eq:semimartingale}. We assume that the requirements of Assumption \ref{as:vol} and \ref{as:nu} are met. Let $\{g, \tg\}$ be pair of dual Gabor generators satisfying the conditions of Lemma \eqref{le:gabor} with $g$  Lipschitz continuous on the unit interval. Let  $\{H_n\}$ be an increasing sequence and   $\{u_n\}$  a decreasing sequence statisfying $u_n = O(\Delta_n^\beta)$ with   $0 <\beta<1$. If  
   \begin{align}
-    &u_n^{-1/2}(H^n)^2\Delta_n^{1/2} = o(1)\notag\\
-    &H^nu^{1/2}_n = o(1)\notag
+    &u_n^{-1/2}(H^n)^2\Delta_n^{1/2} = o(1), \notag\\
+    &(H^n)^2u^{1/2}_n = o(1)\notag
     \label{}
   \end{align} 
   \begin{comment}and   that $\nu$ satisfies 
@@ -63,7 +62,7 @@ We now give the main result of the paper.
     \label{eq:smallo}
   \end{align}
   \end{comment}
-  Then  \jvn, defined in \eqref{eq:jumpvolestimator}, converges in \Ltwo in probability to \sv.
+  then  \jvn defined in \eqref{eq:jumpvolestimator} converges in \Ltwo in probability to \sv.
 \end{prop}
 \begin{proof}
   \begin{comment}  We wish to show that the random variable
@@ -74,9 +73,9 @@ We now give the main result of the paper.
     &X^f = X^c + J^l\label{eq:xjc},
   \end{align}
   where 
-    $X^c = \int^t_0 b_s \D s + \int^t_0 \sigma_s \D W_s$, 
-    $J^l = (xI_{\vert x \vert > 1}) \ast \mu,$
-    and $J^s = (xI_{\vert x \vert \le  1} )\ast (\mu - \nu)$. By localization, it is enough to assume $\sigma^4$, $b^4$, and $x^2 \ast \mu_t$  are integrable. 
+    $X^c_t = \int^t_0 b_s \D s + \int^t_0 \sigma_s \D W_s$, 
+    $J^l_t = (xI_{\vert x \vert > 1}) \ast \mu_t,$
+    and $J^s_t = (xI_{\vert x \vert \le  1} )\ast (\mu - \nu)_t$. By localization, it is enough to assume $\sigma^4$ and  $b^4$   are integrable. 
     Let $t$ be a point in the unit interval, then 
     \begin{align}
       \jvn -  \sigma^2_t &= \sumt (\ceen{X} - \cee) \ghk(t) - \sumnt \cee \ghk(t),
@@ -96,9 +95,9 @@ We now give the main result of the paper.
       &z_{h,k} := \sumin \btghki(\djt)^2\indx.
       \label{}
     \end{align}
-    By Lemma \eqref{lem:finite}, if $\delta > 0$ then %\begin{align}  
+    By Lemma \ref{lem:finite}, if $\delta > 0$ then %\begin{align}  
       $\p(\sup_{t \in [0,1]}\vert \sumt w_{h,k} \ghk(t) \vert > \delta) \to 0$ %\label{eq:w} \end{align} 
-    as $n$ tends to infinity.  It remains to show that the last three terms on the right of \eqref{eq:summands} converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$. By the reverse triangle inequality,   $A_i \cap B_i^c \subset \{\vert \djt \vert > u_n^{1/2}\}$. Hence, 
+    as $n$ tends to infinity.  It remains to show that the last three terms on the right of \eqref{eq:summands} converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$. It is easily verified using the  reverse triangle inequality that   $A_i \cap B_i^c \subset \{\vert \djt \vert > u_n^{1/2}\}$. Hence, 
     \begin{align}
       (\dxf)^2 I_{A_i \cap B_i^c} &\le (\dxf)^2 I_{\{(\djt)^2 > u_n\}}\\
        & \le 2 (\dxc)^2 I_{\{(\djt)^2 > u_n\}}
@@ -114,14 +113,16 @@ We now give the main result of the paper.
     \end{align}
   Now let  $\varepsilon > 0$ be given and note that because  $\Lambda$ is almost surely finite,   there is a sufficiently large $K > 0$ such that $\p(\Lambda > K) \le \varepsilon/2$. Hence, 
 \end{comment}
-We have,
+We have by \holder's inequality and \eqref{eq:secmo} that
 \begin{align} 
-  \e(v_i) & = 2 \e( (\dxc)^4)^{1/2} \p( (\djt)^2 > u_n)^{1/2} \notag \\ 
-  & = 2 u_n^{-1/2} \e( (\dxc)^4)^{1/2} \e( (\djt)^2)^{1/2} \notag \\ 
+  \e(v_i) & \le c (\e( (\dxc)^4))^{1/2} \p( (\djt)^2 > u_n)^{1/2} \notag \\ 
+  & \le c u_n^{-1/2} \e( (\dxc)^4)^{1/2} \e( (\djt)^2)^{1/2} \notag \\ 
   & \le c u_n^{-1/2}\Delta_n^{3/2} \label{eq:vi}.
 \end{align}
-Hence,  by Markov's inequality and the boundedness of $\ghk$ \begin{align} \sup_{t \in \domain}\sumnt \sumin \btghki v_i \ghk(t) = O_P(u_n^{-1/2}H^n \Delta_n^{1/2}).\end{align} 
-Now note that if $\eta >  0$ then   
+Hence,  by Markov's inequality and the boundedness of $\ghk$ \begin{align} \sup_{t \in \domain}\sumnt \sumin \btghki v_i \ghk(t) = O_P(u_n^{-1/2}H^n \Delta_n^{1/2}),\end{align} 
+which by assumption tends to zero in probability.
+
+To obtain a bound on the term ivolving $w_i$,  note that if $\eta >  0$ then   
 \begin{align} 
   \p( \sup_{t \in \domain}\vert &\sumnt \sumin \btghki w_i \ghk(t)\vert > \eta) \notag \\
   &\le \p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > u_n\}\right) \notag \\ 

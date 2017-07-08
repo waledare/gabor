@@ -3,14 +3,14 @@ We fix a filtered probability space $(\Omega, \mcal{F}, \{\mcal{F}_t\}_{t \ge 0}
 \begin{defn}
   An $\real$-valued process $X$ is an \ito semimartingale with \levy jumps if it admits the representation:
   \begin{align}
-    X_t = X_0 + \int^t_0 b_s ds + \int^t_0 \sigma_s d W_s  + J^l_t + J^s_t, \qquad t \ge 0, 
+    X_t = X_0 + \int^t_0 b_s \D s + \int^t_0 \sigma_s \D W_s  + J^l_t + J^s_t, \qquad t \ge 0, 
     \label{eq:semimartingale}
   \end{align}
   with 
   \begin{align}
-    & J^l := x  I_{\{\vert x \vert > 1\}} \ast \mu, \notag \\
-    & J^s := x  I_{\{\vert x \vert \le  1\}} \ast (\mu - \nu), \notag\\
-    &\nu(dt, dx) = F(dx) dt, \notag
+    & J^l_t := x  I_{\{\vert x \vert > 1\}} \ast \mu := \int_0^t \int_\real x  I_{\{\vert x \vert > 1\}} \mu(\D x, \D s), \notag \\
+    & J^s_t := x  I_{\{\vert x \vert \le  1\}} \ast (\mu - \nu) := \int_0^t \int_\real x  I_{\{\vert x \vert \le  1\}}(\mu - \nu)(\D x,  \D s), \notag\\
+    &\nu(\D t, \D x) = F(\D x) \D t, \notag
     \label{}
   \end{align}
   where $W$ is a Brownian motion, $\sigma$ and $b$ are \real-valued progressively measurable processes, $\mu$ is an integer-valued measure induced by the jumps  of $X$, $\nu$ is its \levy system, and $F(dx)$ is a  deterministic constant-in-time $\sigma$-finite measure on \real. 
