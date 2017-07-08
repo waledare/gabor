@@ -97,7 +97,13 @@ We now give the main result of the paper.
     \end{align}
     By Lemma \ref{lem:finite}, if $\delta > 0$ then %\begin{align}  
       $\p(\sup_{t \in [0,1]}\vert \sumt w_{h,k} \ghk(t) \vert > \delta) \to 0$ %\label{eq:w} \end{align} 
-    as $n$ tends to infinity.  It remains to show that the last three terms on the right of \eqref{eq:summands} converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$. It is easily verified using the  reverse triangle inequality that   $A_i \cap B_i^c \subset \{\vert \djt \vert > u_n^{1/2}\}$. Hence, 
+    as $n$ tends to infinity.  It remains to show that the last three terms on the right of \eqref{eq:summands} converge to zero in probability. Starting with the second summand, denote $A_i := \{(\dx)^2 \le u_n\}$,  $B_i   := \{(\dxf)^2 \le 4 u_n\}$ and note that $I_{A_i} - I_{B_i} = I_{A_i \cap B_i^c} - I_{A^c_i\cap B_i}$.  Hence, we may write 
+    \begin{align}
+      \sumt x_{h, k} \ghk(t) = \sumt \sumin \btghki (x^{i, 1} - x^{i, 2}) \ghk(t)  \notag
+      \label{}
+    \end{align}
+   where $ x^{i, 1}  := (\dxf)^2 I_{A_i \cap B_i^c}$ and  $x^{i, 2} := (\dxf)^2I_{A^c_i\cap B_i}$.  
+    It is now easily verified using the  reverse triangle inequality that   $A_i \cap B_i^c \subset \{\vert \djt \vert > u_n^{1/2}\}$. So that, 
     \begin{align}
       (\dxf)^2 I_{A_i \cap B_i^c} &\le (\dxf)^2 I_{\{(\djt)^2 > u_n\}}\\
        & \le 2 (\dxc)^2 I_{\{(\djt)^2 > u_n\}}
@@ -105,6 +111,10 @@ We now give the main result of the paper.
        & =: v_i + w_i. 
       \label{eq:longineq}
     \end{align}
+    It thus follows that   
+    \begin{align}
+      \sumt \sumin \btghki x^{i,1} \ghk(t) \le \sumt \left(\sumin \btghki (v_i + w_i) \right) \ghk(t). \notag 
+  \end{align}
     \begin{comment}
     where \begin{align} &v_n :=  2c H_n \Lambda n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}} \notag \\ & w_n: = c H_n \sumin  (\djl)^2 I_{\{(\djt)^2 > u_n\}}\notag \end{align}  where $c$ is a sufficiently large constant, and $\Lambda$ is a finite-valued random variable satisfying  $\Lambda \ge  \sup_{t \in \domain} \vert b(t)\vert  + C $, where $C^{1/2}$ is the finite-valued random variable from Lemma \ref{lem:mylevy}.  Let  $\delta > 0$ be given, put  $x_n(t)  :=  \sumt\left(\sumin  \btghki(\dxf)^2 I_{A_i \cap B_i^c})\right)\ghk(t)$  and note that 
     \begin{align}
@@ -113,67 +123,65 @@ We now give the main result of the paper.
     \end{align}
   Now let  $\varepsilon > 0$ be given and note that because  $\Lambda$ is almost surely finite,   there is a sufficiently large $K > 0$ such that $\p(\Lambda > K) \le \varepsilon/2$. Hence, 
 \end{comment}
-We have by \holder's inequality and \eqref{eq:secmo} that
+We  proceed by using \holder's inequality and \eqref{eq:secmo}   to write
 \begin{align} 
   \e(v_i) & \le c (\e( (\dxc)^4))^{1/2} \p( (\djt)^2 > u_n)^{1/2} \notag \\ 
   & \le c u_n^{-1/2} \e( (\dxc)^4)^{1/2} \e( (\djt)^2)^{1/2} \notag \\ 
   & \le c u_n^{-1/2}\Delta_n^{3/2} \label{eq:vi}.
 \end{align}
-Hence,  by Markov's inequality and the boundedness of $\ghk$ \begin{align} \sup_{t \in \domain}\sumnt \sumin \btghki v_i \ghk(t) = O_P(u_n^{-1/2}H^n \Delta_n^{1/2}),\end{align} 
+Hence,  by Markov's inequality and the boundedness of $\ghk$ \begin{align} \sup_{t \in \domain}\sumt \sumin \btghki v_i \ghk(t) = O_P(u_n^{-1/2}H^n \Delta_n^{1/2}),\end{align} 
 which by assumption tends to zero in probability.
 
-To obtain a bound on the term ivolving $w_i$,  note that if $\eta >  0$ then   
+As for the term involving $w_i$,   recall  that because $\mu$ is a Poisson random measure, if $A$ and  $B$ are disjoint measurable sets  in $\real^+\times \real$    then $\mu(A)$ is independent of $\mu(B)$. Using this fact, we may write  given $\eta > 0$    
 \begin{align} 
-  \p( \sup_{t \in \domain}\vert &\sumnt \sumin \btghki w_i \ghk(t)\vert > \eta) \notag \\
-  &\le \p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > u_n\}\right) \notag \\ 
-  & \le n \p(\mu( [0, 1/n] \times \{\vert x \vert > 1\}) > 0 ) E( (\Delta_{1/n} J^s)^2) u_n^{-1} \notag \\ 
+  \p( \sup_{t \in \domain}\vert &\sumt \sumin \btghki w_i \ghk(t)\vert > \eta) \notag \\
+  &\le \p\left(\cup_i\{\mu( (t_i, t_{i + 1}] \times \{\vert x \vert > 1\}) > 0   , (\djt)^2 > u_n\}\right) \notag \\ 
+  & \le n \p(\mu( [0, t_1] \times \{\vert x \vert > 1\}) > 0 ) E( ( J^s_{t_1})^2) u_n^{-1} \notag \\ 
   & \le c \Delta_n u_n^{-1}\notag,
 \end{align} 
-which clearly tends to zero in $n$.
+which clearly tends to zero in $n$. This concludes the demonstration that $ \sumt \sumin \btghki x^{i,1} \ghk(t)$ tends to zero in probability.  
   \begin{comment}
 \p(v_n > \delta /2) & \le 2cKH_n\delta^{-1}E(n^{-1} \log(n) \sumin I_{\{(\djt)^2 > u_n\}}) + \p(\Lambda > K) \notag  \\ & = 2cK H_n\delta^{-1}\log(n) \p( (\Delta_{1/n}J^s)^2 > u_n)  + \varepsilon/2 \notag \\ &\le  2cK H_n\delta^{-1}\log(n) E((\Delta_{1/n} J^s)^2))u_n^{-1}   + \varepsilon/2 \notag \\ &\le 2cKH_n\delta^{-1} \log(n) n^{-1}\kappa u_n^{-1} +  \varepsilon/2\label{eq:asabove} \end{align} where $\kappa := E((\Delta_1 J^s)^2)) < \infty$.  Obviously there is a large enough $n$ such that the first expression above is less than or equal to $\varepsilon/2$.
 \end{comment}
 \begin{comment} Moreover, because $\delta >  0$,  \begin{align} \p(w_n > \delta/2) & \le \p\left(\cup_i\{I_{\{\vert x \vert > 1\}}\ast \mu( (t_i, t_{i + 1}] \times \real) > 0   , (\djt)^2 > u_n\}\right) \notag \\ & \le n \p(\mu( [0, 1/n] \times \{\vert x \vert > 1\}) > 0 ) E( (\Delta_1 J^s)^2) u_n^{-1} \notag \\ & \le c n^{-1} \kappa u_n^{-1}\notag,\end{align} which clearly tends to zero in $n$. 
 \end{comment}
-Now, define
+To tackle the term $ \sumt \sumin \btghki x^{i,2} \ghk(t)$, we start with the following definitions:
 \begin{align}
-&\Omega_n^1 := \{\omega : \vert \dxf(\omega) \vert > 2u^{1/2}_n, \forall  i < n\},\notag \\ 
+&\Omega_n^1 := \{ \omega: \vert\Delta_i X^c(\omega)\vert <   1-  2u_n^{1/2} , \text{ for all }i < n   \},\notag \\
+%\{\omega : \vert \dxf(\omega) \vert > 2u^{1/2}_n, \forall  i < n\},\notag \\ 
 &\Omega_n^2 := \{\omega : \mu(\omega,  (t_i, t_{i+1}] \times \{\vert x \vert > 1\} ) \le 1, \forall i <n  \},\notag 
 \end{align}
-$\forall n \in \nats$. These sets are clearly measurable. Denote $\Omega_n   := \Omega_n^1 \cap \Omega_n^2 $. Since there can be at most a finite number of jumps  larger than 1,  in absolute value, per outcome on \domain and  $u_n \downarrow 0$ while $X^c$ is uniformly continuous on \domain, it follows that $ \p(\Omega_n) \to 1$ as $n \to \infty$ (See \eqref{eq:well1}). Now note that 
+$\forall n \in \nats$. These sets are clearly measurable. Denote $\Omega_n   := \Omega_n^1 \cap \Omega_n^2 $. Since there can be at most a finite number of jumps  larger than 1  in magnitude    on \domain,  and  $1 - 2u_n^{1/2} \uparrow 1$ while $ \Delta_iX^c \downarrow  0 $  uniformly  on \domain, it follows that $ \p(\Omega_n) \to 1$ as $n \to \infty$. Now note that 
 \begin{align}
   \notag
   A_i^c \cap B_i \cap \Omega_n & \subset  \{ (\dxc + \djt)^2 > u_n \} \notag\\
   &\subset \{(\dxc)^2 > u_n/4\} \cup \{(\djt)^2 > u_n/4\}\notag .
   \label{}
 \end{align}
-Hence, by successive applications of \holder and Markov inequaities,   
+Hence, by successive applications of \holder and Markov inequalities,   
 \begin{align}
   \notag
  \e(&(\dxf)^2 I_{A_i^c \cap B_i \cap \Omega_n} ) = \e((\dxc)^2 I_{A_i^c \cap B_i \cap \Omega_n} )\notag \\
  &\le \e((\dxc)^2 I_{\{(\dxc)^2 > u_n/4\}}) + \e((\dxc)^2 I_{\{(\djt)^2 > u_n/4\}}) \label{} \notag\\
  & \le c \Delta_n^{3/2} u_n^{-1/2}.\notag
 \end{align}
-Let $\eta$ be a given positive number; put $y_i :=  (\dxf)^2 I_{A_i^c \cap B_i}$. Then it is clear that
+Let $\eta$ be a given positive number; it is now clear that
 \begin{align}
-  \p(\sup_{t \in \domain} \vert \sumt\sumin  \btghki y_i \ghk(t)\vert  > \eta) \le  \p(\Omega_n^c)  + c u^{-1/2}_nH^n\Delta_n^{1/2}, \notag
+  \p(\sup_{t \in \domain} \vert \sumt\sumin  \btghki x^{i,2} \ghk(t)\vert  > \eta) \le  \p(\Omega_n^c)  + c u^{-1/2}_nH^n\Delta_n^{1/2}, \notag
   \label{}
 \end{align}
-which tends to zero in $n$.  This completes the proof that \begin{align}\label{eq:x} \p(\sup_{t \in [0,1]}\vert \sumt x_{h,k} \ghk(t) \vert > \eta) \to 0. \end{align}
-Now we obtain a bound for the third summand in  \eqref{eq:summands}. First, denote $C_i := \{( \djt )^2 \le 4 u_n\}$, $p_{h,k} : = 2 \sumin \btghki\dxf \djt I_{A_i \cap C_i}$, and $q_{h,k} := 2 \sumin \btghki\dxf \djt I_{A_i \cap C_i^c}$. Clearly, $\sumnt y_{h,k} \ghk(t)  = \sumnt (p_{h,k} + q_{h,k}) \ghk(t)$. By the reverse triangle inequality,
-\begin{align}
-  A_i \cap C_i^c &\subset \{ u_n^{1/2} < \vert \dxf \vert  \}\notag\\
-  & \subset \{ u_n^{1/2}/2 < \vert \dxc \vert  \} \cup  \{ u_n^{1/2}/2 < \vert \djl \vert  \}\notag\\
-  &=: G^1_i \cup G^2_i\notag.
-  \label{}
+which tends to zero.  This completes the demonstration that \begin{align}\label{eq:x} \p(\sup_{t \in [0,1]}\vert \sumt x_{h,k} \ghk(t) \vert > \eta) \to 0. \end{align}
+Now we show the third summand in  \eqref{eq:summands} tends to zero. First, denote $C_i := \{( \djt )^2 \le 4 u_n\}$, $p_{h,k} : = 2 \sumin \btghki\dxf \djt I_{A_i \cap C_i}$, and $q_{h,k} := 2 \sumin \btghki\dxf \djt I_{A_i \cap C_i^c}$. Clearly, 
+\begin{align} 
+  \sumt y_{h,k} \ghk(t)  = \sumt (p_{h,k} + q_{h,k}) \ghk(t).\notag
 \end{align}
-So that 
+Treating the term involving $q_{h,k}$ first, note that by the reverse triangle inequality, we may  write $A_i \cap C_i^c \subset \{ u_n^{1/2} < \vert \dxf \vert  \} \subset \{ u_n^{1/2}/2 < \vert \dxc \vert  \} \cup  \{ u_n^{1/2}/2 < \vert \djl \vert  \} =: G^1_i \cup G^2_i\notag$. So that 
 \begin{align}
   \dxf \djt I_{A_i \cap C_i^c} &\le \dxf \djt  (I_{G^1_i} +  I_{G^2_i}) \notag\\
   & \le \dxc \djt(I_{G^1_i} +  I_{G^2_i}) + \djl \djt(I_{G^1_i} +  I_{G^2_i}) \notag \\
   & =: \gamma_i^1 + \gamma_i^2 + \gamma_i^3 + \gamma^4_i.\notag 
 \end{align}
-Now,
+Hence, \begin{align} \notag \sumt q_{h,k} \ghk(t) \le \sumt (\sumin \btghki (\gamma_i^1 + \gamma_i^2 + \gamma_i^3 + \gamma^4_i)) \ghk(t). \end{align} We show in turn that each summand converges to zero. First, observe that
 \begin{align}
   \e(\gamma_i^1) &\le  \e( (\dxc  I_{G^1_i})^2)^{1/2} \e( (\djt)^2)^{1/2} \notag\\
   &\le  \e( (\dxc)^4)^{1/4}  E(I_{G^1_i})^{1/4} \e( (\djt)^2)^{1/2} \notag\\
@@ -183,62 +191,65 @@ Now,
 \end{align}
 Hence, given positive $\eta$, 
 \begin{align} 
-  \p( \sup_{t \in \domain}\vert \sumnt \sumin \btghki \gamma^1_i \ghk(t)\vert > \eta) \le cH^n (u^{-1}_n\Delta_n)^{1/2}. \notag \end{align}
-Similarly, we have 
+  \p( \sup_{t \in \domain}\vert \sumt \sumin \btghki \gamma^1_i \ghk(t)\vert > \eta) \le cH^n (u^{-1}_n\Delta_n)^{1/2}. \label{eq:g1} \end{align}
+Secondly, we have 
 \begin{align}
   \e(\gamma_i^2) & =  \e(\dxc \djt I_{G^2_i}) \notag\\
   & \le \e((\dxc)^2 I_{G^2_i})^{1/2} \e((\djt)^2)^{1/2}\notag \\
   &\le \e((\dxc)^4)^{1/4} \p(\djl > u_n^{1/2}/2)^{1/4} \e((\djt)^2)^{1/2}\notag\\
-  & \le  c u^{-1/8}_n \Delta_n^{5/4}\notag.
-  \label{}
+  & \le  c u^{-1/8}_n \Delta_n^{5/4}. \notag
 \end{align}
 So that given positive $\eta$,
 \begin{align} 
-  \p( \sup_{t \in \domain}\vert \sumnt \sumin \btghki \gamma^2_i \ghk(t)\vert > \eta) \le cH^n (u^{-1/2}_n\Delta_n)^{1/4}. \notag \end{align}
-Observe that, 
+  \label{eq:g2}
+  \p( \sup_{t \in \domain}\vert \sumt \sumin \btghki \gamma^2_i \ghk(t)\vert > \eta) \le cH^n (u^{-1/2}_n\Delta_n)^{1/4}.  \end{align}
+Moreover, 
 \begin{align}
-\p( \sup_{t \in \domain}\vert &\sumnt \sumin \btghki \gamma^3_i  \ghk(t)\vert > \eta) \notag \\
-&\le \p(    \cup_i\{ \mu( (t_i, t_{i+1}] \times \{\vert x \vert > 1 \} ) > 0,  (\dxc)^2 > u_n/4\}) \notag \\ & \le c \Delta_n u_n^{-1} \notag\end{align}
-and
+\p( \sup_{t \in \domain}\vert &\sumt \sumin \btghki \gamma^3_i  \ghk(t)\vert > \eta) \notag \\
+&\le \p(    \cup_i\{ \mu( (t_i, t_{i+1}] \times \{\vert x \vert > 1 \} ) > 0,  (\dxc)^2 > u_n/4\}) \notag \\ & \le c \Delta_n u_n^{-1}. \label{eq:g3}\end{align}
+Finally,
 \begin{align}
-\p( \sup_{t \in \domain}\vert &\sumnt \sumin \btghki \gamma^4_i  \ghk(t)\vert > \eta) \notag \\
-&\le \p(    \cup_i\{ \mu( (t_i, t_{i+1}] \times \{\vert x \vert > 1 \} ) > 0,  (\djt)^2 > u_n/4\}) \notag \\ & \le c \Delta_n u_n^{-1}.\notag\end{align}
-
+\p( \sup_{t \in \domain}\vert &\sumt \sumin \btghki \gamma^4_i  \ghk(t)\vert > \eta) \notag \\
+&\le \p(    \cup_i\{ \mu( (t_i, t_{i+1}] \times \{\vert x \vert > 1 \} ) > 0,  (\djt)^2 > u_n/4\}) \notag \\ & \le c \Delta_n u_n^{-1}.\label{eq:g4}\end{align}
 \begin{comment}
 
 $\Omega_q := \{\omega : \mu(\omega, \domain  \times \{\vert x \vert > 1\} ) \le q \}$, for     $q \in \nats$. It is easily seen that $\p(\Omega_q) \to 1$ as $q \to \infty$. Set $\Omega(n, q) := \Omega_n \cap \Omega_q$. Now note that   $\e(\gamma^3_i I_{\Omega(n,q)}) \le q \e(\djt I_{G^1_i}) \le c q \Delta_n^{3/2} u_n^{-1/2}$. So that given positive $\eta$,
 \begin{align} 
-  \p( \sup_{t \in \domain}&\vert \sumnt \sumin \btghki \gamma^3_i \ghk(t)\vert > \eta) \notag \\ &\le \p(\Omega(n,q)^c) + cqH^n (u^{-1}_n\Delta_n)^{1/2}, \notag \end{align}
+  \p( \sup_{t \in \domain}&\vert \sumt \sumin \btghki \gamma^3_i \ghk(t)\vert > \eta) \notag \\ &\le \p(\Omega(n,q)^c) + cqH^n (u^{-1}_n\Delta_n)^{1/2}, \notag \end{align}
 which can be made arbitrarily small by  choosing $n,q$ large enough and letting $n \to \infty$.  Similarly note that $\e(\gamma^4_i I_{\Omega(n,q)}) \le q \e(\djt I_{G^2_i}) \le c q \Delta_n u_n^{-1/4}$. So that 
 \begin{align} 
-  \p( \sup_{t \in \domain}\vert \sumnt \sumin \btghki \gamma^4_i \ghk(t)\vert > \eta) \le \p(\Omega(n,q)^c) + cqH^n u^{-1/4}_n\Delta_n, \notag \end{align}
+  \p( \sup_{t \in \domain}\vert \sumt \sumin \btghki \gamma^4_i \ghk(t)\vert > \eta) \le \p(\Omega(n,q)^c) + cqH^n u^{-1/4}_n\Delta_n, \notag \end{align}
 which can be made as small as desired. This completes the demonstration  that 
 \begin{align}
-  \p(\sup_{t \in \domain} \vert \sumnt q_{h,k} \ghk(t) \vert > \eta) \to 0.\notag
+  \p(\sup_{t \in \domain} \vert \sumt q_{h,k} \ghk(t) \vert > \eta) \to 0.\notag
   \label{}
 \end{align}
 %\begin{comment}
 Now, arguing as in Theorem 4.1 of \cite{Mancini2009}, note that on $ A_i \cap C_i^c$, it is the case that  $2u_n^{1/2} - \vert \dxf \vert < \vert \djt\vert - \vert \dxf\vert \le \vert \dx \vert \le u_n^{1/2}$, so that $u_n^{1/2} < \vert \dxf \vert < \vert \djl \vert + \vert \dxc \vert $. In turn, the last inequality implies that either $\vert \djl \vert > u^{1/2}_n/2$ or  $\vert \dxc \vert > u^{1/2}_n/2$. Now, for sufficiently large $n$, it is almost surely never the case that $\vert \dxc \vert > u^{1/2}_n/2$ for some $i$,  $0 \le  i  \le n -1$. Hence,  for positive $\delta$, \begin{align} \p(\vert&\sumt q_{h,k} \ghk(t) \vert > \delta/2) \notag \\ &\le \p(    \cup_i\{ \mu( (t_i, t_{i+1}] \times \{\vert x \vert > 1 \} ) > 0,  (\djt)^2 > u_n\}) \notag \\ & \le c n^{-1} \kappa u_n^{-1}.\end{align}
 \end{comment}
 %\end{comment}
-Now, let $\Psi_n := \{\omega: \vert \dxc(\omega) \vert > u_n^{1/2} \text{ for some } i < n\}$.  Then 
+We conclude by  reference to the estimates in \eqref{eq:g1}, \eqref{eq:g2}, \eqref{eq:g3}, and \eqref{eq:g4} that  $\sup_{t \in \domain} \vert \sumt q_{h,k} \ghk (t) \vert $ tends to zero in probability.
+
+We now show that $\sumt p_{h,k} \ghk (t)$ tends to zero uniformly  in probability.
+To that end, let $\Psi_n := \{\omega: \vert \dxc(\omega) \vert > u_n^{1/2} \text{ for some } i < n\}$.  It now follows by Markov's inequality that 
 \begin{align}
   \p(\Psi_n ) &\le \sumin \p(\vert \dxc \vert > u_n^{1/2}) \notag \\
   & \le u_n^{-3/2(1 - \beta) } \sumin \e( (\dxc)^{ 3/(1 - \beta)} ) \notag\\
   & \le  c \Delta_n^{1/2}.
   \label{}
 \end{align}
-Hence, $\p(\Psi_n ) \to 0$. On $A_i \cap C_i \cap \Psi_n^c$, it is easily seen that $\vert \djl \vert - \vert \dxc + \djt \vert < \vert \dx \vert \le u_n^{1/2}$, so that $\vert \djl\vert \le u^{1/2}_n + \vert \dxc \vert + \vert \djt\vert$, and  $ \vert \djl \vert  = O(u^{1/2}_n)$. Let $r_{h,k} :=  2 \sumin \btghki\dxc \djt I_{A_i \cap C_i \cap \Psi_n^c}$ and $s_{h,k} := 2 c u_n^{1/2}\sumin \btghki \djt I_{A_i \cap C_i \cap \Psi_n^c}$. Then for $\delta > 0$, 
+Hence, $\p(\Psi_n ) \to 0$. On $A_i \cap C_i \cap \Psi_n^c$, it is easily seen that $\vert \djl \vert - \vert \dxc + \djt \vert < \vert \dx \vert \le u_n^{1/2}$, so that $\vert \djl\vert \le u^{1/2}_n + \vert \dxc \vert + \vert \djt\vert$. It is therefore the case that  $ \vert \djl \vert  = O(u^{1/2}_n)$. Let $r_{h,k} :=  2 \sumin \btghki\dxc \djt I_{A_i \cap C_i \cap \Psi_n^c}$ and $s_{h,k} := 2 c u_n^{1/2}\sumin \btghki \djt I_{A_i \cap C_i \cap \Psi_n^c}$. Then given  $\delta > 0$ and $\varepsilon > 0$, 
 \begin{align}
- \p(\vert&\sumt p_{h,k} \ghk(t) \vert > \delta/2)\notag \\&  \le \p(\Psi_n) + \p(\vert\sumt r_{h,k} \ghk(t) \vert > \delta/4) + \p(\vert\sumt s_{h,k} \ghk(t) \vert > \delta/4).\notag
+  &\p(\sup_{t \in \domain}\vert\sumt p_{h,k} \ghk(t) \vert > \delta)\notag \\&  \le \p(\Psi_n) + \p(\sup_{t \in \domain} \vert\sumt r_{h,k} \ghk(t) \vert > \delta/2)  \notag \\
+  &\quad + \p(\sup_{t \in \domain} \vert\sumt s_{h,k} \ghk(t) \vert > \delta/2).
+  \label{eq:phk}
+\end{align}
+Now consider that $\sumt r_{h,k} \ghk(t) \le  c H_n \sumin \vert \dxc \djt  I_{A_i \cap C_i} \vert$; this implies that given $\varepsilon > 0$  
+\begin{align}
+  \p(&\vert\sumt r_{h,k} \ghk(t) \vert > \delta/2) \le \p(c H_n  \sumin \vert \dxc \djt I_{A_i \cap C_i} \vert  > \delta/2)\notag\\& \le \p\left( \left(\sumin (\dxc)^2\right)^{1/2} \left(\sumin ( \djt I_{A_i \cap C_i})^2\right)^{1/2} > \delta (2H_nc)^{-1}\right).\notag
   \label{}
 \end{align}
-Now consider that $\sumt r_{h,k} \ghk(t) \le  c H_n \sumin \dxc \djt I_{A_i \cap C_i}$, which implies that  
-\begin{align}
-  \p(&\vert\sumt r_{h,k} \ghk(t) \vert > \delta/4) \le \p(c H_n \vert \sumin \dxc \djt I_{A_i \cap C_i} \vert  > \delta/4)\notag\\& \le \p\left( \left(\sumin (\dxc)^2\right)^{1/2} \left(\sumin ( \djt I_{A_i \cap C_i})^2\right)^{1/2} > \delta (4H_nc)^{-1}\right).\notag
-  \label{}
-\end{align}
-It is a well known fact that  $\sumin (\dxc)^2 (t)$ converges to $\int_0^t\sigma^2(s)\D s$ in probability uniformly on the unit interval. Hence, there is a sufficiently large $N$ such that if $n > N$ then $ \p(\vert (\sumin (\dxc)^2)^{1/2}  - (\int_0^1\sigma^2(s) \D s)^{1/2}\vert > \delta ) \le  \varepsilon/4$, and because integrated volatility is almost surely finite, there is a sufficiently large $K$ satisfying  $K/2 > \delta$ such that $\p( \int_0^1\sigma^2(s) \D s > K/2) \le \varepsilon/4.$ Hence, we may write
+We now use the well-known fact  that  $\sumin (\dxc)^2 (t)$ converges to $\int_0^t\sigma^2(s)\D s$ in probability uniformly on compact intervals \citep[Theorem II.22]{Protter2004}. That is, there is a sufficiently large $N$ such that if $n$ is larger than or equal to $N$ then   $ \p(\vert (\sumin (\dxc)^2)^{1/2}  - (\int_0^1\sigma^2(s) \D s)^{1/2}\vert > \delta ) \le  \varepsilon/4$, and because integrated volatility is almost surely finite, there is a sufficiently large $K$ satisfying  $K/2 > \delta$ such that $\p( \int_0^1\sigma^2(s) \D s > K/2) \le \varepsilon/4.$ Hence, we may write
 \begin{align}
 \p(&\vert\sumt r_{h,k} \ghk(t) \vert > \delta/4) \notag \\&\le \p\left(\sumin ( \djt I_{A_i \cap C_i})^2 > \delta^2 (4K H_nc)^{-2}\right) + \varepsilon/2\notag\\&\le  \p\left( (x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}})\ast\mu_1 > \delta^2 (4K H_nc)^{-2}\right) + \varepsilon/2\notag\\
 &\le \delta^{-2} (4K H_nc)^{2}\e\left( (x^2I_{\{\vert x\vert \le 1 \wedge 2 u_n^{1/2}\}})\ast\mu_1  \right) + \varepsilon/2\notag\\
@@ -294,18 +305,18 @@ Meanwhile, on $A_i \cap C_i$, it is easily seen that $\vert \djl \vert - \vert \
 \end{align}
 Arguing as above, it is easily verified that $\e(\theta_i^1)  \le c \Delta_n^{5/4} u_n^{-1/8}$  so that 
 \begin{align} 
-  \p( \sup_{t \in \domain}\vert \sumnt \sumin \btghki \theta^1_i \ghk(t)\vert > \eta) \le cH^n (u^{-1/2}_n\Delta_n)^{1/4} \notag \end{align}
+  \p( \sup_{t \in \domain}\vert \sumt \sumin \btghki \theta^1_i \ghk(t)\vert > \eta) \le cH^n (u^{-1/2}_n\Delta_n)^{1/4} \notag \end{align}
 Similarly,  $\e(\theta_i^2 I_{\Omega(n,q)}) \le q c \Delta_n u^{-1/4}_n$ so that  
 \begin{align} 
-  \p( \sup_{t \in \domain}\vert \sumnt \sumin \btghki \theta^2_i &\ghk(t)\vert > \eta) \notag \\ &\le \p(\Omega(n,q)^c) + cH^n (u^{-1/2}_n\Delta_n)^{1/4} \notag \end{align}
+  \p( \sup_{t \in \domain}\vert \sumt \sumin \btghki \theta^2_i &\ghk(t)\vert > \eta) \notag \\ &\le \p(\Omega(n,q)^c) + cH^n (u^{-1/2}_n\Delta_n)^{1/4} \notag \end{align}
 Hence, 
 \begin{align}
-  \p(\sup_{t \in \domain} \vert \sumnt p_{h,k} \ghk(t) \vert > \eta) \to 0.\notag
+  \p(\sup_{t \in \domain} \vert \sumt p_{h,k} \ghk(t) \vert > \eta) \to 0.\notag
   \label{}
 \end{align}
 This completes the demonstration  that 
 \begin{align}
-  \p(\sup_{t \in \domain} \vert \sumnt y_{h,k} \ghk(t) \vert > \eta) \to 0.\notag
+  \p(\sup_{t \in \domain} \vert \sumt y_{h,k} \ghk(t) \vert > \eta) \to 0.\notag
   \label{}
 \end{align}
 

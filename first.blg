@@ -50,45 +50,46 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Warning--can't use both author and editor fields in Christensen2008
 Warning--can't use both author and editor fields in Halmos1950
-You've used 14 entries,
+Warning--can't use both author and editor fields in Protter2004
+You've used 15 entries,
             6548 wiz_defined-function locations,
-            1346 strings with 11847 characters,
-and the built_in function-call counts, 15546 in all, are:
-= -- 2516
-> -- 542
-< -- 39
-+ -- 184
-- -- 170
-* -- 894
-:= -- 2115
-add.period$ -- 14
-call.type$ -- 14
-change.case$ -- 108
-chr.to.int$ -- 17
-cite$ -- 16
-duplicate$ -- 466
-empty$ -- 786
-format.name$ -- 174
-if$ -- 3948
+            1352 strings with 11966 characters,
+and the built_in function-call counts, 16447 in all, are:
+= -- 2655
+> -- 569
+< -- 42
++ -- 193
+- -- 178
+* -- 941
+:= -- 2247
+add.period$ -- 15
+call.type$ -- 15
+change.case$ -- 116
+chr.to.int$ -- 21
+cite$ -- 18
+duplicate$ -- 497
+empty$ -- 839
+format.name$ -- 182
+if$ -- 4173
 int.to.chr$ -- 0
 int.to.str$ -- 0
 missing$ -- 0
-newline$ -- 57
-num.names$ -- 134
-pop$ -- 231
+newline$ -- 60
+num.names$ -- 144
+pop$ -- 250
 preamble$ -- 2
-purify$ -- 96
+purify$ -- 102
 quote$ -- 0
-skip$ -- 1021
+skip$ -- 1082
 stack$ -- 0
-substring$ -- 1302
-swap$ -- 95
+substring$ -- 1370
+swap$ -- 97
 text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 206
-warning$ -- 2
-while$ -- 135
+type$ -- 215
+warning$ -- 3
+while$ -- 144
 width$ -- 0
-write$ -- 220
+write$ -- 235
 (There were 6 error messages)
