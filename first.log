@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  8 JUL 2017 22:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.12)  9 JUL 2017 13:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1374,32 +1374,32 @@ Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pg.pdf used on inpu
 t line 5.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/po.pdf, id=113, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=113, 845.1575pt x 597.23125pt>
+File: /home/wale/Dropbox/Research/Paper3/pcir.pdf Graphic file (type pdf)
+<use /home/wale/Dropbox/Research/Paper3/pcir.pdf>
+Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pcir.pdf used on in
+put line 7.
+(pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
+
+</home/wale/Dropbox/Research/Paper3/po.pdf, id=114, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/po.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/po.pdf>
 Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/po.pdf used on inpu
-t line 7.
+t line 9.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 
-</home/wale/Dropbox/Research/Paper3/pa.pdf, id=114, 845.1575pt x 597.23125pt>
+</home/wale/Dropbox/Research/Paper3/pa.pdf, id=115, 845.1575pt x 597.23125pt>
 File: /home/wale/Dropbox/Research/Paper3/pa.pdf Graphic file (type pdf)
 
 <use /home/wale/Dropbox/Research/Paper3/pa.pdf>
 Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pa.pdf used on inpu
-t line 9.
-(pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
-
-</home/wale/Dropbox/Research/Paper3/pcir.pdf, id=115, 845.1575pt x 597.23125pt>
-File: /home/wale/Dropbox/Research/Paper3/pcir.pdf Graphic file (type pdf)
-<use /home/wale/Dropbox/Research/Paper3/pcir.pdf>
-Package pdftex.def Info: /home/wale/Dropbox/Research/Paper3/pcir.pdf used on in
-put line 10.
+t line 11.
 (pdftex.def)             Requested size: 175.49881pt x 124.00974pt.
 ) (./simtab.tex [27 </home/wale/Dropbox/Research/Paper3/pg.pdf, page is rotated
- 90 degrees> </home/wale/Dropbox/Research/Paper3/po.pdf, page is rotated 90 deg
-rees> </home/wale/Dropbox/Research/Paper3/pa.pdf, page is rotated 90 degrees> <
-/home/wale/Dropbox/Research/Paper3/pcir.pdf, page is rotated 90 degrees>] [28
+ 90 degrees> </home/wale/Dropbox/Research/Paper3/pcir.pdf, page is rotated 90 d
+egrees> </home/wale/Dropbox/Research/Paper3/po.pdf, page is rotated 90 degrees>
+ </home/wale/Dropbox/Research/Paper3/pa.pdf, page is rotated 90 degrees>] [28
 
 ]) [29
 
@@ -1511,7 +1511,7 @@ e/2013/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2013/t
 exmf-dist/fonts/type1/public/cm-super/sfti1000.pfb></usr/local/texlive/2013/tex
 mf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on first.pdf (37 pages, 2442161 bytes).
+Output written on first.pdf (37 pages, 2442152 bytes).
 PDF statistics:
  295 PDF objects out of 1000 (max. 8388607)
  209 compressed objects within 3 object streams
